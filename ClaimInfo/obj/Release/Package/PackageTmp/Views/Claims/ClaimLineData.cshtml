@@ -1,0 +1,227 @@
+﻿@model IEnumerable<ClaimInfo.Models.IntakeClaimLineDataListViewModel>
+@{
+    ViewBag.Title = "ClaimLineData";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+    string FileID = ViewBag.FileID;
+    string ClaimID = ViewBag.ClaaimID;
+}
+<link href="~/CSS/StyleSheetForTable.css" rel="stylesheet" />
+<div class="rightpart">
+    <div class="dashBx">
+        <div class="clearfix"></div>
+        <h2> Claim Line Data</h2>
+        <hr />
+        <div id="fileIntekDiv">
+
+            <div class="dashformBx  dashformBx2 clearfix">
+                <div class="dashfrm-L">
+                    <label class="lblTxt">  SVD01 </label>
+                    @Html.TextBox("SVD01-filter", "", new { @class = "dashInp form-control input-filter", @search_index = "1" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">   SVD03 </label>
+                    @Html.TextBox("SVD03-filter", "", new { @class = "dashInp form-control input-filter", @search_index = "2" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt"> LineCheckOrRemittance Date From </label>
+                    @Html.TextBox("startDate", "", new { @class = "dashInp date-filter form-control", @search_index = "3", @search_type = "from", @onkeydown = "return false;" })
+                </div>
+                <div class="dashfrm-R">
+                    <label class="lblTxt">SBR02 </label>
+                    @Html.TextBox("SBR02", "", new { @class = "dashInp input-filter form-control", @search_index = "4", @search_type = "to", @onkeydown = "return false;" })
+
+                </div>
+                <div class="clearfix"></div>
+                <div class="dashfrm-L">
+                    <label class="lblTxt">  LineCheckOrRemittance Date To </label>
+                    @Html.TextBox("endDate", "", new { @class = "dashInp date-filter form-control", @search_index = "3", @search_type = "to" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">    </label>
+                    <button class="editBtn pull-right filter-reset" style="width: 30%;"> Reset </button>
+                </div>
+            </div>
+
+            <div class="table-responsive" id="rootId" style="margin-top:5px;">
+                <table id="claimLineDataTable" class="dashTable cell-border table table-bordered display">
+                    <thead>
+                        <tr>
+                            <th>
+                                Seq ID
+                            </th>
+                            <th>
+                                File ID
+                            </th>
+                            <th>
+                                Claim ID
+                            </th>
+                            <th>
+                                Service Line Count
+                            </th>
+                            <th>
+                                Paid Amount
+                            </th>
+                            <th>
+                                Remaining Amount
+                            </th>
+                            <th>
+                                Service Date
+                            </th>
+                            <th>
+                                Other Payer Primary Identifier
+                            </th>
+                            <th>
+                                Procedure Code
+                            </th>
+                            <th>
+                                Paid Service Unit Count
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                            <th>
+                                Status Code
+                            </th>
+                            <th>
+                                Line Check Or RemittanceDate
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+                </div>
+            </div>
+            <div id="divClaimIntakeLineDataModel" class="modal fade" role="dialog">
+            </div>
+        </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+//        $('.date-filter').daterangepicker(
+//{
+//    singleDatePicker: true,
+//});
+        $("#claimLineDataTable tr:even").css("background-color", "#dedede");
+
+        $("#claimLineDataTable").DataTable({
+            "processing": true,
+            "bLengthChange": false,
+            "language": {
+                "processing": "<img src='/Content/images/loading.gif' id='ProgressImage'/>" //add a loading image,simply putting <img src="loader.gif" /> tag.
+            },
+            "serverSide": true,
+            "searching": true,
+            "ordering": true,
+            "scrollY": 200,
+            "scrollX": true,
+            "responsive": true,
+            "ajax":
+            {
+                "url": "/Claims/GetClaimLineData",
+                "data": {
+                    "FileID": @FileID,
+                    "ClaimID":"@ClaimID",
+                },
+                "type": "POST",
+                "dataType": "JSON"
+            },
+            "columns": [
+           {
+               data:'ClaimLineDataSeqID',
+               "visible": false,
+               "searchable": false
+           },
+            {
+                data: 'FileID'
+            },
+            { data: 'ClaimID' },
+            { data: 'LX' },
+            { data: 'SVD02' },
+            { data: 'AmmountOwed' },
+            { data: 'ServiceDate' },
+            { data: 'SVD01' },
+            { data: 'SVD03' },
+            { data: 'SVD05' },
+            { data: 'ErrorCode' },
+            { data: 'ErrorDesc' },
+            { data: 'LineCheckOrRemittanceDate' },
+            {
+                "targets": -1,
+                "data": null,
+                "render": function (data, type, row, meta) {
+                    //debugger;
+                    if (type === 'display') {
+                        //debugger;<img src="../Content/Images/glyphicons_new_window.png" style="height:30px; width:30px;" />
+                        //data = '<a href="/Claims/ClaimLineDataDetails?SeqID='+row.ClaimLineDataSeqID+'" class="btn btn-default"><span class="glyphicon glyphicon-new-window"></span></a>';
+                        data = '<a href="/Claims/ClaimLineDataDetails?SeqID=' + row.ClaimLineDataSeqID + '" class="btn btn-default"><img src="../Content/Images/glyphicons_new_window.png" style="height:30px; width:30px;" /></a>';
+                    }
+                    return data;
+                },
+                }]
+            , "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+
+                //if (aData['ErrorCode'] != null) {
+                //    $('td', nRow).css('background-color', 'red');
+                //    $('td', nRow).css('color', 'white');
+                //}
+
+            }
+        });
+
+        $('#claimLineDataTable tbody').on('click', '#showClaimLineData', function () {
+            var table = $('#claimLineDataTable').DataTable();
+            var data = table.row($(this).parents('tr')).data();
+            window.location.href = "/Claims/ClaimLineDataDetails?SeqID=" + data[0];
+        });
+        $('.date-filter').val('');
+        // Filter Section
+
+        $('.input-filter').on('blur', function (e) {
+            //debugger;
+            index = $(this).attr("search-index");
+            searchFilter(this, index);
+        });
+
+        $(".filter-reset").on('click', function (e) {
+            //debugger;
+            $('#claimLineDataTable').DataTable().search('').columns().search('').draw();
+            $('.input-filter').val('');
+            $('.date-filter').val('');
+        });
+        $('.date-filter').on('change', function (e) {
+            //debugger;
+            val = '';
+            index = $(this).attr("search-index");
+            type = $(this).attr("search-type");
+
+            if (($("#endDate").val() != '' && $("#startDate").val() != '') && (Date.parse($("#endDate").val()) < Date.parse($("#startDate").val()))) {
+                alert("End date should be greater than or equal to Start date");
+                $(this).val('');
+            }
+
+            if (type == 'from') {
+                val = $(this).val() + '-' + $("#endDate").val();
+            }
+            else if (type == 'to') {
+                val = $("#startDate").val() + '-' + $(this).val();
+            }
+            var data = $('#claimLineDataTable').DataTable();
+            data.column(index).search(val).draw();
+
+        });
+
+
+
+
+    });
+
+    function searchFilter(ele, index) {
+        //debugger;
+        var datatable = $('#claimLineDataTable').DataTable();
+        datatable.column(index).search(ele.value).draw();
+    }
+</script>

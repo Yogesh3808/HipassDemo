@@ -1,0 +1,1563 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HiPaaS_website_offshoreModelStoreContainer" CdmEntityContainer="HiPaaS_website_offshoreEntities">
+    <EntitySetMapping Name="FileInTakes">
+      <EntityTypeMapping TypeName="HiPaaS_website_offshoreModel.FileInTake">
+        <MappingFragment StoreEntitySet="FileInTake">
+          <ScalarProperty Name="SeqID" ColumnName="SeqID" />
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FileDate" ColumnName="FileDate" />
+          <ScalarProperty Name="BatchID" ColumnName="BatchID" />
+          <ScalarProperty Name="TransmissionID" ColumnName="TransmissionID" />
+          <ScalarProperty Name="TradingPartner" ColumnName="TradingPartner" />
+          <ScalarProperty Name="InterchangeSenderID" ColumnName="InterchangeSenderID" />
+          <ScalarProperty Name="InterchangeControlNumber" ColumnName="InterchangeControlNumber" />
+          <ScalarProperty Name="InterchangeDate" ColumnName="InterchangeDate" />
+          <ScalarProperty Name="InterchangeTime" ColumnName="InterchangeTime" />
+          <ScalarProperty Name="SubmitterID" ColumnName="SubmitterID" />
+          <ScalarProperty Name="ReceiverName" ColumnName="ReceiverName" />
+          <ScalarProperty Name="ReceiverID" ColumnName="ReceiverID" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+          <ScalarProperty Name="ISA01" ColumnName="ISA01" />
+          <ScalarProperty Name="ISA02" ColumnName="ISA02" />
+          <ScalarProperty Name="ISA03" ColumnName="ISA03" />
+          <ScalarProperty Name="ISA04" ColumnName="ISA04" />
+          <ScalarProperty Name="ISA05" ColumnName="ISA05" />
+          <ScalarProperty Name="ISA06" ColumnName="ISA06" />
+          <ScalarProperty Name="ISA07" ColumnName="ISA07" />
+          <ScalarProperty Name="ISA08" ColumnName="ISA08" />
+          <ScalarProperty Name="ISA09" ColumnName="ISA09" />
+          <ScalarProperty Name="ISA10" ColumnName="ISA10" />
+          <ScalarProperty Name="ISA11" ColumnName="ISA11" />
+          <ScalarProperty Name="ISA12" ColumnName="ISA12" />
+          <ScalarProperty Name="ISA13" ColumnName="ISA13" />
+          <ScalarProperty Name="ISA14" ColumnName="ISA14" />
+          <ScalarProperty Name="ISA15" ColumnName="ISA15" />
+          <ScalarProperty Name="ISA16" ColumnName="ISA16" />
+          <ScalarProperty Name="GSA01" ColumnName="GSA01" />
+          <ScalarProperty Name="GSA02" ColumnName="GSA02" />
+          <ScalarProperty Name="GSA03" ColumnName="GSA03" />
+          <ScalarProperty Name="GSA04" ColumnName="GSA04" />
+          <ScalarProperty Name="GSA05" ColumnName="GSA05" />
+          <ScalarProperty Name="GSA06" ColumnName="GSA06" />
+          <ScalarProperty Name="GSA07" ColumnName="GSA07" />
+          <ScalarProperty Name="GSA08" ColumnName="GSA08" />
+          <ScalarProperty Name="ST01" ColumnName="ST01" />
+          <ScalarProperty Name="ST02" ColumnName="ST02" />
+          <ScalarProperty Name="ST03" ColumnName="ST03" />
+          <ScalarProperty Name="BHT01" ColumnName="BHT01" />
+          <ScalarProperty Name="BHT02" ColumnName="BHT02" />
+          <ScalarProperty Name="BHT03" ColumnName="BHT03" />
+          <ScalarProperty Name="BHT04" ColumnName="BHT04" />
+          <ScalarProperty Name="BHT05" ColumnName="BHT05" />
+          <ScalarProperty Name="BHT06" ColumnName="BHT06" />
+          <ScalarProperty Name="Sumbitter_N101" ColumnName="Sumbitter_N101" />
+          <ScalarProperty Name="Submitter_N102" ColumnName="Submitter_N102" />
+          <ScalarProperty Name="Submitter_N103" ColumnName="Submitter_N103" />
+          <ScalarProperty Name="Submitter_N104" ColumnName="Submitter_N104" />
+          <ScalarProperty Name="Submitter_N301" ColumnName="Submitter_N301" />
+          <ScalarProperty Name="Submitter_N302" ColumnName="Submitter_N302" />
+          <ScalarProperty Name="Submitter_N401" ColumnName="Submitter_N401" />
+          <ScalarProperty Name="Submitter_N402" ColumnName="Submitter_N402" />
+          <ScalarProperty Name="Submitter_N403" ColumnName="Submitter_N403" />
+          <ScalarProperty Name="Submitter_PER01" ColumnName="Submitter_PER01" />
+          <ScalarProperty Name="Submitter_PER02" ColumnName="Submitter_PER02" />
+          <ScalarProperty Name="Submitter_PER03" ColumnName="Submitter_PER03" />
+          <ScalarProperty Name="Submitter_PER04" ColumnName="Submitter_PER04" />
+          <ScalarProperty Name="Submitter_PER05" ColumnName="Submitter_PER05" />
+          <ScalarProperty Name="Submitter_PER06" ColumnName="Submitter_PER06" />
+          <ScalarProperty Name="Receiver_N101" ColumnName="Receiver_N101" />
+          <ScalarProperty Name="Receiver_N102" ColumnName="Receiver_N102" />
+          <ScalarProperty Name="Receiver_N103" ColumnName="Receiver_N103" />
+          <ScalarProperty Name="Receiver_N104" ColumnName="Receiver_N104" />
+          <ScalarProperty Name="Receiver_N105" ColumnName="Receiver_N105" />
+          <ScalarProperty Name="Receiver_N301" ColumnName="Receiver_N301" />
+          <ScalarProperty Name="Receiver_N302" ColumnName="Receiver_N302" />
+          <ScalarProperty Name="Receiver_N401" ColumnName="Receiver_N401" />
+          <ScalarProperty Name="Receiver_N402" ColumnName="Receiver_N402" />
+          <ScalarProperty Name="Receiver_N403" ColumnName="Receiver_N403" />
+          <ScalarProperty Name="Receiver_PER01" ColumnName="Receiver_PER01" />
+          <ScalarProperty Name="Receiver_PER02" ColumnName="Receiver_PER02" />
+          <ScalarProperty Name="Receiver_PER03" ColumnName="Receiver_PER03" />
+          <ScalarProperty Name="Receiver_PER04" ColumnName="Receiver_PER04" />
+          <ScalarProperty Name="Receiver_PER05" ColumnName="Receiver_PER05" />
+          <ScalarProperty Name="Receiver_PER06" ColumnName="Receiver_PER06" />
+          <ScalarProperty Name="ClaimCount" ColumnName="ClaimCount" />
+          <ScalarProperty Name="ExternalCorrelationToken" ColumnName="ExternalCorrelationToken" />
+          <ScalarProperty Name="ExtraField1" ColumnName="ExtraField1" />
+          <ScalarProperty Name="ExtraField2" ColumnName="ExtraField2" />
+          <ScalarProperty Name="ExtraField3" ColumnName="ExtraField3" />
+          <ScalarProperty Name="ExtraField4" ColumnName="ExtraField4" />
+          <ScalarProperty Name="ExtraField5" ColumnName="ExtraField5" />
+          <ScalarProperty Name="ExtraField6" ColumnName="ExtraField6" />
+          <ScalarProperty Name="ExtraField7" ColumnName="ExtraField7" />
+          <ScalarProperty Name="ExtraField8" ColumnName="ExtraField8" />
+          <ScalarProperty Name="ExtraField9" ColumnName="ExtraField9" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="FileStatus" ColumnName="FileStatus" />
+          <ScalarProperty Name="FileLevelErrors" ColumnName="FileLevelErrors" />
+          <ScalarProperty Name="Field2" ColumnName="Field2" />
+          <ScalarProperty Name="Field3" ColumnName="Field3" />
+          <ScalarProperty Name="Field4" ColumnName="Field4" />
+          <ScalarProperty Name="Field5" ColumnName="Field5" />
+          <ScalarProperty Name="Field6" ColumnName="Field6" />
+          <ScalarProperty Name="error_claimcount" ColumnName="error_claimcount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Claim_Status">
+      <EntityTypeMapping TypeName="HiPaaS_website_offshoreModel.Claim_Status">
+        <MappingFragment StoreEntitySet="Claim_Status">
+          <ScalarProperty Name="Claim_Status_desc" ColumnName="Claim_Status_desc" />
+          <ScalarProperty Name="Claim_Status_id" ColumnName="Claim_Status_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClaimAdjustmentServiceLines">
+      <EntityTypeMapping TypeName="HiPaaS_website_offshoreModel.ClaimAdjustmentServiceLine">
+        <MappingFragment StoreEntitySet="ClaimAdjustmentServiceLine">
+          <ScalarProperty Name="ExtraField4" ColumnName="ExtraField4" />
+          <ScalarProperty Name="ExtraField3" ColumnName="ExtraField3" />
+          <ScalarProperty Name="ExtraField2" ColumnName="ExtraField2" />
+          <ScalarProperty Name="ExtraField1" ColumnName="ExtraField1" />
+          <ScalarProperty Name="CAS20" ColumnName="CAS20" />
+          <ScalarProperty Name="CAS19" ColumnName="CAS19" />
+          <ScalarProperty Name="CAS18" ColumnName="CAS18" />
+          <ScalarProperty Name="CAS17" ColumnName="CAS17" />
+          <ScalarProperty Name="CAS16" ColumnName="CAS16" />
+          <ScalarProperty Name="CAS15" ColumnName="CAS15" />
+          <ScalarProperty Name="CAS14" ColumnName="CAS14" />
+          <ScalarProperty Name="CAS13" ColumnName="CAS13" />
+          <ScalarProperty Name="CAS12" ColumnName="CAS12" />
+          <ScalarProperty Name="CAS11" ColumnName="CAS11" />
+          <ScalarProperty Name="CAS10" ColumnName="CAS10" />
+          <ScalarProperty Name="CAS09" ColumnName="CAS09" />
+          <ScalarProperty Name="CAS08" ColumnName="CAS08" />
+          <ScalarProperty Name="CAS07" ColumnName="CAS07" />
+          <ScalarProperty Name="CAS06" ColumnName="CAS06" />
+          <ScalarProperty Name="CAS05" ColumnName="CAS05" />
+          <ScalarProperty Name="CAS04" ColumnName="CAS04" />
+          <ScalarProperty Name="CAS03" ColumnName="CAS03" />
+          <ScalarProperty Name="CAS02" ColumnName="CAS02" />
+          <ScalarProperty Name="CAS01" ColumnName="CAS01" />
+          <ScalarProperty Name="SequenceId" ColumnName="SequenceId" />
+          <ScalarProperty Name="OccurenceLoop" ColumnName="OccurenceLoop" />
+          <ScalarProperty Name="FileDate" ColumnName="FileDate" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+          <ScalarProperty Name="ClaimId" ColumnName="ClaimId" />
+          <ScalarProperty Name="SeqID" ColumnName="SeqID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClaimDiagnosisInfoes">
+      <EntityTypeMapping TypeName="HiPaaS_website_offshoreModel.ClaimDiagnosisInfo">
+        <MappingFragment StoreEntitySet="ClaimDiagnosisInfo">
+          <ScalarProperty Name="ExtraField4" ColumnName="ExtraField4" />
+          <ScalarProperty Name="ExtraField3" ColumnName="ExtraField3" />
+          <ScalarProperty Name="ExtraField2" ColumnName="ExtraField2" />
+          <ScalarProperty Name="ExtraField1" ColumnName="ExtraField1" />
+          <ScalarProperty Name="HI10" ColumnName="HI10" />
+          <ScalarProperty Name="HI09" ColumnName="HI09" />
+          <ScalarProperty Name="HI08" ColumnName="HI08" />
+          <ScalarProperty Name="HI07" ColumnName="HI07" />
+          <ScalarProperty Name="HI06" ColumnName="HI06" />
+          <ScalarProperty Name="HI05" ColumnName="HI05" />
+          <ScalarProperty Name="HI04" ColumnName="HI04" />
+          <ScalarProperty Name="HI03" ColumnName="HI03" />
+          <ScalarProperty Name="HI02" ColumnName="HI02" />
+          <ScalarProperty Name="HI01" ColumnName="HI01" />
+          <ScalarProperty Name="SequenceId" ColumnName="SequenceId" />
+          <ScalarProperty Name="OccurenceLoop" ColumnName="OccurenceLoop" />
+          <ScalarProperty Name="FileDate" ColumnName="FileDate" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+          <ScalarProperty Name="ClaimId" ColumnName="ClaimId" />
+          <ScalarProperty Name="SeqID" ColumnName="SeqID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClaimInformationREFs">
+      <EntityTypeMapping TypeName="HiPaaS_website_offshoreModel.ClaimInformationREF">
+        <MappingFragment StoreEntitySet="ClaimInformationREF">
+          <ScalarProperty Name="ExtraField4" ColumnName="ExtraField4" />
+          <ScalarProperty Name="ExtraField3" ColumnName="ExtraField3" />
+          <ScalarProperty Name="ExtraField2" ColumnName="ExtraField2" />
+          <ScalarProperty Name="ExtraField1" ColumnName="ExtraField1" />
+          <ScalarProperty Name="ClaimId" ColumnName="ClaimId" />
+          <ScalarProperty Name="REF02" ColumnName="REF02" />
+          <ScalarProperty Name="REF01" ColumnName="REF01" />
+          <ScalarProperty Name="SequenceId" ColumnName="SequenceId" />
+          <ScalarProperty Name="OccurenceLoop" ColumnName="OccurenceLoop" />
+          <ScalarProperty Name="FileDate" ColumnName="FileDate" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+          <ScalarProperty Name="SeqID" ColumnName="SeqID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Claims_ICD_CODE">
+      <EntityTypeMapping TypeName="HiPaaS_website_offshoreModel.Claims_ICD_CODE">
+        <MappingFragment StoreEntitySet="Claims_ICD_CODE">
+          <ScalarProperty Name="ExtraField1" ColumnName="ExtraField1" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="ICD_CODE" ColumnName="ICD_CODE" />
+          <ScalarProperty Name="SeqId" ColumnName="SeqId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NoteClaim837">
+      <EntityTypeMapping TypeName="HiPaaS_website_offshoreModel.NoteClaim837">
+        <MappingFragment StoreEntitySet="NoteClaim837">
+          <ScalarProperty Name="ServiceLineItem" ColumnName="ServiceLineItem" />
+          <ScalarProperty Name="ClaimId" ColumnName="ClaimId" />
+          <ScalarProperty Name="NTE02" ColumnName="NTE02" />
+          <ScalarProperty Name="NTE01" ColumnName="NTE01" />
+          <ScalarProperty Name="SequenceId" ColumnName="SequenceId" />
+          <ScalarProperty Name="OccurenceLoop" ColumnName="OccurenceLoop" />
+          <ScalarProperty Name="FileDate" ColumnName="FileDate" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+          <ScalarProperty Name="SeqID" ColumnName="SeqID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="HiPaaS_website_offshoreModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="CategoryDesc" ColumnName="CategoryDesc" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LCD_Covered_Original">
+      <EntityTypeMapping TypeName="HiPaaS_website_offshoreModel.LCD_Covered_Original">
+        <MappingFragment StoreEntitySet="LCD_Covered_Original">
+          <ScalarProperty Name="ExtraField1" ColumnName="ExtraField1" />
+          <ScalarProperty Name="Diagnosis_Coding_Order" ColumnName="Diagnosis_Coding_Order" />
+          <ScalarProperty Name="Diagnosis_Group_Logic" ColumnName="Diagnosis_Group_Logic" />
+          <ScalarProperty Name="Diagnosis_Group_Identifier" ColumnName="Diagnosis_Group_Identifier" />
+          <ScalarProperty Name="Policy_Rule_NameorDescriptor" ColumnName="Policy_Rule_NameorDescriptor" />
+          <ScalarProperty Name="Policy_Rule_Key" ColumnName="Policy_Rule_Key" />
+          <ScalarProperty Name="Age_Unit" ColumnName="Age_Unit" />
+          <ScalarProperty Name="Age_Maximum" ColumnName="Age_Maximum" />
+          <ScalarProperty Name="Age_Minimum" ColumnName="Age_Minimum" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Frequency_Time_Span_Number" ColumnName="Frequency_Time_Span_Number" />
+          <ScalarProperty Name="Frequency_Time_Span_Unit" ColumnName="Frequency_Time_Span_Unit" />
+          <ScalarProperty Name="Frequency_Procedure_Limit" ColumnName="Frequency_Procedure_Limit" />
+          <ScalarProperty Name="Frequency_Limit" ColumnName="Frequency_Limit" />
+          <ScalarProperty Name="Code_Termination_Date" ColumnName="Code_Termination_Date" />
+          <ScalarProperty Name="Code_Effective_Date" ColumnName="Code_Effective_Date" />
+          <ScalarProperty Name="ABN_Spanish_Form_Reason" ColumnName="ABN_Spanish_Form_Reason" />
+          <ScalarProperty Name="ABN_Form_Reason" ColumnName="ABN_Form_Reason" />
+          <ScalarProperty Name="Policy_Rule_Summary_or_Reference" ColumnName="Policy_Rule_Summary_or_Reference" />
+          <ScalarProperty Name="ICD_Code_Range_End" ColumnName="ICD_Code_Range_End" />
+          <ScalarProperty Name="ICD_Code_Range_Start" ColumnName="ICD_Code_Range_Start" />
+          <ScalarProperty Name="Exclusion_Type" ColumnName="Exclusion_Type" />
+          <ScalarProperty Name="CPT_HCPCS" ColumnName="CPT_HCPCS" />
+          <ScalarProperty Name="SeqId" ColumnName="SeqId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetClaims_ICD_CODE" FunctionName="HiPaaS_website_offshoreModel.Store.SP_GetClaims_ICD_CODE">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HiPaaS_website_offshoreModel.SP_GetClaims_ICD_CODE_Result">
+          <ScalarProperty Name="SeqId" ColumnName="SeqId" />
+          <ScalarProperty Name="ICD_CODE" ColumnName="ICD_CODE" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="CodeDesc" ColumnName="CodeDesc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetCompanion_Guide" FunctionName="HiPaaS_website_offshoreModel.Store.SP_GetCompanion_Guide">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HiPaaS_website_offshoreModel.SP_GetCompanion_Guide_Result">
+          <ScalarProperty Name="Edit_Reference" ColumnName="Edit_Reference" />
+          <ScalarProperty Name="Segment" ColumnName="Segment" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Min_Max" ColumnName="Min_Max" />
+          <ScalarProperty Name="Usage_Req" ColumnName="Usage_Req" />
+          <ScalarProperty Name="Values5010A1" ColumnName="Values5010A1" />
+          <ScalarProperty Name="TA1_999_277CA" ColumnName="TA1_999_277CA" />
+          <ScalarProperty Name="Accept_Reject" ColumnName="Accept_Reject" />
+          <ScalarProperty Name="Disposition" ColumnName="Disposition" />
+          <ScalarProperty Name="PartB" ColumnName="PartB" />
+          <ScalarProperty Name="CEDI" ColumnName="CEDI" />
+          <ScalarProperty Name="MiscNotes" ColumnName="MiscNotes" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetLCD_Covered_Original" FunctionName="HiPaaS_website_offshoreModel.Store.SP_GetLCD_Covered_Original">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HiPaaS_website_offshoreModel.SP_GetLCD_Covered_Original_Result">
+          <ScalarProperty Name="SeqId" ColumnName="SeqId" />
+          <ScalarProperty Name="CPT" ColumnName="CPT" />
+          <ScalarProperty Name="ICDCode" ColumnName="ICDCode" />
+          <ScalarProperty Name="policy" ColumnName="policy" />
+          <ScalarProperty Name="C_eff_date" ColumnName="C_eff_date" />
+          <ScalarProperty Name="policyrulekey" ColumnName="policyrulekey" />
+          <ScalarProperty Name="policyDesc" ColumnName="policyDesc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetLCD_SmallFile" FunctionName="HiPaaS_website_offshoreModel.Store.SP_GetLCD_SmallFile" />
+    <FunctionImportMapping FunctionImportName="SP_GetPendingClaimError" FunctionName="HiPaaS_website_offshoreModel.Store.SP_GetPendingClaimError">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HiPaaS_website_offshoreModel.SP_GetPendingClaimError_Result">
+          <ScalarProperty Name="RejLevelCount" ColumnName="RejLevelCount" />
+          <ScalarProperty Name="ClaimLevelErrors" ColumnName="ClaimLevelErrors" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetRejectedClaimError" FunctionName="HiPaaS_website_offshoreModel.Store.SP_GetRejectedClaimError">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HiPaaS_website_offshoreModel.SP_GetRejectedClaimError_Result">
+          <ScalarProperty Name="RejLevelCount" ColumnName="RejLevelCount" />
+          <ScalarProperty Name="ClaimLevelErrors" ColumnName="ClaimLevelErrors" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SearchClaims" FunctionName="HiPaaS_website_offshoreModel.Store.SP_SearchClaims">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HiPaaS_website_offshoreModel.SP_SearchClaims_Result">
+          <ScalarProperty Name="SeqID" ColumnName="SeqID" />
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FileDate" ColumnName="FileDate" />
+          <ScalarProperty Name="ClaimID" ColumnName="ClaimID" />
+          <ScalarProperty Name="claim_amount" ColumnName="claim_amount" />
+          <ScalarProperty Name="ClaimStatus" ColumnName="ClaimStatus" />
+          <ScalarProperty Name="BillingProvider_TaxId" ColumnName="BillingProvider_TaxId" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Eligibility276">
+      <EntityTypeMapping TypeName="HiPaaS_website_offshoreModel.Eligibility276">
+        <MappingFragment StoreEntitySet="Eligibility276">
+          <ScalarProperty Name="Error" ColumnName="Error" />
+          <ScalarProperty Name="Success" ColumnName="Success" />
+          <ScalarProperty Name="TotalNumOfReq" ColumnName="TotalNumOfReq" />
+          <ScalarProperty Name="AvgResTime" ColumnName="AvgResTime" />
+          <ScalarProperty Name="TypeofTransaction" ColumnName="TypeofTransaction" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Eligibilty270">
+      <EntityTypeMapping TypeName="HiPaaS_website_offshoreModel.Eligibilty270">
+        <MappingFragment StoreEntitySet="Eligibilty270">
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Error" ColumnName="Error" />
+          <ScalarProperty Name="Success" ColumnName="Success" />
+          <ScalarProperty Name="TotalNumOfReq" ColumnName="TotalNumOfReq" />
+          <ScalarProperty Name="AvgResTime" ColumnName="AvgResTime" />
+          <ScalarProperty Name="TypeofTransaction" ColumnName="TypeofTransaction" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetCompanion_Guide_270" FunctionName="HiPaaS_website_offshoreModel.Store.SP_GetCompanion_Guide_270">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HiPaaS_website_offshoreModel.SP_GetCompanion_Guide_270_Result">
+          <ScalarProperty Name="Loop_ID" ColumnName="Loop_ID" />
+          <ScalarProperty Name="Reference" ColumnName="Reference" />
+          <ScalarProperty Name="Info_Source_Name" ColumnName="Info_Source_Name" />
+          <ScalarProperty Name="X12_Codes" ColumnName="X12_Codes" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="ErrorTypes">
+      <EntityTypeMapping TypeName="HiPaaS_website_offshoreModel.ErrorType">
+        <MappingFragment StoreEntitySet="ErrorType">
+          <ScalarProperty Name="Error_Reason" ColumnName="Error_Reason" />
+          <ScalarProperty Name="Transaction_Type" ColumnName="Transaction_Type" />
+          <ScalarProperty Name="Error_type" ColumnName="Error_type" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetFileInTakeCount" FunctionName="HiPaaS_website_offshoreModel.Store.SP_GetFileInTakeCount" />
+    <FunctionImportMapping FunctionImportName="SP_GetIntakeClaimDataCount" FunctionName="HiPaaS_website_offshoreModel.Store.SP_GetIntakeClaimDataCount" />
+    <FunctionImportMapping FunctionImportName="SP_GetIntakeClaimDataErrorsCount" FunctionName="HiPaaS_website_offshoreModel.Store.SP_GetIntakeClaimDataErrorsCount" />
+    <FunctionImportMapping FunctionImportName="SP_GetIntakeClaimDataVarifiedCount" FunctionName="HiPaaS_website_offshoreModel.Store.SP_GetIntakeClaimDataVarifiedCount" />
+    <FunctionImportMapping FunctionImportName="SP_GetRejectedClaims" FunctionName="HiPaaS_website_offshoreModel.Store.SP_GetRejectedClaims">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HiPaaS_website_offshoreModel.SP_GetRejectedClaims_Result">
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="BillingProviderLastName" ColumnName="BillingProviderLastName" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FileDate" ColumnName="FileDate" />
+          <ScalarProperty Name="Member_Account_Number" ColumnName="Member_Account_Number" />
+          <ScalarProperty Name="SubscriberLastName" ColumnName="SubscriberLastName" />
+          <ScalarProperty Name="SubscriberFirstName" ColumnName="SubscriberFirstName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetClaimDailyAuditCount" FunctionName="HiPaaS_website_offshoreModel.Store.SP_GetClaimDailyAuditCount">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HiPaaS_website_offshoreModel.SP_GetClaimDailyAuditCount_Result">
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="InBizstockTotal" ColumnName="InBizstockTotal" />
+          <ScalarProperty Name="RejTotal" ColumnName="RejTotal" />
+          <ScalarProperty Name="PenTotal" ColumnName="PenTotal" />
+          <ScalarProperty Name="VeriTotal" ColumnName="VeriTotal" />
+          <ScalarProperty Name="errTotal" ColumnName="errTotal" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetClaimDailyAudit" FunctionName="HiPaaS_website_offshoreModel.Store.SP_GetClaimDailyAudit">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HiPaaS_website_offshoreModel.SP_GetClaimDailyAudit_Result">
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="Submitted" ColumnName="Submitted" />
+          <ScalarProperty Name="Rejected" ColumnName="Rejected" />
+          <ScalarProperty Name="Pending" ColumnName="Pending" />
+          <ScalarProperty Name="Verified" ColumnName="Verified" />
+          <ScalarProperty Name="Error" ColumnName="Error" />
+          <ScalarProperty Name="InBizstock" ColumnName="InBizstock" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="FileInTake835">
+      <EntityTypeMapping TypeName="HiPaaS_website_offshoreModel.FileInTake835">
+        <MappingFragment StoreEntitySet="FileInTake835">
+          <ScalarProperty Name="error_claimcount" ColumnName="error_claimcount" />
+          <ScalarProperty Name="Field6" ColumnName="Field6" />
+          <ScalarProperty Name="Field5" ColumnName="Field5" />
+          <ScalarProperty Name="Field4" ColumnName="Field4" />
+          <ScalarProperty Name="Field3" ColumnName="Field3" />
+          <ScalarProperty Name="Field2" ColumnName="Field2" />
+          <ScalarProperty Name="FileLevelErrors" ColumnName="FileLevelErrors" />
+          <ScalarProperty Name="FileStatus" ColumnName="FileStatus" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ExtraField9" ColumnName="ExtraField9" />
+          <ScalarProperty Name="ExtraField8" ColumnName="ExtraField8" />
+          <ScalarProperty Name="ExtraField7" ColumnName="ExtraField7" />
+          <ScalarProperty Name="ExtraField6" ColumnName="ExtraField6" />
+          <ScalarProperty Name="ExtraField5" ColumnName="ExtraField5" />
+          <ScalarProperty Name="ExtraField4" ColumnName="ExtraField4" />
+          <ScalarProperty Name="ExtraField3" ColumnName="ExtraField3" />
+          <ScalarProperty Name="ExtraField2" ColumnName="ExtraField2" />
+          <ScalarProperty Name="ExtraField1" ColumnName="ExtraField1" />
+          <ScalarProperty Name="ExternalCorrelationToken" ColumnName="ExternalCorrelationToken" />
+          <ScalarProperty Name="ClaimCount" ColumnName="ClaimCount" />
+          <ScalarProperty Name="Receiver_PER06" ColumnName="Receiver_PER06" />
+          <ScalarProperty Name="Receiver_PER05" ColumnName="Receiver_PER05" />
+          <ScalarProperty Name="Receiver_PER04" ColumnName="Receiver_PER04" />
+          <ScalarProperty Name="Receiver_PER03" ColumnName="Receiver_PER03" />
+          <ScalarProperty Name="Receiver_PER02" ColumnName="Receiver_PER02" />
+          <ScalarProperty Name="Receiver_PER01" ColumnName="Receiver_PER01" />
+          <ScalarProperty Name="Receiver_N403" ColumnName="Receiver_N403" />
+          <ScalarProperty Name="Receiver_N402" ColumnName="Receiver_N402" />
+          <ScalarProperty Name="Receiver_N401" ColumnName="Receiver_N401" />
+          <ScalarProperty Name="Receiver_N302" ColumnName="Receiver_N302" />
+          <ScalarProperty Name="Receiver_N301" ColumnName="Receiver_N301" />
+          <ScalarProperty Name="Receiver_N105" ColumnName="Receiver_N105" />
+          <ScalarProperty Name="Receiver_N104" ColumnName="Receiver_N104" />
+          <ScalarProperty Name="Receiver_N103" ColumnName="Receiver_N103" />
+          <ScalarProperty Name="Receiver_N102" ColumnName="Receiver_N102" />
+          <ScalarProperty Name="Receiver_N101" ColumnName="Receiver_N101" />
+          <ScalarProperty Name="Submitter_PER06" ColumnName="Submitter_PER06" />
+          <ScalarProperty Name="Submitter_PER05" ColumnName="Submitter_PER05" />
+          <ScalarProperty Name="Submitter_PER04" ColumnName="Submitter_PER04" />
+          <ScalarProperty Name="Submitter_PER03" ColumnName="Submitter_PER03" />
+          <ScalarProperty Name="Submitter_PER02" ColumnName="Submitter_PER02" />
+          <ScalarProperty Name="Submitter_PER01" ColumnName="Submitter_PER01" />
+          <ScalarProperty Name="Submitter_N403" ColumnName="Submitter_N403" />
+          <ScalarProperty Name="Submitter_N402" ColumnName="Submitter_N402" />
+          <ScalarProperty Name="Submitter_N401" ColumnName="Submitter_N401" />
+          <ScalarProperty Name="Submitter_N302" ColumnName="Submitter_N302" />
+          <ScalarProperty Name="Submitter_N301" ColumnName="Submitter_N301" />
+          <ScalarProperty Name="Submitter_N104" ColumnName="Submitter_N104" />
+          <ScalarProperty Name="Submitter_N103" ColumnName="Submitter_N103" />
+          <ScalarProperty Name="Submitter_N102" ColumnName="Submitter_N102" />
+          <ScalarProperty Name="Sumbitter_N101" ColumnName="Sumbitter_N101" />
+          <ScalarProperty Name="BHT06" ColumnName="BHT06" />
+          <ScalarProperty Name="BHT05" ColumnName="BHT05" />
+          <ScalarProperty Name="BHT04" ColumnName="BHT04" />
+          <ScalarProperty Name="BHT03" ColumnName="BHT03" />
+          <ScalarProperty Name="BHT02" ColumnName="BHT02" />
+          <ScalarProperty Name="BHT01" ColumnName="BHT01" />
+          <ScalarProperty Name="ST03" ColumnName="ST03" />
+          <ScalarProperty Name="ST02" ColumnName="ST02" />
+          <ScalarProperty Name="ST01" ColumnName="ST01" />
+          <ScalarProperty Name="GSA08" ColumnName="GSA08" />
+          <ScalarProperty Name="GSA07" ColumnName="GSA07" />
+          <ScalarProperty Name="GSA06" ColumnName="GSA06" />
+          <ScalarProperty Name="GSA05" ColumnName="GSA05" />
+          <ScalarProperty Name="GSA04" ColumnName="GSA04" />
+          <ScalarProperty Name="GSA03" ColumnName="GSA03" />
+          <ScalarProperty Name="GSA02" ColumnName="GSA02" />
+          <ScalarProperty Name="GSA01" ColumnName="GSA01" />
+          <ScalarProperty Name="ISA16" ColumnName="ISA16" />
+          <ScalarProperty Name="ISA15" ColumnName="ISA15" />
+          <ScalarProperty Name="ISA14" ColumnName="ISA14" />
+          <ScalarProperty Name="ISA13" ColumnName="ISA13" />
+          <ScalarProperty Name="ISA12" ColumnName="ISA12" />
+          <ScalarProperty Name="ISA11" ColumnName="ISA11" />
+          <ScalarProperty Name="ISA10" ColumnName="ISA10" />
+          <ScalarProperty Name="ISA09" ColumnName="ISA09" />
+          <ScalarProperty Name="ISA08" ColumnName="ISA08" />
+          <ScalarProperty Name="ISA07" ColumnName="ISA07" />
+          <ScalarProperty Name="ISA06" ColumnName="ISA06" />
+          <ScalarProperty Name="ISA05" ColumnName="ISA05" />
+          <ScalarProperty Name="ISA04" ColumnName="ISA04" />
+          <ScalarProperty Name="ISA03" ColumnName="ISA03" />
+          <ScalarProperty Name="ISA02" ColumnName="ISA02" />
+          <ScalarProperty Name="ISA01" ColumnName="ISA01" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+          <ScalarProperty Name="ReceiverID" ColumnName="ReceiverID" />
+          <ScalarProperty Name="ReceiverName" ColumnName="ReceiverName" />
+          <ScalarProperty Name="SubmitterID" ColumnName="SubmitterID" />
+          <ScalarProperty Name="InterchangeTime" ColumnName="InterchangeTime" />
+          <ScalarProperty Name="InterchangeDate" ColumnName="InterchangeDate" />
+          <ScalarProperty Name="InterchangeControlNumber" ColumnName="InterchangeControlNumber" />
+          <ScalarProperty Name="InterchangeSenderID" ColumnName="InterchangeSenderID" />
+          <ScalarProperty Name="TradingPartner" ColumnName="TradingPartner" />
+          <ScalarProperty Name="TransmissionID" ColumnName="TransmissionID" />
+          <ScalarProperty Name="BatchID" ColumnName="BatchID" />
+          <ScalarProperty Name="FileDate" ColumnName="FileDate" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+          <ScalarProperty Name="SeqID" ColumnName="SeqID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IntakeClaimData835">
+      <EntityTypeMapping TypeName="HiPaaS_website_offshoreModel.IntakeClaimData835">
+        <MappingFragment StoreEntitySet="IntakeClaimData835">
+          <ScalarProperty Name="HI01" ColumnName="HI01" />
+          <ScalarProperty Name="ClaimLevelCLMErrorFlag" ColumnName="ClaimLevelCLMErrorFlag" />
+          <ScalarProperty Name="ClaimLevelICDErrorFlag" ColumnName="ClaimLevelICDErrorFlag" />
+          <ScalarProperty Name="CLM_11" ColumnName="CLM_11" />
+          <ScalarProperty Name="NM109_2330" ColumnName="NM109_2330" />
+          <ScalarProperty Name="Field4" ColumnName="Field4" />
+          <ScalarProperty Name="Field3" ColumnName="Field3" />
+          <ScalarProperty Name="ClaimLevelErrors" ColumnName="ClaimLevelErrors" />
+          <ScalarProperty Name="Field1" ColumnName="Field1" />
+          <ScalarProperty Name="ErrorDesc" ColumnName="ErrorDesc" />
+          <ScalarProperty Name="ErrorCode" ColumnName="ErrorCode" />
+          <ScalarProperty Name="RepricerReceivevDate" ColumnName="RepricerReceivevDate" />
+          <ScalarProperty Name="AdmissionDate" ColumnName="AdmissionDate" />
+          <ScalarProperty Name="DischargeHour" ColumnName="DischargeHour" />
+          <ScalarProperty Name="StatementEnd" ColumnName="StatementEnd" />
+          <ScalarProperty Name="StatementBegin" ColumnName="StatementBegin" />
+          <ScalarProperty Name="CLM05_03" ColumnName="CLM05_03" />
+          <ScalarProperty Name="CLM05_02" ColumnName="CLM05_02" />
+          <ScalarProperty Name="CLM05_01" ColumnName="CLM05_01" />
+          <ScalarProperty Name="CLM02" ColumnName="CLM02" />
+          <ScalarProperty Name="CLM01" ColumnName="CLM01" />
+          <ScalarProperty Name="PatientDOB" ColumnName="PatientDOB" />
+          <ScalarProperty Name="PatientCity_State_Zip" ColumnName="PatientCity_State_Zip" />
+          <ScalarProperty Name="PatientAddress" ColumnName="PatientAddress" />
+          <ScalarProperty Name="NM109_Patient" ColumnName="NM109_Patient" />
+          <ScalarProperty Name="NM108_Patient" ColumnName="NM108_Patient" />
+          <ScalarProperty Name="PatientFirstName" ColumnName="PatientFirstName" />
+          <ScalarProperty Name="PatientLastName" ColumnName="PatientLastName" />
+          <ScalarProperty Name="HL_Level_Patient" ColumnName="HL_Level_Patient" />
+          <ScalarProperty Name="HL_ID_Patient" ColumnName="HL_ID_Patient" />
+          <ScalarProperty Name="BillingProviderSecondaryId" ColumnName="BillingProviderSecondaryId" />
+          <ScalarProperty Name="PayerSecondaryId" ColumnName="PayerSecondaryId" />
+          <ScalarProperty Name="PayerCity_State_Zip" ColumnName="PayerCity_State_Zip" />
+          <ScalarProperty Name="PayerAddress" ColumnName="PayerAddress" />
+          <ScalarProperty Name="NM109_Payer" ColumnName="NM109_Payer" />
+          <ScalarProperty Name="NM108_Payer" ColumnName="NM108_Payer" />
+          <ScalarProperty Name="PayerFirstName" ColumnName="PayerFirstName" />
+          <ScalarProperty Name="PayerLastName" ColumnName="PayerLastName" />
+          <ScalarProperty Name="CasualityClaimNumber" ColumnName="CasualityClaimNumber" />
+          <ScalarProperty Name="SubscriberSecondaryIdentification" ColumnName="SubscriberSecondaryIdentification" />
+          <ScalarProperty Name="SubscriberCity_State_Zip" ColumnName="SubscriberCity_State_Zip" />
+          <ScalarProperty Name="SubscriberAddress" ColumnName="SubscriberAddress" />
+          <ScalarProperty Name="NM109_Subscriber" ColumnName="NM109_Subscriber" />
+          <ScalarProperty Name="NM108_Subscriber" ColumnName="NM108_Subscriber" />
+          <ScalarProperty Name="SubscriberDOB" ColumnName="SubscriberDOB" />
+          <ScalarProperty Name="SubscriberFirstName" ColumnName="SubscriberFirstName" />
+          <ScalarProperty Name="SubscriberLastName" ColumnName="SubscriberLastName" />
+          <ScalarProperty Name="SBR09" ColumnName="SBR09" />
+          <ScalarProperty Name="SBR03" ColumnName="SBR03" />
+          <ScalarProperty Name="SBR02" ColumnName="SBR02" />
+          <ScalarProperty Name="SBR01" ColumnName="SBR01" />
+          <ScalarProperty Name="HL_Level_Subscriber" ColumnName="HL_Level_Subscriber" />
+          <ScalarProperty Name="HL_ID_Subscriber" ColumnName="HL_ID_Subscriber" />
+          <ScalarProperty Name="PayToProvider_PER04" ColumnName="PayToProvider_PER04" />
+          <ScalarProperty Name="PayToProvider_PER03" ColumnName="PayToProvider_PER03" />
+          <ScalarProperty Name="PayToProvider_PER02" ColumnName="PayToProvider_PER02" />
+          <ScalarProperty Name="PayToProvider_PER01" ColumnName="PayToProvider_PER01" />
+          <ScalarProperty Name="PayToProvider_TaxId" ColumnName="PayToProvider_TaxId" />
+          <ScalarProperty Name="PayToProviderCity_State_Zip" ColumnName="PayToProviderCity_State_Zip" />
+          <ScalarProperty Name="PayToProviderAddress" ColumnName="PayToProviderAddress" />
+          <ScalarProperty Name="NM109_PayToProvider" ColumnName="NM109_PayToProvider" />
+          <ScalarProperty Name="NM108_PayToProvider" ColumnName="NM108_PayToProvider" />
+          <ScalarProperty Name="PayToProviderFirstName" ColumnName="PayToProviderFirstName" />
+          <ScalarProperty Name="PayToProviderLastName" ColumnName="PayToProviderLastName" />
+          <ScalarProperty Name="NM101_PayToProvider" ColumnName="NM101_PayToProvider" />
+          <ScalarProperty Name="BillingProvider_PER04" ColumnName="BillingProvider_PER04" />
+          <ScalarProperty Name="BillingProvider_PER03" ColumnName="BillingProvider_PER03" />
+          <ScalarProperty Name="BillingProvider_PER02" ColumnName="BillingProvider_PER02" />
+          <ScalarProperty Name="BillingProvider_PER01" ColumnName="BillingProvider_PER01" />
+          <ScalarProperty Name="BillingProvider_TaxId" ColumnName="BillingProvider_TaxId" />
+          <ScalarProperty Name="BillingProviderCity_State_Zip" ColumnName="BillingProviderCity_State_Zip" />
+          <ScalarProperty Name="BillingProviderAddress" ColumnName="BillingProviderAddress" />
+          <ScalarProperty Name="NM109_BillingProvider" ColumnName="NM109_BillingProvider" />
+          <ScalarProperty Name="NM108_BillingProvider" ColumnName="NM108_BillingProvider" />
+          <ScalarProperty Name="BillingProviderFirstName" ColumnName="BillingProviderFirstName" />
+          <ScalarProperty Name="BillingProviderLastName" ColumnName="BillingProviderLastName" />
+          <ScalarProperty Name="NM101_BillingProviderId" ColumnName="NM101_BillingProviderId" />
+          <ScalarProperty Name="PRV_Billing03" ColumnName="PRV_Billing03" />
+          <ScalarProperty Name="PRV_Billing02" ColumnName="PRV_Billing02" />
+          <ScalarProperty Name="PRV_Billing01" ColumnName="PRV_Billing01" />
+          <ScalarProperty Name="HL_Level_BillingProvider" ColumnName="HL_Level_BillingProvider" />
+          <ScalarProperty Name="HL_ID_BillingProvider" ColumnName="HL_ID_BillingProvider" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ExtraField9" ColumnName="ExtraField9" />
+          <ScalarProperty Name="ExtraField8" ColumnName="ExtraField8" />
+          <ScalarProperty Name="ExtraField7" ColumnName="ExtraField7" />
+          <ScalarProperty Name="ExtraField6" ColumnName="ExtraField6" />
+          <ScalarProperty Name="ExtraField5" ColumnName="ExtraField5" />
+          <ScalarProperty Name="ExtraField4" ColumnName="ExtraField4" />
+          <ScalarProperty Name="ExtraField3" ColumnName="ExtraField3" />
+          <ScalarProperty Name="ExtraField2" ColumnName="ExtraField2" />
+          <ScalarProperty Name="ExtraField1" ColumnName="ExtraField1" />
+          <ScalarProperty Name="LineCount" ColumnName="LineCount" />
+          <ScalarProperty Name="ExternalCorrelationToken" ColumnName="ExternalCorrelationToken" />
+          <ScalarProperty Name="PatientDueAmmount" ColumnName="PatientDueAmmount" />
+          <ScalarProperty Name="ContractInformation" ColumnName="ContractInformation" />
+          <ScalarProperty Name="ClaimSupplimentalInfo" ColumnName="ClaimSupplimentalInfo" />
+          <ScalarProperty Name="OtherID" ColumnName="OtherID" />
+          <ScalarProperty Name="ClaimCode" ColumnName="ClaimCode" />
+          <ScalarProperty Name="ClaimStatus" ColumnName="ClaimStatus" />
+          <ScalarProperty Name="COB_Claim_Number" ColumnName="COB_Claim_Number" />
+          <ScalarProperty Name="VAN_Trace_Number" ColumnName="VAN_Trace_Number" />
+          <ScalarProperty Name="InsuranceBalance" ColumnName="InsuranceBalance" />
+          <ScalarProperty Name="Adjust" ColumnName="Adjust" />
+          <ScalarProperty Name="NetBalance" ColumnName="NetBalance" />
+          <ScalarProperty Name="PatientPaid" ColumnName="PatientPaid" />
+          <ScalarProperty Name="Claim_Amount" ColumnName="Claim_Amount" />
+          <ScalarProperty Name="DiagnosisCodes" ColumnName="DiagnosisCodes" />
+          <ScalarProperty Name="Member_DOB" ColumnName="Member_DOB" />
+          <ScalarProperty Name="MemberMI" ColumnName="MemberMI" />
+          <ScalarProperty Name="Member_First_Name" ColumnName="Member_First_Name" />
+          <ScalarProperty Name="Member_Last_Name" ColumnName="Member_Last_Name" />
+          <ScalarProperty Name="Member_Account_Number" ColumnName="Member_Account_Number" />
+          <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+          <ScalarProperty Name="ExtSubscriber_ID" ColumnName="ExtSubscriber_ID" />
+          <ScalarProperty Name="Subscriber_ID" ColumnName="Subscriber_ID" />
+          <ScalarProperty Name="SecondaryBilling_ID" ColumnName="SecondaryBilling_ID" />
+          <ScalarProperty Name="Billing_Provider_ID" ColumnName="Billing_Provider_ID" />
+          <ScalarProperty Name="PaytoPlanInfo" ColumnName="PaytoPlanInfo" />
+          <ScalarProperty Name="ClaimTMTrackingID" ColumnName="ClaimTMTrackingID" />
+          <ScalarProperty Name="ClaimID" ColumnName="ClaimID" />
+          <ScalarProperty Name="ClaimExtNmbr" ColumnName="ClaimExtNmbr" />
+          <ScalarProperty Name="TransmissionID" ColumnName="TransmissionID" />
+          <ScalarProperty Name="BatchID" ColumnName="BatchID" />
+          <ScalarProperty Name="FileDate" ColumnName="FileDate" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+          <ScalarProperty Name="SeqID" ColumnName="SeqID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IntakeClaimLineData835">
+      <EntityTypeMapping TypeName="HiPaaS_website_offshoreModel.IntakeClaimLineData835">
+        <MappingFragment StoreEntitySet="IntakeClaimLineData835">
+          <ScalarProperty Name="Field4" ColumnName="Field4" />
+          <ScalarProperty Name="Field3" ColumnName="Field3" />
+          <ScalarProperty Name="Field2" ColumnName="Field2" />
+          <ScalarProperty Name="Field1" ColumnName="Field1" />
+          <ScalarProperty Name="ClaimLineLevelErrors" ColumnName="ClaimLineLevelErrors" />
+          <ScalarProperty Name="ErrorCode" ColumnName="ErrorCode" />
+          <ScalarProperty Name="RemainingPatientLiability" ColumnName="RemainingPatientLiability" />
+          <ScalarProperty Name="LineCheckOrRemittanceDate" ColumnName="LineCheckOrRemittanceDate" />
+          <ScalarProperty Name="SVD05" ColumnName="SVD05" />
+          <ScalarProperty Name="SVD03_3" ColumnName="SVD03_3" />
+          <ScalarProperty Name="SVD03_2" ColumnName="SVD03_2" />
+          <ScalarProperty Name="SVD03_1" ColumnName="SVD03_1" />
+          <ScalarProperty Name="SVD03" ColumnName="SVD03" />
+          <ScalarProperty Name="SVD02" ColumnName="SVD02" />
+          <ScalarProperty Name="SVD01" ColumnName="SVD01" />
+          <ScalarProperty Name="CTP05_1" ColumnName="CTP05_1" />
+          <ScalarProperty Name="CTP05" ColumnName="CTP05" />
+          <ScalarProperty Name="CTP04_DrugQuantity" ColumnName="CTP04_DrugQuantity" />
+          <ScalarProperty Name="LIN03" ColumnName="LIN03" />
+          <ScalarProperty Name="LIN02_DrugIdentification" ColumnName="LIN02_DrugIdentification" />
+          <ScalarProperty Name="ServiceDate" ColumnName="ServiceDate" />
+          <ScalarProperty Name="PWK05" ColumnName="PWK05" />
+          <ScalarProperty Name="PWK02" ColumnName="PWK02" />
+          <ScalarProperty Name="LinSupplimentalInfo_PWK01" ColumnName="LinSupplimentalInfo_PWK01" />
+          <ScalarProperty Name="SV207" ColumnName="SV207" />
+          <ScalarProperty Name="SV205" ColumnName="SV205" />
+          <ScalarProperty Name="SV204" ColumnName="SV204" />
+          <ScalarProperty Name="SV203" ColumnName="SV203" />
+          <ScalarProperty Name="SV202_7" ColumnName="SV202_7" />
+          <ScalarProperty Name="SV202_6" ColumnName="SV202_6" />
+          <ScalarProperty Name="SV202_5" ColumnName="SV202_5" />
+          <ScalarProperty Name="SV202_4" ColumnName="SV202_4" />
+          <ScalarProperty Name="SV202_3" ColumnName="SV202_3" />
+          <ScalarProperty Name="SV202_2" ColumnName="SV202_2" />
+          <ScalarProperty Name="SV202_1" ColumnName="SV202_1" />
+          <ScalarProperty Name="SV202" ColumnName="SV202" />
+          <ScalarProperty Name="SV201" ColumnName="SV201" />
+          <ScalarProperty Name="LX" ColumnName="LX" />
+          <ScalarProperty Name="ClaimCheckOrRemittanceDate" ColumnName="ClaimCheckOrRemittanceDate" />
+          <ScalarProperty Name="OtherPayerCityStateZip" ColumnName="OtherPayerCityStateZip" />
+          <ScalarProperty Name="OtherPayerAddress" ColumnName="OtherPayerAddress" />
+          <ScalarProperty Name="NM109_OtherPayer" ColumnName="NM109_OtherPayer" />
+          <ScalarProperty Name="NM108_OtherPayer" ColumnName="NM108_OtherPayer" />
+          <ScalarProperty Name="OtherPayer_NM102" ColumnName="OtherPayer_NM102" />
+          <ScalarProperty Name="OtherPayerNameFirst" ColumnName="OtherPayerNameFirst" />
+          <ScalarProperty Name="OtherPayerNameLastOrOrganizationName" ColumnName="OtherPayerNameLastOrOrganizationName" />
+          <ScalarProperty Name="OtherSubscriber_RF02" ColumnName="OtherSubscriber_RF02" />
+          <ScalarProperty Name="OtherSubscriber_REF01" ColumnName="OtherSubscriber_REF01" />
+          <ScalarProperty Name="OtherSubscriberCityStateZip" ColumnName="OtherSubscriberCityStateZip" />
+          <ScalarProperty Name="OtherSubscriberAddress" ColumnName="OtherSubscriberAddress" />
+          <ScalarProperty Name="NM109_OtherSubscriber" ColumnName="NM109_OtherSubscriber" />
+          <ScalarProperty Name="NM108_OtherSubscriber" ColumnName="NM108_OtherSubscriber" />
+          <ScalarProperty Name="OtherSubscriber_NM102" ColumnName="OtherSubscriber_NM102" />
+          <ScalarProperty Name="OtherSubscriberNameFirst" ColumnName="OtherSubscriberNameFirst" />
+          <ScalarProperty Name="OtherSubscriberNameLastOrOrganizationName" ColumnName="OtherSubscriberNameLastOrOrganizationName" />
+          <ScalarProperty Name="MOA10" ColumnName="MOA10" />
+          <ScalarProperty Name="MOA09" ColumnName="MOA09" />
+          <ScalarProperty Name="MOA08" ColumnName="MOA08" />
+          <ScalarProperty Name="MOA07" ColumnName="MOA07" />
+          <ScalarProperty Name="MOA06" ColumnName="MOA06" />
+          <ScalarProperty Name="MOA05" ColumnName="MOA05" />
+          <ScalarProperty Name="MOA04" ColumnName="MOA04" />
+          <ScalarProperty Name="MOA03" ColumnName="MOA03" />
+          <ScalarProperty Name="MOA02" ColumnName="MOA02" />
+          <ScalarProperty Name="MOA01" ColumnName="MOA01" />
+          <ScalarProperty Name="MIA10" ColumnName="MIA10" />
+          <ScalarProperty Name="MIA09" ColumnName="MIA09" />
+          <ScalarProperty Name="MIA08" ColumnName="MIA08" />
+          <ScalarProperty Name="MIA07" ColumnName="MIA07" />
+          <ScalarProperty Name="MIA06" ColumnName="MIA06" />
+          <ScalarProperty Name="MIA05" ColumnName="MIA05" />
+          <ScalarProperty Name="MIA04" ColumnName="MIA04" />
+          <ScalarProperty Name="MIA03" ColumnName="MIA03" />
+          <ScalarProperty Name="MIA02" ColumnName="MIA02" />
+          <ScalarProperty Name="MIA01" ColumnName="MIA01" />
+          <ScalarProperty Name="OtherInsuranceCoverage_OI06" ColumnName="OtherInsuranceCoverage_OI06" />
+          <ScalarProperty Name="OtherInsuranceCoverage_OI03" ColumnName="OtherInsuranceCoverage_OI03" />
+          <ScalarProperty Name="AMT02_NCAmount" ColumnName="AMT02_NCAmount" />
+          <ScalarProperty Name="AMT01_NonCoveredChargeAmmount" ColumnName="AMT01_NonCoveredChargeAmmount" />
+          <ScalarProperty Name="AMT02_RPAmount" ColumnName="AMT02_RPAmount" />
+          <ScalarProperty Name="AMT01_RemainingPatientLiability" ColumnName="AMT01_RemainingPatientLiability" />
+          <ScalarProperty Name="AMT02_Amount" ColumnName="AMT02_Amount" />
+          <ScalarProperty Name="AMT01_PayerPaidAmmount" ColumnName="AMT01_PayerPaidAmmount" />
+          <ScalarProperty Name="CAS19" ColumnName="CAS19" />
+          <ScalarProperty Name="CAS18" ColumnName="CAS18" />
+          <ScalarProperty Name="CAS17" ColumnName="CAS17" />
+          <ScalarProperty Name="CAS16" ColumnName="CAS16" />
+          <ScalarProperty Name="CAS15" ColumnName="CAS15" />
+          <ScalarProperty Name="CAS14" ColumnName="CAS14" />
+          <ScalarProperty Name="CAS13" ColumnName="CAS13" />
+          <ScalarProperty Name="CAS12" ColumnName="CAS12" />
+          <ScalarProperty Name="CAS11" ColumnName="CAS11" />
+          <ScalarProperty Name="CAS10" ColumnName="CAS10" />
+          <ScalarProperty Name="CAS09" ColumnName="CAS09" />
+          <ScalarProperty Name="CAS08" ColumnName="CAS08" />
+          <ScalarProperty Name="CAS07" ColumnName="CAS07" />
+          <ScalarProperty Name="CAS06" ColumnName="CAS06" />
+          <ScalarProperty Name="CAS05" ColumnName="CAS05" />
+          <ScalarProperty Name="CAS04" ColumnName="CAS04" />
+          <ScalarProperty Name="CAS03" ColumnName="CAS03" />
+          <ScalarProperty Name="CAS02" ColumnName="CAS02" />
+          <ScalarProperty Name="CAS01_ClaimAdjustMentGroupCode" ColumnName="CAS01_ClaimAdjustMentGroupCode" />
+          <ScalarProperty Name="SBR09" ColumnName="SBR09" />
+          <ScalarProperty Name="SBR04" ColumnName="SBR04" />
+          <ScalarProperty Name="SBR03" ColumnName="SBR03" />
+          <ScalarProperty Name="SBR02" ColumnName="SBR02" />
+          <ScalarProperty Name="SBR01_PayerResponsibilityCode" ColumnName="SBR01_PayerResponsibilityCode" />
+          <ScalarProperty Name="ReferringProvider_REF02" ColumnName="ReferringProvider_REF02" />
+          <ScalarProperty Name="ReferringProvider_REF01" ColumnName="ReferringProvider_REF01" />
+          <ScalarProperty Name="NM109_ReferringProvider" ColumnName="NM109_ReferringProvider" />
+          <ScalarProperty Name="NM108_ReferringProvider" ColumnName="NM108_ReferringProvider" />
+          <ScalarProperty Name="ReferringProviderNameFirst" ColumnName="ReferringProviderNameFirst" />
+          <ScalarProperty Name="ReferringProviderNameLastOrOrganizationName" ColumnName="ReferringProviderNameLastOrOrganizationName" />
+          <ScalarProperty Name="ServiceFacilityLocation_REF02" ColumnName="ServiceFacilityLocation_REF02" />
+          <ScalarProperty Name="ServiceFacilityLocation_REF01" ColumnName="ServiceFacilityLocation_REF01" />
+          <ScalarProperty Name="ServiceFacilityLocation_City_State_Zip" ColumnName="ServiceFacilityLocation_City_State_Zip" />
+          <ScalarProperty Name="ServiceFacilityLocationAddress" ColumnName="ServiceFacilityLocationAddress" />
+          <ScalarProperty Name="ServiceFacilityLocation_NM109" ColumnName="ServiceFacilityLocation_NM109" />
+          <ScalarProperty Name="ServiceFacilityLocation_NM108" ColumnName="ServiceFacilityLocation_NM108" />
+          <ScalarProperty Name="ServiceFacilityLocation_NM102" ColumnName="ServiceFacilityLocation_NM102" />
+          <ScalarProperty Name="ServiceFacilityLocationName" ColumnName="ServiceFacilityLocationName" />
+          <ScalarProperty Name="RenderingPhysician_REF02" ColumnName="RenderingPhysician_REF02" />
+          <ScalarProperty Name="RenderingPhysician_REF01" ColumnName="RenderingPhysician_REF01" />
+          <ScalarProperty Name="NM109_RenderingPhysician" ColumnName="NM109_RenderingPhysician" />
+          <ScalarProperty Name="NM108_RenderingPhysician" ColumnName="NM108_RenderingPhysician" />
+          <ScalarProperty Name="RenderingPhysicianNameFirst" ColumnName="RenderingPhysicianNameFirst" />
+          <ScalarProperty Name="RenderingPhysicianNameLastOrOrganizationName" ColumnName="RenderingPhysicianNameLastOrOrganizationName" />
+          <ScalarProperty Name="OtherOperatingPhysician_REF02" ColumnName="OtherOperatingPhysician_REF02" />
+          <ScalarProperty Name="OtherOperatingPhysician_REF01" ColumnName="OtherOperatingPhysician_REF01" />
+          <ScalarProperty Name="NM109_OtherOperatingPhysician" ColumnName="NM109_OtherOperatingPhysician" />
+          <ScalarProperty Name="NM108_OtherOperatingPhysician" ColumnName="NM108_OtherOperatingPhysician" />
+          <ScalarProperty Name="OtherOperatingPhysicianNameFirst" ColumnName="OtherOperatingPhysicianNameFirst" />
+          <ScalarProperty Name="OtherOperatingPhysicianNameLastOrOrganizationName" ColumnName="OtherOperatingPhysicianNameLastOrOrganizationName" />
+          <ScalarProperty Name="OperatingPhysician_REF02" ColumnName="OperatingPhysician_REF02" />
+          <ScalarProperty Name="OperatingPhysician_REF01" ColumnName="OperatingPhysician_REF01" />
+          <ScalarProperty Name="NM109_OperatingPhysician" ColumnName="NM109_OperatingPhysician" />
+          <ScalarProperty Name="NM108_OperatingPhysician" ColumnName="NM108_OperatingPhysician" />
+          <ScalarProperty Name="OperatingPhysicianNameFirst" ColumnName="OperatingPhysicianNameFirst" />
+          <ScalarProperty Name="OperatingPhysicianNameLastOrOrganizationName" ColumnName="OperatingPhysicianNameLastOrOrganizationName" />
+          <ScalarProperty Name="AttendingProvider_REF02" ColumnName="AttendingProvider_REF02" />
+          <ScalarProperty Name="AttendingProvider_REF01" ColumnName="AttendingProvider_REF01" />
+          <ScalarProperty Name="AttendingProvider_PRV03" ColumnName="AttendingProvider_PRV03" />
+          <ScalarProperty Name="AttendingProvider_PRV02" ColumnName="AttendingProvider_PRV02" />
+          <ScalarProperty Name="AttendingProviderCode" ColumnName="AttendingProviderCode" />
+          <ScalarProperty Name="NM109_AttendingProvider" ColumnName="NM109_AttendingProvider" />
+          <ScalarProperty Name="NM108_AttendingProvider" ColumnName="NM108_AttendingProvider" />
+          <ScalarProperty Name="AttendingProviderNameFirst" ColumnName="AttendingProviderNameFirst" />
+          <ScalarProperty Name="AttendingProviderNameLastOrOrganizationName" ColumnName="AttendingProviderNameLastOrOrganizationName" />
+          <ScalarProperty Name="HCP15_ExceptionCode" ColumnName="HCP15_ExceptionCode" />
+          <ScalarProperty Name="HCP14" ColumnName="HCP14" />
+          <ScalarProperty Name="HCP13" ColumnName="HCP13" />
+          <ScalarProperty Name="HCP12_Quantity" ColumnName="HCP12_Quantity" />
+          <ScalarProperty Name="HCP08" ColumnName="HCP08" />
+          <ScalarProperty Name="HCP07" ColumnName="HCP07" />
+          <ScalarProperty Name="HCP06" ColumnName="HCP06" />
+          <ScalarProperty Name="HCP05_Rate" ColumnName="HCP05_Rate" />
+          <ScalarProperty Name="HCP04" ColumnName="HCP04" />
+          <ScalarProperty Name="HCP03" ColumnName="HCP03" />
+          <ScalarProperty Name="HCP02_Amount" ColumnName="HCP02_Amount" />
+          <ScalarProperty Name="HCP01_PricingMethodology" ColumnName="HCP01_PricingMethodology" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ExtraField9" ColumnName="ExtraField9" />
+          <ScalarProperty Name="ExtraField8" ColumnName="ExtraField8" />
+          <ScalarProperty Name="ExtraField7" ColumnName="ExtraField7" />
+          <ScalarProperty Name="ExtraField6" ColumnName="ExtraField6" />
+          <ScalarProperty Name="ExtraField5" ColumnName="ExtraField5" />
+          <ScalarProperty Name="ExtraField4" ColumnName="ExtraField4" />
+          <ScalarProperty Name="ExtraField3" ColumnName="ExtraField3" />
+          <ScalarProperty Name="ExtraField2" ColumnName="ExtraField2" />
+          <ScalarProperty Name="ExtraField1" ColumnName="ExtraField1" />
+          <ScalarProperty Name="TransportInfo" ColumnName="TransportInfo" />
+          <ScalarProperty Name="XRayInfo" ColumnName="XRayInfo" />
+          <ScalarProperty Name="AmbulanceInfo" ColumnName="AmbulanceInfo" />
+          <ScalarProperty Name="ExternalCorrelationToken" ColumnName="ExternalCorrelationToken" />
+          <ScalarProperty Name="OtherID" ColumnName="OtherID" />
+          <ScalarProperty Name="LineStatus" ColumnName="LineStatus" />
+          <ScalarProperty Name="DateofServiceEnd" ColumnName="DateofServiceEnd" />
+          <ScalarProperty Name="DateofService" ColumnName="DateofService" />
+          <ScalarProperty Name="InsuranceBalance" ColumnName="InsuranceBalance" />
+          <ScalarProperty Name="Adjust" ColumnName="Adjust" />
+          <ScalarProperty Name="NetBalance" ColumnName="NetBalance" />
+          <ScalarProperty Name="PatientPaid" ColumnName="PatientPaid" />
+          <ScalarProperty Name="Proc_Amount" ColumnName="Proc_Amount" />
+          <ScalarProperty Name="UnitMeasure" ColumnName="UnitMeasure" />
+          <ScalarProperty Name="Units" ColumnName="Units" />
+          <ScalarProperty Name="PatientWeight" ColumnName="PatientWeight" />
+          <ScalarProperty Name="DiagnosisCodes" ColumnName="DiagnosisCodes" />
+          <ScalarProperty Name="DiagnosisXRef" ColumnName="DiagnosisXRef" />
+          <ScalarProperty Name="ProcNo" ColumnName="ProcNo" />
+          <ScalarProperty Name="ICD9ICD10" ColumnName="ICD9ICD10" />
+          <ScalarProperty Name="ExtSubscriber_ID" ColumnName="ExtSubscriber_ID" />
+          <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+          <ScalarProperty Name="Subscriber_ID" ColumnName="Subscriber_ID" />
+          <ScalarProperty Name="ClaimTMTrackingID" ColumnName="ClaimTMTrackingID" />
+          <ScalarProperty Name="ClaimID" ColumnName="ClaimID" />
+          <ScalarProperty Name="ClaimExtNmbr" ColumnName="ClaimExtNmbr" />
+          <ScalarProperty Name="TransmissionID" ColumnName="TransmissionID" />
+          <ScalarProperty Name="BatchID" ColumnName="BatchID" />
+          <ScalarProperty Name="FileDate" ColumnName="FileDate" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="ClaimSeqID" ColumnName="ClaimSeqID" />
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+          <ScalarProperty Name="SeqID" ColumnName="SeqID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetFileInTake835Count" FunctionName="HiPaaS_website_offshoreModel.Store.SP_GetFileInTake835Count" />
+    <EntitySetMapping Name="Claims278">
+      <EntityTypeMapping TypeName="HiPaaS_website_offshoreModel.Claims278">
+        <MappingFragment StoreEntitySet="Claims278">
+          <ScalarProperty Name="ErrorCode" ColumnName="ErrorCode" />
+          <ScalarProperty Name="Submitter" ColumnName="Submitter" />
+          <ScalarProperty Name="TranStatus" ColumnName="TranStatus" />
+          <ScalarProperty Name="TranDate" ColumnName="TranDate" />
+          <ScalarProperty Name="TranName" ColumnName="TranName" />
+          <ScalarProperty Name="TranID" ColumnName="TranID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetData_Wise270" FunctionName="HiPaaS_website_offshoreModel.Store.SP_GetData_Wise270">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HiPaaS_website_offshoreModel.SP_GetData_Wise270_Result">
+          <ScalarProperty Name="Trans_CountID" ColumnName="Trans_CountID" />
+          <ScalarProperty Name="TypeOfTransaction" ColumnName="TypeOfTransaction" />
+          <ScalarProperty Name="AvgResTime" ColumnName="AvgResTime" />
+          <ScalarProperty Name="TotalNumOfReq" ColumnName="TotalNumOfReq" />
+          <ScalarProperty Name="Success" ColumnName="Success" />
+          <ScalarProperty Name="Error" ColumnName="Error" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Trans_type" ColumnName="Trans_type" />
+          <ScalarProperty Name="Submiter" ColumnName="Submiter" />
+          <ScalarProperty Name="Trans_ID" ColumnName="Trans_ID" />
+          <ScalarProperty Name="Error_Code" ColumnName="Error_Code" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetDetails270" FunctionName="HiPaaS_website_offshoreModel.Store.SP_GetDetails270">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HiPaaS_website_offshoreModel.SP_GetDetails270_Result">
+          <ScalarProperty Name="Trans_CountID" ColumnName="Trans_CountID" />
+          <ScalarProperty Name="TypeOfTransaction" ColumnName="TypeOfTransaction" />
+          <ScalarProperty Name="AvgResTime" ColumnName="AvgResTime" />
+          <ScalarProperty Name="TotalNumOfReq" ColumnName="TotalNumOfReq" />
+          <ScalarProperty Name="Success" ColumnName="Success" />
+          <ScalarProperty Name="Error" ColumnName="Error" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Trans_type" ColumnName="Trans_type" />
+          <ScalarProperty Name="Submiter" ColumnName="Submiter" />
+          <ScalarProperty Name="Trans_ID" ColumnName="Trans_ID" />
+          <ScalarProperty Name="Error_Code" ColumnName="Error_Code" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Eligibilty_DateWise">
+      <EntityTypeMapping TypeName="HiPaaS_website_offshoreModel.Eligibilty_DateWise">
+        <MappingFragment StoreEntitySet="Eligibilty_DateWise">
+          <ScalarProperty Name="Error_Code" ColumnName="Error_Code" />
+          <ScalarProperty Name="Trans_ID" ColumnName="Trans_ID" />
+          <ScalarProperty Name="Submiter" ColumnName="Submiter" />
+          <ScalarProperty Name="Trans_type" ColumnName="Trans_type" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Error" ColumnName="Error" />
+          <ScalarProperty Name="Success" ColumnName="Success" />
+          <ScalarProperty Name="TotalNumOfReq" ColumnName="TotalNumOfReq" />
+          <ScalarProperty Name="AvgResTime" ColumnName="AvgResTime" />
+          <ScalarProperty Name="TypeOfTransaction" ColumnName="TypeOfTransaction" />
+          <ScalarProperty Name="Trans_CountID" ColumnName="Trans_CountID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IntakeClaimDatas">
+      <EntityTypeMapping TypeName="HiPaaS_website_offshoreModel.IntakeClaimData">
+        <MappingFragment StoreEntitySet="IntakeClaimData">
+          <ScalarProperty Name="adjudication_status" ColumnName="adjudication_status" />
+          <ScalarProperty Name="HI01" ColumnName="HI01" />
+          <ScalarProperty Name="ClaimLevelCLMErrorFlag" ColumnName="ClaimLevelCLMErrorFlag" />
+          <ScalarProperty Name="ClaimLevelICDErrorFlag" ColumnName="ClaimLevelICDErrorFlag" />
+          <ScalarProperty Name="CLM_11" ColumnName="CLM_11" />
+          <ScalarProperty Name="NM109_2330" ColumnName="NM109_2330" />
+          <ScalarProperty Name="Field4" ColumnName="Field4" />
+          <ScalarProperty Name="Field3" ColumnName="Field3" />
+          <ScalarProperty Name="ClaimLevelErrors" ColumnName="ClaimLevelErrors" />
+          <ScalarProperty Name="Field1" ColumnName="Field1" />
+          <ScalarProperty Name="ErrorDesc" ColumnName="ErrorDesc" />
+          <ScalarProperty Name="ErrorCode" ColumnName="ErrorCode" />
+          <ScalarProperty Name="RepricerReceivevDate" ColumnName="RepricerReceivevDate" />
+          <ScalarProperty Name="AdmissionDate" ColumnName="AdmissionDate" />
+          <ScalarProperty Name="DischargeHour" ColumnName="DischargeHour" />
+          <ScalarProperty Name="StatementEnd" ColumnName="StatementEnd" />
+          <ScalarProperty Name="StatementBegin" ColumnName="StatementBegin" />
+          <ScalarProperty Name="CLM05_03" ColumnName="CLM05_03" />
+          <ScalarProperty Name="CLM05_02" ColumnName="CLM05_02" />
+          <ScalarProperty Name="CLM05_01" ColumnName="CLM05_01" />
+          <ScalarProperty Name="CLM02" ColumnName="CLM02" />
+          <ScalarProperty Name="CLM01" ColumnName="CLM01" />
+          <ScalarProperty Name="PatientDOB" ColumnName="PatientDOB" />
+          <ScalarProperty Name="PatientCity_State_Zip" ColumnName="PatientCity_State_Zip" />
+          <ScalarProperty Name="PatientAddress" ColumnName="PatientAddress" />
+          <ScalarProperty Name="NM109_Patient" ColumnName="NM109_Patient" />
+          <ScalarProperty Name="NM108_Patient" ColumnName="NM108_Patient" />
+          <ScalarProperty Name="PatientFirstName" ColumnName="PatientFirstName" />
+          <ScalarProperty Name="PatientLastName" ColumnName="PatientLastName" />
+          <ScalarProperty Name="HL_Level_Patient" ColumnName="HL_Level_Patient" />
+          <ScalarProperty Name="HL_ID_Patient" ColumnName="HL_ID_Patient" />
+          <ScalarProperty Name="BillingProviderSecondaryId" ColumnName="BillingProviderSecondaryId" />
+          <ScalarProperty Name="PayerSecondaryId" ColumnName="PayerSecondaryId" />
+          <ScalarProperty Name="PayerCity_State_Zip" ColumnName="PayerCity_State_Zip" />
+          <ScalarProperty Name="PayerAddress" ColumnName="PayerAddress" />
+          <ScalarProperty Name="NM109_Payer" ColumnName="NM109_Payer" />
+          <ScalarProperty Name="NM108_Payer" ColumnName="NM108_Payer" />
+          <ScalarProperty Name="PayerFirstName" ColumnName="PayerFirstName" />
+          <ScalarProperty Name="PayerLastName" ColumnName="PayerLastName" />
+          <ScalarProperty Name="CasualityClaimNumber" ColumnName="CasualityClaimNumber" />
+          <ScalarProperty Name="SubscriberSecondaryIdentification" ColumnName="SubscriberSecondaryIdentification" />
+          <ScalarProperty Name="SubscriberCity_State_Zip" ColumnName="SubscriberCity_State_Zip" />
+          <ScalarProperty Name="SubscriberAddress" ColumnName="SubscriberAddress" />
+          <ScalarProperty Name="NM109_Subscriber" ColumnName="NM109_Subscriber" />
+          <ScalarProperty Name="NM108_Subscriber" ColumnName="NM108_Subscriber" />
+          <ScalarProperty Name="SubscriberDOB" ColumnName="SubscriberDOB" />
+          <ScalarProperty Name="SubscriberFirstName" ColumnName="SubscriberFirstName" />
+          <ScalarProperty Name="SubscriberLastName" ColumnName="SubscriberLastName" />
+          <ScalarProperty Name="SBR09" ColumnName="SBR09" />
+          <ScalarProperty Name="SBR03" ColumnName="SBR03" />
+          <ScalarProperty Name="SBR02" ColumnName="SBR02" />
+          <ScalarProperty Name="SBR01" ColumnName="SBR01" />
+          <ScalarProperty Name="HL_Level_Subscriber" ColumnName="HL_Level_Subscriber" />
+          <ScalarProperty Name="HL_ID_Subscriber" ColumnName="HL_ID_Subscriber" />
+          <ScalarProperty Name="PayToProvider_PER04" ColumnName="PayToProvider_PER04" />
+          <ScalarProperty Name="PayToProvider_PER03" ColumnName="PayToProvider_PER03" />
+          <ScalarProperty Name="PayToProvider_PER02" ColumnName="PayToProvider_PER02" />
+          <ScalarProperty Name="PayToProvider_PER01" ColumnName="PayToProvider_PER01" />
+          <ScalarProperty Name="PayToProvider_TaxId" ColumnName="PayToProvider_TaxId" />
+          <ScalarProperty Name="PayToProviderCity_State_Zip" ColumnName="PayToProviderCity_State_Zip" />
+          <ScalarProperty Name="PayToProviderAddress" ColumnName="PayToProviderAddress" />
+          <ScalarProperty Name="NM109_PayToProvider" ColumnName="NM109_PayToProvider" />
+          <ScalarProperty Name="NM108_PayToProvider" ColumnName="NM108_PayToProvider" />
+          <ScalarProperty Name="PayToProviderFirstName" ColumnName="PayToProviderFirstName" />
+          <ScalarProperty Name="PayToProviderLastName" ColumnName="PayToProviderLastName" />
+          <ScalarProperty Name="NM101_PayToProvider" ColumnName="NM101_PayToProvider" />
+          <ScalarProperty Name="BillingProvider_PER04" ColumnName="BillingProvider_PER04" />
+          <ScalarProperty Name="BillingProvider_PER03" ColumnName="BillingProvider_PER03" />
+          <ScalarProperty Name="BillingProvider_PER02" ColumnName="BillingProvider_PER02" />
+          <ScalarProperty Name="BillingProvider_PER01" ColumnName="BillingProvider_PER01" />
+          <ScalarProperty Name="BillingProvider_TaxId" ColumnName="BillingProvider_TaxId" />
+          <ScalarProperty Name="BillingProviderCity_State_Zip" ColumnName="BillingProviderCity_State_Zip" />
+          <ScalarProperty Name="BillingProviderAddress" ColumnName="BillingProviderAddress" />
+          <ScalarProperty Name="NM109_BillingProvider" ColumnName="NM109_BillingProvider" />
+          <ScalarProperty Name="NM108_BillingProvider" ColumnName="NM108_BillingProvider" />
+          <ScalarProperty Name="BillingProviderFirstName" ColumnName="BillingProviderFirstName" />
+          <ScalarProperty Name="BillingProviderLastName" ColumnName="BillingProviderLastName" />
+          <ScalarProperty Name="NM101_BillingProviderId" ColumnName="NM101_BillingProviderId" />
+          <ScalarProperty Name="PRV_Billing03" ColumnName="PRV_Billing03" />
+          <ScalarProperty Name="PRV_Billing02" ColumnName="PRV_Billing02" />
+          <ScalarProperty Name="PRV_Billing01" ColumnName="PRV_Billing01" />
+          <ScalarProperty Name="HL_Level_BillingProvider" ColumnName="HL_Level_BillingProvider" />
+          <ScalarProperty Name="HL_ID_BillingProvider" ColumnName="HL_ID_BillingProvider" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ExtraField9" ColumnName="ExtraField9" />
+          <ScalarProperty Name="ExtraField8" ColumnName="ExtraField8" />
+          <ScalarProperty Name="ExtraField7" ColumnName="ExtraField7" />
+          <ScalarProperty Name="ExtraField6" ColumnName="ExtraField6" />
+          <ScalarProperty Name="ExtraField5" ColumnName="ExtraField5" />
+          <ScalarProperty Name="ExtraField4" ColumnName="ExtraField4" />
+          <ScalarProperty Name="ExtraField3" ColumnName="ExtraField3" />
+          <ScalarProperty Name="ExtraField2" ColumnName="ExtraField2" />
+          <ScalarProperty Name="ExtraField1" ColumnName="ExtraField1" />
+          <ScalarProperty Name="LineCount" ColumnName="LineCount" />
+          <ScalarProperty Name="ExternalCorrelationToken" ColumnName="ExternalCorrelationToken" />
+          <ScalarProperty Name="PatientDueAmmount" ColumnName="PatientDueAmmount" />
+          <ScalarProperty Name="ContractInformation" ColumnName="ContractInformation" />
+          <ScalarProperty Name="ClaimSupplimentalInfo" ColumnName="ClaimSupplimentalInfo" />
+          <ScalarProperty Name="OtherID" ColumnName="OtherID" />
+          <ScalarProperty Name="ClaimCode" ColumnName="ClaimCode" />
+          <ScalarProperty Name="ClaimStatus" ColumnName="ClaimStatus" />
+          <ScalarProperty Name="COB_Claim_Number" ColumnName="COB_Claim_Number" />
+          <ScalarProperty Name="VAN_Trace_Number" ColumnName="VAN_Trace_Number" />
+          <ScalarProperty Name="InsuranceBalance" ColumnName="InsuranceBalance" />
+          <ScalarProperty Name="Adjust" ColumnName="Adjust" />
+          <ScalarProperty Name="NetBalance" ColumnName="NetBalance" />
+          <ScalarProperty Name="PatientPaid" ColumnName="PatientPaid" />
+          <ScalarProperty Name="Claim_Amount" ColumnName="Claim_Amount" />
+          <ScalarProperty Name="DiagnosisCodes" ColumnName="DiagnosisCodes" />
+          <ScalarProperty Name="Member_DOB" ColumnName="Member_DOB" />
+          <ScalarProperty Name="MemberMI" ColumnName="MemberMI" />
+          <ScalarProperty Name="Member_First_Name" ColumnName="Member_First_Name" />
+          <ScalarProperty Name="Member_Last_Name" ColumnName="Member_Last_Name" />
+          <ScalarProperty Name="Member_Account_Number" ColumnName="Member_Account_Number" />
+          <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+          <ScalarProperty Name="ExtSubscriber_ID" ColumnName="ExtSubscriber_ID" />
+          <ScalarProperty Name="Subscriber_ID" ColumnName="Subscriber_ID" />
+          <ScalarProperty Name="SecondaryBilling_ID" ColumnName="SecondaryBilling_ID" />
+          <ScalarProperty Name="Billing_Provider_ID" ColumnName="Billing_Provider_ID" />
+          <ScalarProperty Name="PaytoPlanInfo" ColumnName="PaytoPlanInfo" />
+          <ScalarProperty Name="ClaimTMTrackingID" ColumnName="ClaimTMTrackingID" />
+          <ScalarProperty Name="ClaimID" ColumnName="ClaimID" />
+          <ScalarProperty Name="ClaimExtNmbr" ColumnName="ClaimExtNmbr" />
+          <ScalarProperty Name="TransmissionID" ColumnName="TransmissionID" />
+          <ScalarProperty Name="BatchID" ColumnName="BatchID" />
+          <ScalarProperty Name="FileDate" ColumnName="FileDate" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+          <ScalarProperty Name="SeqID" ColumnName="SeqID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IntakeClaimLineDatas">
+      <EntityTypeMapping TypeName="HiPaaS_website_offshoreModel.IntakeClaimLineData">
+        <MappingFragment StoreEntitySet="IntakeClaimLineData">
+          <ScalarProperty Name="RemainigAmt" ColumnName="RemainigAmt" />
+          <ScalarProperty Name="type_of_adjustment" ColumnName="type_of_adjustment" />
+          <ScalarProperty Name="adjustment" ColumnName="adjustment" />
+          <ScalarProperty Name="Field4" ColumnName="Field4" />
+          <ScalarProperty Name="Field3" ColumnName="Field3" />
+          <ScalarProperty Name="Field2" ColumnName="Field2" />
+          <ScalarProperty Name="Field1" ColumnName="Field1" />
+          <ScalarProperty Name="ClaimLineLevelErrors" ColumnName="ClaimLineLevelErrors" />
+          <ScalarProperty Name="ErrorCode" ColumnName="ErrorCode" />
+          <ScalarProperty Name="RemainingPatientLiability" ColumnName="RemainingPatientLiability" />
+          <ScalarProperty Name="LineCheckOrRemittanceDate" ColumnName="LineCheckOrRemittanceDate" />
+          <ScalarProperty Name="SVD05" ColumnName="SVD05" />
+          <ScalarProperty Name="SVD03_3" ColumnName="SVD03_3" />
+          <ScalarProperty Name="SVD03_2" ColumnName="SVD03_2" />
+          <ScalarProperty Name="SVD03_1" ColumnName="SVD03_1" />
+          <ScalarProperty Name="SVD03" ColumnName="SVD03" />
+          <ScalarProperty Name="SVD02" ColumnName="SVD02" />
+          <ScalarProperty Name="SVD01" ColumnName="SVD01" />
+          <ScalarProperty Name="CTP05_1" ColumnName="CTP05_1" />
+          <ScalarProperty Name="CTP05" ColumnName="CTP05" />
+          <ScalarProperty Name="CTP04_DrugQuantity" ColumnName="CTP04_DrugQuantity" />
+          <ScalarProperty Name="LIN03" ColumnName="LIN03" />
+          <ScalarProperty Name="LIN02_DrugIdentification" ColumnName="LIN02_DrugIdentification" />
+          <ScalarProperty Name="ServiceDate" ColumnName="ServiceDate" />
+          <ScalarProperty Name="PWK05" ColumnName="PWK05" />
+          <ScalarProperty Name="PWK02" ColumnName="PWK02" />
+          <ScalarProperty Name="LinSupplimentalInfo_PWK01" ColumnName="LinSupplimentalInfo_PWK01" />
+          <ScalarProperty Name="SV207" ColumnName="SV207" />
+          <ScalarProperty Name="SV205" ColumnName="SV205" />
+          <ScalarProperty Name="SV204" ColumnName="SV204" />
+          <ScalarProperty Name="SV203" ColumnName="SV203" />
+          <ScalarProperty Name="SV202_7" ColumnName="SV202_7" />
+          <ScalarProperty Name="SV202_6" ColumnName="SV202_6" />
+          <ScalarProperty Name="SV202_5" ColumnName="SV202_5" />
+          <ScalarProperty Name="SV202_4" ColumnName="SV202_4" />
+          <ScalarProperty Name="SV202_3" ColumnName="SV202_3" />
+          <ScalarProperty Name="SV202_2" ColumnName="SV202_2" />
+          <ScalarProperty Name="SV202_1" ColumnName="SV202_1" />
+          <ScalarProperty Name="SV202" ColumnName="SV202" />
+          <ScalarProperty Name="SV201" ColumnName="SV201" />
+          <ScalarProperty Name="LX" ColumnName="LX" />
+          <ScalarProperty Name="ClaimCheckOrRemittanceDate" ColumnName="ClaimCheckOrRemittanceDate" />
+          <ScalarProperty Name="OtherPayerCityStateZip" ColumnName="OtherPayerCityStateZip" />
+          <ScalarProperty Name="OtherPayerAddress" ColumnName="OtherPayerAddress" />
+          <ScalarProperty Name="NM109_OtherPayer" ColumnName="NM109_OtherPayer" />
+          <ScalarProperty Name="NM108_OtherPayer" ColumnName="NM108_OtherPayer" />
+          <ScalarProperty Name="OtherPayer_NM102" ColumnName="OtherPayer_NM102" />
+          <ScalarProperty Name="OtherPayerNameFirst" ColumnName="OtherPayerNameFirst" />
+          <ScalarProperty Name="OtherPayerNameLastOrOrganizationName" ColumnName="OtherPayerNameLastOrOrganizationName" />
+          <ScalarProperty Name="OtherSubscriber_RF02" ColumnName="OtherSubscriber_RF02" />
+          <ScalarProperty Name="OtherSubscriber_REF01" ColumnName="OtherSubscriber_REF01" />
+          <ScalarProperty Name="OtherSubscriberCityStateZip" ColumnName="OtherSubscriberCityStateZip" />
+          <ScalarProperty Name="OtherSubscriberAddress" ColumnName="OtherSubscriberAddress" />
+          <ScalarProperty Name="NM109_OtherSubscriber" ColumnName="NM109_OtherSubscriber" />
+          <ScalarProperty Name="NM108_OtherSubscriber" ColumnName="NM108_OtherSubscriber" />
+          <ScalarProperty Name="OtherSubscriber_NM102" ColumnName="OtherSubscriber_NM102" />
+          <ScalarProperty Name="OtherSubscriberNameFirst" ColumnName="OtherSubscriberNameFirst" />
+          <ScalarProperty Name="OtherSubscriberNameLastOrOrganizationName" ColumnName="OtherSubscriberNameLastOrOrganizationName" />
+          <ScalarProperty Name="MOA10" ColumnName="MOA10" />
+          <ScalarProperty Name="MOA09" ColumnName="MOA09" />
+          <ScalarProperty Name="MOA08" ColumnName="MOA08" />
+          <ScalarProperty Name="MOA07" ColumnName="MOA07" />
+          <ScalarProperty Name="MOA06" ColumnName="MOA06" />
+          <ScalarProperty Name="MOA05" ColumnName="MOA05" />
+          <ScalarProperty Name="MOA04" ColumnName="MOA04" />
+          <ScalarProperty Name="MOA03" ColumnName="MOA03" />
+          <ScalarProperty Name="MOA02" ColumnName="MOA02" />
+          <ScalarProperty Name="MOA01" ColumnName="MOA01" />
+          <ScalarProperty Name="MIA10" ColumnName="MIA10" />
+          <ScalarProperty Name="MIA09" ColumnName="MIA09" />
+          <ScalarProperty Name="MIA08" ColumnName="MIA08" />
+          <ScalarProperty Name="MIA07" ColumnName="MIA07" />
+          <ScalarProperty Name="MIA06" ColumnName="MIA06" />
+          <ScalarProperty Name="MIA05" ColumnName="MIA05" />
+          <ScalarProperty Name="MIA04" ColumnName="MIA04" />
+          <ScalarProperty Name="MIA03" ColumnName="MIA03" />
+          <ScalarProperty Name="MIA02" ColumnName="MIA02" />
+          <ScalarProperty Name="MIA01" ColumnName="MIA01" />
+          <ScalarProperty Name="OtherInsuranceCoverage_OI06" ColumnName="OtherInsuranceCoverage_OI06" />
+          <ScalarProperty Name="OtherInsuranceCoverage_OI03" ColumnName="OtherInsuranceCoverage_OI03" />
+          <ScalarProperty Name="AMT02_NCAmount" ColumnName="AMT02_NCAmount" />
+          <ScalarProperty Name="AMT01_NonCoveredChargeAmmount" ColumnName="AMT01_NonCoveredChargeAmmount" />
+          <ScalarProperty Name="AMT02_RPAmount" ColumnName="AMT02_RPAmount" />
+          <ScalarProperty Name="AMT01_RemainingPatientLiability" ColumnName="AMT01_RemainingPatientLiability" />
+          <ScalarProperty Name="AMT02_Amount" ColumnName="AMT02_Amount" />
+          <ScalarProperty Name="AMT01_PayerPaidAmmount" ColumnName="AMT01_PayerPaidAmmount" />
+          <ScalarProperty Name="CAS19" ColumnName="CAS19" />
+          <ScalarProperty Name="CAS18" ColumnName="CAS18" />
+          <ScalarProperty Name="CAS17" ColumnName="CAS17" />
+          <ScalarProperty Name="CAS16" ColumnName="CAS16" />
+          <ScalarProperty Name="CAS15" ColumnName="CAS15" />
+          <ScalarProperty Name="CAS14" ColumnName="CAS14" />
+          <ScalarProperty Name="CAS13" ColumnName="CAS13" />
+          <ScalarProperty Name="CAS12" ColumnName="CAS12" />
+          <ScalarProperty Name="CAS11" ColumnName="CAS11" />
+          <ScalarProperty Name="CAS10" ColumnName="CAS10" />
+          <ScalarProperty Name="CAS09" ColumnName="CAS09" />
+          <ScalarProperty Name="CAS08" ColumnName="CAS08" />
+          <ScalarProperty Name="CAS07" ColumnName="CAS07" />
+          <ScalarProperty Name="CAS06" ColumnName="CAS06" />
+          <ScalarProperty Name="CAS05" ColumnName="CAS05" />
+          <ScalarProperty Name="CAS04" ColumnName="CAS04" />
+          <ScalarProperty Name="CAS03" ColumnName="CAS03" />
+          <ScalarProperty Name="CAS02" ColumnName="CAS02" />
+          <ScalarProperty Name="CAS01_ClaimAdjustMentGroupCode" ColumnName="CAS01_ClaimAdjustMentGroupCode" />
+          <ScalarProperty Name="SBR09" ColumnName="SBR09" />
+          <ScalarProperty Name="SBR04" ColumnName="SBR04" />
+          <ScalarProperty Name="SBR03" ColumnName="SBR03" />
+          <ScalarProperty Name="SBR02" ColumnName="SBR02" />
+          <ScalarProperty Name="SBR01_PayerResponsibilityCode" ColumnName="SBR01_PayerResponsibilityCode" />
+          <ScalarProperty Name="ReferringProvider_REF02" ColumnName="ReferringProvider_REF02" />
+          <ScalarProperty Name="ReferringProvider_REF01" ColumnName="ReferringProvider_REF01" />
+          <ScalarProperty Name="NM109_ReferringProvider" ColumnName="NM109_ReferringProvider" />
+          <ScalarProperty Name="NM108_ReferringProvider" ColumnName="NM108_ReferringProvider" />
+          <ScalarProperty Name="ReferringProviderNameFirst" ColumnName="ReferringProviderNameFirst" />
+          <ScalarProperty Name="ReferringProviderNameLastOrOrganizationName" ColumnName="ReferringProviderNameLastOrOrganizationName" />
+          <ScalarProperty Name="ServiceFacilityLocation_REF02" ColumnName="ServiceFacilityLocation_REF02" />
+          <ScalarProperty Name="ServiceFacilityLocation_REF01" ColumnName="ServiceFacilityLocation_REF01" />
+          <ScalarProperty Name="ServiceFacilityLocation_City_State_Zip" ColumnName="ServiceFacilityLocation_City_State_Zip" />
+          <ScalarProperty Name="ServiceFacilityLocationAddress" ColumnName="ServiceFacilityLocationAddress" />
+          <ScalarProperty Name="ServiceFacilityLocation_NM109" ColumnName="ServiceFacilityLocation_NM109" />
+          <ScalarProperty Name="ServiceFacilityLocation_NM108" ColumnName="ServiceFacilityLocation_NM108" />
+          <ScalarProperty Name="ServiceFacilityLocation_NM102" ColumnName="ServiceFacilityLocation_NM102" />
+          <ScalarProperty Name="ServiceFacilityLocationName" ColumnName="ServiceFacilityLocationName" />
+          <ScalarProperty Name="RenderingPhysician_REF02" ColumnName="RenderingPhysician_REF02" />
+          <ScalarProperty Name="RenderingPhysician_REF01" ColumnName="RenderingPhysician_REF01" />
+          <ScalarProperty Name="NM109_RenderingPhysician" ColumnName="NM109_RenderingPhysician" />
+          <ScalarProperty Name="NM108_RenderingPhysician" ColumnName="NM108_RenderingPhysician" />
+          <ScalarProperty Name="RenderingPhysicianNameFirst" ColumnName="RenderingPhysicianNameFirst" />
+          <ScalarProperty Name="RenderingPhysicianNameLastOrOrganizationName" ColumnName="RenderingPhysicianNameLastOrOrganizationName" />
+          <ScalarProperty Name="OtherOperatingPhysician_REF02" ColumnName="OtherOperatingPhysician_REF02" />
+          <ScalarProperty Name="OtherOperatingPhysician_REF01" ColumnName="OtherOperatingPhysician_REF01" />
+          <ScalarProperty Name="NM109_OtherOperatingPhysician" ColumnName="NM109_OtherOperatingPhysician" />
+          <ScalarProperty Name="NM108_OtherOperatingPhysician" ColumnName="NM108_OtherOperatingPhysician" />
+          <ScalarProperty Name="OtherOperatingPhysicianNameFirst" ColumnName="OtherOperatingPhysicianNameFirst" />
+          <ScalarProperty Name="OtherOperatingPhysicianNameLastOrOrganizationName" ColumnName="OtherOperatingPhysicianNameLastOrOrganizationName" />
+          <ScalarProperty Name="OperatingPhysician_REF02" ColumnName="OperatingPhysician_REF02" />
+          <ScalarProperty Name="OperatingPhysician_REF01" ColumnName="OperatingPhysician_REF01" />
+          <ScalarProperty Name="NM109_OperatingPhysician" ColumnName="NM109_OperatingPhysician" />
+          <ScalarProperty Name="NM108_OperatingPhysician" ColumnName="NM108_OperatingPhysician" />
+          <ScalarProperty Name="OperatingPhysicianNameFirst" ColumnName="OperatingPhysicianNameFirst" />
+          <ScalarProperty Name="OperatingPhysicianNameLastOrOrganizationName" ColumnName="OperatingPhysicianNameLastOrOrganizationName" />
+          <ScalarProperty Name="AttendingProvider_REF02" ColumnName="AttendingProvider_REF02" />
+          <ScalarProperty Name="AttendingProvider_REF01" ColumnName="AttendingProvider_REF01" />
+          <ScalarProperty Name="AttendingProvider_PRV03" ColumnName="AttendingProvider_PRV03" />
+          <ScalarProperty Name="AttendingProvider_PRV02" ColumnName="AttendingProvider_PRV02" />
+          <ScalarProperty Name="AttendingProviderCode" ColumnName="AttendingProviderCode" />
+          <ScalarProperty Name="NM109_AttendingProvider" ColumnName="NM109_AttendingProvider" />
+          <ScalarProperty Name="NM108_AttendingProvider" ColumnName="NM108_AttendingProvider" />
+          <ScalarProperty Name="AttendingProviderNameFirst" ColumnName="AttendingProviderNameFirst" />
+          <ScalarProperty Name="AttendingProviderNameLastOrOrganizationName" ColumnName="AttendingProviderNameLastOrOrganizationName" />
+          <ScalarProperty Name="HCP15_ExceptionCode" ColumnName="HCP15_ExceptionCode" />
+          <ScalarProperty Name="HCP14" ColumnName="HCP14" />
+          <ScalarProperty Name="HCP13" ColumnName="HCP13" />
+          <ScalarProperty Name="HCP12_Quantity" ColumnName="HCP12_Quantity" />
+          <ScalarProperty Name="HCP08" ColumnName="HCP08" />
+          <ScalarProperty Name="HCP07" ColumnName="HCP07" />
+          <ScalarProperty Name="HCP06" ColumnName="HCP06" />
+          <ScalarProperty Name="HCP05_Rate" ColumnName="HCP05_Rate" />
+          <ScalarProperty Name="HCP04" ColumnName="HCP04" />
+          <ScalarProperty Name="HCP03" ColumnName="HCP03" />
+          <ScalarProperty Name="HCP02_Amount" ColumnName="HCP02_Amount" />
+          <ScalarProperty Name="HCP01_PricingMethodology" ColumnName="HCP01_PricingMethodology" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ExtraField9" ColumnName="ExtraField9" />
+          <ScalarProperty Name="ExtraField8" ColumnName="ExtraField8" />
+          <ScalarProperty Name="ExtraField7" ColumnName="ExtraField7" />
+          <ScalarProperty Name="ExtraField6" ColumnName="ExtraField6" />
+          <ScalarProperty Name="ExtraField5" ColumnName="ExtraField5" />
+          <ScalarProperty Name="ExtraField4" ColumnName="ExtraField4" />
+          <ScalarProperty Name="ExtraField3" ColumnName="ExtraField3" />
+          <ScalarProperty Name="ExtraField2" ColumnName="ExtraField2" />
+          <ScalarProperty Name="ExtraField1" ColumnName="ExtraField1" />
+          <ScalarProperty Name="TransportInfo" ColumnName="TransportInfo" />
+          <ScalarProperty Name="XRayInfo" ColumnName="XRayInfo" />
+          <ScalarProperty Name="AmbulanceInfo" ColumnName="AmbulanceInfo" />
+          <ScalarProperty Name="ExternalCorrelationToken" ColumnName="ExternalCorrelationToken" />
+          <ScalarProperty Name="OtherID" ColumnName="OtherID" />
+          <ScalarProperty Name="LineStatus" ColumnName="LineStatus" />
+          <ScalarProperty Name="DateofServiceEnd" ColumnName="DateofServiceEnd" />
+          <ScalarProperty Name="DateofService" ColumnName="DateofService" />
+          <ScalarProperty Name="InsuranceBalance" ColumnName="InsuranceBalance" />
+          <ScalarProperty Name="Adjust" ColumnName="Adjust" />
+          <ScalarProperty Name="NetBalance" ColumnName="NetBalance" />
+          <ScalarProperty Name="PatientPaid" ColumnName="PatientPaid" />
+          <ScalarProperty Name="Proc_Amount" ColumnName="Proc_Amount" />
+          <ScalarProperty Name="UnitMeasure" ColumnName="UnitMeasure" />
+          <ScalarProperty Name="Units" ColumnName="Units" />
+          <ScalarProperty Name="PatientWeight" ColumnName="PatientWeight" />
+          <ScalarProperty Name="DiagnosisCodes" ColumnName="DiagnosisCodes" />
+          <ScalarProperty Name="DiagnosisXRef" ColumnName="DiagnosisXRef" />
+          <ScalarProperty Name="ProcNo" ColumnName="ProcNo" />
+          <ScalarProperty Name="ICD9ICD10" ColumnName="ICD9ICD10" />
+          <ScalarProperty Name="ExtSubscriber_ID" ColumnName="ExtSubscriber_ID" />
+          <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+          <ScalarProperty Name="Subscriber_ID" ColumnName="Subscriber_ID" />
+          <ScalarProperty Name="ClaimTMTrackingID" ColumnName="ClaimTMTrackingID" />
+          <ScalarProperty Name="ClaimID" ColumnName="ClaimID" />
+          <ScalarProperty Name="ClaimExtNmbr" ColumnName="ClaimExtNmbr" />
+          <ScalarProperty Name="TransmissionID" ColumnName="TransmissionID" />
+          <ScalarProperty Name="BatchID" ColumnName="BatchID" />
+          <ScalarProperty Name="FileDate" ColumnName="FileDate" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="ClaimSeqID" ColumnName="ClaimSeqID" />
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+          <ScalarProperty Name="SeqID" ColumnName="SeqID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetLCD_SmallFileNew" FunctionName="HiPaaS_website_offshoreModel.Store.SP_GetLCD_SmallFileNew">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HiPaaS_website_offshoreModel.SP_GetLCD_SmallFileNew_Result">
+          <ScalarProperty Name="SeqId" ColumnName="SeqId" />
+          <ScalarProperty Name="CPT" ColumnName="CPT" />
+          <ScalarProperty Name="ICDCode" ColumnName="ICDCode" />
+          <ScalarProperty Name="policy" ColumnName="policy" />
+          <ScalarProperty Name="C_eff_date" ColumnName="C_eff_date" />
+          <ScalarProperty Name="policyrulekey" ColumnName="policyrulekey" />
+          <ScalarProperty Name="policyDesc" ColumnName="policyDesc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="HiPaaS_website_offshoreModel.AspNetRole">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="HiPaaS_website_offshoreModel.AspNetUserClaim">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="HiPaaS_website_offshoreModel.AspNetUserLogin">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_LoginUserDetails" FunctionName="HiPaaS_website_offshoreModel.Store.SP_LoginUserDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HiPaaS_website_offshoreModel.SP_LoginUserDetails_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="User_Role" ColumnName="User_Role" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetenrollmentDetails834" FunctionName="HiPaaS_website_offshoreModel.Store.SP_GetenrollmentDetails834">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HiPaaS_website_offshoreModel.SP_GetenrollmentDetails834_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SFHPID" ColumnName="SFHPID" />
+          <ScalarProperty Name="CIN" ColumnName="CIN" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Member_Birth_date" ColumnName="Member_Birth_date" />
+          <ScalarProperty Name="Eligibility_Errors" ColumnName="Eligibility_Errors" />
+          <ScalarProperty Name="Inbound_X12_status" ColumnName="Inbound_X12_status" />
+          <ScalarProperty Name="Qnxt_status" ColumnName="Qnxt_status" />
+          <ScalarProperty Name="X12_Eff_date" ColumnName="X12_Eff_date" />
+          <ScalarProperty Name="Qeffdate" ColumnName="Qeffdate" />
+          <ScalarProperty Name="X12_Term_date" ColumnName="X12_Term_date" />
+          <ScalarProperty Name="Qenddate" ColumnName="Qenddate" />
+          <ScalarProperty Name="C834ToQNXT" ColumnName="834ToQNXT" />
+          <ScalarProperty Name="Member_death_date" ColumnName="Member_death_date" />
+          <ScalarProperty Name="FAMEDetails_status" ColumnName="FAMEDetails_status" />
+          <ScalarProperty Name="CustomDB_staus" ColumnName="CustomDB_staus" />
+          <ScalarProperty Name="PlanIntegration_status" ColumnName="PlanIntegration_status" />
+          <ScalarProperty Name="IPA_status" ColumnName="IPA_status" />
+          <ScalarProperty Name="Plancode" ColumnName="Plancode" />
+          <ScalarProperty Name="Error_Type" ColumnName="Error_Type" />
+          <ScalarProperty Name="custome_errors" ColumnName="custome_errors" />
+          <ScalarProperty Name="Outbound_status" ColumnName="Outbound_status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="MemberCoverageInfo_M1">
+      <EntityTypeMapping TypeName="HiPaaS_website_offshoreModel.MemberCoverageInfo_M1">
+        <MappingFragment StoreEntitySet="MemberCoverageInfo_M1">
+          <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+          <ScalarProperty Name="Reconcile" ColumnName="Reconcile" />
+          <ScalarProperty Name="ReconcileInfo" ColumnName="ReconcileInfo" />
+          <ScalarProperty Name="RefZZ1" ColumnName="RefZZ1" />
+          <ScalarProperty Name="RefZX1" ColumnName="RefZX1" />
+          <ScalarProperty Name="RefXX11" ColumnName="RefXX11" />
+          <ScalarProperty Name="RefRB1" ColumnName="RefRB1" />
+          <ScalarProperty Name="RefE81" ColumnName="RefE81" />
+          <ScalarProperty Name="RefCE1" ColumnName="RefCE1" />
+          <ScalarProperty Name="Ref9V1" ColumnName="Ref9V1" />
+          <ScalarProperty Name="Ref171" ColumnName="Ref171" />
+          <ScalarProperty Name="MemberAmount" ColumnName="MemberAmount" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="PlanCoverageDesc" ColumnName="PlanCoverageDesc" />
+          <ScalarProperty Name="InsLineCode" ColumnName="InsLineCode" />
+          <ScalarProperty Name="TransCode" ColumnName="TransCode" />
+          <ScalarProperty Name="MEDSID" ColumnName="MEDSID" />
+          <ScalarProperty Name="SubscriberNo" ColumnName="SubscriberNo" />
+          <ScalarProperty Name="OtherID" ColumnName="OtherID" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="LoadMonth" ColumnName="LoadMonth" />
+          <ScalarProperty Name="FullFile" ColumnName="FullFile" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+          <ScalarProperty Name="SeqID" ColumnName="SeqID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MemberInfo_M1">
+      <EntityTypeMapping TypeName="HiPaaS_website_offshoreModel.MemberInfo_M1">
+        <MappingFragment StoreEntitySet="MemberInfo_M1">
+          <ScalarProperty Name="error_desc" ColumnName="error_desc" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+          <ScalarProperty Name="Reconcile" ColumnName="Reconcile" />
+          <ScalarProperty Name="ReconcileInfo" ColumnName="ReconcileInfo" />
+          <ScalarProperty Name="ExtraField2" ColumnName="ExtraField2" />
+          <ScalarProperty Name="ExtraField1" ColumnName="ExtraField1" />
+          <ScalarProperty Name="Status2" ColumnName="Status2" />
+          <ScalarProperty Name="Status1" ColumnName="Status1" />
+          <ScalarProperty Name="RefZZ1" ColumnName="RefZZ1" />
+          <ScalarProperty Name="RefABB1" ColumnName="RefABB1" />
+          <ScalarProperty Name="RefQQ1" ColumnName="RefQQ1" />
+          <ScalarProperty Name="RefQ41" ColumnName="RefQ41" />
+          <ScalarProperty Name="RefF61" ColumnName="RefF61" />
+          <ScalarProperty Name="RefDX1" ColumnName="RefDX1" />
+          <ScalarProperty Name="Ref601" ColumnName="Ref601" />
+          <ScalarProperty Name="Ref3H1" ColumnName="Ref3H1" />
+          <ScalarProperty Name="Ref231" ColumnName="Ref231" />
+          <ScalarProperty Name="Ref171" ColumnName="Ref171" />
+          <ScalarProperty Name="MailingPostalCode" ColumnName="MailingPostalCode" />
+          <ScalarProperty Name="MailingState" ColumnName="MailingState" />
+          <ScalarProperty Name="MailingCity" ColumnName="MailingCity" />
+          <ScalarProperty Name="MailingStreetAddress" ColumnName="MailingStreetAddress" />
+          <ScalarProperty Name="FAMELanguge" ColumnName="FAMELanguge" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+          <ScalarProperty Name="Ethinicity" ColumnName="Ethinicity" />
+          <ScalarProperty Name="Race" ColumnName="Race" />
+          <ScalarProperty Name="CountyRes" ColumnName="CountyRes" />
+          <ScalarProperty Name="County" ColumnName="County" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="StreetAddress" ColumnName="StreetAddress" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="MemberMI" ColumnName="MemberMI" />
+          <ScalarProperty Name="MemberLName" ColumnName="MemberLName" />
+          <ScalarProperty Name="MemberFName" ColumnName="MemberFName" />
+          <ScalarProperty Name="MEDSID" ColumnName="MEDSID" />
+          <ScalarProperty Name="SubscriberNo" ColumnName="SubscriberNo" />
+          <ScalarProperty Name="OtherID" ColumnName="OtherID" />
+          <ScalarProperty Name="LoadMonth" ColumnName="LoadMonth" />
+          <ScalarProperty Name="FullFile" ColumnName="FullFile" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+          <ScalarProperty Name="SeqID" ColumnName="SeqID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_834DailyDashboardCount" FunctionName="HiPaaS_website_offshoreModel.Store.SP_834DailyDashboardCount">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HiPaaS_website_offshoreModel.SP_834DailyDashboardCount_Result">
+          <ScalarProperty Name="total_file" ColumnName="total_file" />
+          <ScalarProperty Name="Total_enrollment" ColumnName="Total_enrollment" />
+          <ScalarProperty Name="addition" ColumnName="addition" />
+          <ScalarProperty Name="Change" ColumnName="Change" />
+          <ScalarProperty Name="term" ColumnName="term" />
+          <ScalarProperty Name="Auditcount" ColumnName="Auditcount" />
+          <ScalarProperty Name="Error" ColumnName="Error" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_834FileDetails" FunctionName="HiPaaS_website_offshoreModel.Store.SP_834FileDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HiPaaS_website_offshoreModel.SP_834FileDetails_Result">
+          <ScalarProperty Name="SubscriberNo" ColumnName="SubscriberNo" />
+          <ScalarProperty Name="fileid" ColumnName="fileid" />
+          <ScalarProperty Name="Enrollment_type" ColumnName="Enrollment_type" />
+          <ScalarProperty Name="InsLineCode" ColumnName="InsLineCode" />
+          <ScalarProperty Name="TransCode" ColumnName="TransCode" />
+          <ScalarProperty Name="MemberAmount" ColumnName="MemberAmount" />
+          <ScalarProperty Name="Error" ColumnName="Error" />
+          <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_834Filecountwisedetails" FunctionName="HiPaaS_website_offshoreModel.Store.SP_834Filecountwisedetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HiPaaS_website_offshoreModel.SP_834Filecountwisedetails_Result">
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+          <ScalarProperty Name="sender" ColumnName="sender" />
+          <ScalarProperty Name="receiver" ColumnName="receiver" />
+          <ScalarProperty Name="FileStatus" ColumnName="FileStatus" />
+          <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_Daily834headerData" FunctionName="HiPaaS_website_offshoreModel.Store.SP_Daily834headerData">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HiPaaS_website_offshoreModel.SP_Daily834headerData_Result">
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+          <ScalarProperty Name="sender" ColumnName="sender" />
+          <ScalarProperty Name="receiver" ColumnName="receiver" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="FileStatus" ColumnName="FileStatus" />
+          <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_834FileHeaderDetails" FunctionName="HiPaaS_website_offshoreModel.Store.SP_834FileHeaderDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HiPaaS_website_offshoreModel.SP_834FileHeaderDetails_Result">
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+          <ScalarProperty Name="sender" ColumnName="sender" />
+          <ScalarProperty Name="receiver" ColumnName="receiver" />
+          <ScalarProperty Name="SubscriberNo" ColumnName="SubscriberNo" />
+          <ScalarProperty Name="MemberFName" ColumnName="MemberFName" />
+          <ScalarProperty Name="MemberLName" ColumnName="MemberLName" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="StreetAddress" ColumnName="StreetAddress" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Enrollment_type" ColumnName="Enrollment_type" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="InsLineCode" ColumnName="InsLineCode" />
+          <ScalarProperty Name="MemberAmount" ColumnName="MemberAmount" />
+          <ScalarProperty Name="EnrollmentStatus" ColumnName="EnrollmentStatus" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

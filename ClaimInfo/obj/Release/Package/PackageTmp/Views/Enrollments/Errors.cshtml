@@ -1,0 +1,204 @@
+﻿@model ClaimInfo.Models.enrollmentDetails834
+@{
+    ViewBag.Title = "Errors";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<style>
+
+    .Grid1 {
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    .Grid1, th, td {
+        border: 1px solid #f3eeee;
+        border-collapse: collapse;
+        width: 250px;
+        height: 1px;
+    }
+
+    Grid1, th, td {
+        padding: 15px;
+        text-align: left;
+    }
+
+    .Grid1 {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .Grid1, th, td {
+        text-align: center;
+        padding: 8px;
+        border: 1px solid #f3eeee;
+    }
+
+
+
+    Grid1, th {
+        background-color: #139DC9;
+        color: white;
+    }
+</style>
+<div class="rightpart">
+    <br />
+    <div class="dashBx">
+        <div class="clearfix"></div>
+        <div style="border-bottom: 1.5px solid #139DC9;">
+            <img src="~/Images/Search.png" style="width:14px; height:14px;" />
+            <input type="text" id="MyCustomSearch" style="color: #139DC9; font-weight: bold;" placeholder="Search" class="mySearchbox" name="min">
+        </div>
+        <br />
+        <div>
+            <div style="width:25%; display:none; float:left;">
+                <label class="lblTxt">Select Client Name </label>
+                @Html.DropDownList("ClientName", new List<SelectListItem>
+                {
+                    new SelectListItem {Text = "Client Name 1", Value = "1",Selected = true},
+                    new SelectListItem {Text = "Client Name 2", Value = "2"}
+                }, "Select Client Name", new {@class = "dashInp"})
+            </div>
+            <div style="width:25%; float:left;">
+                <label class="lblTxt">Select State </label>
+                @Html.DropDownList("State", new List<SelectListItem>
+                {
+                    new SelectListItem {Text = "California", Value = "1" ,Selected = true},
+                    new SelectListItem {Text = "Michigan", Value = "2"},
+                 new SelectListItem {Text = "Florida", Value = "3"},
+                    new SelectListItem {Text = "New York", Value = "4"},
+                 new SelectListItem {Text = "Idaho", Value = "5"},
+                    new SelectListItem {Text = "Ohio", Value = "6"},
+                 new SelectListItem {Text = "Illinois", Value = "7"},
+                    new SelectListItem {Text = "Texas", Value = "8"},
+               new SelectListItem {Text = "Mississippi", Value = "9"},
+                    new SelectListItem {Text = "South Carolina", Value = "10"},
+                new SelectListItem {Text = "New Mexico", Value = "11"},
+                    new SelectListItem {Text = "Puerto Rico", Value = "12"},
+                          new SelectListItem {Text = "Washington", Value = "13"},
+                new SelectListItem {Text = "Utah", Value = "14"},
+                    new SelectListItem {Text = "Wisconsin", Value = "15"}
+                }, "Select State", new {@class = "dashInp"})
+            </div>
+            <div style="width:25%;  float:left;">
+                <label class="lblTxt">Select Trading Partner </label>
+                @Html.DropDownList("TradingPartner", new List<SelectListItem>
+                {
+                    new SelectListItem {Text = "Trading Partner 1", Value = "1",Selected = true},
+                    new SelectListItem {Text = "Trading Partner 2", Value = "2"}
+                }, "Select Trading Partner", new {@class = "dashInp"})
+            </div>
+            <div style="width:25%; float:left;">
+                <label class="lblTxt">Select Provider Name </label>
+                @Html.DropDownList("ProviderName", new List<SelectListItem>
+                {
+                    new SelectListItem {Text = "Provider Name 1", Value = "1",Selected = true},
+                    new SelectListItem {Text = "Provider Name 2", Value = "2"}
+                }, "Select Provider Name", new {@class = "dashInp"})
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <br />
+        <br />
+        <div>
+
+            <div style="width:15%; float:left;">
+                <p><strong>Loading Date Time</strong></p>
+                <label>June 20 5:45 PM</label>
+            </div>
+            <div style="width:15%; float:left;">
+                <p><strong>PlanIntegration Errors</strong></p>
+                <p><strong style="color:red; font-size:xx-large; margin-left:20px;">10</strong></p>
+            </div>
+            <div style="width:15%; float:left;">
+                <div style="background-color:#139DC9; height:100px;">
+                    <label style="color:white;">Error</label><br />
+                    <label style="color:white;">10</label>
+                </div>
+
+            </div>
+            <div style="width:40%; float:left; margin-left:25px;">
+                <table cellpadding="0" cellspacing="0">
+                    <tr style="height:3px;">
+                        <th style="width: 100px;">Error Type</th>
+                        <th style="width: 100px;">Error Des.</th>
+                        <th style="width: 100px;">Count</th>
+                    </tr>
+                    <tr style="height:3px;">
+                        <td style="height:3px;">PlanIntegration Errors</td>
+                        <td>5.01 Enroll Coverage gap</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>PlanIntegration Errors</td>
+                        <td>5.09 Another enrollcoverage exists</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>PlanIntegration Errors</td>
+                        <td>5.05 Cannot insert duplicate</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>PlanIntegration Errors</td>
+                        <td>5.05 Cannot insert duplicate key</td>
+                        <td>4</td>
+                    </tr>
+                </table>
+
+            </div>
+
+
+        </div>
+        <div class="clearfix"></div>
+        <br />
+        <div class="dashBx">
+            <div style="float:left;">
+                <table cellpadding="0" cellspacing="0" class="Grid1">
+                    <tr>
+                        <th style="width: 100px;">SFHPID<img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                        <th style="width: 100px;">CIN<img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                        <th style="width: 100px;">Last Name<img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                        <th style="width: 100px;">First Name<img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                        <th style="width: 100px;">Member Birth date<img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                        @*<th>Error Type<img src="~/Images/search_3_16.ico" style="float: right" /></th>*@
+                        <th style="width: 100px;">Inbound status<img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                        <th style="width: 100px;">QNXT Status<img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                        <th style="width: 100px;">X12 Eff Date<img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                        <th style="width: 100px;">QNXT Eff Date<img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                        <th style="width: 100px;">X12 End Date<img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                        <th style="width: 100px;">QNXT End Date<img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                        <th style="width: 100px;">834 To QNXT<img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                        <th style="width: 100px;">Custom Error<img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                        <th style="width: 100px;">Custom staus<img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                        @*<th>Member death Date<img src="~/Images/search_3_16.ico" style="float: right" /></th>*@
+                        <th style="width: 100px;">IPA status<img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                    </tr>
+                    <tr>
+                        @foreach (var item in Model.objVisitDetailsList)
+                        {
+                        <tr>
+                            <td>@item.SFHPID</td>
+                            <td>@item.CIN</td>
+                            <td>@item.LastName</td>
+                            <td>@item.FirstName</td>
+                            <td>@item.Member_Birth_date</td>
+                            @*<td>@item.Error_Type</td>*@
+                            <td>@item.Inbound_X12_status</td>
+                            <td>@item.Qnxt_status</td>
+                            <td>@item.X12_Eff_date</td>
+                            <td>@item.Qeffdate</td>
+                            <td>@item.X12_Term_date</td>
+                            <td>@item.Qenddate</td>
+                            <td>@item.C834ToQNXT</td>
+                            <td>@item.custome_errors</td>
+                            <td>@item.CustomDB_staus</td>
+                            @*<td>@item.Member_death_date</td>*@
+                            <td>@item.IPA_status</td>
+                        </tr>
+                    }
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+

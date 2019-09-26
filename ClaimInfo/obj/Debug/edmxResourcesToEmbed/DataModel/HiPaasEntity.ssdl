@@ -1,0 +1,1800 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HiPaaS_website_offshoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryDesc" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Claim_Status">
+    <Key>
+      <PropertyRef Name="Claim_Status_id" />
+    </Key>
+    <Property Name="Claim_Status_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Claim_Status_desc" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ClaimAdjustmentServiceLine">
+    <Key>
+      <PropertyRef Name="SeqID" />
+    </Key>
+    <Property Name="SeqID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClaimId" Type="varchar" MaxLength="40" />
+    <Property Name="FileID" Type="varchar" MaxLength="100" />
+    <Property Name="TransactionID" Type="int" />
+    <Property Name="FileName" Type="varchar" MaxLength="100" />
+    <Property Name="FileDate" Type="varchar" MaxLength="100" />
+    <Property Name="OccurenceLoop" Type="varchar" MaxLength="10" />
+    <Property Name="SequenceId" Type="varchar" MaxLength="100" />
+    <Property Name="CAS01" Type="varchar" MaxLength="100" />
+    <Property Name="CAS02" Type="varchar" MaxLength="100" />
+    <Property Name="CAS03" Type="varchar" MaxLength="100" />
+    <Property Name="CAS04" Type="varchar" MaxLength="100" />
+    <Property Name="CAS05" Type="varchar" MaxLength="100" />
+    <Property Name="CAS06" Type="varchar" MaxLength="100" />
+    <Property Name="CAS07" Type="varchar" MaxLength="100" />
+    <Property Name="CAS08" Type="varchar" MaxLength="100" />
+    <Property Name="CAS09" Type="varchar" MaxLength="100" />
+    <Property Name="CAS10" Type="varchar" MaxLength="100" />
+    <Property Name="CAS11" Type="varchar" MaxLength="100" />
+    <Property Name="CAS12" Type="varchar" MaxLength="100" />
+    <Property Name="CAS13" Type="varchar" MaxLength="100" />
+    <Property Name="CAS14" Type="varchar" MaxLength="100" />
+    <Property Name="CAS15" Type="varchar" MaxLength="100" />
+    <Property Name="CAS16" Type="varchar" MaxLength="100" />
+    <Property Name="CAS17" Type="varchar" MaxLength="100" />
+    <Property Name="CAS18" Type="varchar" MaxLength="100" />
+    <Property Name="CAS19" Type="varchar" MaxLength="100" />
+    <Property Name="CAS20" Type="varchar" MaxLength="100" />
+    <Property Name="ExtraField1" Type="varchar" MaxLength="100" />
+    <Property Name="ExtraField2" Type="varchar" MaxLength="100" />
+    <Property Name="ExtraField3" Type="varchar" MaxLength="100" />
+    <Property Name="ExtraField4" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ClaimDiagnosisInfo">
+    <Key>
+      <PropertyRef Name="SeqID" />
+    </Key>
+    <Property Name="SeqID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClaimId" Type="varchar" MaxLength="40" />
+    <Property Name="FileID" Type="varchar" MaxLength="100" />
+    <Property Name="TransactionID" Type="int" />
+    <Property Name="FileName" Type="varchar" MaxLength="100" />
+    <Property Name="FileDate" Type="varchar" MaxLength="100" />
+    <Property Name="OccurenceLoop" Type="varchar" MaxLength="10" />
+    <Property Name="SequenceId" Type="varchar" MaxLength="100" />
+    <Property Name="HI01" Type="varchar" MaxLength="100" />
+    <Property Name="HI02" Type="varchar" MaxLength="100" />
+    <Property Name="HI03" Type="varchar" MaxLength="100" />
+    <Property Name="HI04" Type="varchar" MaxLength="100" />
+    <Property Name="HI05" Type="varchar" MaxLength="100" />
+    <Property Name="HI06" Type="varchar" MaxLength="100" />
+    <Property Name="HI07" Type="varchar" MaxLength="100" />
+    <Property Name="HI08" Type="varchar" MaxLength="100" />
+    <Property Name="HI09" Type="varchar" MaxLength="100" />
+    <Property Name="HI10" Type="varchar" MaxLength="100" />
+    <Property Name="ExtraField1" Type="varchar" MaxLength="100" />
+    <Property Name="ExtraField2" Type="varchar" MaxLength="100" />
+    <Property Name="ExtraField3" Type="varchar" MaxLength="100" />
+    <Property Name="ExtraField4" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ClaimInformationREF">
+    <Key>
+      <PropertyRef Name="SeqID" />
+    </Key>
+    <Property Name="SeqID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileID" Type="varchar" MaxLength="100" />
+    <Property Name="TransactionID" Type="int" />
+    <Property Name="FileName" Type="varchar" MaxLength="100" />
+    <Property Name="FileDate" Type="varchar" MaxLength="100" />
+    <Property Name="OccurenceLoop" Type="varchar" MaxLength="10" />
+    <Property Name="SequenceId" Type="varchar" MaxLength="100" />
+    <Property Name="REF01" Type="varchar" MaxLength="100" />
+    <Property Name="REF02" Type="varchar" MaxLength="100" />
+    <Property Name="ClaimId" Type="varchar" MaxLength="40" />
+    <Property Name="ExtraField1" Type="varchar" MaxLength="100" />
+    <Property Name="ExtraField2" Type="varchar" MaxLength="100" />
+    <Property Name="ExtraField3" Type="varchar" MaxLength="100" />
+    <Property Name="ExtraField4" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Claims_ICD_CODE">
+    <Key>
+      <PropertyRef Name="SeqId" />
+    </Key>
+    <Property Name="SeqId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ICD_CODE" Type="varchar" MaxLength="50" />
+    <Property Name="Year" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField1" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Claims278">
+    <Key>
+      <PropertyRef Name="TranID" />
+    </Key>
+    <Property Name="TranID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TranName" Type="varchar" MaxLength="50" />
+    <Property Name="TranDate" Type="varchar" MaxLength="50" />
+    <Property Name="TranStatus" Type="varchar" MaxLength="50" />
+    <Property Name="Submitter" Type="varchar" MaxLength="200" />
+    <Property Name="ErrorCode" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Eligibility276">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeofTransaction" Type="varchar" MaxLength="50" />
+    <Property Name="AvgResTime" Type="varchar" MaxLength="50" />
+    <Property Name="TotalNumOfReq" Type="int" />
+    <Property Name="Success" Type="int" />
+    <Property Name="Error" Type="int" />
+  </EntityType>
+  <EntityType Name="Eligibilty_DateWise">
+    <Key>
+      <PropertyRef Name="Trans_CountID" />
+    </Key>
+    <Property Name="Trans_CountID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeOfTransaction" Type="varchar" MaxLength="50" />
+    <Property Name="AvgResTime" Type="varchar" MaxLength="50" />
+    <Property Name="TotalNumOfReq" Type="int" />
+    <Property Name="Success" Type="int" />
+    <Property Name="Error" Type="int" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Trans_type" Type="varchar" MaxLength="20" />
+    <Property Name="Submiter" Type="varchar" MaxLength="50" />
+    <Property Name="Trans_ID" Type="int" />
+    <Property Name="Error_Code" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Eligibilty270">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeofTransaction" Type="varchar" MaxLength="50" />
+    <Property Name="AvgResTime" Type="varchar" MaxLength="50" />
+    <Property Name="TotalNumOfReq" Type="int" />
+    <Property Name="Success" Type="int" />
+    <Property Name="Error" Type="int" />
+    <Property Name="Created_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ErrorType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Error_type" Type="varchar" MaxLength="50" />
+    <Property Name="Transaction_Type" Type="varchar" MaxLength="50" />
+    <Property Name="Error_Reason" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="FileInTake">
+    <Key>
+      <PropertyRef Name="SeqID" />
+    </Key>
+    <Property Name="SeqID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileID" Type="varchar" MaxLength="100" />
+    <Property Name="TransactionID" Type="int" />
+    <Property Name="FileName" Type="varchar" MaxLength="100" />
+    <Property Name="FileDate" Type="varchar" MaxLength="100" />
+    <Property Name="BatchID" Type="varchar" MaxLength="50" />
+    <Property Name="TransmissionID" Type="bigint" />
+    <Property Name="TradingPartner" Type="varchar" MaxLength="100" />
+    <Property Name="InterchangeSenderID" Type="varchar" MaxLength="100" />
+    <Property Name="InterchangeControlNumber" Type="varchar" MaxLength="100" />
+    <Property Name="InterchangeDate" Type="varchar" MaxLength="25" />
+    <Property Name="InterchangeTime" Type="varchar" MaxLength="10" />
+    <Property Name="SubmitterID" Type="varchar" MaxLength="100" />
+    <Property Name="ReceiverName" Type="varchar" MaxLength="100" />
+    <Property Name="ReceiverID" Type="varchar" MaxLength="50" />
+    <Property Name="Destination" Type="varchar" MaxLength="50" />
+    <Property Name="ISA01" Type="varchar" MaxLength="50" />
+    <Property Name="ISA02" Type="varchar" MaxLength="50" />
+    <Property Name="ISA03" Type="varchar" MaxLength="50" />
+    <Property Name="ISA04" Type="varchar" MaxLength="50" />
+    <Property Name="ISA05" Type="varchar" MaxLength="50" />
+    <Property Name="ISA06" Type="varchar" MaxLength="50" />
+    <Property Name="ISA07" Type="varchar" MaxLength="50" />
+    <Property Name="ISA08" Type="varchar" MaxLength="50" />
+    <Property Name="ISA09" Type="varchar" MaxLength="50" />
+    <Property Name="ISA10" Type="varchar" MaxLength="50" />
+    <Property Name="ISA11" Type="varchar" MaxLength="50" />
+    <Property Name="ISA12" Type="varchar" MaxLength="50" />
+    <Property Name="ISA13" Type="varchar" MaxLength="50" />
+    <Property Name="ISA14" Type="varchar" MaxLength="50" />
+    <Property Name="ISA15" Type="varchar" MaxLength="50" />
+    <Property Name="ISA16" Type="varchar" MaxLength="50" />
+    <Property Name="GSA01" Type="varchar" MaxLength="50" />
+    <Property Name="GSA02" Type="varchar" MaxLength="50" />
+    <Property Name="GSA03" Type="varchar" MaxLength="50" />
+    <Property Name="GSA04" Type="varchar" MaxLength="50" />
+    <Property Name="GSA05" Type="varchar" MaxLength="50" />
+    <Property Name="GSA06" Type="varchar" MaxLength="50" />
+    <Property Name="GSA07" Type="varchar" MaxLength="50" />
+    <Property Name="GSA08" Type="varchar" MaxLength="50" />
+    <Property Name="ST01" Type="varchar" MaxLength="50" />
+    <Property Name="ST02" Type="varchar" MaxLength="50" />
+    <Property Name="ST03" Type="varchar" MaxLength="50" />
+    <Property Name="BHT01" Type="varchar" MaxLength="50" />
+    <Property Name="BHT02" Type="varchar" MaxLength="50" />
+    <Property Name="BHT03" Type="varchar" MaxLength="50" />
+    <Property Name="BHT04" Type="varchar" MaxLength="50" />
+    <Property Name="BHT05" Type="varchar" MaxLength="50" />
+    <Property Name="BHT06" Type="varchar" MaxLength="50" />
+    <Property Name="Sumbitter_N101" Type="varchar" MaxLength="50" />
+    <Property Name="Submitter_N102" Type="varchar" MaxLength="50" />
+    <Property Name="Submitter_N103" Type="varchar" MaxLength="50" />
+    <Property Name="Submitter_N104" Type="varchar" MaxLength="50" />
+    <Property Name="Submitter_N301" Type="varchar" MaxLength="50" />
+    <Property Name="Submitter_N302" Type="varchar" MaxLength="50" />
+    <Property Name="Submitter_N401" Type="varchar" MaxLength="50" />
+    <Property Name="Submitter_N402" Type="varchar" MaxLength="50" />
+    <Property Name="Submitter_N403" Type="varchar" MaxLength="50" />
+    <Property Name="Submitter_PER01" Type="varchar" MaxLength="50" />
+    <Property Name="Submitter_PER02" Type="varchar" MaxLength="50" />
+    <Property Name="Submitter_PER03" Type="varchar" MaxLength="50" />
+    <Property Name="Submitter_PER04" Type="varchar" MaxLength="50" />
+    <Property Name="Submitter_PER05" Type="varchar" MaxLength="50" />
+    <Property Name="Submitter_PER06" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_N101" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_N102" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_N103" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_N104" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_N105" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_N301" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_N302" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_N401" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_N402" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_N403" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_PER01" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_PER02" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_PER03" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_PER04" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_PER05" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_PER06" Type="varchar" MaxLength="50" />
+    <Property Name="ClaimCount" Type="int" />
+    <Property Name="ExternalCorrelationToken" Type="uniqueidentifier" />
+    <Property Name="ExtraField1" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField2" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField3" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField4" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField5" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField6" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField7" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField8" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField9" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDateTime" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="varchar" MaxLength="50" />
+    <Property Name="FileStatus" Type="varchar" MaxLength="50" />
+    <Property Name="FileLevelErrors" Type="varchar" MaxLength="100" />
+    <Property Name="Field2" Type="varchar" MaxLength="100" />
+    <Property Name="Field3" Type="varchar" MaxLength="100" />
+    <Property Name="Field4" Type="varchar" MaxLength="100" />
+    <Property Name="Field5" Type="varchar" MaxLength="100" />
+    <Property Name="Field6" Type="varchar" MaxLength="100" />
+    <Property Name="error_claimcount" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HiPaaS_website.dbo.FileInTake835' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="FileInTake835">
+    <Key>
+      <PropertyRef Name="SeqID" />
+    </Key>
+    <Property Name="SeqID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileID" Type="varchar" MaxLength="100" />
+    <Property Name="TransactionID" Type="int" />
+    <Property Name="FileName" Type="varchar" MaxLength="100" />
+    <Property Name="FileDate" Type="varchar" MaxLength="100" />
+    <Property Name="BatchID" Type="varchar" MaxLength="50" />
+    <Property Name="TransmissionID" Type="bigint" />
+    <Property Name="TradingPartner" Type="varchar" MaxLength="100" />
+    <Property Name="InterchangeSenderID" Type="varchar" MaxLength="100" />
+    <Property Name="InterchangeControlNumber" Type="varchar" MaxLength="100" />
+    <Property Name="InterchangeDate" Type="varchar" MaxLength="25" />
+    <Property Name="InterchangeTime" Type="varchar" MaxLength="10" />
+    <Property Name="SubmitterID" Type="varchar" MaxLength="100" />
+    <Property Name="ReceiverName" Type="varchar" MaxLength="100" />
+    <Property Name="ReceiverID" Type="varchar" MaxLength="50" />
+    <Property Name="Destination" Type="varchar" MaxLength="50" />
+    <Property Name="ISA01" Type="varchar" MaxLength="50" />
+    <Property Name="ISA02" Type="varchar" MaxLength="50" />
+    <Property Name="ISA03" Type="varchar" MaxLength="50" />
+    <Property Name="ISA04" Type="varchar" MaxLength="50" />
+    <Property Name="ISA05" Type="varchar" MaxLength="50" />
+    <Property Name="ISA06" Type="varchar" MaxLength="50" />
+    <Property Name="ISA07" Type="varchar" MaxLength="50" />
+    <Property Name="ISA08" Type="varchar" MaxLength="50" />
+    <Property Name="ISA09" Type="varchar" MaxLength="50" />
+    <Property Name="ISA10" Type="varchar" MaxLength="50" />
+    <Property Name="ISA11" Type="varchar" MaxLength="50" />
+    <Property Name="ISA12" Type="varchar" MaxLength="50" />
+    <Property Name="ISA13" Type="varchar" MaxLength="50" />
+    <Property Name="ISA14" Type="varchar" MaxLength="50" />
+    <Property Name="ISA15" Type="varchar" MaxLength="50" />
+    <Property Name="ISA16" Type="varchar" MaxLength="50" />
+    <Property Name="GSA01" Type="varchar" MaxLength="50" />
+    <Property Name="GSA02" Type="varchar" MaxLength="50" />
+    <Property Name="GSA03" Type="varchar" MaxLength="50" />
+    <Property Name="GSA04" Type="varchar" MaxLength="50" />
+    <Property Name="GSA05" Type="varchar" MaxLength="50" />
+    <Property Name="GSA06" Type="varchar" MaxLength="50" />
+    <Property Name="GSA07" Type="varchar" MaxLength="50" />
+    <Property Name="GSA08" Type="varchar" MaxLength="50" />
+    <Property Name="ST01" Type="varchar" MaxLength="50" />
+    <Property Name="ST02" Type="varchar" MaxLength="50" />
+    <Property Name="ST03" Type="varchar" MaxLength="50" />
+    <Property Name="BHT01" Type="varchar" MaxLength="50" />
+    <Property Name="BHT02" Type="varchar" MaxLength="50" />
+    <Property Name="BHT03" Type="varchar" MaxLength="50" />
+    <Property Name="BHT04" Type="varchar" MaxLength="50" />
+    <Property Name="BHT05" Type="varchar" MaxLength="50" />
+    <Property Name="BHT06" Type="varchar" MaxLength="50" />
+    <Property Name="Sumbitter_N101" Type="varchar" MaxLength="50" />
+    <Property Name="Submitter_N102" Type="varchar" MaxLength="50" />
+    <Property Name="Submitter_N103" Type="varchar" MaxLength="50" />
+    <Property Name="Submitter_N104" Type="varchar" MaxLength="50" />
+    <Property Name="Submitter_N301" Type="varchar" MaxLength="50" />
+    <Property Name="Submitter_N302" Type="varchar" MaxLength="50" />
+    <Property Name="Submitter_N401" Type="varchar" MaxLength="50" />
+    <Property Name="Submitter_N402" Type="varchar" MaxLength="50" />
+    <Property Name="Submitter_N403" Type="varchar" MaxLength="50" />
+    <Property Name="Submitter_PER01" Type="varchar" MaxLength="50" />
+    <Property Name="Submitter_PER02" Type="varchar" MaxLength="50" />
+    <Property Name="Submitter_PER03" Type="varchar" MaxLength="50" />
+    <Property Name="Submitter_PER04" Type="varchar" MaxLength="50" />
+    <Property Name="Submitter_PER05" Type="varchar" MaxLength="50" />
+    <Property Name="Submitter_PER06" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_N101" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_N102" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_N103" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_N104" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_N105" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_N301" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_N302" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_N401" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_N402" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_N403" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_PER01" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_PER02" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_PER03" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_PER04" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_PER05" Type="varchar" MaxLength="50" />
+    <Property Name="Receiver_PER06" Type="varchar" MaxLength="50" />
+    <Property Name="ClaimCount" Type="int" />
+    <Property Name="ExternalCorrelationToken" Type="uniqueidentifier" />
+    <Property Name="ExtraField1" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField2" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField3" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField4" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField5" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField6" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField7" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField8" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField9" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDateTime" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="varchar" MaxLength="50" />
+    <Property Name="FileStatus" Type="varchar" MaxLength="50" />
+    <Property Name="FileLevelErrors" Type="varchar" MaxLength="100" />
+    <Property Name="Field2" Type="varchar" MaxLength="100" />
+    <Property Name="Field3" Type="varchar" MaxLength="100" />
+    <Property Name="Field4" Type="varchar" MaxLength="100" />
+    <Property Name="Field5" Type="varchar" MaxLength="100" />
+    <Property Name="Field6" Type="varchar" MaxLength="100" />
+    <Property Name="error_claimcount" Type="int" />
+  </EntityType>
+  <EntityType Name="IntakeClaimData">
+    <Key>
+      <PropertyRef Name="SeqID" />
+    </Key>
+    <Property Name="SeqID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileID" Type="varchar" MaxLength="50" />
+    <Property Name="TransactionID" Type="varchar" MaxLength="50" />
+    <Property Name="FileName" Type="varchar" MaxLength="100" />
+    <Property Name="FileDate" Type="varchar" MaxLength="100" />
+    <Property Name="BatchID" Type="varchar" MaxLength="50" />
+    <Property Name="TransmissionID" Type="varchar" MaxLength="50" />
+    <Property Name="ClaimExtNmbr" Type="varchar" MaxLength="100" />
+    <Property Name="ClaimID" Type="varchar" MaxLength="100" />
+    <Property Name="ClaimTMTrackingID" Type="varchar" MaxLength="100" />
+    <Property Name="PaytoPlanInfo" Type="varchar" MaxLength="100" />
+    <Property Name="Billing_Provider_ID" Type="varchar" MaxLength="100" />
+    <Property Name="SecondaryBilling_ID" Type="varchar" MaxLength="100" />
+    <Property Name="Subscriber_ID" Type="varchar" MaxLength="100" />
+    <Property Name="ExtSubscriber_ID" Type="varchar" MaxLength="100" />
+    <Property Name="Member_ID" Type="varchar" MaxLength="100" />
+    <Property Name="Member_Account_Number" Type="varchar" MaxLength="100" />
+    <Property Name="Member_Last_Name" Type="varchar" MaxLength="100" />
+    <Property Name="Member_First_Name" Type="varchar" MaxLength="100" />
+    <Property Name="MemberMI" Type="varchar" MaxLength="50" />
+    <Property Name="Member_DOB" Type="varchar" MaxLength="50" />
+    <Property Name="DiagnosisCodes" Type="varchar" MaxLength="100" />
+    <Property Name="Claim_Amount" Type="varchar" MaxLength="50" />
+    <Property Name="PatientPaid" Type="varchar" MaxLength="50" />
+    <Property Name="NetBalance" Type="varchar" MaxLength="50" />
+    <Property Name="Adjust" Type="varchar" MaxLength="50" />
+    <Property Name="InsuranceBalance" Type="varchar" MaxLength="50" />
+    <Property Name="VAN_Trace_Number" Type="varchar" MaxLength="100" />
+    <Property Name="COB_Claim_Number" Type="varchar" MaxLength="100" />
+    <Property Name="ClaimStatus" Type="varchar" MaxLength="50" />
+    <Property Name="ClaimCode" Type="varchar" MaxLength="50" />
+    <Property Name="OtherID" Type="varchar" MaxLength="50" />
+    <Property Name="ClaimSupplimentalInfo" Type="varchar" MaxLength="50" />
+    <Property Name="ContractInformation" Type="varchar" MaxLength="50" />
+    <Property Name="PatientDueAmmount" Type="varchar" MaxLength="50" />
+    <Property Name="ExternalCorrelationToken" Type="varchar" MaxLength="50" />
+    <Property Name="LineCount" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField1" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField2" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField3" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField4" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField5" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField6" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField7" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField8" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField9" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDateTime" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="HL_ID_BillingProvider" Type="varchar" MaxLength="50" />
+    <Property Name="HL_Level_BillingProvider" Type="varchar" MaxLength="50" />
+    <Property Name="PRV_Billing01" Type="varchar" MaxLength="50" />
+    <Property Name="PRV_Billing02" Type="varchar" MaxLength="50" />
+    <Property Name="PRV_Billing03" Type="varchar" MaxLength="50" />
+    <Property Name="NM101_BillingProviderId" Type="varchar" MaxLength="50" />
+    <Property Name="BillingProviderLastName" Type="varchar" MaxLength="50" />
+    <Property Name="BillingProviderFirstName" Type="varchar" MaxLength="50" />
+    <Property Name="NM108_BillingProvider" Type="varchar" MaxLength="50" />
+    <Property Name="NM109_BillingProvider" Type="varchar" MaxLength="50" />
+    <Property Name="BillingProviderAddress" Type="varchar" MaxLength="50" />
+    <Property Name="BillingProviderCity_State_Zip" Type="varchar" MaxLength="50" />
+    <Property Name="BillingProvider_TaxId" Type="varchar" MaxLength="50" />
+    <Property Name="BillingProvider_PER01" Type="varchar" MaxLength="50" />
+    <Property Name="BillingProvider_PER02" Type="varchar" MaxLength="50" />
+    <Property Name="BillingProvider_PER03" Type="varchar" MaxLength="50" />
+    <Property Name="BillingProvider_PER04" Type="varchar" MaxLength="50" />
+    <Property Name="NM101_PayToProvider" Type="varchar" MaxLength="50" />
+    <Property Name="PayToProviderLastName" Type="varchar" MaxLength="50" />
+    <Property Name="PayToProviderFirstName" Type="varchar" MaxLength="50" />
+    <Property Name="NM108_PayToProvider" Type="varchar" MaxLength="50" />
+    <Property Name="NM109_PayToProvider" Type="varchar" MaxLength="50" />
+    <Property Name="PayToProviderAddress" Type="varchar" MaxLength="50" />
+    <Property Name="PayToProviderCity_State_Zip" Type="varchar" MaxLength="50" />
+    <Property Name="PayToProvider_TaxId" Type="varchar" MaxLength="50" />
+    <Property Name="PayToProvider_PER01" Type="varchar" MaxLength="50" />
+    <Property Name="PayToProvider_PER02" Type="varchar" MaxLength="50" />
+    <Property Name="PayToProvider_PER03" Type="varchar" MaxLength="50" />
+    <Property Name="PayToProvider_PER04" Type="varchar" MaxLength="50" />
+    <Property Name="HL_ID_Subscriber" Type="varchar" MaxLength="50" />
+    <Property Name="HL_Level_Subscriber" Type="varchar" MaxLength="50" />
+    <Property Name="SBR01" Type="varchar" MaxLength="50" />
+    <Property Name="SBR02" Type="varchar" MaxLength="50" />
+    <Property Name="SBR03" Type="varchar" MaxLength="50" />
+    <Property Name="SBR09" Type="varchar" MaxLength="50" />
+    <Property Name="SubscriberLastName" Type="varchar" MaxLength="50" />
+    <Property Name="SubscriberFirstName" Type="varchar" MaxLength="50" />
+    <Property Name="SubscriberDOB" Type="varchar" MaxLength="50" />
+    <Property Name="NM108_Subscriber" Type="varchar" MaxLength="50" />
+    <Property Name="NM109_Subscriber" Type="varchar" MaxLength="50" />
+    <Property Name="SubscriberAddress" Type="varchar" MaxLength="50" />
+    <Property Name="SubscriberCity_State_Zip" Type="varchar" MaxLength="50" />
+    <Property Name="SubscriberSecondaryIdentification" Type="varchar" MaxLength="50" />
+    <Property Name="CasualityClaimNumber" Type="varchar" MaxLength="50" />
+    <Property Name="PayerLastName" Type="varchar" MaxLength="50" />
+    <Property Name="PayerFirstName" Type="varchar" MaxLength="50" />
+    <Property Name="NM108_Payer" Type="varchar" MaxLength="50" />
+    <Property Name="NM109_Payer" Type="varchar" MaxLength="50" />
+    <Property Name="PayerAddress" Type="varchar" MaxLength="50" />
+    <Property Name="PayerCity_State_Zip" Type="varchar" MaxLength="50" />
+    <Property Name="PayerSecondaryId" Type="varchar" MaxLength="50" />
+    <Property Name="BillingProviderSecondaryId" Type="varchar" MaxLength="50" />
+    <Property Name="HL_ID_Patient" Type="varchar" MaxLength="50" />
+    <Property Name="HL_Level_Patient" Type="varchar" MaxLength="50" />
+    <Property Name="PatientLastName" Type="varchar" MaxLength="50" />
+    <Property Name="PatientFirstName" Type="varchar" MaxLength="50" />
+    <Property Name="NM108_Patient" Type="varchar" MaxLength="50" />
+    <Property Name="NM109_Patient" Type="varchar" MaxLength="50" />
+    <Property Name="PatientAddress" Type="varchar" MaxLength="50" />
+    <Property Name="PatientCity_State_Zip" Type="varchar" MaxLength="50" />
+    <Property Name="PatientDOB" Type="varchar" MaxLength="50" />
+    <Property Name="CLM01" Type="varchar" MaxLength="50" />
+    <Property Name="CLM02" Type="varchar" MaxLength="50" />
+    <Property Name="CLM05_01" Type="varchar" MaxLength="50" />
+    <Property Name="CLM05_02" Type="varchar" MaxLength="50" />
+    <Property Name="CLM05_03" Type="varchar" MaxLength="50" />
+    <Property Name="StatementBegin" Type="varchar" MaxLength="50" />
+    <Property Name="StatementEnd" Type="varchar" MaxLength="50" />
+    <Property Name="DischargeHour" Type="varchar" MaxLength="50" />
+    <Property Name="AdmissionDate" Type="varchar" MaxLength="50" />
+    <Property Name="RepricerReceivevDate" Type="varchar" MaxLength="50" />
+    <Property Name="ErrorCode" Type="varchar" MaxLength="100" />
+    <Property Name="ErrorDesc" Type="varchar" MaxLength="100" />
+    <Property Name="Field1" Type="varchar" MaxLength="100" />
+    <Property Name="ClaimLevelErrors" Type="varchar" MaxLength="100" />
+    <Property Name="Field3" Type="varchar" MaxLength="100" />
+    <Property Name="Field4" Type="varchar" MaxLength="100" />
+    <Property Name="NM109_2330" Type="varchar" MaxLength="25" />
+    <Property Name="CLM_11" Type="varchar" MaxLength="25" />
+    <Property Name="ClaimLevelICDErrorFlag" Type="varchar" MaxLength="10" />
+    <Property Name="ClaimLevelCLMErrorFlag" Type="varchar" MaxLength="10" />
+    <Property Name="HI01" Type="varchar" MaxLength="50" />
+    <Property Name="adjudication_status" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HiPaaS_website.dbo.IntakeClaimData835' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="IntakeClaimData835">
+    <Key>
+      <PropertyRef Name="SeqID" />
+    </Key>
+    <Property Name="SeqID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileID" Type="varchar" MaxLength="50" />
+    <Property Name="TransactionID" Type="varchar" MaxLength="50" />
+    <Property Name="FileName" Type="varchar" MaxLength="100" />
+    <Property Name="FileDate" Type="varchar" MaxLength="100" />
+    <Property Name="BatchID" Type="varchar" MaxLength="50" />
+    <Property Name="TransmissionID" Type="varchar" MaxLength="50" />
+    <Property Name="ClaimExtNmbr" Type="varchar" MaxLength="100" />
+    <Property Name="ClaimID" Type="varchar" MaxLength="100" />
+    <Property Name="ClaimTMTrackingID" Type="varchar" MaxLength="100" />
+    <Property Name="PaytoPlanInfo" Type="varchar" MaxLength="100" />
+    <Property Name="Billing_Provider_ID" Type="varchar" MaxLength="100" />
+    <Property Name="SecondaryBilling_ID" Type="varchar" MaxLength="100" />
+    <Property Name="Subscriber_ID" Type="varchar" MaxLength="100" />
+    <Property Name="ExtSubscriber_ID" Type="varchar" MaxLength="100" />
+    <Property Name="Member_ID" Type="varchar" MaxLength="100" />
+    <Property Name="Member_Account_Number" Type="varchar" MaxLength="100" />
+    <Property Name="Member_Last_Name" Type="varchar" MaxLength="100" />
+    <Property Name="Member_First_Name" Type="varchar" MaxLength="100" />
+    <Property Name="MemberMI" Type="varchar" MaxLength="50" />
+    <Property Name="Member_DOB" Type="varchar" MaxLength="50" />
+    <Property Name="DiagnosisCodes" Type="varchar" MaxLength="100" />
+    <Property Name="Claim_Amount" Type="varchar" MaxLength="50" />
+    <Property Name="PatientPaid" Type="varchar" MaxLength="50" />
+    <Property Name="NetBalance" Type="varchar" MaxLength="50" />
+    <Property Name="Adjust" Type="varchar" MaxLength="50" />
+    <Property Name="InsuranceBalance" Type="varchar" MaxLength="50" />
+    <Property Name="VAN_Trace_Number" Type="varchar" MaxLength="100" />
+    <Property Name="COB_Claim_Number" Type="varchar" MaxLength="100" />
+    <Property Name="ClaimStatus" Type="varchar" MaxLength="50" />
+    <Property Name="ClaimCode" Type="varchar" MaxLength="50" />
+    <Property Name="OtherID" Type="varchar" MaxLength="50" />
+    <Property Name="ClaimSupplimentalInfo" Type="varchar" MaxLength="50" />
+    <Property Name="ContractInformation" Type="varchar" MaxLength="50" />
+    <Property Name="PatientDueAmmount" Type="varchar" MaxLength="50" />
+    <Property Name="ExternalCorrelationToken" Type="varchar" MaxLength="50" />
+    <Property Name="LineCount" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField1" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField2" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField3" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField4" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField5" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField6" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField7" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField8" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField9" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDateTime" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="HL_ID_BillingProvider" Type="varchar" MaxLength="50" />
+    <Property Name="HL_Level_BillingProvider" Type="varchar" MaxLength="50" />
+    <Property Name="PRV_Billing01" Type="varchar" MaxLength="50" />
+    <Property Name="PRV_Billing02" Type="varchar" MaxLength="50" />
+    <Property Name="PRV_Billing03" Type="varchar" MaxLength="50" />
+    <Property Name="NM101_BillingProviderId" Type="varchar" MaxLength="50" />
+    <Property Name="BillingProviderLastName" Type="varchar" MaxLength="50" />
+    <Property Name="BillingProviderFirstName" Type="varchar" MaxLength="50" />
+    <Property Name="NM108_BillingProvider" Type="varchar" MaxLength="50" />
+    <Property Name="NM109_BillingProvider" Type="varchar" MaxLength="50" />
+    <Property Name="BillingProviderAddress" Type="varchar" MaxLength="50" />
+    <Property Name="BillingProviderCity_State_Zip" Type="varchar" MaxLength="50" />
+    <Property Name="BillingProvider_TaxId" Type="varchar" MaxLength="50" />
+    <Property Name="BillingProvider_PER01" Type="varchar" MaxLength="50" />
+    <Property Name="BillingProvider_PER02" Type="varchar" MaxLength="50" />
+    <Property Name="BillingProvider_PER03" Type="varchar" MaxLength="50" />
+    <Property Name="BillingProvider_PER04" Type="varchar" MaxLength="50" />
+    <Property Name="NM101_PayToProvider" Type="varchar" MaxLength="50" />
+    <Property Name="PayToProviderLastName" Type="varchar" MaxLength="50" />
+    <Property Name="PayToProviderFirstName" Type="varchar" MaxLength="50" />
+    <Property Name="NM108_PayToProvider" Type="varchar" MaxLength="50" />
+    <Property Name="NM109_PayToProvider" Type="varchar" MaxLength="50" />
+    <Property Name="PayToProviderAddress" Type="varchar" MaxLength="50" />
+    <Property Name="PayToProviderCity_State_Zip" Type="varchar" MaxLength="50" />
+    <Property Name="PayToProvider_TaxId" Type="varchar" MaxLength="50" />
+    <Property Name="PayToProvider_PER01" Type="varchar" MaxLength="50" />
+    <Property Name="PayToProvider_PER02" Type="varchar" MaxLength="50" />
+    <Property Name="PayToProvider_PER03" Type="varchar" MaxLength="50" />
+    <Property Name="PayToProvider_PER04" Type="varchar" MaxLength="50" />
+    <Property Name="HL_ID_Subscriber" Type="varchar" MaxLength="50" />
+    <Property Name="HL_Level_Subscriber" Type="varchar" MaxLength="50" />
+    <Property Name="SBR01" Type="varchar" MaxLength="50" />
+    <Property Name="SBR02" Type="varchar" MaxLength="50" />
+    <Property Name="SBR03" Type="varchar" MaxLength="50" />
+    <Property Name="SBR09" Type="varchar" MaxLength="50" />
+    <Property Name="SubscriberLastName" Type="varchar" MaxLength="50" />
+    <Property Name="SubscriberFirstName" Type="varchar" MaxLength="50" />
+    <Property Name="SubscriberDOB" Type="varchar" MaxLength="50" />
+    <Property Name="NM108_Subscriber" Type="varchar" MaxLength="50" />
+    <Property Name="NM109_Subscriber" Type="varchar" MaxLength="50" />
+    <Property Name="SubscriberAddress" Type="varchar" MaxLength="50" />
+    <Property Name="SubscriberCity_State_Zip" Type="varchar" MaxLength="50" />
+    <Property Name="SubscriberSecondaryIdentification" Type="varchar" MaxLength="50" />
+    <Property Name="CasualityClaimNumber" Type="varchar" MaxLength="50" />
+    <Property Name="PayerLastName" Type="varchar" MaxLength="50" />
+    <Property Name="PayerFirstName" Type="varchar" MaxLength="50" />
+    <Property Name="NM108_Payer" Type="varchar" MaxLength="50" />
+    <Property Name="NM109_Payer" Type="varchar" MaxLength="50" />
+    <Property Name="PayerAddress" Type="varchar" MaxLength="50" />
+    <Property Name="PayerCity_State_Zip" Type="varchar" MaxLength="50" />
+    <Property Name="PayerSecondaryId" Type="varchar" MaxLength="50" />
+    <Property Name="BillingProviderSecondaryId" Type="varchar" MaxLength="50" />
+    <Property Name="HL_ID_Patient" Type="varchar" MaxLength="50" />
+    <Property Name="HL_Level_Patient" Type="varchar" MaxLength="50" />
+    <Property Name="PatientLastName" Type="varchar" MaxLength="50" />
+    <Property Name="PatientFirstName" Type="varchar" MaxLength="50" />
+    <Property Name="NM108_Patient" Type="varchar" MaxLength="50" />
+    <Property Name="NM109_Patient" Type="varchar" MaxLength="50" />
+    <Property Name="PatientAddress" Type="varchar" MaxLength="50" />
+    <Property Name="PatientCity_State_Zip" Type="varchar" MaxLength="50" />
+    <Property Name="PatientDOB" Type="varchar" MaxLength="50" />
+    <Property Name="CLM01" Type="varchar" MaxLength="50" />
+    <Property Name="CLM02" Type="varchar" MaxLength="50" />
+    <Property Name="CLM05_01" Type="varchar" MaxLength="50" />
+    <Property Name="CLM05_02" Type="varchar" MaxLength="50" />
+    <Property Name="CLM05_03" Type="varchar" MaxLength="50" />
+    <Property Name="StatementBegin" Type="varchar" MaxLength="50" />
+    <Property Name="StatementEnd" Type="varchar" MaxLength="50" />
+    <Property Name="DischargeHour" Type="varchar" MaxLength="50" />
+    <Property Name="AdmissionDate" Type="varchar" MaxLength="50" />
+    <Property Name="RepricerReceivevDate" Type="varchar" MaxLength="50" />
+    <Property Name="ErrorCode" Type="varchar" MaxLength="100" />
+    <Property Name="ErrorDesc" Type="varchar" MaxLength="100" />
+    <Property Name="Field1" Type="varchar" MaxLength="100" />
+    <Property Name="ClaimLevelErrors" Type="varchar" MaxLength="100" />
+    <Property Name="Field3" Type="varchar" MaxLength="100" />
+    <Property Name="Field4" Type="varchar" MaxLength="100" />
+    <Property Name="NM109_2330" Type="varchar" MaxLength="25" />
+    <Property Name="CLM_11" Type="varchar" MaxLength="25" />
+    <Property Name="ClaimLevelICDErrorFlag" Type="varchar" MaxLength="10" />
+    <Property Name="ClaimLevelCLMErrorFlag" Type="varchar" MaxLength="10" />
+    <Property Name="HI01" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="IntakeClaimLineData">
+    <Key>
+      <PropertyRef Name="SeqID" />
+    </Key>
+    <Property Name="SeqID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileID" Type="varchar" MaxLength="50" />
+    <Property Name="ClaimSeqID" Type="varchar" MaxLength="50" />
+    <Property Name="TransactionID" Type="varchar" MaxLength="50" />
+    <Property Name="FileName" Type="varchar" MaxLength="100" />
+    <Property Name="FileDate" Type="varchar" MaxLength="100" />
+    <Property Name="BatchID" Type="varchar" MaxLength="50" />
+    <Property Name="TransmissionID" Type="varchar" MaxLength="50" />
+    <Property Name="ClaimExtNmbr" Type="varchar" MaxLength="100" />
+    <Property Name="ClaimID" Type="varchar" MaxLength="100" />
+    <Property Name="ClaimTMTrackingID" Type="varchar" MaxLength="100" />
+    <Property Name="Subscriber_ID" Type="varchar" MaxLength="100" />
+    <Property Name="Member_ID" Type="varchar" MaxLength="100" />
+    <Property Name="ExtSubscriber_ID" Type="varchar" MaxLength="100" />
+    <Property Name="ICD9ICD10" Type="varchar" MaxLength="10" />
+    <Property Name="ProcNo" Type="varchar" MaxLength="50" />
+    <Property Name="DiagnosisXRef" Type="varchar" MaxLength="100" />
+    <Property Name="DiagnosisCodes" Type="varchar" MaxLength="100" />
+    <Property Name="PatientWeight" Type="varchar" MaxLength="5" />
+    <Property Name="Units" Type="varchar" MaxLength="50" />
+    <Property Name="UnitMeasure" Type="varchar" MaxLength="50" />
+    <Property Name="Proc_Amount" Type="varchar" MaxLength="50" />
+    <Property Name="PatientPaid" Type="varchar" MaxLength="50" />
+    <Property Name="NetBalance" Type="varchar" MaxLength="50" />
+    <Property Name="Adjust" Type="varchar" MaxLength="50" />
+    <Property Name="InsuranceBalance" Type="varchar" MaxLength="50" />
+    <Property Name="DateofService" Type="varchar" MaxLength="50" />
+    <Property Name="DateofServiceEnd" Type="varchar" MaxLength="50" />
+    <Property Name="LineStatus" Type="varchar" MaxLength="10" />
+    <Property Name="OtherID" Type="varchar" MaxLength="50" />
+    <Property Name="ExternalCorrelationToken" Type="varchar" MaxLength="50" />
+    <Property Name="AmbulanceInfo" Type="varchar" MaxLength="50" />
+    <Property Name="XRayInfo" Type="varchar" MaxLength="50" />
+    <Property Name="TransportInfo" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField1" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField2" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField3" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField4" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField5" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField6" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField7" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField8" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField9" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDateTime" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="varchar" MaxLength="50" />
+    <Property Name="HCP01_PricingMethodology" Type="varchar" MaxLength="50" />
+    <Property Name="HCP02_Amount" Type="varchar" MaxLength="50" />
+    <Property Name="HCP03" Type="varchar" MaxLength="50" />
+    <Property Name="HCP04" Type="varchar" MaxLength="50" />
+    <Property Name="HCP05_Rate" Type="varchar" MaxLength="50" />
+    <Property Name="HCP06" Type="varchar" MaxLength="50" />
+    <Property Name="HCP07" Type="varchar" MaxLength="50" />
+    <Property Name="HCP08" Type="varchar" MaxLength="50" />
+    <Property Name="HCP12_Quantity" Type="varchar" MaxLength="50" />
+    <Property Name="HCP13" Type="varchar" MaxLength="50" />
+    <Property Name="HCP14" Type="varchar" MaxLength="50" />
+    <Property Name="HCP15_ExceptionCode" Type="varchar" MaxLength="50" />
+    <Property Name="AttendingProviderNameLastOrOrganizationName" Type="varchar" MaxLength="50" />
+    <Property Name="AttendingProviderNameFirst" Type="varchar" MaxLength="50" />
+    <Property Name="NM108_AttendingProvider" Type="varchar" MaxLength="50" />
+    <Property Name="NM109_AttendingProvider" Type="varchar" MaxLength="50" />
+    <Property Name="AttendingProviderCode" Type="varchar" MaxLength="50" />
+    <Property Name="AttendingProvider_PRV02" Type="varchar" MaxLength="50" />
+    <Property Name="AttendingProvider_PRV03" Type="varchar" MaxLength="50" />
+    <Property Name="AttendingProvider_REF01" Type="varchar" MaxLength="50" />
+    <Property Name="AttendingProvider_REF02" Type="varchar" MaxLength="50" />
+    <Property Name="OperatingPhysicianNameLastOrOrganizationName" Type="varchar" MaxLength="50" />
+    <Property Name="OperatingPhysicianNameFirst" Type="varchar" MaxLength="50" />
+    <Property Name="NM108_OperatingPhysician" Type="varchar" MaxLength="50" />
+    <Property Name="NM109_OperatingPhysician" Type="varchar" MaxLength="50" />
+    <Property Name="OperatingPhysician_REF01" Type="varchar" MaxLength="50" />
+    <Property Name="OperatingPhysician_REF02" Type="varchar" MaxLength="50" />
+    <Property Name="OtherOperatingPhysicianNameLastOrOrganizationName" Type="varchar" MaxLength="50" />
+    <Property Name="OtherOperatingPhysicianNameFirst" Type="varchar" MaxLength="50" />
+    <Property Name="NM108_OtherOperatingPhysician" Type="varchar" MaxLength="50" />
+    <Property Name="NM109_OtherOperatingPhysician" Type="varchar" MaxLength="50" />
+    <Property Name="OtherOperatingPhysician_REF01" Type="varchar" MaxLength="50" />
+    <Property Name="OtherOperatingPhysician_REF02" Type="varchar" MaxLength="50" />
+    <Property Name="RenderingPhysicianNameLastOrOrganizationName" Type="varchar" MaxLength="50" />
+    <Property Name="RenderingPhysicianNameFirst" Type="varchar" MaxLength="50" />
+    <Property Name="NM108_RenderingPhysician" Type="varchar" MaxLength="50" />
+    <Property Name="NM109_RenderingPhysician" Type="varchar" MaxLength="50" />
+    <Property Name="RenderingPhysician_REF01" Type="varchar" MaxLength="50" />
+    <Property Name="RenderingPhysician_REF02" Type="varchar" MaxLength="50" />
+    <Property Name="ServiceFacilityLocationName" Type="varchar" MaxLength="50" />
+    <Property Name="ServiceFacilityLocation_NM102" Type="varchar" MaxLength="50" />
+    <Property Name="ServiceFacilityLocation_NM108" Type="varchar" MaxLength="50" />
+    <Property Name="ServiceFacilityLocation_NM109" Type="varchar" MaxLength="50" />
+    <Property Name="ServiceFacilityLocationAddress" Type="varchar" MaxLength="50" />
+    <Property Name="ServiceFacilityLocation_City_State_Zip" Type="varchar" MaxLength="50" />
+    <Property Name="ServiceFacilityLocation_REF01" Type="varchar" MaxLength="50" />
+    <Property Name="ServiceFacilityLocation_REF02" Type="varchar" MaxLength="50" />
+    <Property Name="ReferringProviderNameLastOrOrganizationName" Type="varchar" MaxLength="50" />
+    <Property Name="ReferringProviderNameFirst" Type="varchar" MaxLength="50" />
+    <Property Name="NM108_ReferringProvider" Type="varchar" MaxLength="50" />
+    <Property Name="NM109_ReferringProvider" Type="varchar" MaxLength="50" />
+    <Property Name="ReferringProvider_REF01" Type="varchar" MaxLength="50" />
+    <Property Name="ReferringProvider_REF02" Type="varchar" MaxLength="50" />
+    <Property Name="SBR01_PayerResponsibilityCode" Type="varchar" MaxLength="50" />
+    <Property Name="SBR02" Type="varchar" MaxLength="50" />
+    <Property Name="SBR03" Type="varchar" MaxLength="50" />
+    <Property Name="SBR04" Type="varchar" MaxLength="50" />
+    <Property Name="SBR09" Type="varchar" MaxLength="50" />
+    <Property Name="CAS01_ClaimAdjustMentGroupCode" Type="varchar" MaxLength="50" />
+    <Property Name="CAS02" Type="varchar" MaxLength="50" />
+    <Property Name="CAS03" Type="varchar" MaxLength="50" />
+    <Property Name="CAS04" Type="varchar" MaxLength="50" />
+    <Property Name="CAS05" Type="varchar" MaxLength="50" />
+    <Property Name="CAS06" Type="varchar" MaxLength="50" />
+    <Property Name="CAS07" Type="varchar" MaxLength="50" />
+    <Property Name="CAS08" Type="varchar" MaxLength="50" />
+    <Property Name="CAS09" Type="varchar" MaxLength="50" />
+    <Property Name="CAS10" Type="varchar" MaxLength="50" />
+    <Property Name="CAS11" Type="varchar" MaxLength="50" />
+    <Property Name="CAS12" Type="varchar" MaxLength="50" />
+    <Property Name="CAS13" Type="varchar" MaxLength="50" />
+    <Property Name="CAS14" Type="varchar" MaxLength="50" />
+    <Property Name="CAS15" Type="varchar" MaxLength="50" />
+    <Property Name="CAS16" Type="varchar" MaxLength="50" />
+    <Property Name="CAS17" Type="varchar" MaxLength="50" />
+    <Property Name="CAS18" Type="varchar" MaxLength="50" />
+    <Property Name="CAS19" Type="varchar" MaxLength="50" />
+    <Property Name="AMT01_PayerPaidAmmount" Type="varchar" MaxLength="50" />
+    <Property Name="AMT02_Amount" Type="varchar" MaxLength="50" />
+    <Property Name="AMT01_RemainingPatientLiability" Type="varchar" MaxLength="50" />
+    <Property Name="AMT02_RPAmount" Type="varchar" MaxLength="50" />
+    <Property Name="AMT01_NonCoveredChargeAmmount" Type="varchar" MaxLength="50" />
+    <Property Name="AMT02_NCAmount" Type="varchar" MaxLength="50" />
+    <Property Name="OtherInsuranceCoverage_OI03" Type="varchar" MaxLength="50" />
+    <Property Name="OtherInsuranceCoverage_OI06" Type="varchar" MaxLength="50" />
+    <Property Name="MIA01" Type="varchar" MaxLength="50" />
+    <Property Name="MIA02" Type="varchar" MaxLength="50" />
+    <Property Name="MIA03" Type="varchar" MaxLength="50" />
+    <Property Name="MIA04" Type="varchar" MaxLength="50" />
+    <Property Name="MIA05" Type="varchar" MaxLength="50" />
+    <Property Name="MIA06" Type="varchar" MaxLength="50" />
+    <Property Name="MIA07" Type="varchar" MaxLength="50" />
+    <Property Name="MIA08" Type="varchar" MaxLength="50" />
+    <Property Name="MIA09" Type="varchar" MaxLength="50" />
+    <Property Name="MIA10" Type="varchar" MaxLength="50" />
+    <Property Name="MOA01" Type="varchar" MaxLength="50" />
+    <Property Name="MOA02" Type="varchar" MaxLength="50" />
+    <Property Name="MOA03" Type="varchar" MaxLength="50" />
+    <Property Name="MOA04" Type="varchar" MaxLength="50" />
+    <Property Name="MOA05" Type="varchar" MaxLength="50" />
+    <Property Name="MOA06" Type="varchar" MaxLength="50" />
+    <Property Name="MOA07" Type="varchar" MaxLength="50" />
+    <Property Name="MOA08" Type="varchar" MaxLength="50" />
+    <Property Name="MOA09" Type="varchar" MaxLength="50" />
+    <Property Name="MOA10" Type="varchar" MaxLength="50" />
+    <Property Name="OtherSubscriberNameLastOrOrganizationName" Type="varchar" MaxLength="50" />
+    <Property Name="OtherSubscriberNameFirst" Type="varchar" MaxLength="50" />
+    <Property Name="OtherSubscriber_NM102" Type="varchar" MaxLength="50" />
+    <Property Name="NM108_OtherSubscriber" Type="varchar" MaxLength="50" />
+    <Property Name="NM109_OtherSubscriber" Type="varchar" MaxLength="50" />
+    <Property Name="OtherSubscriberAddress" Type="varchar" MaxLength="50" />
+    <Property Name="OtherSubscriberCityStateZip" Type="varchar" MaxLength="50" />
+    <Property Name="OtherSubscriber_REF01" Type="varchar" MaxLength="50" />
+    <Property Name="OtherSubscriber_RF02" Type="varchar" MaxLength="50" />
+    <Property Name="OtherPayerNameLastOrOrganizationName" Type="varchar" MaxLength="50" />
+    <Property Name="OtherPayerNameFirst" Type="varchar" MaxLength="50" />
+    <Property Name="OtherPayer_NM102" Type="varchar" MaxLength="50" />
+    <Property Name="NM108_OtherPayer" Type="varchar" MaxLength="50" />
+    <Property Name="NM109_OtherPayer" Type="varchar" MaxLength="50" />
+    <Property Name="OtherPayerAddress" Type="varchar" MaxLength="50" />
+    <Property Name="OtherPayerCityStateZip" Type="varchar" MaxLength="50" />
+    <Property Name="ClaimCheckOrRemittanceDate" Type="varchar" MaxLength="50" />
+    <Property Name="LX" Type="varchar" MaxLength="2" />
+    <Property Name="SV201" Type="varchar" MaxLength="50" />
+    <Property Name="SV202" Type="varchar" MaxLength="50" />
+    <Property Name="SV202_1" Type="varchar" MaxLength="50" />
+    <Property Name="SV202_2" Type="varchar" MaxLength="50" />
+    <Property Name="SV202_3" Type="varchar" MaxLength="50" />
+    <Property Name="SV202_4" Type="varchar" MaxLength="50" />
+    <Property Name="SV202_5" Type="varchar" MaxLength="50" />
+    <Property Name="SV202_6" Type="varchar" MaxLength="50" />
+    <Property Name="SV202_7" Type="varchar" MaxLength="50" />
+    <Property Name="SV203" Type="varchar" MaxLength="50" />
+    <Property Name="SV204" Type="varchar" MaxLength="50" />
+    <Property Name="SV205" Type="varchar" MaxLength="50" />
+    <Property Name="SV207" Type="varchar" MaxLength="50" />
+    <Property Name="LinSupplimentalInfo_PWK01" Type="varchar" MaxLength="50" />
+    <Property Name="PWK02" Type="varchar" MaxLength="50" />
+    <Property Name="PWK05" Type="varchar" MaxLength="50" />
+    <Property Name="ServiceDate" Type="varchar" MaxLength="50" />
+    <Property Name="LIN02_DrugIdentification" Type="varchar" MaxLength="50" />
+    <Property Name="LIN03" Type="varchar" MaxLength="50" />
+    <Property Name="CTP04_DrugQuantity" Type="varchar" MaxLength="50" />
+    <Property Name="CTP05" Type="varchar" MaxLength="50" />
+    <Property Name="CTP05_1" Type="varchar" MaxLength="50" />
+    <Property Name="SVD01" Type="varchar" MaxLength="200" />
+    <Property Name="SVD02" Type="varchar" MaxLength="200" />
+    <Property Name="SVD03" Type="varchar" MaxLength="200" />
+    <Property Name="SVD03_1" Type="varchar" MaxLength="200" />
+    <Property Name="SVD03_2" Type="varchar" MaxLength="200" />
+    <Property Name="SVD03_3" Type="varchar" MaxLength="200" />
+    <Property Name="SVD05" Type="varchar" MaxLength="200" />
+    <Property Name="LineCheckOrRemittanceDate" Type="varchar" MaxLength="50" />
+    <Property Name="RemainingPatientLiability" Type="varchar" MaxLength="50" />
+    <Property Name="ErrorCode" Type="varchar" MaxLength="100" />
+    <Property Name="ClaimLineLevelErrors" Type="varchar" MaxLength="100" />
+    <Property Name="Field1" Type="varchar" MaxLength="100" />
+    <Property Name="Field2" Type="varchar" MaxLength="100" />
+    <Property Name="Field3" Type="varchar" MaxLength="100" />
+    <Property Name="Field4" Type="varchar" MaxLength="100" />
+    <Property Name="adjustment" Type="varchar" MaxLength="255" />
+    <Property Name="type_of_adjustment" Type="varchar" MaxLength="255" />
+    <Property Name="RemainigAmt" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HiPaaS_website.dbo.IntakeClaimLineData835' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="IntakeClaimLineData835">
+    <Key>
+      <PropertyRef Name="SeqID" />
+    </Key>
+    <Property Name="SeqID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileID" Type="varchar" MaxLength="50" />
+    <Property Name="ClaimSeqID" Type="varchar" MaxLength="50" />
+    <Property Name="TransactionID" Type="varchar" MaxLength="50" />
+    <Property Name="FileName" Type="varchar" MaxLength="100" />
+    <Property Name="FileDate" Type="varchar" MaxLength="100" />
+    <Property Name="BatchID" Type="varchar" MaxLength="50" />
+    <Property Name="TransmissionID" Type="varchar" MaxLength="50" />
+    <Property Name="ClaimExtNmbr" Type="varchar" MaxLength="100" />
+    <Property Name="ClaimID" Type="varchar" MaxLength="100" />
+    <Property Name="ClaimTMTrackingID" Type="varchar" MaxLength="100" />
+    <Property Name="Subscriber_ID" Type="varchar" MaxLength="100" />
+    <Property Name="Member_ID" Type="varchar" MaxLength="100" />
+    <Property Name="ExtSubscriber_ID" Type="varchar" MaxLength="100" />
+    <Property Name="ICD9ICD10" Type="varchar" MaxLength="10" />
+    <Property Name="ProcNo" Type="varchar" MaxLength="50" />
+    <Property Name="DiagnosisXRef" Type="varchar" MaxLength="100" />
+    <Property Name="DiagnosisCodes" Type="varchar" MaxLength="100" />
+    <Property Name="PatientWeight" Type="varchar" MaxLength="5" />
+    <Property Name="Units" Type="varchar" MaxLength="50" />
+    <Property Name="UnitMeasure" Type="varchar" MaxLength="50" />
+    <Property Name="Proc_Amount" Type="varchar" MaxLength="50" />
+    <Property Name="PatientPaid" Type="varchar" MaxLength="50" />
+    <Property Name="NetBalance" Type="varchar" MaxLength="50" />
+    <Property Name="Adjust" Type="varchar" MaxLength="50" />
+    <Property Name="InsuranceBalance" Type="varchar" MaxLength="50" />
+    <Property Name="DateofService" Type="varchar" MaxLength="50" />
+    <Property Name="DateofServiceEnd" Type="varchar" MaxLength="50" />
+    <Property Name="LineStatus" Type="varchar" MaxLength="10" />
+    <Property Name="OtherID" Type="varchar" MaxLength="50" />
+    <Property Name="ExternalCorrelationToken" Type="varchar" MaxLength="50" />
+    <Property Name="AmbulanceInfo" Type="varchar" MaxLength="50" />
+    <Property Name="XRayInfo" Type="varchar" MaxLength="50" />
+    <Property Name="TransportInfo" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField1" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField2" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField3" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField4" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField5" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField6" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField7" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField8" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField9" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDateTime" Type="varchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="varchar" MaxLength="50" />
+    <Property Name="HCP01_PricingMethodology" Type="varchar" MaxLength="50" />
+    <Property Name="HCP02_Amount" Type="varchar" MaxLength="50" />
+    <Property Name="HCP03" Type="varchar" MaxLength="50" />
+    <Property Name="HCP04" Type="varchar" MaxLength="50" />
+    <Property Name="HCP05_Rate" Type="varchar" MaxLength="50" />
+    <Property Name="HCP06" Type="varchar" MaxLength="50" />
+    <Property Name="HCP07" Type="varchar" MaxLength="50" />
+    <Property Name="HCP08" Type="varchar" MaxLength="50" />
+    <Property Name="HCP12_Quantity" Type="varchar" MaxLength="50" />
+    <Property Name="HCP13" Type="varchar" MaxLength="50" />
+    <Property Name="HCP14" Type="varchar" MaxLength="50" />
+    <Property Name="HCP15_ExceptionCode" Type="varchar" MaxLength="50" />
+    <Property Name="AttendingProviderNameLastOrOrganizationName" Type="varchar" MaxLength="50" />
+    <Property Name="AttendingProviderNameFirst" Type="varchar" MaxLength="50" />
+    <Property Name="NM108_AttendingProvider" Type="varchar" MaxLength="50" />
+    <Property Name="NM109_AttendingProvider" Type="varchar" MaxLength="50" />
+    <Property Name="AttendingProviderCode" Type="varchar" MaxLength="50" />
+    <Property Name="AttendingProvider_PRV02" Type="varchar" MaxLength="50" />
+    <Property Name="AttendingProvider_PRV03" Type="varchar" MaxLength="50" />
+    <Property Name="AttendingProvider_REF01" Type="varchar" MaxLength="50" />
+    <Property Name="AttendingProvider_REF02" Type="varchar" MaxLength="50" />
+    <Property Name="OperatingPhysicianNameLastOrOrganizationName" Type="varchar" MaxLength="50" />
+    <Property Name="OperatingPhysicianNameFirst" Type="varchar" MaxLength="50" />
+    <Property Name="NM108_OperatingPhysician" Type="varchar" MaxLength="50" />
+    <Property Name="NM109_OperatingPhysician" Type="varchar" MaxLength="50" />
+    <Property Name="OperatingPhysician_REF01" Type="varchar" MaxLength="50" />
+    <Property Name="OperatingPhysician_REF02" Type="varchar" MaxLength="50" />
+    <Property Name="OtherOperatingPhysicianNameLastOrOrganizationName" Type="varchar" MaxLength="50" />
+    <Property Name="OtherOperatingPhysicianNameFirst" Type="varchar" MaxLength="50" />
+    <Property Name="NM108_OtherOperatingPhysician" Type="varchar" MaxLength="50" />
+    <Property Name="NM109_OtherOperatingPhysician" Type="varchar" MaxLength="50" />
+    <Property Name="OtherOperatingPhysician_REF01" Type="varchar" MaxLength="50" />
+    <Property Name="OtherOperatingPhysician_REF02" Type="varchar" MaxLength="50" />
+    <Property Name="RenderingPhysicianNameLastOrOrganizationName" Type="varchar" MaxLength="50" />
+    <Property Name="RenderingPhysicianNameFirst" Type="varchar" MaxLength="50" />
+    <Property Name="NM108_RenderingPhysician" Type="varchar" MaxLength="50" />
+    <Property Name="NM109_RenderingPhysician" Type="varchar" MaxLength="50" />
+    <Property Name="RenderingPhysician_REF01" Type="varchar" MaxLength="50" />
+    <Property Name="RenderingPhysician_REF02" Type="varchar" MaxLength="50" />
+    <Property Name="ServiceFacilityLocationName" Type="varchar" MaxLength="50" />
+    <Property Name="ServiceFacilityLocation_NM102" Type="varchar" MaxLength="50" />
+    <Property Name="ServiceFacilityLocation_NM108" Type="varchar" MaxLength="50" />
+    <Property Name="ServiceFacilityLocation_NM109" Type="varchar" MaxLength="50" />
+    <Property Name="ServiceFacilityLocationAddress" Type="varchar" MaxLength="50" />
+    <Property Name="ServiceFacilityLocation_City_State_Zip" Type="varchar" MaxLength="50" />
+    <Property Name="ServiceFacilityLocation_REF01" Type="varchar" MaxLength="50" />
+    <Property Name="ServiceFacilityLocation_REF02" Type="varchar" MaxLength="50" />
+    <Property Name="ReferringProviderNameLastOrOrganizationName" Type="varchar" MaxLength="50" />
+    <Property Name="ReferringProviderNameFirst" Type="varchar" MaxLength="50" />
+    <Property Name="NM108_ReferringProvider" Type="varchar" MaxLength="50" />
+    <Property Name="NM109_ReferringProvider" Type="varchar" MaxLength="50" />
+    <Property Name="ReferringProvider_REF01" Type="varchar" MaxLength="50" />
+    <Property Name="ReferringProvider_REF02" Type="varchar" MaxLength="50" />
+    <Property Name="SBR01_PayerResponsibilityCode" Type="varchar" MaxLength="50" />
+    <Property Name="SBR02" Type="varchar" MaxLength="50" />
+    <Property Name="SBR03" Type="varchar" MaxLength="50" />
+    <Property Name="SBR04" Type="varchar" MaxLength="50" />
+    <Property Name="SBR09" Type="varchar" MaxLength="50" />
+    <Property Name="CAS01_ClaimAdjustMentGroupCode" Type="varchar" MaxLength="50" />
+    <Property Name="CAS02" Type="varchar" MaxLength="50" />
+    <Property Name="CAS03" Type="varchar" MaxLength="50" />
+    <Property Name="CAS04" Type="varchar" MaxLength="50" />
+    <Property Name="CAS05" Type="varchar" MaxLength="50" />
+    <Property Name="CAS06" Type="varchar" MaxLength="50" />
+    <Property Name="CAS07" Type="varchar" MaxLength="50" />
+    <Property Name="CAS08" Type="varchar" MaxLength="50" />
+    <Property Name="CAS09" Type="varchar" MaxLength="50" />
+    <Property Name="CAS10" Type="varchar" MaxLength="50" />
+    <Property Name="CAS11" Type="varchar" MaxLength="50" />
+    <Property Name="CAS12" Type="varchar" MaxLength="50" />
+    <Property Name="CAS13" Type="varchar" MaxLength="50" />
+    <Property Name="CAS14" Type="varchar" MaxLength="50" />
+    <Property Name="CAS15" Type="varchar" MaxLength="50" />
+    <Property Name="CAS16" Type="varchar" MaxLength="50" />
+    <Property Name="CAS17" Type="varchar" MaxLength="50" />
+    <Property Name="CAS18" Type="varchar" MaxLength="50" />
+    <Property Name="CAS19" Type="varchar" MaxLength="50" />
+    <Property Name="AMT01_PayerPaidAmmount" Type="varchar" MaxLength="50" />
+    <Property Name="AMT02_Amount" Type="varchar" MaxLength="50" />
+    <Property Name="AMT01_RemainingPatientLiability" Type="varchar" MaxLength="50" />
+    <Property Name="AMT02_RPAmount" Type="varchar" MaxLength="50" />
+    <Property Name="AMT01_NonCoveredChargeAmmount" Type="varchar" MaxLength="50" />
+    <Property Name="AMT02_NCAmount" Type="varchar" MaxLength="50" />
+    <Property Name="OtherInsuranceCoverage_OI03" Type="varchar" MaxLength="50" />
+    <Property Name="OtherInsuranceCoverage_OI06" Type="varchar" MaxLength="50" />
+    <Property Name="MIA01" Type="varchar" MaxLength="50" />
+    <Property Name="MIA02" Type="varchar" MaxLength="50" />
+    <Property Name="MIA03" Type="varchar" MaxLength="50" />
+    <Property Name="MIA04" Type="varchar" MaxLength="50" />
+    <Property Name="MIA05" Type="varchar" MaxLength="50" />
+    <Property Name="MIA06" Type="varchar" MaxLength="50" />
+    <Property Name="MIA07" Type="varchar" MaxLength="50" />
+    <Property Name="MIA08" Type="varchar" MaxLength="50" />
+    <Property Name="MIA09" Type="varchar" MaxLength="50" />
+    <Property Name="MIA10" Type="varchar" MaxLength="50" />
+    <Property Name="MOA01" Type="varchar" MaxLength="50" />
+    <Property Name="MOA02" Type="varchar" MaxLength="50" />
+    <Property Name="MOA03" Type="varchar" MaxLength="50" />
+    <Property Name="MOA04" Type="varchar" MaxLength="50" />
+    <Property Name="MOA05" Type="varchar" MaxLength="50" />
+    <Property Name="MOA06" Type="varchar" MaxLength="50" />
+    <Property Name="MOA07" Type="varchar" MaxLength="50" />
+    <Property Name="MOA08" Type="varchar" MaxLength="50" />
+    <Property Name="MOA09" Type="varchar" MaxLength="50" />
+    <Property Name="MOA10" Type="varchar" MaxLength="50" />
+    <Property Name="OtherSubscriberNameLastOrOrganizationName" Type="varchar" MaxLength="50" />
+    <Property Name="OtherSubscriberNameFirst" Type="varchar" MaxLength="50" />
+    <Property Name="OtherSubscriber_NM102" Type="varchar" MaxLength="50" />
+    <Property Name="NM108_OtherSubscriber" Type="varchar" MaxLength="50" />
+    <Property Name="NM109_OtherSubscriber" Type="varchar" MaxLength="50" />
+    <Property Name="OtherSubscriberAddress" Type="varchar" MaxLength="50" />
+    <Property Name="OtherSubscriberCityStateZip" Type="varchar" MaxLength="50" />
+    <Property Name="OtherSubscriber_REF01" Type="varchar" MaxLength="50" />
+    <Property Name="OtherSubscriber_RF02" Type="varchar" MaxLength="50" />
+    <Property Name="OtherPayerNameLastOrOrganizationName" Type="varchar" MaxLength="50" />
+    <Property Name="OtherPayerNameFirst" Type="varchar" MaxLength="50" />
+    <Property Name="OtherPayer_NM102" Type="varchar" MaxLength="50" />
+    <Property Name="NM108_OtherPayer" Type="varchar" MaxLength="50" />
+    <Property Name="NM109_OtherPayer" Type="varchar" MaxLength="50" />
+    <Property Name="OtherPayerAddress" Type="varchar" MaxLength="50" />
+    <Property Name="OtherPayerCityStateZip" Type="varchar" MaxLength="50" />
+    <Property Name="ClaimCheckOrRemittanceDate" Type="varchar" MaxLength="50" />
+    <Property Name="LX" Type="varchar" MaxLength="2" />
+    <Property Name="SV201" Type="varchar" MaxLength="50" />
+    <Property Name="SV202" Type="varchar" MaxLength="50" />
+    <Property Name="SV202_1" Type="varchar" MaxLength="50" />
+    <Property Name="SV202_2" Type="varchar" MaxLength="50" />
+    <Property Name="SV202_3" Type="varchar" MaxLength="50" />
+    <Property Name="SV202_4" Type="varchar" MaxLength="50" />
+    <Property Name="SV202_5" Type="varchar" MaxLength="50" />
+    <Property Name="SV202_6" Type="varchar" MaxLength="50" />
+    <Property Name="SV202_7" Type="varchar" MaxLength="50" />
+    <Property Name="SV203" Type="varchar" MaxLength="50" />
+    <Property Name="SV204" Type="varchar" MaxLength="50" />
+    <Property Name="SV205" Type="varchar" MaxLength="50" />
+    <Property Name="SV207" Type="varchar" MaxLength="50" />
+    <Property Name="LinSupplimentalInfo_PWK01" Type="varchar" MaxLength="50" />
+    <Property Name="PWK02" Type="varchar" MaxLength="50" />
+    <Property Name="PWK05" Type="varchar" MaxLength="50" />
+    <Property Name="ServiceDate" Type="varchar" MaxLength="50" />
+    <Property Name="LIN02_DrugIdentification" Type="varchar" MaxLength="50" />
+    <Property Name="LIN03" Type="varchar" MaxLength="50" />
+    <Property Name="CTP04_DrugQuantity" Type="varchar" MaxLength="50" />
+    <Property Name="CTP05" Type="varchar" MaxLength="50" />
+    <Property Name="CTP05_1" Type="varchar" MaxLength="50" />
+    <Property Name="SVD01" Type="varchar" MaxLength="200" />
+    <Property Name="SVD02" Type="varchar" MaxLength="200" />
+    <Property Name="SVD03" Type="varchar" MaxLength="200" />
+    <Property Name="SVD03_1" Type="varchar" MaxLength="200" />
+    <Property Name="SVD03_2" Type="varchar" MaxLength="200" />
+    <Property Name="SVD03_3" Type="varchar" MaxLength="200" />
+    <Property Name="SVD05" Type="varchar" MaxLength="200" />
+    <Property Name="LineCheckOrRemittanceDate" Type="varchar" MaxLength="50" />
+    <Property Name="RemainingPatientLiability" Type="varchar" MaxLength="50" />
+    <Property Name="ErrorCode" Type="varchar" MaxLength="100" />
+    <Property Name="ClaimLineLevelErrors" Type="varchar" MaxLength="100" />
+    <Property Name="Field1" Type="varchar" MaxLength="100" />
+    <Property Name="Field2" Type="varchar" MaxLength="100" />
+    <Property Name="Field3" Type="varchar" MaxLength="100" />
+    <Property Name="Field4" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HiPaaS_website.dbo.LCD_Covered_Original' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="LCD_Covered_Original">
+    <Key>
+      <PropertyRef Name="SeqId" />
+    </Key>
+    <Property Name="SeqId" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CPT_HCPCS" Type="varchar" MaxLength="50" />
+    <Property Name="Exclusion_Type" Type="varchar" MaxLength="50" />
+    <Property Name="ICD_Code_Range_Start" Type="varchar(max)" />
+    <Property Name="ICD_Code_Range_End" Type="varchar(max)" />
+    <Property Name="Policy_Rule_Summary_or_Reference" Type="varchar(max)" />
+    <Property Name="ABN_Form_Reason" Type="varchar(max)" />
+    <Property Name="ABN_Spanish_Form_Reason" Type="varchar(max)" />
+    <Property Name="Code_Effective_Date" Type="varchar" MaxLength="50" />
+    <Property Name="Code_Termination_Date" Type="varchar" MaxLength="50" />
+    <Property Name="Frequency_Limit" Type="varchar(max)" />
+    <Property Name="Frequency_Procedure_Limit" Type="varchar(max)" />
+    <Property Name="Frequency_Time_Span_Unit" Type="varchar(max)" />
+    <Property Name="Frequency_Time_Span_Number" Type="varchar(max)" />
+    <Property Name="Sex" Type="varchar" MaxLength="10" />
+    <Property Name="Age_Minimum" Type="varchar" MaxLength="50" />
+    <Property Name="Age_Maximum" Type="varchar" MaxLength="50" />
+    <Property Name="Age_Unit" Type="varchar" MaxLength="50" />
+    <Property Name="Policy_Rule_Key" Type="varchar(max)" />
+    <Property Name="Policy_Rule_NameorDescriptor" Type="varchar(max)" />
+    <Property Name="Diagnosis_Group_Identifier" Type="varchar" MaxLength="50" />
+    <Property Name="Diagnosis_Group_Logic" Type="varchar" MaxLength="50" />
+    <Property Name="Diagnosis_Coding_Order" Type="varchar(max)" />
+    <Property Name="ExtraField1" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="MemberCoverageInfo_M1">
+    <Key>
+      <PropertyRef Name="SeqID" />
+    </Key>
+    <Property Name="SeqID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileID" Type="int" />
+    <Property Name="FileName" Type="varchar" MaxLength="100" />
+    <Property Name="FullFile" Type="varchar" MaxLength="10" />
+    <Property Name="LoadMonth" Type="date" />
+    <Property Name="TransactionID" Type="int" />
+    <Property Name="OtherID" Type="varchar" MaxLength="50" />
+    <Property Name="SubscriberNo" Type="varchar" MaxLength="50" />
+    <Property Name="MEDSID" Type="varchar" MaxLength="50" />
+    <Property Name="TransCode" Type="varchar" MaxLength="50" />
+    <Property Name="InsLineCode" Type="varchar" MaxLength="50" />
+    <Property Name="PlanCoverageDesc" Type="varchar" MaxLength="10" />
+    <Property Name="StartDate" Type="varchar" MaxLength="50" />
+    <Property Name="EndDate" Type="varchar" MaxLength="100" />
+    <Property Name="MemberAmount" Type="varchar" MaxLength="50" />
+    <Property Name="Ref171" Type="varchar" MaxLength="50" />
+    <Property Name="Ref9V1" Type="varchar" MaxLength="50" />
+    <Property Name="RefCE1" Type="varchar" MaxLength="50" />
+    <Property Name="RefE81" Type="varchar" MaxLength="50" />
+    <Property Name="RefRB1" Type="varchar" MaxLength="50" />
+    <Property Name="RefXX11" Type="varchar" MaxLength="50" />
+    <Property Name="RefZX1" Type="varchar" MaxLength="50" />
+    <Property Name="RefZZ1" Type="varchar" MaxLength="50" />
+    <Property Name="ReconcileInfo" Type="varchar" MaxLength="5" />
+    <Property Name="Reconcile" Type="int" />
+    <Property Name="CreateDateTime" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MemberInfo_M1">
+    <Key>
+      <PropertyRef Name="SeqID" />
+    </Key>
+    <Property Name="SeqID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileID" Type="int" />
+    <Property Name="TransactionID" Type="int" />
+    <Property Name="FileName" Type="varchar" MaxLength="50" />
+    <Property Name="FullFile" Type="varchar" MaxLength="10" />
+    <Property Name="LoadMonth" Type="date" />
+    <Property Name="OtherID" Type="varchar" MaxLength="50" />
+    <Property Name="SubscriberNo" Type="varchar" MaxLength="50" />
+    <Property Name="MEDSID" Type="varchar" MaxLength="50" />
+    <Property Name="MemberFName" Type="varchar" MaxLength="50" />
+    <Property Name="MemberLName" Type="varchar" MaxLength="50" />
+    <Property Name="MemberMI" Type="varchar" MaxLength="10" />
+    <Property Name="Telephone" Type="varchar" MaxLength="50" />
+    <Property Name="StreetAddress" Type="varchar" MaxLength="100" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="State" Type="varchar" MaxLength="50" />
+    <Property Name="PostalCode" Type="varchar" MaxLength="12" />
+    <Property Name="County" Type="varchar" MaxLength="10" />
+    <Property Name="CountyRes" Type="varchar" MaxLength="10" />
+    <Property Name="Race" Type="varchar" MaxLength="50" />
+    <Property Name="Ethinicity" Type="varchar" MaxLength="50" />
+    <Property Name="Language" Type="varchar" MaxLength="50" />
+    <Property Name="FAMELanguge" Type="varchar" MaxLength="50" />
+    <Property Name="MailingStreetAddress" Type="varchar" MaxLength="100" />
+    <Property Name="MailingCity" Type="varchar" MaxLength="50" />
+    <Property Name="MailingState" Type="varchar" MaxLength="50" />
+    <Property Name="MailingPostalCode" Type="varchar" MaxLength="10" />
+    <Property Name="Ref171" Type="varchar" MaxLength="50" />
+    <Property Name="Ref231" Type="varchar" MaxLength="50" />
+    <Property Name="Ref3H1" Type="varchar" MaxLength="50" />
+    <Property Name="Ref601" Type="varchar" MaxLength="50" />
+    <Property Name="RefDX1" Type="varchar" MaxLength="50" />
+    <Property Name="RefF61" Type="varchar" MaxLength="50" />
+    <Property Name="RefQ41" Type="varchar" MaxLength="50" />
+    <Property Name="RefQQ1" Type="varchar" MaxLength="50" />
+    <Property Name="RefABB1" Type="varchar" MaxLength="50" />
+    <Property Name="RefZZ1" Type="varchar" MaxLength="50" />
+    <Property Name="Status1" Type="varchar" MaxLength="10" />
+    <Property Name="Status2" Type="varchar" MaxLength="10" />
+    <Property Name="ExtraField1" Type="varchar" MaxLength="50" />
+    <Property Name="ExtraField2" Type="varchar" MaxLength="50" />
+    <Property Name="ReconcileInfo" Type="varchar" MaxLength="5" />
+    <Property Name="Reconcile" Type="int" />
+    <Property Name="CreateDateTime" Type="varchar" MaxLength="50" />
+    <Property Name="dob" Type="datetime" />
+    <Property Name="Gender" Type="varchar" MaxLength="1" />
+    <Property Name="error_desc" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="NoteClaim837">
+    <Key>
+      <PropertyRef Name="SeqID" />
+    </Key>
+    <Property Name="SeqID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileID" Type="varchar" MaxLength="100" />
+    <Property Name="TransactionID" Type="int" />
+    <Property Name="FileName" Type="varchar" MaxLength="100" />
+    <Property Name="FileDate" Type="varchar" MaxLength="100" />
+    <Property Name="OccurenceLoop" Type="varchar" MaxLength="10" />
+    <Property Name="SequenceId" Type="varchar" MaxLength="100" />
+    <Property Name="NTE01" Type="varchar" MaxLength="100" />
+    <Property Name="NTE02" Type="varchar" MaxLength="100" />
+    <Property Name="ClaimId" Type="varchar" MaxLength="40" />
+    <Property Name="ServiceLineItem" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <Function Name="SP_834DailyDashboardCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_834Filecountwisedetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="text" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_834FileDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="text" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_834FileHeaderDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FileId" Type="varchar" Mode="In" />
+    <Parameter Name="Subscriber" Type="varchar" Mode="In" />
+    <Parameter Name="type" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_Daily834headerData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_GetClaimDailyAudit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="filedate" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_GetClaimDailyAuditCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="filedate" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_GetClaims_ICD_CODE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_GetCompanion_Guide" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_GetCompanion_Guide_270" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_GetData_Wise270" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SDate" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_GetDetails270" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SDate" Type="varchar" Mode="In" />
+    <Parameter Name="Type_ID" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_GetenrollmentDetails834" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_GetFileInTake835Count" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="filedate" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_GetFileInTakeCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="filedate" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_GetIntakeClaimDataCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="filedate" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_GetIntakeClaimDataErrorsCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="filedate" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_GetIntakeClaimDataVarifiedCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="filedate" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_GetLCD_Covered_Original" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_GetLCD_SmallFile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_GetLCD_SmallFileNew" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_GetPendingClaimError" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_GetRejectedClaimError" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_GetRejectedClaims" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="filedate" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_LoginUserDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LoginEmailID" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SearchClaims" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="HiPaaS_website_offshoreModelStoreContainer">
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Claim_Status" EntityType="Self.Claim_Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClaimAdjustmentServiceLine" EntityType="Self.ClaimAdjustmentServiceLine" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClaimDiagnosisInfo" EntityType="Self.ClaimDiagnosisInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClaimInformationREF" EntityType="Self.ClaimInformationREF" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Claims_ICD_CODE" EntityType="Self.Claims_ICD_CODE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Claims278" EntityType="Self.Claims278" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Eligibility276" EntityType="Self.Eligibility276" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Eligibilty_DateWise" EntityType="Self.Eligibilty_DateWise" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Eligibilty270" EntityType="Self.Eligibilty270" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ErrorType" EntityType="Self.ErrorType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FileInTake" EntityType="Self.FileInTake" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IntakeClaimData" EntityType="Self.IntakeClaimData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IntakeClaimLineData" EntityType="Self.IntakeClaimLineData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MemberCoverageInfo_M1" EntityType="Self.MemberCoverageInfo_M1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MemberInfo_M1" EntityType="Self.MemberInfo_M1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NoteClaim837" EntityType="Self.NoteClaim837" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FileInTake835" EntityType="Self.FileInTake835" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [FileInTake835].[SeqID] AS [SeqID], 
+    [FileInTake835].[FileID] AS [FileID], 
+    [FileInTake835].[TransactionID] AS [TransactionID], 
+    [FileInTake835].[FileName] AS [FileName], 
+    [FileInTake835].[FileDate] AS [FileDate], 
+    [FileInTake835].[BatchID] AS [BatchID], 
+    [FileInTake835].[TransmissionID] AS [TransmissionID], 
+    [FileInTake835].[TradingPartner] AS [TradingPartner], 
+    [FileInTake835].[InterchangeSenderID] AS [InterchangeSenderID], 
+    [FileInTake835].[InterchangeControlNumber] AS [InterchangeControlNumber], 
+    [FileInTake835].[InterchangeDate] AS [InterchangeDate], 
+    [FileInTake835].[InterchangeTime] AS [InterchangeTime], 
+    [FileInTake835].[SubmitterID] AS [SubmitterID], 
+    [FileInTake835].[ReceiverName] AS [ReceiverName], 
+    [FileInTake835].[ReceiverID] AS [ReceiverID], 
+    [FileInTake835].[Destination] AS [Destination], 
+    [FileInTake835].[ISA01] AS [ISA01], 
+    [FileInTake835].[ISA02] AS [ISA02], 
+    [FileInTake835].[ISA03] AS [ISA03], 
+    [FileInTake835].[ISA04] AS [ISA04], 
+    [FileInTake835].[ISA05] AS [ISA05], 
+    [FileInTake835].[ISA06] AS [ISA06], 
+    [FileInTake835].[ISA07] AS [ISA07], 
+    [FileInTake835].[ISA08] AS [ISA08], 
+    [FileInTake835].[ISA09] AS [ISA09], 
+    [FileInTake835].[ISA10] AS [ISA10], 
+    [FileInTake835].[ISA11] AS [ISA11], 
+    [FileInTake835].[ISA12] AS [ISA12], 
+    [FileInTake835].[ISA13] AS [ISA13], 
+    [FileInTake835].[ISA14] AS [ISA14], 
+    [FileInTake835].[ISA15] AS [ISA15], 
+    [FileInTake835].[ISA16] AS [ISA16], 
+    [FileInTake835].[GSA01] AS [GSA01], 
+    [FileInTake835].[GSA02] AS [GSA02], 
+    [FileInTake835].[GSA03] AS [GSA03], 
+    [FileInTake835].[GSA04] AS [GSA04], 
+    [FileInTake835].[GSA05] AS [GSA05], 
+    [FileInTake835].[GSA06] AS [GSA06], 
+    [FileInTake835].[GSA07] AS [GSA07], 
+    [FileInTake835].[GSA08] AS [GSA08], 
+    [FileInTake835].[ST01] AS [ST01], 
+    [FileInTake835].[ST02] AS [ST02], 
+    [FileInTake835].[ST03] AS [ST03], 
+    [FileInTake835].[BHT01] AS [BHT01], 
+    [FileInTake835].[BHT02] AS [BHT02], 
+    [FileInTake835].[BHT03] AS [BHT03], 
+    [FileInTake835].[BHT04] AS [BHT04], 
+    [FileInTake835].[BHT05] AS [BHT05], 
+    [FileInTake835].[BHT06] AS [BHT06], 
+    [FileInTake835].[Sumbitter_N101] AS [Sumbitter_N101], 
+    [FileInTake835].[Submitter_N102] AS [Submitter_N102], 
+    [FileInTake835].[Submitter_N103] AS [Submitter_N103], 
+    [FileInTake835].[Submitter_N104] AS [Submitter_N104], 
+    [FileInTake835].[Submitter_N301] AS [Submitter_N301], 
+    [FileInTake835].[Submitter_N302] AS [Submitter_N302], 
+    [FileInTake835].[Submitter_N401] AS [Submitter_N401], 
+    [FileInTake835].[Submitter_N402] AS [Submitter_N402], 
+    [FileInTake835].[Submitter_N403] AS [Submitter_N403], 
+    [FileInTake835].[Submitter_PER01] AS [Submitter_PER01], 
+    [FileInTake835].[Submitter_PER02] AS [Submitter_PER02], 
+    [FileInTake835].[Submitter_PER03] AS [Submitter_PER03], 
+    [FileInTake835].[Submitter_PER04] AS [Submitter_PER04], 
+    [FileInTake835].[Submitter_PER05] AS [Submitter_PER05], 
+    [FileInTake835].[Submitter_PER06] AS [Submitter_PER06], 
+    [FileInTake835].[Receiver_N101] AS [Receiver_N101], 
+    [FileInTake835].[Receiver_N102] AS [Receiver_N102], 
+    [FileInTake835].[Receiver_N103] AS [Receiver_N103], 
+    [FileInTake835].[Receiver_N104] AS [Receiver_N104], 
+    [FileInTake835].[Receiver_N105] AS [Receiver_N105], 
+    [FileInTake835].[Receiver_N301] AS [Receiver_N301], 
+    [FileInTake835].[Receiver_N302] AS [Receiver_N302], 
+    [FileInTake835].[Receiver_N401] AS [Receiver_N401], 
+    [FileInTake835].[Receiver_N402] AS [Receiver_N402], 
+    [FileInTake835].[Receiver_N403] AS [Receiver_N403], 
+    [FileInTake835].[Receiver_PER01] AS [Receiver_PER01], 
+    [FileInTake835].[Receiver_PER02] AS [Receiver_PER02], 
+    [FileInTake835].[Receiver_PER03] AS [Receiver_PER03], 
+    [FileInTake835].[Receiver_PER04] AS [Receiver_PER04], 
+    [FileInTake835].[Receiver_PER05] AS [Receiver_PER05], 
+    [FileInTake835].[Receiver_PER06] AS [Receiver_PER06], 
+    [FileInTake835].[ClaimCount] AS [ClaimCount], 
+    [FileInTake835].[ExternalCorrelationToken] AS [ExternalCorrelationToken], 
+    [FileInTake835].[ExtraField1] AS [ExtraField1], 
+    [FileInTake835].[ExtraField2] AS [ExtraField2], 
+    [FileInTake835].[ExtraField3] AS [ExtraField3], 
+    [FileInTake835].[ExtraField4] AS [ExtraField4], 
+    [FileInTake835].[ExtraField5] AS [ExtraField5], 
+    [FileInTake835].[ExtraField6] AS [ExtraField6], 
+    [FileInTake835].[ExtraField7] AS [ExtraField7], 
+    [FileInTake835].[ExtraField8] AS [ExtraField8], 
+    [FileInTake835].[ExtraField9] AS [ExtraField9], 
+    [FileInTake835].[CreatedBy] AS [CreatedBy], 
+    [FileInTake835].[CreateDateTime] AS [CreateDateTime], 
+    [FileInTake835].[Created_Date] AS [Created_Date], 
+    [FileInTake835].[FileStatus] AS [FileStatus], 
+    [FileInTake835].[FileLevelErrors] AS [FileLevelErrors], 
+    [FileInTake835].[Field2] AS [Field2], 
+    [FileInTake835].[Field3] AS [Field3], 
+    [FileInTake835].[Field4] AS [Field4], 
+    [FileInTake835].[Field5] AS [Field5], 
+    [FileInTake835].[Field6] AS [Field6], 
+    [FileInTake835].[error_claimcount] AS [error_claimcount]
+    FROM [dbo].[FileInTake835] AS [FileInTake835]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="IntakeClaimData835" EntityType="Self.IntakeClaimData835" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [IntakeClaimData835].[SeqID] AS [SeqID], 
+    [IntakeClaimData835].[FileID] AS [FileID], 
+    [IntakeClaimData835].[TransactionID] AS [TransactionID], 
+    [IntakeClaimData835].[FileName] AS [FileName], 
+    [IntakeClaimData835].[FileDate] AS [FileDate], 
+    [IntakeClaimData835].[BatchID] AS [BatchID], 
+    [IntakeClaimData835].[TransmissionID] AS [TransmissionID], 
+    [IntakeClaimData835].[ClaimExtNmbr] AS [ClaimExtNmbr], 
+    [IntakeClaimData835].[ClaimID] AS [ClaimID], 
+    [IntakeClaimData835].[ClaimTMTrackingID] AS [ClaimTMTrackingID], 
+    [IntakeClaimData835].[PaytoPlanInfo] AS [PaytoPlanInfo], 
+    [IntakeClaimData835].[Billing_Provider_ID] AS [Billing_Provider_ID], 
+    [IntakeClaimData835].[SecondaryBilling_ID] AS [SecondaryBilling_ID], 
+    [IntakeClaimData835].[Subscriber_ID] AS [Subscriber_ID], 
+    [IntakeClaimData835].[ExtSubscriber_ID] AS [ExtSubscriber_ID], 
+    [IntakeClaimData835].[Member_ID] AS [Member_ID], 
+    [IntakeClaimData835].[Member_Account_Number] AS [Member_Account_Number], 
+    [IntakeClaimData835].[Member_Last_Name] AS [Member_Last_Name], 
+    [IntakeClaimData835].[Member_First_Name] AS [Member_First_Name], 
+    [IntakeClaimData835].[MemberMI] AS [MemberMI], 
+    [IntakeClaimData835].[Member_DOB] AS [Member_DOB], 
+    [IntakeClaimData835].[DiagnosisCodes] AS [DiagnosisCodes], 
+    [IntakeClaimData835].[Claim_Amount] AS [Claim_Amount], 
+    [IntakeClaimData835].[PatientPaid] AS [PatientPaid], 
+    [IntakeClaimData835].[NetBalance] AS [NetBalance], 
+    [IntakeClaimData835].[Adjust] AS [Adjust], 
+    [IntakeClaimData835].[InsuranceBalance] AS [InsuranceBalance], 
+    [IntakeClaimData835].[VAN_Trace_Number] AS [VAN_Trace_Number], 
+    [IntakeClaimData835].[COB_Claim_Number] AS [COB_Claim_Number], 
+    [IntakeClaimData835].[ClaimStatus] AS [ClaimStatus], 
+    [IntakeClaimData835].[ClaimCode] AS [ClaimCode], 
+    [IntakeClaimData835].[OtherID] AS [OtherID], 
+    [IntakeClaimData835].[ClaimSupplimentalInfo] AS [ClaimSupplimentalInfo], 
+    [IntakeClaimData835].[ContractInformation] AS [ContractInformation], 
+    [IntakeClaimData835].[PatientDueAmmount] AS [PatientDueAmmount], 
+    [IntakeClaimData835].[ExternalCorrelationToken] AS [ExternalCorrelationToken], 
+    [IntakeClaimData835].[LineCount] AS [LineCount], 
+    [IntakeClaimData835].[ExtraField1] AS [ExtraField1], 
+    [IntakeClaimData835].[ExtraField2] AS [ExtraField2], 
+    [IntakeClaimData835].[ExtraField3] AS [ExtraField3], 
+    [IntakeClaimData835].[ExtraField4] AS [ExtraField4], 
+    [IntakeClaimData835].[ExtraField5] AS [ExtraField5], 
+    [IntakeClaimData835].[ExtraField6] AS [ExtraField6], 
+    [IntakeClaimData835].[ExtraField7] AS [ExtraField7], 
+    [IntakeClaimData835].[ExtraField8] AS [ExtraField8], 
+    [IntakeClaimData835].[ExtraField9] AS [ExtraField9], 
+    [IntakeClaimData835].[CreatedBy] AS [CreatedBy], 
+    [IntakeClaimData835].[CreateDateTime] AS [CreateDateTime], 
+    [IntakeClaimData835].[Created_Date] AS [Created_Date], 
+    [IntakeClaimData835].[HL_ID_BillingProvider] AS [HL_ID_BillingProvider], 
+    [IntakeClaimData835].[HL_Level_BillingProvider] AS [HL_Level_BillingProvider], 
+    [IntakeClaimData835].[PRV_Billing01] AS [PRV_Billing01], 
+    [IntakeClaimData835].[PRV_Billing02] AS [PRV_Billing02], 
+    [IntakeClaimData835].[PRV_Billing03] AS [PRV_Billing03], 
+    [IntakeClaimData835].[NM101_BillingProviderId] AS [NM101_BillingProviderId], 
+    [IntakeClaimData835].[BillingProviderLastName] AS [BillingProviderLastName], 
+    [IntakeClaimData835].[BillingProviderFirstName] AS [BillingProviderFirstName], 
+    [IntakeClaimData835].[NM108_BillingProvider] AS [NM108_BillingProvider], 
+    [IntakeClaimData835].[NM109_BillingProvider] AS [NM109_BillingProvider], 
+    [IntakeClaimData835].[BillingProviderAddress] AS [BillingProviderAddress], 
+    [IntakeClaimData835].[BillingProviderCity_State_Zip] AS [BillingProviderCity_State_Zip], 
+    [IntakeClaimData835].[BillingProvider_TaxId] AS [BillingProvider_TaxId], 
+    [IntakeClaimData835].[BillingProvider_PER01] AS [BillingProvider_PER01], 
+    [IntakeClaimData835].[BillingProvider_PER02] AS [BillingProvider_PER02], 
+    [IntakeClaimData835].[BillingProvider_PER03] AS [BillingProvider_PER03], 
+    [IntakeClaimData835].[BillingProvider_PER04] AS [BillingProvider_PER04], 
+    [IntakeClaimData835].[NM101_PayToProvider] AS [NM101_PayToProvider], 
+    [IntakeClaimData835].[PayToProviderLastName] AS [PayToProviderLastName], 
+    [IntakeClaimData835].[PayToProviderFirstName] AS [PayToProviderFirstName], 
+    [IntakeClaimData835].[NM108_PayToProvider] AS [NM108_PayToProvider], 
+    [IntakeClaimData835].[NM109_PayToProvider] AS [NM109_PayToProvider], 
+    [IntakeClaimData835].[PayToProviderAddress] AS [PayToProviderAddress], 
+    [IntakeClaimData835].[PayToProviderCity_State_Zip] AS [PayToProviderCity_State_Zip], 
+    [IntakeClaimData835].[PayToProvider_TaxId] AS [PayToProvider_TaxId], 
+    [IntakeClaimData835].[PayToProvider_PER01] AS [PayToProvider_PER01], 
+    [IntakeClaimData835].[PayToProvider_PER02] AS [PayToProvider_PER02], 
+    [IntakeClaimData835].[PayToProvider_PER03] AS [PayToProvider_PER03], 
+    [IntakeClaimData835].[PayToProvider_PER04] AS [PayToProvider_PER04], 
+    [IntakeClaimData835].[HL_ID_Subscriber] AS [HL_ID_Subscriber], 
+    [IntakeClaimData835].[HL_Level_Subscriber] AS [HL_Level_Subscriber], 
+    [IntakeClaimData835].[SBR01] AS [SBR01], 
+    [IntakeClaimData835].[SBR02] AS [SBR02], 
+    [IntakeClaimData835].[SBR03] AS [SBR03], 
+    [IntakeClaimData835].[SBR09] AS [SBR09], 
+    [IntakeClaimData835].[SubscriberLastName] AS [SubscriberLastName], 
+    [IntakeClaimData835].[SubscriberFirstName] AS [SubscriberFirstName], 
+    [IntakeClaimData835].[SubscriberDOB] AS [SubscriberDOB], 
+    [IntakeClaimData835].[NM108_Subscriber] AS [NM108_Subscriber], 
+    [IntakeClaimData835].[NM109_Subscriber] AS [NM109_Subscriber], 
+    [IntakeClaimData835].[SubscriberAddress] AS [SubscriberAddress], 
+    [IntakeClaimData835].[SubscriberCity_State_Zip] AS [SubscriberCity_State_Zip], 
+    [IntakeClaimData835].[SubscriberSecondaryIdentification] AS [SubscriberSecondaryIdentification], 
+    [IntakeClaimData835].[CasualityClaimNumber] AS [CasualityClaimNumber], 
+    [IntakeClaimData835].[PayerLastName] AS [PayerLastName], 
+    [IntakeClaimData835].[PayerFirstName] AS [PayerFirstName], 
+    [IntakeClaimData835].[NM108_Payer] AS [NM108_Payer], 
+    [IntakeClaimData835].[NM109_Payer] AS [NM109_Payer], 
+    [IntakeClaimData835].[PayerAddress] AS [PayerAddress], 
+    [IntakeClaimData835].[PayerCity_State_Zip] AS [PayerCity_State_Zip], 
+    [IntakeClaimData835].[PayerSecondaryId] AS [PayerSecondaryId], 
+    [IntakeClaimData835].[BillingProviderSecondaryId] AS [BillingProviderSecondaryId], 
+    [IntakeClaimData835].[HL_ID_Patient] AS [HL_ID_Patient], 
+    [IntakeClaimData835].[HL_Level_Patient] AS [HL_Level_Patient], 
+    [IntakeClaimData835].[PatientLastName] AS [PatientLastName], 
+    [IntakeClaimData835].[PatientFirstName] AS [PatientFirstName], 
+    [IntakeClaimData835].[NM108_Patient] AS [NM108_Patient], 
+    [IntakeClaimData835].[NM109_Patient] AS [NM109_Patient], 
+    [IntakeClaimData835].[PatientAddress] AS [PatientAddress], 
+    [IntakeClaimData835].[PatientCity_State_Zip] AS [PatientCity_State_Zip], 
+    [IntakeClaimData835].[PatientDOB] AS [PatientDOB], 
+    [IntakeClaimData835].[CLM01] AS [CLM01], 
+    [IntakeClaimData835].[CLM02] AS [CLM02], 
+    [IntakeClaimData835].[CLM05_01] AS [CLM05_01], 
+    [IntakeClaimData835].[CLM05_02] AS [CLM05_02], 
+    [IntakeClaimData835].[CLM05_03] AS [CLM05_03], 
+    [IntakeClaimData835].[StatementBegin] AS [StatementBegin], 
+    [IntakeClaimData835].[StatementEnd] AS [StatementEnd], 
+    [IntakeClaimData835].[DischargeHour] AS [DischargeHour], 
+    [IntakeClaimData835].[AdmissionDate] AS [AdmissionDate], 
+    [IntakeClaimData835].[RepricerReceivevDate] AS [RepricerReceivevDate], 
+    [IntakeClaimData835].[ErrorCode] AS [ErrorCode], 
+    [IntakeClaimData835].[ErrorDesc] AS [ErrorDesc], 
+    [IntakeClaimData835].[Field1] AS [Field1], 
+    [IntakeClaimData835].[ClaimLevelErrors] AS [ClaimLevelErrors], 
+    [IntakeClaimData835].[Field3] AS [Field3], 
+    [IntakeClaimData835].[Field4] AS [Field4], 
+    [IntakeClaimData835].[NM109_2330] AS [NM109_2330], 
+    [IntakeClaimData835].[CLM_11] AS [CLM_11], 
+    [IntakeClaimData835].[ClaimLevelICDErrorFlag] AS [ClaimLevelICDErrorFlag], 
+    [IntakeClaimData835].[ClaimLevelCLMErrorFlag] AS [ClaimLevelCLMErrorFlag], 
+    [IntakeClaimData835].[HI01] AS [HI01]
+    FROM [dbo].[IntakeClaimData835] AS [IntakeClaimData835]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="IntakeClaimLineData835" EntityType="Self.IntakeClaimLineData835" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [IntakeClaimLineData835].[SeqID] AS [SeqID], 
+    [IntakeClaimLineData835].[FileID] AS [FileID], 
+    [IntakeClaimLineData835].[ClaimSeqID] AS [ClaimSeqID], 
+    [IntakeClaimLineData835].[TransactionID] AS [TransactionID], 
+    [IntakeClaimLineData835].[FileName] AS [FileName], 
+    [IntakeClaimLineData835].[FileDate] AS [FileDate], 
+    [IntakeClaimLineData835].[BatchID] AS [BatchID], 
+    [IntakeClaimLineData835].[TransmissionID] AS [TransmissionID], 
+    [IntakeClaimLineData835].[ClaimExtNmbr] AS [ClaimExtNmbr], 
+    [IntakeClaimLineData835].[ClaimID] AS [ClaimID], 
+    [IntakeClaimLineData835].[ClaimTMTrackingID] AS [ClaimTMTrackingID], 
+    [IntakeClaimLineData835].[Subscriber_ID] AS [Subscriber_ID], 
+    [IntakeClaimLineData835].[Member_ID] AS [Member_ID], 
+    [IntakeClaimLineData835].[ExtSubscriber_ID] AS [ExtSubscriber_ID], 
+    [IntakeClaimLineData835].[ICD9ICD10] AS [ICD9ICD10], 
+    [IntakeClaimLineData835].[ProcNo] AS [ProcNo], 
+    [IntakeClaimLineData835].[DiagnosisXRef] AS [DiagnosisXRef], 
+    [IntakeClaimLineData835].[DiagnosisCodes] AS [DiagnosisCodes], 
+    [IntakeClaimLineData835].[PatientWeight] AS [PatientWeight], 
+    [IntakeClaimLineData835].[Units] AS [Units], 
+    [IntakeClaimLineData835].[UnitMeasure] AS [UnitMeasure], 
+    [IntakeClaimLineData835].[Proc_Amount] AS [Proc_Amount], 
+    [IntakeClaimLineData835].[PatientPaid] AS [PatientPaid], 
+    [IntakeClaimLineData835].[NetBalance] AS [NetBalance], 
+    [IntakeClaimLineData835].[Adjust] AS [Adjust], 
+    [IntakeClaimLineData835].[InsuranceBalance] AS [InsuranceBalance], 
+    [IntakeClaimLineData835].[DateofService] AS [DateofService], 
+    [IntakeClaimLineData835].[DateofServiceEnd] AS [DateofServiceEnd], 
+    [IntakeClaimLineData835].[LineStatus] AS [LineStatus], 
+    [IntakeClaimLineData835].[OtherID] AS [OtherID], 
+    [IntakeClaimLineData835].[ExternalCorrelationToken] AS [ExternalCorrelationToken], 
+    [IntakeClaimLineData835].[AmbulanceInfo] AS [AmbulanceInfo], 
+    [IntakeClaimLineData835].[XRayInfo] AS [XRayInfo], 
+    [IntakeClaimLineData835].[TransportInfo] AS [TransportInfo], 
+    [IntakeClaimLineData835].[ExtraField1] AS [ExtraField1], 
+    [IntakeClaimLineData835].[ExtraField2] AS [ExtraField2], 
+    [IntakeClaimLineData835].[ExtraField3] AS [ExtraField3], 
+    [IntakeClaimLineData835].[ExtraField4] AS [ExtraField4], 
+    [IntakeClaimLineData835].[ExtraField5] AS [ExtraField5], 
+    [IntakeClaimLineData835].[ExtraField6] AS [ExtraField6], 
+    [IntakeClaimLineData835].[ExtraField7] AS [ExtraField7], 
+    [IntakeClaimLineData835].[ExtraField8] AS [ExtraField8], 
+    [IntakeClaimLineData835].[ExtraField9] AS [ExtraField9], 
+    [IntakeClaimLineData835].[CreatedBy] AS [CreatedBy], 
+    [IntakeClaimLineData835].[CreateDateTime] AS [CreateDateTime], 
+    [IntakeClaimLineData835].[Created_Date] AS [Created_Date], 
+    [IntakeClaimLineData835].[HCP01_PricingMethodology] AS [HCP01_PricingMethodology], 
+    [IntakeClaimLineData835].[HCP02_Amount] AS [HCP02_Amount], 
+    [IntakeClaimLineData835].[HCP03] AS [HCP03], 
+    [IntakeClaimLineData835].[HCP04] AS [HCP04], 
+    [IntakeClaimLineData835].[HCP05_Rate] AS [HCP05_Rate], 
+    [IntakeClaimLineData835].[HCP06] AS [HCP06], 
+    [IntakeClaimLineData835].[HCP07] AS [HCP07], 
+    [IntakeClaimLineData835].[HCP08] AS [HCP08], 
+    [IntakeClaimLineData835].[HCP12_Quantity] AS [HCP12_Quantity], 
+    [IntakeClaimLineData835].[HCP13] AS [HCP13], 
+    [IntakeClaimLineData835].[HCP14] AS [HCP14], 
+    [IntakeClaimLineData835].[HCP15_ExceptionCode] AS [HCP15_ExceptionCode], 
+    [IntakeClaimLineData835].[AttendingProviderNameLastOrOrganizationName] AS [AttendingProviderNameLastOrOrganizationName], 
+    [IntakeClaimLineData835].[AttendingProviderNameFirst] AS [AttendingProviderNameFirst], 
+    [IntakeClaimLineData835].[NM108_AttendingProvider] AS [NM108_AttendingProvider], 
+    [IntakeClaimLineData835].[NM109_AttendingProvider] AS [NM109_AttendingProvider], 
+    [IntakeClaimLineData835].[AttendingProviderCode] AS [AttendingProviderCode], 
+    [IntakeClaimLineData835].[AttendingProvider_PRV02] AS [AttendingProvider_PRV02], 
+    [IntakeClaimLineData835].[AttendingProvider_PRV03] AS [AttendingProvider_PRV03], 
+    [IntakeClaimLineData835].[AttendingProvider_REF01] AS [AttendingProvider_REF01], 
+    [IntakeClaimLineData835].[AttendingProvider_REF02] AS [AttendingProvider_REF02], 
+    [IntakeClaimLineData835].[OperatingPhysicianNameLastOrOrganizationName] AS [OperatingPhysicianNameLastOrOrganizationName], 
+    [IntakeClaimLineData835].[OperatingPhysicianNameFirst] AS [OperatingPhysicianNameFirst], 
+    [IntakeClaimLineData835].[NM108_OperatingPhysician] AS [NM108_OperatingPhysician], 
+    [IntakeClaimLineData835].[NM109_OperatingPhysician] AS [NM109_OperatingPhysician], 
+    [IntakeClaimLineData835].[OperatingPhysician_REF01] AS [OperatingPhysician_REF01], 
+    [IntakeClaimLineData835].[OperatingPhysician_REF02] AS [OperatingPhysician_REF02], 
+    [IntakeClaimLineData835].[OtherOperatingPhysicianNameLastOrOrganizationName] AS [OtherOperatingPhysicianNameLastOrOrganizationName], 
+    [IntakeClaimLineData835].[OtherOperatingPhysicianNameFirst] AS [OtherOperatingPhysicianNameFirst], 
+    [IntakeClaimLineData835].[NM108_OtherOperatingPhysician] AS [NM108_OtherOperatingPhysician], 
+    [IntakeClaimLineData835].[NM109_OtherOperatingPhysician] AS [NM109_OtherOperatingPhysician], 
+    [IntakeClaimLineData835].[OtherOperatingPhysician_REF01] AS [OtherOperatingPhysician_REF01], 
+    [IntakeClaimLineData835].[OtherOperatingPhysician_REF02] AS [OtherOperatingPhysician_REF02], 
+    [IntakeClaimLineData835].[RenderingPhysicianNameLastOrOrganizationName] AS [RenderingPhysicianNameLastOrOrganizationName], 
+    [IntakeClaimLineData835].[RenderingPhysicianNameFirst] AS [RenderingPhysicianNameFirst], 
+    [IntakeClaimLineData835].[NM108_RenderingPhysician] AS [NM108_RenderingPhysician], 
+    [IntakeClaimLineData835].[NM109_RenderingPhysician] AS [NM109_RenderingPhysician], 
+    [IntakeClaimLineData835].[RenderingPhysician_REF01] AS [RenderingPhysician_REF01], 
+    [IntakeClaimLineData835].[RenderingPhysician_REF02] AS [RenderingPhysician_REF02], 
+    [IntakeClaimLineData835].[ServiceFacilityLocationName] AS [ServiceFacilityLocationName], 
+    [IntakeClaimLineData835].[ServiceFacilityLocation_NM102] AS [ServiceFacilityLocation_NM102], 
+    [IntakeClaimLineData835].[ServiceFacilityLocation_NM108] AS [ServiceFacilityLocation_NM108], 
+    [IntakeClaimLineData835].[ServiceFacilityLocation_NM109] AS [ServiceFacilityLocation_NM109], 
+    [IntakeClaimLineData835].[ServiceFacilityLocationAddress] AS [ServiceFacilityLocationAddress], 
+    [IntakeClaimLineData835].[ServiceFacilityLocation_City_State_Zip] AS [ServiceFacilityLocation_City_State_Zip], 
+    [IntakeClaimLineData835].[ServiceFacilityLocation_REF01] AS [ServiceFacilityLocation_REF01], 
+    [IntakeClaimLineData835].[ServiceFacilityLocation_REF02] AS [ServiceFacilityLocation_REF02], 
+    [IntakeClaimLineData835].[ReferringProviderNameLastOrOrganizationName] AS [ReferringProviderNameLastOrOrganizationName], 
+    [IntakeClaimLineData835].[ReferringProviderNameFirst] AS [ReferringProviderNameFirst], 
+    [IntakeClaimLineData835].[NM108_ReferringProvider] AS [NM108_ReferringProvider], 
+    [IntakeClaimLineData835].[NM109_ReferringProvider] AS [NM109_ReferringProvider], 
+    [IntakeClaimLineData835].[ReferringProvider_REF01] AS [ReferringProvider_REF01], 
+    [IntakeClaimLineData835].[ReferringProvider_REF02] AS [ReferringProvider_REF02], 
+    [IntakeClaimLineData835].[SBR01_PayerResponsibilityCode] AS [SBR01_PayerResponsibilityCode], 
+    [IntakeClaimLineData835].[SBR02] AS [SBR02], 
+    [IntakeClaimLineData835].[SBR03] AS [SBR03], 
+    [IntakeClaimLineData835].[SBR04] AS [SBR04], 
+    [IntakeClaimLineData835].[SBR09] AS [SBR09], 
+    [IntakeClaimLineData835].[CAS01_ClaimAdjustMentGroupCode] AS [CAS01_ClaimAdjustMentGroupCode], 
+    [IntakeClaimLineData835].[CAS02] AS [CAS02], 
+    [IntakeClaimLineData835].[CAS03] AS [CAS03], 
+    [IntakeClaimLineData835].[CAS04] AS [CAS04], 
+    [IntakeClaimLineData835].[CAS05] AS [CAS05], 
+    [IntakeClaimLineData835].[CAS06] AS [CAS06], 
+    [IntakeClaimLineData835].[CAS07] AS [CAS07], 
+    [IntakeClaimLineData835].[CAS08] AS [CAS08], 
+    [IntakeClaimLineData835].[CAS09] AS [CAS09], 
+    [IntakeClaimLineData835].[CAS10] AS [CAS10], 
+    [IntakeClaimLineData835].[CAS11] AS [CAS11], 
+    [IntakeClaimLineData835].[CAS12] AS [CAS12], 
+    [IntakeClaimLineData835].[CAS13] AS [CAS13], 
+    [IntakeClaimLineData835].[CAS14] AS [CAS14], 
+    [IntakeClaimLineData835].[CAS15] AS [CAS15], 
+    [IntakeClaimLineData835].[CAS16] AS [CAS16], 
+    [IntakeClaimLineData835].[CAS17] AS [CAS17], 
+    [IntakeClaimLineData835].[CAS18] AS [CAS18], 
+    [IntakeClaimLineData835].[CAS19] AS [CAS19], 
+    [IntakeClaimLineData835].[AMT01_PayerPaidAmmount] AS [AMT01_PayerPaidAmmount], 
+    [IntakeClaimLineData835].[AMT02_Amount] AS [AMT02_Amount], 
+    [IntakeClaimLineData835].[AMT01_RemainingPatientLiability] AS [AMT01_RemainingPatientLiability], 
+    [IntakeClaimLineData835].[AMT02_RPAmount] AS [AMT02_RPAmount], 
+    [IntakeClaimLineData835].[AMT01_NonCoveredChargeAmmount] AS [AMT01_NonCoveredChargeAmmount], 
+    [IntakeClaimLineData835].[AMT02_NCAmount] AS [AMT02_NCAmount], 
+    [IntakeClaimLineData835].[OtherInsuranceCoverage_OI03] AS [OtherInsuranceCoverage_OI03], 
+    [IntakeClaimLineData835].[OtherInsuranceCoverage_OI06] AS [OtherInsuranceCoverage_OI06], 
+    [IntakeClaimLineData835].[MIA01] AS [MIA01], 
+    [IntakeClaimLineData835].[MIA02] AS [MIA02], 
+    [IntakeClaimLineData835].[MIA03] AS [MIA03], 
+    [IntakeClaimLineData835].[MIA04] AS [MIA04], 
+    [IntakeClaimLineData835].[MIA05] AS [MIA05], 
+    [IntakeClaimLineData835].[MIA06] AS [MIA06], 
+    [IntakeClaimLineData835].[MIA07] AS [MIA07], 
+    [IntakeClaimLineData835].[MIA08] AS [MIA08], 
+    [IntakeClaimLineData835].[MIA09] AS [MIA09], 
+    [IntakeClaimLineData835].[MIA10] AS [MIA10], 
+    [IntakeClaimLineData835].[MOA01] AS [MOA01], 
+    [IntakeClaimLineData835].[MOA02] AS [MOA02], 
+    [IntakeClaimLineData835].[MOA03] AS [MOA03], 
+    [IntakeClaimLineData835].[MOA04] AS [MOA04], 
+    [IntakeClaimLineData835].[MOA05] AS [MOA05], 
+    [IntakeClaimLineData835].[MOA06] AS [MOA06], 
+    [IntakeClaimLineData835].[MOA07] AS [MOA07], 
+    [IntakeClaimLineData835].[MOA08] AS [MOA08], 
+    [IntakeClaimLineData835].[MOA09] AS [MOA09], 
+    [IntakeClaimLineData835].[MOA10] AS [MOA10], 
+    [IntakeClaimLineData835].[OtherSubscriberNameLastOrOrganizationName] AS [OtherSubscriberNameLastOrOrganizationName], 
+    [IntakeClaimLineData835].[OtherSubscriberNameFirst] AS [OtherSubscriberNameFirst], 
+    [IntakeClaimLineData835].[OtherSubscriber_NM102] AS [OtherSubscriber_NM102], 
+    [IntakeClaimLineData835].[NM108_OtherSubscriber] AS [NM108_OtherSubscriber], 
+    [IntakeClaimLineData835].[NM109_OtherSubscriber] AS [NM109_OtherSubscriber], 
+    [IntakeClaimLineData835].[OtherSubscriberAddress] AS [OtherSubscriberAddress], 
+    [IntakeClaimLineData835].[OtherSubscriberCityStateZip] AS [OtherSubscriberCityStateZip], 
+    [IntakeClaimLineData835].[OtherSubscriber_REF01] AS [OtherSubscriber_REF01], 
+    [IntakeClaimLineData835].[OtherSubscriber_RF02] AS [OtherSubscriber_RF02], 
+    [IntakeClaimLineData835].[OtherPayerNameLastOrOrganizationName] AS [OtherPayerNameLastOrOrganizationName], 
+    [IntakeClaimLineData835].[OtherPayerNameFirst] AS [OtherPayerNameFirst], 
+    [IntakeClaimLineData835].[OtherPayer_NM102] AS [OtherPayer_NM102], 
+    [IntakeClaimLineData835].[NM108_OtherPayer] AS [NM108_OtherPayer], 
+    [IntakeClaimLineData835].[NM109_OtherPayer] AS [NM109_OtherPayer], 
+    [IntakeClaimLineData835].[OtherPayerAddress] AS [OtherPayerAddress], 
+    [IntakeClaimLineData835].[OtherPayerCityStateZip] AS [OtherPayerCityStateZip], 
+    [IntakeClaimLineData835].[ClaimCheckOrRemittanceDate] AS [ClaimCheckOrRemittanceDate], 
+    [IntakeClaimLineData835].[LX] AS [LX], 
+    [IntakeClaimLineData835].[SV201] AS [SV201], 
+    [IntakeClaimLineData835].[SV202] AS [SV202], 
+    [IntakeClaimLineData835].[SV202_1] AS [SV202_1], 
+    [IntakeClaimLineData835].[SV202_2] AS [SV202_2], 
+    [IntakeClaimLineData835].[SV202_3] AS [SV202_3], 
+    [IntakeClaimLineData835].[SV202_4] AS [SV202_4], 
+    [IntakeClaimLineData835].[SV202_5] AS [SV202_5], 
+    [IntakeClaimLineData835].[SV202_6] AS [SV202_6], 
+    [IntakeClaimLineData835].[SV202_7] AS [SV202_7], 
+    [IntakeClaimLineData835].[SV203] AS [SV203], 
+    [IntakeClaimLineData835].[SV204] AS [SV204], 
+    [IntakeClaimLineData835].[SV205] AS [SV205], 
+    [IntakeClaimLineData835].[SV207] AS [SV207], 
+    [IntakeClaimLineData835].[LinSupplimentalInfo_PWK01] AS [LinSupplimentalInfo_PWK01], 
+    [IntakeClaimLineData835].[PWK02] AS [PWK02], 
+    [IntakeClaimLineData835].[PWK05] AS [PWK05], 
+    [IntakeClaimLineData835].[ServiceDate] AS [ServiceDate], 
+    [IntakeClaimLineData835].[LIN02_DrugIdentification] AS [LIN02_DrugIdentification], 
+    [IntakeClaimLineData835].[LIN03] AS [LIN03], 
+    [IntakeClaimLineData835].[CTP04_DrugQuantity] AS [CTP04_DrugQuantity], 
+    [IntakeClaimLineData835].[CTP05] AS [CTP05], 
+    [IntakeClaimLineData835].[CTP05_1] AS [CTP05_1], 
+    [IntakeClaimLineData835].[SVD01] AS [SVD01], 
+    [IntakeClaimLineData835].[SVD02] AS [SVD02], 
+    [IntakeClaimLineData835].[SVD03] AS [SVD03], 
+    [IntakeClaimLineData835].[SVD03_1] AS [SVD03_1], 
+    [IntakeClaimLineData835].[SVD03_2] AS [SVD03_2], 
+    [IntakeClaimLineData835].[SVD03_3] AS [SVD03_3], 
+    [IntakeClaimLineData835].[SVD05] AS [SVD05], 
+    [IntakeClaimLineData835].[LineCheckOrRemittanceDate] AS [LineCheckOrRemittanceDate], 
+    [IntakeClaimLineData835].[RemainingPatientLiability] AS [RemainingPatientLiability], 
+    [IntakeClaimLineData835].[ErrorCode] AS [ErrorCode], 
+    [IntakeClaimLineData835].[ClaimLineLevelErrors] AS [ClaimLineLevelErrors], 
+    [IntakeClaimLineData835].[Field1] AS [Field1], 
+    [IntakeClaimLineData835].[Field2] AS [Field2], 
+    [IntakeClaimLineData835].[Field3] AS [Field3], 
+    [IntakeClaimLineData835].[Field4] AS [Field4]
+    FROM [dbo].[IntakeClaimLineData835] AS [IntakeClaimLineData835]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="LCD_Covered_Original" EntityType="Self.LCD_Covered_Original" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [LCD_Covered_Original].[SeqId] AS [SeqId], 
+    [LCD_Covered_Original].[CPT_HCPCS] AS [CPT_HCPCS], 
+    [LCD_Covered_Original].[Exclusion_Type] AS [Exclusion_Type], 
+    [LCD_Covered_Original].[ICD_Code_Range_Start] AS [ICD_Code_Range_Start], 
+    [LCD_Covered_Original].[ICD_Code_Range_End] AS [ICD_Code_Range_End], 
+    [LCD_Covered_Original].[Policy_Rule_Summary_or_Reference] AS [Policy_Rule_Summary_or_Reference], 
+    [LCD_Covered_Original].[ABN_Form_Reason] AS [ABN_Form_Reason], 
+    [LCD_Covered_Original].[ABN_Spanish_Form_Reason] AS [ABN_Spanish_Form_Reason], 
+    [LCD_Covered_Original].[Code_Effective_Date] AS [Code_Effective_Date], 
+    [LCD_Covered_Original].[Code_Termination_Date] AS [Code_Termination_Date], 
+    [LCD_Covered_Original].[Frequency_Limit] AS [Frequency_Limit], 
+    [LCD_Covered_Original].[Frequency_Procedure_Limit] AS [Frequency_Procedure_Limit], 
+    [LCD_Covered_Original].[Frequency_Time_Span_Unit] AS [Frequency_Time_Span_Unit], 
+    [LCD_Covered_Original].[Frequency_Time_Span_Number] AS [Frequency_Time_Span_Number], 
+    [LCD_Covered_Original].[Sex] AS [Sex], 
+    [LCD_Covered_Original].[Age_Minimum] AS [Age_Minimum], 
+    [LCD_Covered_Original].[Age_Maximum] AS [Age_Maximum], 
+    [LCD_Covered_Original].[Age_Unit] AS [Age_Unit], 
+    [LCD_Covered_Original].[Policy_Rule_Key] AS [Policy_Rule_Key], 
+    [LCD_Covered_Original].[Policy_Rule_NameorDescriptor] AS [Policy_Rule_NameorDescriptor], 
+    [LCD_Covered_Original].[Diagnosis_Group_Identifier] AS [Diagnosis_Group_Identifier], 
+    [LCD_Covered_Original].[Diagnosis_Group_Logic] AS [Diagnosis_Group_Logic], 
+    [LCD_Covered_Original].[Diagnosis_Coding_Order] AS [Diagnosis_Coding_Order], 
+    [LCD_Covered_Original].[ExtraField1] AS [ExtraField1]
+    FROM [dbo].[LCD_Covered_Original] AS [LCD_Covered_Original]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

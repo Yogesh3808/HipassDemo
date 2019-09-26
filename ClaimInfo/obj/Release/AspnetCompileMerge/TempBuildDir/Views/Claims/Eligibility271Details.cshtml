@@ -1,0 +1,676 @@
+﻿@model ClaimInfo.Models.Eligibility270_Details
+@{
+    ViewBag.Title = "Eligibility271Details";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2>Eligibility271Details</h2>
+
+<div class="rightpart">
+    <div class="dashBx">
+        <div class="clearfix"></div>
+        @*<h2>Transaction Details</h2>
+            <hr />*@
+        <div style="border-bottom: 1.5px solid #139DC9;">
+            <img src="~/Images/Search.png" style="width:14px; height:14px;" />
+            <input type="text" id="MyCustomSearch" style="color: #139DC9; font-weight: bold;" placeholder="Search Transaction Details" class="mySearchbox" name="min">
+        </div>
+        <br />
+        <div class="dashformBx  dashformBx2 clearfix">
+            <div class="dashfrm-L">
+                @Html.TextBox("fileName-filter", "", new { @placeholder = "Transaction Id", @class = "dashInp form-control input-filter", @search_index = "1" })
+            </div>
+            <div class="dashfrm-M">
+                @Html.TextBox("fileStatus-filter", "", new { @placeholder = "Date", @class = "dashInp form-control input-filter", @search_index = "2" })
+            </div>
+            <div class="dashfrm-M">
+                @Html.TextBox("submitter-filter", "", new { @placeholder = "Status", @class = " dashInp form-control input-filter", @search_index = "12" })
+            </div>
+            <div class="dashfrm-R">
+                @Html.TextBox("reciever-filter", "", new { @placeholder = "Submitter", @class = "dashInp form-control input-filter", @search_index = "13" })
+            </div>
+
+            @*<div class="dashfrm-L1">
+                   <label class="lblTxtCountHeader"> DocuStream Mismatch </label>
+                <br /><br />
+                <label class="lblCount" style="color:#ff0000;"> 17 </label>
+                </div>*@
+        </div>
+
+        <div class="dashBx">
+            <div style="width:48%; float:left;">
+                <table cellpadding="0" cellspacing="0" class="Grid">
+                    <tr style="color: white;">
+                        <th>Transaction Id</th>
+                        <th>Transaction Date</th>
+                        <th>Trans Type</th>
+                        <th>Submitter</th>
+                        <th>Error Code</th>
+                        <th>View</th>
+                    </tr>
+                    <tr>
+
+                        @foreach (var item in Model.objVisitDetailsList)
+                        {
+                            if (@Model.Status == "Fail")
+                            {
+                                if (item.Trans_type == "Fail")
+                                {
+                                <tr>
+                                    <td>@item.Trans_ID</td>
+                                    <td>@item.Date</td>
+                                    <td>@item.Trans_type</td>
+                                    <td>@item.Submiter</td>
+                                    <td>@item.Error_Code</td>
+
+                                    <td><button id="view" onclick="myFunction()" style="background-color:#139DC9; width:50px; height:30px; color:white;">View</button></td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td>@item.Trans_ID</td>
+                                <td>@item.Date</td>
+                                <td>@item.Trans_type</td>
+                                <td>@item.Submiter</td>
+                                <td>@item.Error_Code</td>
+                                <td><button id="view" onclick="myFunction()" style="background-color:#139DC9; width:50px; height:30px; color:white;">View</button></td>
+
+                            </tr>}
+                    }
+                    </table>
+                </div>
+
+                <div class="accordion_container" id="transaction_view" style="width:50%; display:none; float:right;">
+                    <div class="accordion_head" style="color: white;">
+                        276 Request Transaction Request <strong>
+
+                        </strong>
+                        @*   <span class="plusminus">+</span>*@
+                    </div>
+                    <div class="accordion_body">
+                        <p>
+                            ST*276*3707*005010X212
+                            BHT*0010*13*ABC276XYZ*20120128*1425
+                            HL*1**20*1
+                            NM1*PR*2*BCBS DISNEY*****PI*8584537845
+                            HL*2*1*21*1
+                            NM1*41*2*UCLA MEDICAL CENTER*****46*1982
+                            HL*3*2*19*1
+                            NM1*1P*2*UCLA MEDICAL CENTER*****XX*1215193883
+                            HL*4*3*22*0
+                            DMG*D8*19281118*M
+                            NM1*IL*1*MOUSE*MICKEY****MI*60345914A
+                            TRN*1*ABC9001
+                            REF*BLT*221
+                            SE*24*3707..............
+
+                        </p>
+                    </div>
+                    <div class="accordion_head" style="color: white;">
+                        277 Transaction Response <strong>
+
+                        </strong>
+                        @*<span class="plusminus">+</span>*@
+                    </div>
+                    <div class="accordion_body">
+                        <p>
+                            ST*277*3708*005010X212
+                            BHT*0010*08*ABC276XYZ*20120128*1426*DG
+                            HL*1**20*1
+                            NM1*PR*2*BCBS DISNEY*****PI*8584537845
+                            HL*2*1*21*1
+                            NM1*41*2*UCLA MEDICAL CENTER*****46*1982
+                            HL*3*2*19*1
+                            NM1*1P*2*UCLA MEDICAL CENTER*****XX*1215193883
+                            HL*4*3*22*0
+                            DMG*D8*19281118*M
+                            NM1*QC*1*MOUSE*MICKEY****MI*60345914A
+                            TRN*1*ABC9001..............
+
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <style>
+        .Grid {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+
+            .Grid th {
+                background-color: #139DC9;
+                color: white;
+                font-weight: bold;
+            }
+
+            .Grid th, .Grid td {
+                padding: 5px;
+                border: 1px solid #ccc;
+            }
+
+            .Grid img {
+                cursor: pointer;
+            }
+
+        .ChildGrid {
+            width: 100%;
+        }
+
+            .ChildGrid th {
+                background-color: #6C6C6C;
+                color: #fff;
+                font-weight: bold;
+            }
+    </style>
+    <script>
+        function myFunction() {
+            $("#transaction_view").show();
+        }
+    </script>
+    <script type="text/javascript">
+        $(".loadPartialView").click(function () {
+            var name = $(this).attr('id');
+            //alert(name);
+            //var hr = $(this).attr("href");
+            //alert(hr);
+           // $('#PartialDivDashboard').load("@Url.Action("ClaimCounts", "Claims", new { @sDate = 20190123 })");
+            //$("#PartialDivDashboard").load("../Claims/ClaimCounts", new { sDate: name });
+            $.ajax({
+                type: "POST",
+                url: "/Claims/TransCount",
+                data: '{sDate: "' + name + '" }',
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                success: function (response) {
+                    $('#EligibilityPartialView').html(response);
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+});
+    </script>
+    <script>
+        $(function () {
+
+            $('#processSummary').DataTable({
+                //"processing": true,
+                //"bLengthChange": false,
+                //"bLengthChange": false,
+                //"language": {
+                //    "processing": "<img src='/Content/Images/loading.gif' id='ProgressImage'/>" //add a loading image,simply putting <img src="loader.gif" /> tag.
+                //},
+                //"serverSide": true,
+                //"searching": true,
+                //"ordering": true,
+                ////"scrollY": 200,
+                ////"scrollX": true,
+                //"responsive": true,
+                //"ajax":
+                //{
+                //    "url": "/Claims/GetProcessSummary",
+                //    "type": "POST",
+                //    "dataType": "JSON"
+                //},
+                //"columns":
+                //    [
+
+                //        {
+                //            data: 'TypeofTransaction'
+
+                //        },
+                //        { data: 'AvgResTime' },
+                //        //{ data: 'ISA09' },
+                //        { data: 'TotalNumOfReq' },
+                //        { data: 'Success' },
+                //        {
+                //            data: 'Error',
+                //            "render": function (data, type, row, meta) {
+                //                if (type === 'display') {
+                //                    data = '<a class="fileTag" style="color:#6AA2B8;" href="/Claims/ErrorCountDetails?ErrorCount=' + row.Error + '&error_claimcount=0">' + data + '</a>';
+                //                }
+                //                return data;
+                //            }
+                //        },
+
+                //        //{ data: 'CreateDateTime' },
+                //        //{ data: 'ClaimCount' },
+                //        //{ data: 'error_claimcount' }
+                //        //{
+                //        //    data: 'error_claimcount',
+                //        //    "render": function (data, type, row, meta) {
+                //        //        if (type === 'display') {
+                //        //            data = '<a class="btn btn-danger"  href="/Claims/IntakeClaimData?FileID=' + row.FileID + '&error_claimcount=' + row.error_claimcount + '">' + data + '</a>';
+                //        //        }
+                //        //        if (row.error_claimcount != "0")
+                //        //            return data;
+                //        //        else
+                //        //            return "";
+                //        //    }
+                //        //},
+
+                //        // { data: 'Field1' },
+                //        //{ data: 'Field2' }
+
+                //    ]
+                ////, "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+                ////    //alert(iDisplayIndex, iDisplayIndexFull);
+                ////    //if (iDisplayIndex % 2 == 0) {
+                ////    //    $(nRow).removeClass('myodd myeven');
+                ////    //    $(nRow).addClass('myodd');
+                ////    //} else {
+                ////    //    $(nRow).removeClass('myodd myeven');
+                ////    //    $(nRow).addClass('myeven');
+                ////    //}
+                ////    if (aData['FileStatus'] == 'Failed') {
+                ////        //$('td', nRow).css('background-color', '#FF5959');
+                ////        //$('td', nRow).css('color', 'white');
+
+                ////    }
+                ////}
+            });
+
+
+
+
+
+
+
+
+        });
+
+
+
+    </script>
+    @section js{
+        <script type="text/javascript">
+            $(".loadPartialView").click(function () {
+                var name = $(this).attr('id');
+                //alert(name);
+
+                //$.ajax({
+                //    type: "POST",
+                //    url: "/Claims/ClaimCounts",
+                //    data: '{sDate: "' + name + '" }',
+                //    contentType: "application/json; charset=utf-8",
+                //    dataType: "html",
+                //    success: function (response) {
+                //        $('#PartialDivDashboard').html(response);
+                //    },
+                //    failure: function (response) {
+                //        alert(response.responseText);
+                //    },
+                //    error: function (response) {
+                //        alert(response.responseText);
+                //    }
+                //});
+            });
+        </script>
+
+        <style>
+
+            .accordion-containerchild {
+                position: relative;
+                /*max-width: 500px;*/
+                height: auto;
+                margin: 10px auto;
+                padding: 0 18px;
+            }
+
+                .accordion-containerchild > h2 {
+                    text-align: center;
+                    color: #fff;
+                    padding-bottom: 5px;
+                    margin-bottom: 20px;
+                    padding-bottom: 15px;
+                    border-bottom: 1px solid #ddd;
+                }
+
+            .setchild {
+                position: relative;
+                width: 100%;
+                height: auto;
+                background-color: #f5f5f5;
+            }
+
+                .setchild > a {
+                    display: block;
+                    padding: 10px 15px;
+                    text-decoration: none;
+                    color: #555;
+                    font-weight: 600;
+                    border-bottom: 1px solid #ddd;
+                    -webkit-transition: all 0.2s linear;
+                    -moz-transition: all 0.2s linear;
+                    transition: all 0.2s linear;
+                }
+
+                    .setchild > a i {
+                        float: right;
+                        margin-top: 2px;
+                    }
+
+                    .setchild > a.active {
+                        background-color: #3399cc;
+                        color: #fff;
+                    }
+
+            .contentchild {
+                background-color: #fff;
+                /*border-bottom: 1px solid #ddd;*/
+                display: none;
+                border: 1px solid #139DC9;
+            }
+
+                .contentchild p {
+                    padding: 10px 15px;
+                    margin: 0;
+                    color: #333;
+                }
+        </style>
+        <script>
+            $(document).ready(function () {
+                $(".setchild > a").on("click", function () {
+                    var name = $(this).attr('id');
+                    //alert(name);
+                    //var url = "/Claims/DashboardChild?sDate=" + name;
+                    //$('#' + name + 'child').load(url);
+
+                    if ($(this).hasClass("active")) {
+                        $(this).removeClass("active");
+                        $(this)
+                            .siblings(".contentchild")
+                            .slideUp(200);
+                        $(".setchild > a i")
+                            .removeClass("fa-minus")
+                            .addClass("fa-plus");
+                    } else {
+                        $(".setchild > a i")
+                            .removeClass("fa-minus")
+                            .addClass("fa-plus");
+                        $(this)
+                            .find("i")
+                            .removeClass("fa-plus")
+                            .addClass("fa-minus");
+                        $(".setchild > a").removeClass("active");
+                        $(this).addClass("active");
+                        $(".contentchild").slideUp(200);
+                        $(this)
+                            .siblings(".contentchild")
+                            .slideDown(200);
+                    }
+                });
+            });
+
+        </script>
+        @* Parent CSS *@
+        <style>
+            /*body {
+                background-color: #567;
+                padding: 0 10px;
+                font-family: 'Open Sans', sans-serif;
+            }*/
+
+            .accordion-container {
+                position: relative;
+                /*max-width: 500px;*/
+                height: auto;
+                margin: 10px auto;
+            }
+
+                .accordion-container > h2 {
+                    text-align: center;
+                    color: #fff;
+                    padding-bottom: 5px;
+                    margin-bottom: 20px;
+                    padding-bottom: 15px;
+                    border-bottom: 1px solid #ddd;
+                }
+
+            .set {
+                position: relative;
+                width: 100%;
+                height: auto;
+                background-color: #f5f5f5;
+            }
+
+                .set > a {
+                    display: block;
+                    padding: 10px 15px;
+                    text-decoration: none;
+                    color: #555;
+                    font-weight: 600;
+                    border-bottom: 1px solid #ddd;
+                    -webkit-transition: all 0.2s linear;
+                    -moz-transition: all 0.2s linear;
+                    transition: all 0.2s linear;
+                }
+
+                    .set > a i {
+                        float: right;
+                        margin-top: 2px;
+                    }
+
+                    .set > a.active {
+                        background-color: #3399cc;
+                        color: #fff;
+                    }
+
+            .content {
+                background-color: #fff;
+                /*border-bottom: 1px solid #ddd;*/
+                display: none;
+                border: 1px solid #139DC9;
+            }
+
+                .content p {
+                    padding: 10px 15px;
+                    margin: 0;
+                    color: #333;
+                }
+        </style>
+        <script>
+            $(document).ready(function () {
+                $(".set > a").on("click", function () {
+                    if ($(this).hasClass("active")) {
+                        $(this).removeClass("active");
+                        $(this)
+                            .siblings(".content")
+                            .slideUp(200);
+                        $(".set > a i")
+                            .removeClass("fa-minus")
+                            .addClass("fa-plus");
+                    } else {
+                        $(".set > a i")
+                            .removeClass("fa-minus")
+                            .addClass("fa-plus");
+                        $(this)
+                            .find("i")
+                            .removeClass("fa-plus")
+                            .addClass("fa-minus");
+                        $(".set > a").removeClass("active");
+                        $(this).addClass("active");
+                        $(".content").slideUp(200);
+                        $(this)
+                            .siblings(".content")
+                            .slideDown(200);
+                    }
+                });
+            });
+
+        </script>
+    }
+
+    <style>
+       
+        .accordion_container {
+            /*width: 500px;*/
+        }
+
+        .accordion_head {
+            /*background-color: skyblue;*/
+            background-color: #139DC9;
+            color: black;
+            cursor: pointer;
+            font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+            font-size: 14px;
+            margin: 0 0 1px 0;
+            padding: 7px 11px;
+            font-weight: bold;
+        }
+
+        .accordion_body {
+            /*background: lightgray;*/
+            border: 1px solid #139DC9;
+            font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+            padding: 5px;
+        }
+
+            .accordion_body p {
+                padding: 18px 5px;
+                margin: 0px;
+            }
+
+        .plusminus {
+            float: right;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            //toggle the component with class accordion_body
+            //    $(".accordion_head").click(function () {
+            //        if ($('.accordion_body').is(':visible')) {
+            //            $(".accordion_body").slideUp(300);
+            //            $(".plusminus").text('+');
+            //        }
+            //        if ($(this).next(".accordion_body").is(':visible')) {
+            //            $(this).next(".accordion_body").slideUp(300);
+            //            $(this).children(".plusminus").text('+');
+            //        } else {
+            //            $(this).next(".accordion_body").slideDown(300);
+            //            $(this).children(".plusminus").text('-');
+            //        }
+            //    });
+            //});
+    </script>
+   
+
+    <style type="text/css">
+        table {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+
+            table th {
+                background-color: #139DC9;
+                color: #333;
+                font-weight: bold;
+            }
+
+            table th, table td {
+                padding: 5px;
+                border: 1px solid #ccc;
+            }
+
+            table, table table td {
+                border: 0px solid #ccc;
+            }
+    </style>
+
+
+    <style>
+
+
+        .accordion {
+            font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 5px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+            margin-top: 10px;
+        }
+
+            .active, .accordion:hover {
+                background-color: #139DC9;
+            }
+
+        .panel {
+            font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+            border: 1px solid #139DC9;
+        }
+    </style>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+        function openCity(cityName) {
+            var i;
+            var x = document.getElementsByClassName("city");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            document.getElementById(cityName).style.display = "block";
+        }</script>
+    <style>
+
+
+        .accordion {
+            font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 5px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+            margin-top: 10px;
+        }
+
+            .active, .accordion:hover {
+                background-color: #139DC9;
+            }
+
+        .panel {
+            font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+            border: 1px solid #139DC9;
+        }
+    </style>

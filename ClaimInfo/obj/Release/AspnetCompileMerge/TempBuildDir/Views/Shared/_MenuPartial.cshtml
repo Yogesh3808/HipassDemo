@@ -1,0 +1,483 @@
+﻿<div class="leftPart">
+    <div style="padding-left:10px;">
+        <br /><br />
+        <label id="btnInbound" style="border:none;float:left; font-size:15px;width:80px; color:black;">Inbound</label>
+
+
+        <label id="btnoutbound" style=" float:right; font-size:15px; margin-right:2px; width:80px; color:black;">Outbound</label>
+
+        <h1 id="hrinbouned" style="text-decoration:overline; background-color: #139DC9; float:left; font-size:15px;height:1.5px; width:60px;"></h1>
+        <h4 id="hroutbouned" style="text-decoration:overline; background-color: #139DC9; float:right; font-size:15px;height:1.5px; width:70px; margin-right:10px; display:none;"></h4>
+    </div>
+
+    <div class="naviList">
+        <div class="naviList" style="overflow: auto; margin-top:70px;  background: #fff;width: 200px;height: 75%;position: fixed;border-right: #e5e5e5 solid 1px;/*top: 58px;*/top: 65px;">
+
+            <ul id="inbouned" style="display:none;">
+                @*<li>
+                            <a href="javascript:void(0)" class="rightArrow">837 Encounters</a>
+                            <ul class="subnav">
+                                <li><a href="@Url.Action("index","Encounter").ToLower()" class="rightArrow">Encounters Dashboard</a></li>
+                                <li><a href="@Url.Action("ClaimsDailyAudit","Encounter").ToLower()">Encounters Audit Summary</a></li>
+                                <li><a href="@Url.Action("ClaimsDetails","Encounter").ToLower()" class="rightArrow">Details </a></li>
+                                <li><a href="@Url.Ac
+        tion("ClaimsDailyRejection","Encounter").ToLower()">Errors</a></li>
+                                <li><a href="@Url.Action("ResearchQueue","Encounter").ToLower()">Research Queue</a></li>
+                               </ul>
+                            <hr />
+                        </li>*@
+                @*<li>
+
+            <a href="javascript:void(0)" class="rightArrow">270 Eligibility</a>
+            <ul class="subnav">
+                <li><a href="@Url.Action("Claims270","claims").ToLower()" class="rightArrow">270 Real Time</a></li>
+                <li><a href="@Url.Action("ErrorCountDetails","claims",new { @ErrorCount="pie", @error_claimcount=""}).ToLower()">270 Audit Summary</a></li>
+                <li><a href="@Url.Action("Claims270Details","claims").ToLower()">Details</a></li>
+                <li><a href="#">270 Batch</a></li>
+            </ul>
+            <hr />
+        </li>
+        <li>
+            <a href="javascript:void(0)" class="rightArrow">276 Claim Status</a>
+            <ul class="subnav">
+                <li><a href="@Url.Action("RT276","Eligibility").ToLower()" class="rightArrow">276 Real Time</a></li>
+                <li><a href="@Url.Action("Claims270Details","claims").ToLower()">Details</a></li>
+                <li><a href="#">276 Batch</a></li>
+            </ul>
+            <hr />
+        </li>*@
+                @*<li>
+            <a href="javascript:void(0)" class="rightArrow">837 Claims</a>
+            <ul class="subnav">
+                <li><a href="@Url.Action("index","claims").ToLower()" class="rightArrow">Claims Dashboard</a></li>
+                <li><a href="@Url.Action("ClaimsDailyAudit","claims").ToLower()">Claims Audit Summary</a></li>
+                <li><a href="@Url.Action("ClaimsDetails","claims").ToLower()" class="rightArrow">Details </a></li>
+                <li><a href="@Url.Action("ClaimsDailyRejection","claims").ToLower()">Errors</a></li>
+                <li><a href="@Url.Action("ResearchQueue","claims").ToLower()">Research Queue</a></li>
+                <li><a href="@Url.Action("MatchClaims","claims").ToLower()">Match Claims</a></li>
+            </ul>
+            <hr />
+        </li>
+        <li>
+            <a href="javascript:void(0)" class="rightArrow">835 Claim Payment</a>
+            <ul class="subnav">
+                <li><a href="@Url.Action("index","ClaimPayment").ToLower()" class="rightArrow">835 Dashboard</a></li>
+                <li><a href="@Url.Action("Details835","ClaimPayment").ToLower()" class="rightArrow">Details </a></li>
+            </ul>
+            <hr />
+        </li>
+        <li>
+            <a href="javascript:void(0)" class="rightArrow">278 HC Service</a>
+            <ul class="subnav">
+                <li><a href="@Url.Action("index","Claims278").ToLower()" class="rightArrow">278 Dashboard</a></li>
+                <li><a href="@Url.Action("Details","Claims278").ToLower()" class="rightArrow">Details </a></li>
+            </ul>
+            <hr />
+        </li>
+        <li>
+            <a href="javascript:void(0)" class="rightArrow"> 834 Enrollments</a>
+            <ul class="subnav">
+                <li><a href="@Url.Action("Dashboard","enrollments").ToLower()">Dashboard</a></li>
+                <li><a href="@Url.Action("Audit","enrollments").ToLower()">Details</a></li>
+                <li><a href="@Url.Action("Errors","enrollments").ToLower()">Errors</a></li>
+                <li><a href="@Url.Action("Outbound","enrollments").ToLower()">Outbound</a></li>
+            </ul>
+            <hr />
+        </li>*@
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">
+                        270 Eligibility Real-time
+                    </a>
+                    <ul class="subnav">
+                        <li><a href="@Url.Action("Claims270", "EligibilityRealtime270").ToLower()" class="rightArrow">270 Real Time</a></li>
+                        <li><a href="@Url.Action("ErrorCountDetails", "EligibilityRealtime270", new {@ErrorCount = "pie", @error_claimcount = ""}).ToLower()">270 Audit Summary</a></li>
+                        <li><a href="@Url.Action("Claims270Details", "EligibilityRealtime270").ToLower()">Eligibility Details</a></li>
+                    </ul>
+                    <hr />
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">270 Eligibility Batch</a>
+                    <ul class="subnav">
+                        @*<li><a href="@Url.Action("Claims270", "claims").ToLower()" class="rightArrow">270 Real Time</a></li>
+                <li><a href="@Url.Action("ErrorCountDetails", "claims", new {@ErrorCount = "pie", @error_claimcount = ""}).ToLower()">270 Audit Summary</a></li>*@
+                        <li><a href="@Url.Action("Claims270Details", "claims").ToLower()">Eligibility Details</a></li>
+                        <li><a href="#">270 Batch</a></li>
+                    </ul>
+                    <hr />
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">276 Claim Status Real-time</a>
+                    <ul class="subnav">
+                        <li><a href="@Url.Action("RT276", "Eligibility").ToLower()" class="rightArrow">276 Real Time</a></li>
+                        <li><a href="@Url.Action("Claims270Details", "Eligibility").ToLower()">Claim Status Details</a></li>
+                    </ul>
+                    <hr />
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">276 Batch </a>
+                    <ul class="subnav">
+                        <li><a href="@Url.Action("RT276", "Batch276").ToLower()" class="rightArrow">276 Real Time</a></li>
+                        <li><a href="@Url.Action("Claims270Details", "Batch276").ToLower()">Batch Details</a></li>
+                        <li><a href="#">276 Batch</a></li>
+                    </ul>
+                    <hr />
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">274 Provider Info</a>
+                    <hr />
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">275 Patient Info</a>
+                    <hr />
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">278 HC Service</a>
+                    <ul class="subnav">
+                        <li><a href="@Url.Action("index", "Claims278").ToLower()" class="rightArrow">278 Dashboard</a></li>
+                        <li><a href="@Url.Action("Details", "Claims278").ToLower()" class="rightArrow">Service Details </a></li>
+                    </ul>
+                    <hr />
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">837 Claims Inbound</a>
+                    <ul class="subnav">
+                        <li><a href="@Url.Action("index", "Claims837Inbound").ToLower()" class="rightArrow">Claims Dashboard</a></li>
+                        <li><a href="@Url.Action("ClaimsDailyAudit", "Claims837Inbound").ToLower()">Claims Audit Summary</a></li>
+                        <li><a href="@Url.Action("ClaimsDetails", "Claims837Inbound").ToLower()" class="rightArrow">Claims Details </a></li>
+                        <li><a href="@Url.Action("ClaimsDailyRejection", "Claims837Inbound").ToLower()">Claims Errors</a></li>
+                        <li><a href="@Url.Action("ResearchQueue", "Claims837Inbound").ToLower()">Research Queue</a></li>
+                        <li><a href="@Url.Action("MatchClaims", "Claims837Inbound").ToLower()">Match Claims</a></li>
+                        <li><a href="@Url.Action("submitClaim", "Claims837Inbound").ToLower()">Submit Claims</a></li>
+                    </ul>
+                    <hr />
+                </li>
+                @*<li>
+            <a href="javascript:void(0)" class="rightArrow">
+                837 Claims Outbound
+            </a>
+            <ul class="subnav">
+                <li><a href="@Url.Action("index", "claims").ToLower()" class="rightArrow">Claims Dashboard</a></li>
+                <li><a href="@Url.Action("ClaimsDailyAudit", "claims").ToLower()">Claims Audit Summary</a></li>
+                <li><a href="@Url.Action("ClaimsDetails", "claims").ToLower()" class="rightArrow">Details </a></li>
+                <li><a href="@Url.Action("ClaimsDailyRejection", "claims").ToLower()">Errors</a></li>
+                <li><a href="@Url.Action("ResearchQueue", "claims").ToLower()">Research Queue</a></li>
+                <li><a href="@Url.Action("MatchClaims", "claims").ToLower()">Match Claims</a></li>
+            </ul>
+            <hr />
+        </li>*@
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">837 Encounter Inbound</a>
+                    <ul class="subnav">
+                        <li><a href="@Url.Action("index", "Encounters837Inbound").ToLower()" class="rightArrow">Encounter Dashboard</a></li>
+                        <li><a href="@Url.Action("ClaimsDailyAudit", "Encounters837Inbound").ToLower()">Encounter Audit Summary</a></li>
+                        <li><a href="@Url.Action("ClaimsDetails", "Encounters837Inbound").ToLower()" class="rightArrow">Encounter Details </a></li>
+                        <li><a href="@Url.Action("ClaimsDailyRejection", "Encounters837Inbound").ToLower()">Encounter Errors</a></li>
+                        <li><a href="@Url.Action("ResearchQueue", "Encounters837Inbound").ToLower()">Research Queue</a></li>
+                        @*<li><a href="@Url.Action("MatchClaims","claims1").ToLower()">Match Encounters</a></li>*@
+                    </ul>
+                    <hr />
+                </li>
+                @*<li>
+            <a href="javascript:void(0)" class="rightArrow">837 Encounters Outbound</a>
+            <ul class="subnav">
+                <li><a href="@Url.Action("index", "Encounter").ToLower()" class="rightArrow">Encounters Dashboard</a></li>
+                <li><a href="@Url.Action("ClaimsDailyAudit", "Encounter").ToLower()">Encounters Audit Summary</a></li>
+                <li><a href="@Url.Action("ClaimsDetails", "Encounter").ToLower()" class="rightArrow">Details </a></li>
+                <li><a href="@Url.Action("ClaimsDailyRejection", "Encounter").ToLower()">Errors</a></li>
+                <li><a href="@Url.Action("ResearchQueue", "Encounter").ToLower()">Research Queue</a></li>
+            </ul>
+            <hr />
+        </li>*@
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">
+                        834 Full File Compare
+                    </a>
+                    <ul class="subnav">
+                        @*<li><a href="@Url.Action("index","enrollments").ToLower()" class="rightArrow">Enrollments Dashboard</a></li>
+                <li><a href="@Url.Action("Payment","enrollments").ToLower()">Payment Dashboard</a></li>*@
+                        <li><a href="@Url.Action("Dashboard834", "Enrollments834Inbound").ToLower()">Enrollment Dashboard</a></li>
+                        <li><a href="@Url.Action("Dashboard", "Enrollments834Inbound").ToLower()">Dashboard</a></li>
+                        <li><a href="@Url.Action("Audit", "Enrollments834Inbound").ToLower()">Enrollment Details</a></li>
+                        <li><a href="@Url.Action("Errors", "Enrollments834Inbound").ToLower()">Enrollment Errors</a></li>
+                        @*<li><a href="@Url.Action("Outbound", "Enrollments834Inbound").ToLower()">Inbound</a></li>*@
+                    </ul>
+                    <hr />
+                </li>
+
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">
+                        834 Enrollment Inbound
+                    </a>
+                    <ul class="subnav">
+
+                        <li><a href="@Url.Action("Index", "Daily834Inbound").ToLower()">Dashboard</a></li>
+
+                        <li><a href="@Url.Action("FileEnrollmentDetails", "Daily834Inbound").ToLower()">Details</a></li>
+                    </ul>
+                    <hr />
+                </li>
+                @*<li>
+        <a href="javascript:void(0)" class="rightArrow">834 Enrollments Outbound</a>
+        <ul class="subnav">*@
+                @*<li><a href="@Url.Action("index","enrollments").ToLower()" class="rightArrow">Enrollments Dashboard</a></li>
+        <li><a href="@Url.Action("Payment","enrollments").ToLower()">Payment Dashboard</a></li>*@
+                @*<li><a href="@Url.Action("Dashboard", "enrollments").ToLower()">Dashboard</a></li>
+                <li><a href="@Url.Action("Audit", "enrollments").ToLower()">Details</a></li>
+                <li><a href="@Url.Action("Errors", "enrollments").ToLower()">Errors</a></li>
+                <li><a href="@Url.Action("Outbound", "enrollments").ToLower()">Outbound</a></li>
+            </ul>
+            <hr />
+        </li>*@
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">835 Claim Payment</a>
+                    @*<ul class="subnav">
+                            <li><a href="@Url.Action("index", "ClaimPayment").ToLower()" class="rightArrow">835 Dashboard</a></li>
+                    <li><a href="@Url.Action("Details835", "ClaimPayment").ToLower()" class="rightArrow">Claims Details </a></li>
+            </ul>*@
+                    <hr />
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">820 Payment Order</a>
+                    <hr />
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">NCPDP Inbound</a>
+                    <hr />
+                </li>
+                @*<li>
+            <a href="javascript:void(0)" class="rightArrow">NCPDP Outbound</a>
+            <hr />
+        </li>*@
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">999 Inbound</a>
+                    <hr />
+                </li>
+                @*<li>
+            <a href="javascript:void(0)" class="rightArrow">999 Outbound</a>
+            <hr />
+        </li>*@
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">277CA Inbound</a>
+                    <hr />
+                </li>
+                @*<li>
+            <a href="javascript:void(0)" class="rightArrow">277CA Outbound</a>
+            <hr />
+        </li>*@
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">HL7</a>
+                    <hr />
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">MMR</a>
+                    <hr />
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">MOR</a>
+                    <hr />
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">Admin</a>
+                    <ul class="subnav">
+                        <li><a href="@Url.Action("AddNewClient", "Admin").ToLower()" class="rightArrow">Trading Partner Configuration</a></li>
+                        @*<li><a href="@Url.Action("TredingPartner", "Admin").ToLower()" class="rightArrow">Trading Partner</a></li>*@
+
+
+
+                        @*<li><a href="@Url.Action("Comapnion270", "Admin").ToLower()">270 Companion Guide</a></li>
+                <li><a href="@Url.Action("ICDCode","Admin").ToLower()">ICD Code</a></li>*@
+                        <li><a href="@Url.Action("lcdcovered", "claims").ToLower()">Covered</a></li>
+                        <li><a href="@Url.Action("LCDSmall", "claims").ToLower()">NonCovered</a></li>
+                        <li style="display: none;" id="divCompanionGude"><a href="@Url.Action("Comapnion", "Admin").ToLower()">837 Companion Guide</a></li>
+                    </ul>
+                    <hr />
+                </li>
+                @*<li><a href="@Url.Action("ClaimSearch","claims").ToLower()" class="rightArrow">Claim Search </a></li>*@
+                © 2019 Powered by HiPaaS,  All rights reserved.
+            </ul>
+            <ul id="outbouned" style="display:none;">
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">
+                        270 Eligibility Real-time
+                    </a>
+                    <ul class="subnav">
+                        <li><a href="@Url.Action("Claims270", "EligibilityRealtime270").ToLower()" class="rightArrow">270 Real Time</a></li>
+                        <li><a href="@Url.Action("ErrorCountDetails", "EligibilityRealtime270", new {@ErrorCount = "pie", @error_claimcount = ""}).ToLower()">270 Audit Summary</a></li>
+                        <li><a href="@Url.Action("Claims270Details", "EligibilityRealtime270").ToLower()">Eligibility Details</a></li>
+                    </ul>
+                    <hr />
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">270 Eligibility Batch</a>
+                    <ul class="subnav">
+                        @*<li><a href="@Url.Action("Claims270", "claims").ToLower()" class="rightArrow">270 Real Time</a></li>
+                            <li><a href="@Url.Action("ErrorCountDetails", "claims", new {@ErrorCount = "pie", @error_claimcount = ""}).ToLower()">270 Audit Summary</a></li>*@
+                        <li><a href="@Url.Action("Claims270Details", "claims").ToLower()">Batch Details</a></li>
+                        <li><a href="#">270 Batch</a></li>
+                    </ul>
+                    <hr />
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">276 Claim Status Real-time</a>
+                    <ul class="subnav">
+                        <li><a href="@Url.Action("RT276", "Eligibility").ToLower()" class="rightArrow">276 Real Time</a></li>
+                        <li><a href="@Url.Action("Claims270Details", "Eligibility").ToLower()">Claim Status Details</a></li>
+                    </ul>
+                    <hr />
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">276 Batch </a>
+                    <ul class="subnav">
+                        <li><a href="@Url.Action("RT276", "Batch276").ToLower()" class="rightArrow">276 Real Time</a></li>
+                        <li><a href="@Url.Action("Claims270Details", "Batch276").ToLower()">Batch Details</a></li>
+                        <li><a href="#">276 Batch</a></li>
+                    </ul>
+                    <hr />
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">274 Provider Info</a>
+                    <hr />
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">275 Patient Info</a>
+                    <hr />
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">278 HC Service</a>
+                    <ul class="subnav">
+                        <li><a href="@Url.Action("index", "Claims278").ToLower()" class="rightArrow">278 Dashboard</a></li>
+                        <li><a href="@Url.Action("Details", "Claims278").ToLower()" class="rightArrow">Service Details </a></li>
+                    </ul>
+                    <hr />
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">
+                        837 Claims Outbound
+                    </a>
+                    <ul class="subnav">
+                        <li><a href="@Url.Action("index", "claims").ToLower()" class="rightArrow">Claims Dashboard</a></li>
+                        <li><a href="@Url.Action("ClaimsDailyAudit", "claims").ToLower()">Claims Audit Summary</a></li>
+                        <li><a href="@Url.Action("ClaimsDetails", "claims").ToLower()" class="rightArrow">Claims Details </a></li>
+                        <li><a href="@Url.Action("ClaimsDailyRejection", "claims").ToLower()">Claims Errors</a></li>
+                        <li><a href="@Url.Action("ResearchQueue", "claims").ToLower()">Research Queue</a></li>
+                        <li><a href="@Url.Action("MatchClaims", "claims").ToLower()">Match Claims</a></li>
+                        <li><a href="@Url.Action("submitClaim", "Claims").ToLower()">Submit Claims</a></li>
+                    </ul>
+                    <hr />
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">837 Encounter Outbound</a>
+                    <ul class="subnav">
+                        <li><a href="@Url.Action("index", "Encounter").ToLower()" class="rightArrow">Encounter Dashboard</a></li>
+                        <li><a href="@Url.Action("ClaimsDailyAudit", "Encounter").ToLower()">Encounter Audit Summary</a></li>
+                        <li><a href="@Url.Action("ClaimsDetails", "Encounter").ToLower()" class="rightArrow">Encounter Details </a></li>
+                        <li><a href="@Url.Action("ClaimsDailyRejection", "Encounter").ToLower()">Encounter Errors</a></li>
+                        <li><a href="@Url.Action("ResearchQueue", "Encounter").ToLower()">Research Queue</a></li>
+                        @*<li><a href="@Url.Action("MatchClaims","claims1").ToLower()">Match Encounters</a></li>*@
+                    </ul>
+                    <hr />
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">834 Enrollment Outbound</a>
+                    <ul class="subnav">
+                        @*<li><a href="@Url.Action("index","enrollments").ToLower()" class="rightArrow">Enrollments Dashboard</a></li>
+        <li><a href="@Url.Action("Payment","enrollments").ToLower()">Payment Dashboard</a></li>*@
+                        <li><a href="@Url.Action("Dashboard834", "Enrollments834Inbound").ToLower()">Enrollment Dashboard</a></li>
+                        <li><a href="@Url.Action("Dashboard", "enrollments").ToLower()">Dashboard</a></li>
+                        <li><a href="@Url.Action("Audit", "enrollments").ToLower()">Enrollment Details</a></li>
+                        <li><a href="@Url.Action("Errors", "enrollments").ToLower()">Enrollment Errors</a></li>
+                        <li><a href="@Url.Action("Outbound", "enrollments").ToLower()">Outbound</a></li>
+                    </ul>
+                    <hr />
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">835 Claim Payment</a>
+                    @*<ul class="subnav">
+                            <li><a href="@Url.Action("index", "ClaimPayment").ToLower()" class="rightArrow">835 Dashboard</a></li>
+                                <li><a href="@Url.Action("Details835", "ClaimPayment").ToLower()" class="rightArrow">Claims Details </a></li>
+                        </ul>*@
+                    <hr />
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">820 Payment Order</a>
+                    <hr />
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">NCPDP Outbound</a>
+                    <hr />
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">999 Outbound</a>
+                    <hr />
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">277CA Outbound</a>
+                    <hr />
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">HL7</a>
+                    <hr />
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">MMR</a>
+                    <hr />
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">MOR</a>
+                    <hr />
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="rightArrow">Admin</a>
+                    <ul class="subnav">
+                        <li><a href="@Url.Action("AddNewClient", "Admin").ToLower()" class="rightArrow">Trading Partner Configuration</a></li>
+                        @*<li><a href="@Url.Action("TredingPartner", "Admin").ToLower()" class="rightArrow">Trading Partner</a></li>
+                            <li><a href="@Url.Action("Comapnion", "Admin").ToLower()">837 Companion Guide</a></li>
+                            <li><a href="@Url.Action("Comapnion270", "Admin").ToLower()">270 Companion Guide</a></li>
+                            <li><a href="@Url.Action("ICDCode","Admin").ToLower()">ICD Code</a></li>*@
+                        <li><a href="@Url.Action("lcdcovered", "claims").ToLower()">Covered</a></li>
+                        <li><a href="@Url.Action("LCDSmall", "claims").ToLower()">NonCovered</a></li>
+                    </ul>
+                    <hr />
+                </li>
+                @*<li><a href="@Url.Action("ClaimSearch","claims").ToLower()" class="rightArrow">Claim Search </a></li>*@
+                © 2019 Powered by HiPaaS,  All rights reserved.
+            </ul>
+
+
+        </div>
+    </div>
+</div>
+    </div>
+@*© 2019 Powered by EDIVAL,  All rights reserved.*@
+</div>
+
+<script>
+    $(document).ready(function () {
+        var x = document.getElementById("inbouned");
+        var y = document.getElementById("outbouned");
+        var hrinbouned = document.getElementById("hrinbouned");
+        x.style.display = "block";
+        y.style.display = "none";
+        document.getElementsByTagName('h4')[0].style.display = 'none';
+        document.getElementsByTagName('h1')[0].style.display = 'block';
+        $("#btnInbound").css("color", "#139DC9");
+
+        $("#btnInbound").click(function () {
+            x.style.display = "block";
+            y.style.display = "none";
+            document.getElementsByTagName('h1')[0].style.display = 'block';
+            document.getElementsByTagName('h4')[0].style.display = 'none';
+            $("#btnInbound").css("color", "#139DC9");
+            $("#btnoutbound").css("color", "black");
+        });
+        $("#btnoutbound").click(function () {
+            document.getElementsByTagName('h1')[0].style.display = 'none';
+            document.getElementsByTagName('h4')[0].style.display = 'block';
+            y.style.display = "block";
+            x.style.display = "none";
+
+            $("#btnInbound").css("color", "black");
+            $("#btnoutbound").css("color", "#139DC9");
+        });
+    });
+</script>

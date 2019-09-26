@@ -1,0 +1,856 @@
+﻿@model  List<ClaimInfo.DataModel.SP_GetCompanion_Guide_Result>
+@{
+    ViewBag.Title = "AddNewClient";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<script>
+    var expanded = false;
+
+    function showCheckboxes() {
+        var checkboxes = document.getElementById("checkboxes");
+        if (!expanded) {
+            checkboxes.style.display = "block";
+            expanded = true;
+        } else {
+            checkboxes.style.display = "none";
+            expanded = false;
+        }
+    }
+</script>
+<link href="~/CSS/StyleSheetForTable.css" rel="stylesheet" />
+<style>
+    .btn {
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
+    /*Also */
+    .btn-success {
+        color: #fff;
+        background-color: #139DC9;
+        border-color: #139DC9;
+    }
+    /* This is copied from https://github.com/blueimp/jQuery-File-Upload/blob/master/css/jquery.fileupload.css */
+    .fileinput-button {
+        position: relative;
+        overflow: hidden;
+    }
+        /*Also*/
+        .fileinput-button input {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 0;
+            opacity: 0;
+            -ms-filter: 'alpha(opacity=0)';
+            font-size: 200px;
+            direction: ltr;
+            cursor: pointer;
+        }
+</style>
+<div class="rightpart">
+    <div class="dashBx">
+        <div class="clearfix"></div>
+        <div style="border-bottom: 1.5px solid #139DC9;">
+            <img src="~/Images/Search.png" style="width:14px; height:14px;" />
+            <input type="text" id="MyCustomSearch" style="color: #139DC9; font-weight: bold;" placeholder="Search" class="mySearchbox" name="min">
+        </div>
+        <br />
+        <h2>Submit Claim</h2>
+        <br />
+        <div>
+            <div style="width:25%; display:none; float:left;">
+                <label class="lblTxt">Select Client Name </label>
+                @Html.DropDownList("ClientName", new List<SelectListItem>
+                {
+                    new SelectListItem {Text = "Client Name 1", Value = "1",Selected = true},
+                    new SelectListItem {Text = "Client Name 2", Value = "2"}
+                }, "Select Client Name", new {@class = "dashInp"})
+            </div>
+            <div style="width:25%; float:left;">
+                <label class="lblTxt">Select State </label>
+                @Html.DropDownList("State", new List<SelectListItem>
+                {
+                    new SelectListItem {Text = "California", Value = "1" ,Selected = true},
+                    new SelectListItem {Text = "Michigan", Value = "2"},
+                 new SelectListItem {Text = "Florida", Value = "3"},
+                    new SelectListItem {Text = "New York", Value = "4"},
+                 new SelectListItem {Text = "Idaho", Value = "5"},
+                    new SelectListItem {Text = "Ohio", Value = "6"},
+                 new SelectListItem {Text = "Illinois", Value = "7"},
+                    new SelectListItem {Text = "Texas", Value = "8"},
+               new SelectListItem {Text = "Mississippi", Value = "9"},
+                    new SelectListItem {Text = "South Carolina", Value = "10"},
+                new SelectListItem {Text = "New Mexico", Value = "11"},
+                    new SelectListItem {Text = "Puerto Rico", Value = "12"},
+                          new SelectListItem {Text = "Washington", Value = "13"},
+                new SelectListItem {Text = "Utah", Value = "14"},
+                    new SelectListItem {Text = "Wisconsin", Value = "15"}
+                }, "Select State", new {@class = "dashInp"})
+            </div>
+            <div style="width:25%;  float:left;">
+                <label class="lblTxt">Select Trading Partner </label>
+                @Html.DropDownList("TradingPartner", new List<SelectListItem>
+                {
+                    new SelectListItem {Text = "Trading Partner 1", Value = "1",Selected = true},
+                    new SelectListItem {Text = "Trading Partner 2", Value = "2"}
+                }, "Select Trading Partner", new {@class = "dashInp"})
+            </div>
+            <div style="width:25%; float:left;">
+                <label class="lblTxt">Select Provider Name </label>
+                @Html.DropDownList("ProviderName", new List<SelectListItem>
+                {
+                    new SelectListItem {Text = "Provider Name 1", Value = "1",Selected = true},
+                    new SelectListItem {Text = "Provider Name 2", Value = "2"}
+                }, "Select Provider Name", new {@class = "dashInp"})
+            </div>
+        </div>
+        <div id="maindiv">
+            <div class="dashfrm-R" style="padding-left:150px; margin-top:5px;">
+                <br />
+                <button type="button" class="btn btn-success fileinput-button">Submit Claim</button>
+
+            </div>
+            <button class="accordion active">Submitter Info</button>
+            <div class="panel" style="display:block;">
+                <br />
+                <div class="dashfrm-L">
+                    <label class="lblTxt">Submitter Name </label>
+                    @Html.TextBox("A", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">Submitter Identifier</label>
+                    @Html.TextBox("A", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+
+            </div>
+            <button class="accordion">Reciever Info</button>
+            <div class="panel">
+                <br />
+                <div class="dashfrm-L">
+                    <label class="lblTxt">Receiver Name</label>
+                    @Html.TextBox("A", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">Primary Identifier</label>
+                    @Html.TextBox("A", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+            </div>
+            <button class="accordion">Billing Provider Info</button>
+            <div class="panel">
+                <br />
+                <div class="dashfrm-L">
+                    <label class="lblTxt">Name</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">Address</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">City</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-R">
+                    <label class="lblTxt">State</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="clearfix"></div>
+                <div class="dashfrm-L">
+                    <label class="lblTxt">Zip </label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">Tax Id </label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-M"></div>
+                <div class="dashfrm-R"></div>
+            </div>
+            <button class="accordion">Pay To Address Info</button>
+            <div class="panel">
+                <br />
+                <div class="dashfrm-L">
+                    <label class="lblTxt">Name</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">Address</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">City</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-R">
+                    <label class="lblTxt">State</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="clearfix"></div>
+                <div class="dashfrm-L">
+                    <label class="lblTxt">Zip </label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+            </div>
+            <button class="accordion">Subscriber Info</button>
+            <div class="panel">
+                <br />
+                <div class="dashfrm-L">
+                    <label class="lblTxt">First Name</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">Last Name</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">Subscriber Identifier</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+
+
+
+
+
+
+            </div>
+            <button class="accordion">Payer Info</button>
+            <div class="panel">
+                <br />
+                <div class="dashfrm-L">
+                    <label class="lblTxt">Name</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">Payer Identifier</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+
+            </div>
+            <button class="accordion">Patient Info</button>
+            <div class="panel">
+                <br />
+                <div class="dashfrm-L">
+                    <label class="lblTxt">First Name</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">First Name</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">DOB</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-R">
+                    <label class="lblTxt">Gender</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="clearfix"></div>
+                <div class="dashfrm-L">
+                    <label class="lblTxt">Address</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">City</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">State</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-R">
+                    <label class="lblTxt">Zip</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+            </div>
+
+            <button class="accordion">Claim Info</button>
+            <div class="panel">
+                <br />
+                <div class="dashfrm-L">
+                    <label class="lblTxt">Patient Control Number</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">Total Charge Amount</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">Facility Type Code</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-R">
+                    <label class="lblTxt">Claim Frequency Code</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="clearfix"></div>
+                <div class="dashfrm-L">
+                    <label class="lblTxt">Assignment Status</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">Benefit Assignement Indicator</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">Release Information Code</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+
+            </div>
+            <button class="accordion">Service Line Info</button>
+            <div class="panel">
+                <br />
+                <div class="dashfrm-L">
+                    <label class="lblTxt">Identification Code</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">Paid Amount</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">Product Id Qualifier</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-R">
+                    <label class="lblTxt">Qty</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="clearfix"></div>
+                <div class="dashfrm-L">
+                    <label class="lblTxt">Service Date</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+
+
+            </div>
+
+            <button class="accordion">Claim Service Level Info</button>
+            <div class="panel">
+                <br />
+                <div class="dashfrm-L">
+                    <label class="lblTxt">Adjustment Group Code</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">Adjustment Reason Code</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">Adjustment Amount</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-R">
+                    <label class="lblTxt">Remittance Date</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="clearfix"></div>
+                <div class="dashfrm-L">
+                    <label class="lblTxt">Amount Owed</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div style="display:none;" id="Editdiv">
+        <div class="dashBx">
+            <div class="clearfix"></div>
+
+            <button class="accordion active">Basic X12 Options</button>
+            <div class="panel" style="display:block;">
+                <br />
+                <div class="dashfrm-L">
+                    <label class="lblTxt">Functional Acknowledgment Options </label>
+                    @Html.DropDownList("Acknowledgment", new List<SelectListItem>
+                    {
+                        new SelectListItem{Text="Do Not Acknowledgment"},
+                        new SelectListItem{Text=" Acknowledge Functional Groups"},
+                        new SelectListItem{Text="Acknowledge Transaction Sets"},
+                    }, new { @class = "dashInp" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">Document Envelope Option</label>
+                    @Html.DropDownList("Document", new List<SelectListItem>
+                    {
+                        new SelectListItem{Text="Group By InterChange"},
+                        new SelectListItem{Text="Group By Functional Group"},
+                        new SelectListItem{Text="Group By Transaction Set"},
+                    }, new { @class = "dashInp" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">Element Delimiter</label>
+                    @Html.DropDownList("Element", new List<SelectListItem>
+                    {
+                        new SelectListItem{Text="Star Delimited"},
+                        new SelectListItem{Text="Comma Delimited"},
+                        new SelectListItem{Text="Tab Delimited"},
+                        new SelectListItem{Text="Bar(|) Delimited"},
+                        new SelectListItem{Text="Other Characher"},
+                    }, new { @class = "dashInp" })
+                </div>
+                <div class="dashfrm-R">
+                    <label class="lblTxt">Segment Termination Character</label>
+                    @Html.DropDownList("Segment", new List<SelectListItem>
+                    {
+                        new SelectListItem{Text="Single Quote"},
+                        new SelectListItem{Text="Tilde(~)"},
+                        new SelectListItem{Text="Other Characher"},
+                    }, new { @class = "dashInp" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">Filter Functional Acknowledgments</label>
+                    <input type="checkbox" checked style="margin-left:75px;" />
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">Reject Duplicate ISA</label>
+                    <input type="checkbox" checked style="margin-left:75px;" />
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">Validate Outbound Interchanges</label>
+                    <input type="checkbox" checked style="margin-left:75px;" />
+                </div>
+                <div class="dashfrm-R">
+                    <label class="lblTxt">Outbound Validation Option</label>
+                    @Html.DropDownList("Element", new List<SelectListItem>
+                    {
+                        new SelectListItem{Text="Filter Errored Documents"},
+                    }, new { @class = "dashInp" })
+                </div>
+
+                <div class="dashfrm-M">
+                    <label class="lblTxt">Companion Guide</label>
+                    @Html.DropDownList("Companion", new List<SelectListItem>
+                    {
+                        new SelectListItem{Text="Medicare Companion Guide"},
+                        new SelectListItem{Text="Medicaid Companion Guide"},
+
+                    }, new { @class = "dashInp" })
+                </div>
+            </div>
+            <button class="accordion">ISA Identification Options</button>
+            <div class="panel">
+                <br />
+                <h1 style="font-size:14px;">Authorization Information (ISA01,ISA02)</h1>
+                <hr />
+                <br />
+                <div class="dashfrm-L">
+                    <label class="lblTxt">Qualifier</label>
+                    @Html.DropDownList("Element", new List<SelectListItem>
+                    {
+                        new SelectListItem{Text="01-UCS Communication ID"},
+                        new SelectListItem{Text="02-EDXCommunication ID"},
+                        new SelectListItem{Text="03-Additional Data Information"},
+                    }, new { @class = "dashInp" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">ID</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-R">
+                </div>
+                <div class="clearfix"></div>
+                <h1 style="font-size:14px;">Security Information (ISA03,ISA04)</h1>
+                <hr />  <br />
+                <div class="dashfrm-L">
+                    <label class="lblTxt">Qualifier</label>
+                    @Html.DropDownList("Element", new List<SelectListItem>
+                    {
+                        new SelectListItem{Text=" 00-No Security Information Present"},
+                        new SelectListItem{Text=" 01-Password"},
+                    }, new { @class = "dashInp" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">ID</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="clearfix"></div>
+                <h1 style="font-size:14px;">Interchange ID (ISA05/07,ISA06/08)</h1>
+                <hr />
+                <br />
+                <div class="dashfrm-L">
+                    <label class="lblTxt">Qualifier</label>
+                    @Html.DropDownList("Element", new List<SelectListItem>
+                    {
+                        new SelectListItem{Text=" 01-Duns"},
+                        new SelectListItem{Text=" 02-SCAC"},
+                        new SelectListItem{Text=" 03-FMC"},
+                        new SelectListItem{Text="04-IATA"},
+                    }, new { @class = "dashInp" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">ID</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+            </div>
+            <button class="accordion">ISA Version/Control Options</button>
+            <div class="panel">
+                <br />
+                <div class="dashfrm-L">
+                    <label class="lblTxt">Interchange Standard ID (ISA11) </label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">Interchange Version (ISA12)</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">Interchange Ack. Requested (ISA14)</label>
+                    <input type="checkbox" style="margin-left:75px;" />
+                </div>
+                <div class="dashfrm-R">
+                    <label class="lblTxt">Test Indicator (ISA15)</label>
+                    @Html.DropDownList("Segment", new List<SelectListItem>
+                    {
+                        new SelectListItem{Text="P-Production"},
+                        new SelectListItem{Text="T-Test"},
+                    }, new { @class = "dashInp" })
+                </div>
+                <div class="clearfix"></div>
+                <div class="dashfrm-L">
+                    <label class="lblTxt">Component Separator (ISA16) </label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-M">
+                    <div class="multiselect">
+                        <div class="selectBox" onclick="showCheckboxes()">
+                            <select>
+                                <option>Select an X12</option>
+                            </select>
+                            <div class="overSelect"></div>
+                        </div>
+                        <div id="checkboxes">
+                            <label for="one">
+                                <input type="checkbox" id="one" />837I
+                            </label>
+                            <label for="two">
+                                <input type="checkbox" id="two" />270/271
+                            </label>
+                            <label for="three">
+                                <input type="checkbox" id="three" />276/277
+                            </label>
+                            <label for="four">
+                                <input type="checkbox" id="four" />835
+                            </label>
+                            <label for="five">
+                                <input type="checkbox" id="five" />837P
+                            </label>
+                            <label for="six">
+                                <input type="checkbox" id="six" />837D
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashfrm-M"></div>
+                <div class="dashfrm-R"></div>
+            </div>
+            <button class="accordion">GS Version/Control Options</button>
+            <div class="panel">
+                <br />
+                <div class="dashfrm-L">
+                    <label class="lblTxt">Application Code (GS02/03)</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">Responsible Agency Code (GS07)</label>
+                    @Html.DropDownList("Segment", new List<SelectListItem>
+                    {
+                        new SelectListItem{Text="T-Transportation Data Coordinating Committee"},
+                        new SelectListItem{Text="X-Accredited Standards Commitess"},
+                    }, new { @class = "dashInp" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">GS Version (GS08)</label>
+                    @Html.TextBox("InsuranceBalanceDue", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+            </div>
+            <button class="accordion">Communication Methods</button>
+            <div class="panel" style="display:block;">
+                <br />
+                <div class="dashfrm-L">
+                    <label class="lblTxt">Communication Type</label>
+                    @Html.DropDownList("Communication", new List<SelectListItem>
+                    {
+                        new SelectListItem {Text = "SFTP", Value = "1",Selected = true},
+                        new SelectListItem {Text = "Disk",Value = "2"}
+
+
+                    }, "Select Communication", new { @class = "dashInp" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">Use Default Settings</label>
+                    <input type="checkbox" style="margin-left:75px;" />
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">Host</label>
+                    @Html.TextBox("Host", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-R">
+                    <label class="lblTxt">Port</label>
+                    @Html.TextBox("Port", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+
+                <div class="dashfrm-L">
+                    <label class="lblTxt">User Name</label>
+                    @Html.TextBox("username", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">Password</label>
+                    @Html.TextBox("Password", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">Directory</label>
+                    @Html.TextBox("Directory", "", new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">  Create Directory if it doesn't exist</label>
+                    <input type="checkbox" style="margin-left:75px;" />
+                </div>
+                <div class="dashfrm-R">
+                    <label class="lblTxt">File Naming Options</label>
+                    @Html.DropDownList("FileNamingOptions", new List<SelectListItem>
+                    {
+                        new SelectListItem {Text = "Error if file exists"},
+                        new SelectListItem {Text = "Append if file exists"},
+                          new SelectListItem {Text = "Overwrite if file exists"},
+                            new SelectListItem {Text = "Create unique name if file exists"}
+                    }, "", new { @class = "dashInp" })
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+</div>
+<style>
+
+    main {
+        /*max-width: 800px;*/
+        padding: 5px;
+        border: 1px solid rgba(0,0,0,.2);
+        background: #fff;
+        box-shadow: 0 1px 3px rgba(0,0,0,.1);
+    }
+
+    section {
+        display: none;
+        padding: 20px 0 0;
+        border-top: 1px solid #abc;
+    }
+    /*Demographics*/
+    .rbinput {
+        display: none;
+    }
+
+    .rblable {
+        display: inline-block;
+        margin: 0 0 -1px;
+        padding: 15px 25px;
+        font-weight: 600;
+        text-align: center;
+        color: #abc;
+        border: 1px solid transparent;
+    }
+
+        .rblable:before {
+            font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .rblable:hover {
+            color: #789;
+            cursor: pointer;
+        }
+    /*Insurance*/
+    .rbinputIns {
+        display: none;
+    }
+
+    .rblableIns {
+        display: inline-block;
+        margin: 0 0 -1px;
+        padding: 15px 25px;
+        font-weight: 600;
+        text-align: center;
+        color: #abc;
+        border: 1px solid transparent;
+    }
+
+        .rblableIns:before {
+            font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .rblableIns:hover {
+            color: #789;
+            cursor: pointer;
+        }
+
+    input:checked + label {
+        color: #0af;
+        border: 1px solid #abc;
+        border-top: 3px solid #0af;
+        border-bottom: 1px solid #fff;
+    }
+
+    #Demotab1:checked ~ #content1,
+    #Demotab2:checked ~ #content2,
+    #Demotab3:checked ~ #content3,
+    #Demotab4:checked ~ #content4,
+    #Demotab5:checked ~ #content5,
+    #Demotab6:checked ~ #content6,
+    #Demotab7:checked ~ #content7,
+    #Instab1:checked ~ #content8,
+    #Instab2:checked ~ #content9,
+    #Instab3:checked ~ #content10,
+    #Instab4:checked ~ #content11 {
+        display: block;
+    }
+
+    @@media screen and (max-width: 800px) {
+        label {
+            font-size: 0;
+        }
+
+            label:before {
+                margin: 0;
+                font-size: 18px;
+            }
+    }
+
+    @@media screen and (max-width: 500px) {
+        label {
+            padding: 15px;
+        }
+    }
+</style>
+<style>
+
+    .accordion {
+        font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 5px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        transition: 0.4s;
+        margin-top: 10px;
+    }
+
+        .active, .accordion:hover {
+            background-color: #139DC9;
+            color: white;
+        }
+
+    .panel {
+        font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+        padding: 0 18px;
+        display: none;
+        background-color: white;
+        overflow: hidden;
+        border: 1px solid #139DC9;
+    }
+</style>
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+    function openCity(cityName) {
+        var i;
+        var x = document.getElementsByClassName("city");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        document.getElementById(cityName).style.display = "block";
+    }</script>
+<script>
+    function changeuser() {
+        $("#maindiv").hide();
+        $("#Editdiv").show();
+    }
+    function myFunction() {
+        $("#maindiv").show();
+        $("#Editdiv").hide();
+        $('#TradingPartner').val(0);
+    }
+</script>
+<script>
+    var input = document.getElementById('file-upload');
+    var infoArea = document.getElementById('file-upload-filename');
+
+    input.addEventListener('change', showFileName);
+
+    function showFileName(event) {
+
+        // the change event gives us the input it occurred in
+        var input = event.srcElement;
+
+        // the input has an array of files in the `files` property, each one has a name that you can use. We're just using the name here.
+        var fileName = input.files[0].name;
+
+        // use fileName however fits your app best, i.e. add it into a div
+        infoArea.textContent = 'Selected File name:   ' + fileName;
+    }
+
+
+    function ShowMenu() {
+        $("#divCompanionGude").show();
+    }
+</script>
+<script>
+    $("#SecondDiv").hide();
+    $('#Communication').on('change', function () {
+
+        if (this.value == '1') {
+            $("#FirstDiv").show();
+            $("#SecondDiv").hide();
+        }
+        else if (this.value == '2') {
+            $("#FirstDiv").hide();
+            $("#SecondDiv").show();
+        }
+        else {
+            $("#FirstDiv").hide();
+            $("#SecondDiv").hide();
+        }
+    });
+</script>

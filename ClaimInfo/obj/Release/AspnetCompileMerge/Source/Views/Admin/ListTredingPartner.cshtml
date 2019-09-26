@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "ListTredingPartner";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<link href="~/CSS/StyleSheetForTable.css" rel="stylesheet" />
+<div class="rightpart">
+    <div class="dashBx">
+        <div class="clearfix"></div>
+        <h2>List Of Trading Partner</h2><br />
+        <div style="width:100%; float:left;">
+            <table  class="table table-striped" cellpadding="0" cellspacing="0" >
+                <tbody>
+                    <tr>
+
+                        <th>Transaction Id</th>
+                        <th>Transaction Date</th>
+                 
+                        <th>View</th>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <td>1032</td>
+                        <td>Feb  1 2019  1:31AM</td>
+                      
+                        <td><button id="view" onclick="myFunction()" style="background-color:#6AA2B8; width:50px; height:30px; color:white;">View</button></td>
+
+                    </tr>
+                    <tr>
+                        <td>1033</td>
+                        <td>Feb  2 2019 10:32AM</td>
+                     
+                        <td><button id="view" onclick="myFunction()" style="background-color:#6AA2B8; width:50px; height:30px; color:white;">View</button></td>
+
+                    </tr>
+                    <tr>
+                        <td>1034</td>
+                        <td>Feb  3 2019  5:15AM</td>
+                    
+                        <td><button id="view" onclick="myFunction()" style="background-color:#6AA2B8; width:50px; height:30px; color:white;">View</button></td>
+
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+
+
+
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    function myFunction()
+    {
+        window.location.href = "/admin/tredingpartner";
+    }
+</script>

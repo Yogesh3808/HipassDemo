@@ -1,0 +1,81 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - HiPaaS EDI Validation Portal</title>
+    <link href="@Url.Content("~/CSS/admin_stylesheet.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/CSS/NewStyleSheet.css")" rel="stylesheet" />
+    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/bundles/datatable")*@
+    @RenderSection("css", false)
+
+</head>
+<body>
+    <style>
+        .navbar-titleText {
+            position: absolute;
+            width: 80%;
+            left: 0;
+            text-align: center;
+            margin: auto;
+            padding-top: 10px;
+            color: #ffffff;
+            font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+            font-weight: Bold;
+            Line-Height: 23px;
+            text-align: Left;
+            Letter-Spacing: -0.75px;
+            margin: 5px 10px 10px 3%;
+            font-size: 20px;
+        }
+    </style>
+    <div class="main-cont">
+        <!---->
+        <div class="headertopNew">
+            <a href="@Url.Action("Index","Claims").ToLower()">
+                <div class="siteTittle" style="display: block;background-image: url(/Images/Malina2.png);background-repeat: no-repeat;background-size: cover;width: 165px;height: 45px;
+        margin: 0 auto;margin-left: 10px;margin-top: 5px;">
+                </div>
+                
+                @*<div class="nav navbar">
+                    <div class="navbar-titleText">
+                        <h2>MOLINA</h2>
+                    </div>
+
+                </div>*@
+            </a>
+            <P style="margin-top: 50px; margin-left: 40px; color: #FFFFFF;">Powered by HiPaaS</P>
+       
+
+            <a style="float: right; margin-top: -45px;margin-right: 20px;font-size: 16px;" href="~/Account/Login">Logout</a>
+
+        </div>
+
+        <div class="micCont">
+            @Html.Partial("_MenuPartial")
+            @RenderBody()
+        </div>
+    </div>
+    <script src="@Url.Content("~/Scripts/admin_function.js")"></script>
+    <script src="@Url.Content("~/Scripts/CustomFunction.js")"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Scripts/jquery.dataTables.min.js"></script>
+    <link href="~/CSS/jquery.dataTables.css" rel="stylesheet" />
+    <script src="~/Scripts/DataTables/dataTables.bootstrap.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.buttons.min.js"></script>
+    <script src="~/Scripts/DataTables/buttons.html5.min.js"></script>
+    <script src="~/Scripts/DataTables/jszip.min.js"></script>
+    <link href="~/Content/DataTables/css/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/buttons.dataTables.min.css" rel="stylesheet" />
+    @RenderSection("js", false)
+</body>
+</html>

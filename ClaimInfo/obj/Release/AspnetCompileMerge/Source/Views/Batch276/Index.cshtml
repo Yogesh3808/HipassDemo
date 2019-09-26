@@ -1,0 +1,266 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+    string str = ViewBag.DataPoints;
+}
+
+<script>
+        window.onload = function () {
+            CanvasJS.addColorSet("greenShades",
+                [//colorSet Array
+                    "#2980B9"
+                ]);
+            var chart = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: true,
+                dataPointWidth: 20,
+                colorSet: "greenShades",
+                theme: "light2", // "light1", "light2", "dark1", "dark2"
+                title: {
+                    //text: "Number of Employees under Each Manager"
+                },
+                axisY: {
+                    //title: "No. of Employees"
+                },
+                data: [{
+                    type: "column",
+                    dataPoints: @Html.Raw(str)
+        }]
+            });
+            chart.render();
+            var chart1 = new CanvasJS.Chart("chartContainer1", {
+                animationEnabled: true,
+                title: {
+                },
+                data: [{
+                    type: "pie",
+                    startAngle: 240,
+                    yValueFormatString: "##0.00\"%\"",
+                    indexLabel: "{label} {y}",
+                     dataPoints: @Html.Raw(ViewBag.DataPoints1),
+                    @*dataPoints: [
+                        { y:@Html.Raw(ViewBag.DataPoints) , label: "Completed" },
+                        { y: @Html.Raw(ViewBag.DataPoints), label: "Errored" }
+                    ]*@
+                }]
+            });
+            chart1.render();
+            var dps = [];
+            var chart2 = new CanvasJS.Chart("chartContainer2", {
+                title: {
+                },
+                axisY: {
+                    includeZero: false
+                },
+                data: [{
+                    type: "spline",
+                    markerSize: 0,
+                    dataPoints: dps
+                }]
+            });
+            var xVal = 0;
+            var yVal = 100;
+            var updateInterval = 1000;
+            var dataLength = 50; // number of dataPoints visible at any point
+            var updateChart = function (count) {
+                count = count || 1;
+                // count is number of times loop runs to generate random dataPoints.
+                for (var j = 0; j < count; j++) {
+                    yVal = yVal + Math.round(5 + Math.random() * (-5 - 5));
+                    dps.push({
+                        x: xVal,
+                        y: yVal
+                    });
+                    xVal++;
+                }
+                if (dps.length > dataLength) {
+                    dps.shift();
+                }
+                chart2.render();
+            };
+            updateChart(dataLength);
+            //setInterval(function () { updateChart() }, updateInterval);
+        }
+</script>
+<div class="rightpart">
+    <div class="dashBx">
+        <div class="clearfix"></div>
+        <h2>270 Eligibilty</h2><br />
+        <div>
+            <div>
+                <label style="color: #2980B9;">Execution Status Time</label>
+                <label style="color: #2980B9;width:20%; float:right; ">Average Respone Time </label>
+                <label style="color: #2980B9;width:35%; margin-left:15px; float:right;">Execution Status </label>
+                <br />
+                <table style="margin-left:25px; margin-top:15px;">
+                    <tr>
+                        <td>
+                            <div style="background-color:#2980B9; height:12px; width:12px; float:left;"></div>
+                        </td>
+                        <td>
+                            Successful
+                        </td>
+                        @*<td>
+                                <div style="background-color:#F5B041; height:12px; width:12px;  float:left;"></div>
+                            </td>
+                            <td>
+                                Completed-wam
+                            </td>*@
+                        <td>
+                            <div style="background-color:red; height:12px; width:12px;  float:left;"></div>
+                        </td>
+                        <td>
+                            Errored
+                        </td>
+                    </tr>
+                </table>
+                <br />
+                <div id="chartContainer" style="height: 250px; margin-left:0px; width:35%; float:left;  ">
+                </div>
+            </div>
+            <div id="chartContainer1" style="height: 250px; margin-left:50px; width:25%; float:left;  "></div>
+            <div id="chartContainer2" style="height: 250px; width:30%; float:right;"></div>
+            @*<div style="text-align: center">
+                    <canvas id="barcanvas"></canvas>
+                </div>*@
+            @*<script src="~/Scripts/Chat.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.bundle.min.js"></script>*@
+            <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        </div>
+        <div style="margin-top:300px;">
+            <h2>Process Summary Report </h2>
+            @*<table id="processSummary" style="background-color:#C0C0C0;" class="dashTable cell-border table table-bordered display">
+                    <thead>
+                        <tr>
+                            <th>
+                                Process Name
+                            </th>
+                            <th>
+                                Avg Respones(ms)
+                            </th>
+                            <th>
+
+                Standard Deviation
+                            </th>
+                            <th>
+                                Executions
+                            </th>
+                            <th>
+                                Avg Inbound Size(bytes)
+                            </th>
+                            <th>
+                                Avg Inbound Count
+                            </th>
+                            <th>
+                                Avg Outbound Size(bytes)
+                            </th>
+                            <th>
+                                Avg Outbound Count
+                            </th>
+                            <th>
+                                Avg Returned Size(bytes)
+                            </th>
+                            <th>
+                                Avg Returned Count
+                            </th>
+                        </tr>
+                    </thead>
+                </table>*@
+            <table id="processSummary" style="background-color:#C0C0C0;" class="dashTable cell-border table table-bordered display">
+                <thead>
+                    <tr>
+                        <th>
+                            Transaction Type
+                        </th>
+                        <th>
+                            Avg Resquest Time
+                        </th>
+                        <th>
+                            Total Number Of Request
+                        </th>
+                        <th>
+                            Total Success Count
+                        </th>
+                        <th>
+                            Total Error Count
+                        </th>
+
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $('#processSummary').DataTable({
+            "processing": true,
+            "bLengthChange": false,
+            "language": {
+                "processing": "<img src='/Content/Images/loading.gif' id='ProgressImage'/>" //add a loading image,simply putting <img src="loader.gif" /> tag.
+            },
+            "serverSide": true,
+            "searching": true,
+            "ordering": true,
+            //"scrollY": 200,
+            //"scrollX": true,
+            "responsive": true,
+            "ajax":
+            {
+                "url": "/Eligibility/GetProcessSummary",
+                "type": "POST",
+                "dataType": "JSON"
+            },
+            "columns":
+                [
+                    {
+                        data: 'TypeofTransaction'
+                    },
+                    { data: 'AvgResTime' },
+                    //{ data: 'ISA09' },
+                    { data: 'TotalNumOfReq' },
+                    { data: 'Success' },
+                    {
+                        data: 'Error',
+                        "render": function (data, type, row, meta) {
+                            if (type === 'display') {
+                                data = '<a class="fileTag" style="color:#6AA2B8;" href="/Eligibility/ErrorCountDetails?ErrorCount=' + row.Error + '&error_claimcount=0">' + data + '</a>';
+                            }
+                            return data;
+                        }
+                    },
+                    //{ data: 'CreateDateTime' },
+                    //{ data: 'ClaimCount' },
+                    //{ data: 'error_claimcount' }
+                    //{
+                    //    data: 'error_claimcount',
+                    //    "render": function (data, type, row, meta) {
+                    //        if (type === 'display') {
+                    //            data = '<a class="btn btn-danger"  href="/Claims/IntakeClaimData?FileID=' + row.FileID + '&error_claimcount=' + row.error_claimcount + '">' + data + '</a>';
+                    //        }
+                    //        if (row.error_claimcount != "0")
+                    //            return data;
+                    //        else
+                    //            return "";
+                    //    }
+                    //},
+                    // { data: 'Field1' },
+                    //{ data: 'Field2' }
+                ]
+            //, "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+            //    //alert(iDisplayIndex, iDisplayIndexFull);
+            //    //if (iDisplayIndex % 2 == 0) {
+            //    //    $(nRow).removeClass('myodd myeven');
+            //    //    $(nRow).addClass('myodd');
+            //    //} else {
+            //    //    $(nRow).removeClass('myodd myeven');
+            //    //    $(nRow).addClass('myeven');
+            //    //}
+            //    if (aData['FileStatus'] == 'Failed') {
+            //        //$('td', nRow).css('background-color', '#FF5959');
+            //        //$('td', nRow).css('color', 'white');
+            //    }
+            //}
+        });
+    });
+</script>

@@ -1,0 +1,138 @@
+﻿
+@{
+    ViewBag.Title = "276 Claim Error Details";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+    string ErrorCount = ViewBag.ErrorCount;
+    string Tran_type = ViewBag.error_claimcount;
+}
+<style>
+
+    .dashfrm-L1 {
+        width: 15%;
+        float: left;
+        margin-right: 2%;
+        margin-bottom: 20px;
+        text-align: center;
+        padding: 10px;
+        border-radius: 15px;
+    }
+</style>
+<h2>ErrorCountDetails</h2>
+<div class="rightpart">
+    <div class="dashBx">
+        <div class="clearfix"></div>
+        <h2>276 Claim Error Details </h2>
+        <hr />
+        
+        <div class="dashformBx  dashformBx2 clearfix">
+            <div class="dashfrm-L">
+                @Html.TextBox("fileName-filter", "", new { @placeholder = "Error Type", @class = "dashInp form-control input-filter", @search_index = "1" })
+            </div>
+            <div class="dashfrm-M">
+                @Html.TextBox("fileStatus-filter", "", new { @placeholder = "Transaction Type", @class = "dashInp form-control input-filter", @search_index = "2" })
+            </div>
+            <div class="dashfrm-M">
+                @Html.TextBox("submitter-filter", "", new { @placeholder = "Error Description", @class = " dashInp form-control input-filter", @search_index = "12" })
+            </div>
+            <div class="dashfrm-R">
+                
+            </div>
+            <div class="clearfix"></div>
+            <br /><br />
+            <div class="dashfrm-L1">
+                <label class="lblTxtCountHeader"> Total Error </label>
+                <br /><br />
+                <label class="lblCount" style="color:#ff0000; font-size:large;"> @ErrorCount </label>
+            </div>
+            <div class="dashfrm-LR1">
+                <div style="width:15%; text-align:left; display:inline-block; background-color:brown;height:90px;color:#FFFFFF;"><span style="padding:10px;">TA1</span></div>
+                <div style="width :0.2%; text-align:left; display:inline-block;"></div>
+                <div style="width:15%; text-align:left; display:inline-block; background-color:dodgerblue;height:90px;color:#FFFFFF;"><span style="padding:10px;">999</span></div>
+                <div style="width :0.2%; text-align:left; display:inline-block;"></div>
+                <div style="width:15%; text-align:left; display:inline-block; background-color:brown;height:90px;color:#FFFFFF;"><span style="padding:10px;">E2</span></div>
+                <div style="width :0.2%; text-align:left; display:inline-block;"></div>
+                <div style="width:15%; text-align:left; display:inline-block; background-color:dodgerblue;height:90px;color:#FFFFFF;"><span style="padding:10px;">E3</span></div>
+                <div style="width :0.2%; text-align:left; display:inline-block;"></div>
+                <div style="width:15%; text-align:left; display:inline-block; background-color:brown;height:90px;color:#FFFFFF;"><span style="padding:10px;">E4</span></div>
+            </div>
+            <div class="clearfix"></div>
+            <br />
+            <div class="dashBx">
+                <table id="processSummary" style="background-color:#C0C0C0;" class="dashTable cell-border table table-bordered display">
+                    <thead>
+                        <tr>
+                            <th style="text-align:left;">Error Type</th>
+                            <th style="text-align:left;">Transaction Type</th>
+                            <th style="text-align:left;">Error Description</th>
+                        </tr>
+                    </thead>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>$(function () {
+        $('#processSummary').DataTable({
+            "processing": true,
+            "bLengthChange": false,
+            "language": {
+                "processing": "<img src='/Content/Images/loading.gif' id='ProgressImage'/>" //add a loading image,simply putting <img src="loader.gif" /> tag.
+            },
+            "serverSide": true,
+            "searching": true,
+            "ordering": true,
+            //"scrollY": 200,
+            //"scrollX": true,
+            "responsive": true,
+            "ajax":
+            {
+                "url": "/Eligibility/GetErrorType276",
+                "type": "POST",
+                "dataType": "JSON"
+            },
+            "columns":
+                [
+                    {
+                        data: 'Error_type'
+                    },
+                    { data: 'Transaction_Type' },
+                    { data: 'Error_Reason' },
+                    //{ data: 'ISA09' },
+
+                    //{ data: 'CreateDateTime' },
+                    //{ data: 'ClaimCount' },
+                    //{ data: 'error_claimcount' }
+                    //{
+                    //    data: 'error_claimcount',
+                    //    "render": function (data, type, row, meta) {
+                    //        if (type === 'display') {
+                    //            data = '<a class="btn btn-danger"  href="/Claims/IntakeClaimData?FileID=' + row.FileID + '&error_claimcount=' + row.error_claimcount + '">' + data + '</a>';
+                    //        }
+                    //        if (row.error_claimcount != "0")
+                    //            return data;
+                    //        else
+                    //            return "";
+                    //    }
+                    //},
+                    // { data: 'Field1' },
+                    //{ data: 'Field2' }
+                ]
+            //, "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+            //    //alert(iDisplayIndex, iDisplayIndexFull);
+            //    //if (iDisplayIndex % 2 == 0) {
+            //    //    $(nRow).removeClass('myodd myeven');
+            //    //    $(nRow).addClass('myodd');
+            //    //} else {
+            //    //    $(nRow).removeClass('myodd myeven');
+            //    //    $(nRow).addClass('myeven');
+            //    //}
+            //    if (aData['FileStatus'] == 'Failed') {
+            //        //$('td', nRow).css('background-color', '#FF5959');
+            //        //$('td', nRow).css('color', 'white');
+            //    }
+            //}
+        });
+    });</script>
+
+

@@ -1,0 +1,141 @@
+﻿@model  List<ClaimInfo.DataModel.SP_GetCompanion_Guide_Result>
+@{
+    ViewBag.Title = "Comapnion";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<link href="~/CSS/StyleSheetForTable.css" rel="stylesheet" />
+<style>
+    .btn {
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
+    /*Also */
+    .btn-success {
+        color: #fff;
+        background-color: #0912f3;
+        border-color: #4cae4c;
+    }
+    /* This is copied from https://github.com/blueimp/jQuery-File-Upload/blob/master/css/jquery.fileupload.css */
+    .fileinput-button {
+        position: relative;
+        overflow: hidden;
+    }
+        /*Also*/
+        .fileinput-button input {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 0;
+            opacity: 0;
+            -ms-filter: 'alpha(opacity=0)';
+            font-size: 200px;
+            direction: ltr;
+            cursor: pointer;
+        }
+</style>
+<div class="rightpart">
+    <div class="dashBx">
+        <div class="clearfix"></div>
+        <h2>837 Companion Guide </h2>
+        <hr />
+        <div class="dashformBx  dashformBx2 clearfix">
+            <div class="dashfrm-L">
+                <label class="lblTxt">Companion Guide</label>
+                @Html.DropDownList("Companion", new List<SelectListItem>
+                    {
+                     new SelectListItem{Text="Medicare Companion Guide"},
+                      new SelectListItem{Text="Medicaid Companion Guide"},
+
+                    }, "Select Companion", new { @class = "dashInp" })
+            </div>
+            <div class="dashfrm-R" style="padding-left:150px;">
+                <br />
+                @*@Html.TextBox("file", "", new { type = "file" })*@
+                <div method="POST" action="myurl">
+                    <span class="btn btn-success fileinput-button">
+                        <span>Add New</span>
+                        <input type="file" name="file">
+                    </span>
+                </div>
+            </div>
+
+            <div class="dashfrm-M">
+            </div>
+            <div class="dashfrm-R">
+            </div>
+            <div class="clearfix"></div>
+            <div class="dashBx">
+                <div class="table-responsive" id="rootId" style="margin-top:5px;">
+                    <table id="tblId" class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th style="text-align:left;">Edit Reference</th>
+
+                                <th style="text-align:left;">Segment or Element</th>
+                                <th style="text-align:left;">Description</th>
+                                <th style="text-align:left;">ID</th>
+                                <th style="text-align:left;">Min.Max.</th>
+                                <th style="text-align:left;">Usage Req</th>
+                                <th style="text-align:left;">5010A1 Values</th>
+                                <th style="text-align:left;">TA1/999/277CA</th>
+                                @*<th style="text-align:left;">Accept_Reject</th>*@
+                                <th style="text-align:left;">Disposition/Error Code</th>
+                                @*<th style="text-align:left;">PartB</th>
+                            <th style="text-align:left;">CEDI</th>*@
+                                @*
+                            <th style="text-align:left;">MiscNotes</th>*@
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.Count > 0)
+                            {
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td style="text-align:left;">@item.Edit_Reference</td>
+
+                                        <td style="text-align:left;">@item.Segment</td>
+                                        <td style="text-align:left;">@item.Description</td>
+                                        <td style="text-align:left;">@item.ID</td>
+                                        <td style="text-align:left;">@item.Min_Max</td>
+                                        <td style="text-align:left;">@item.Usage_Req</td>
+                                        <td style="text-align:left;">@item.Values5010A1</td>
+                                        <td style="text-align:left;">@item.TA1_999_277CA</td>
+                                        @*<td style="text-align:left;">@item.Accept_Reject</td>*@
+                                        <td style="text-align:left;">@item.Disposition</td>
+                                        @*<td style="text-align:left;">@item.PartB</td>
+                                    <td style="text-align:left;">@item.CEDI</td>*@
+                                        @*<td style="text-align:left;">@item.MiscNotes</td>*@
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr><td style="border:none; text-align:left;">No records found</td></tr>
+
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+

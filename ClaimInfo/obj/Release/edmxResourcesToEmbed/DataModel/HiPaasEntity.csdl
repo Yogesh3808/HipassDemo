@@ -1,0 +1,1544 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HiPaaS_website_offshoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="FileInTake">
+    <Key>
+      <PropertyRef Name="SeqID" />
+    </Key>
+    <Property Name="SeqID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FileID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TransactionID" Type="Int32" />
+    <Property Name="FileName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FileDate" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="BatchID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TransmissionID" Type="Int64" />
+    <Property Name="TradingPartner" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="InterchangeSenderID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="InterchangeControlNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="InterchangeDate" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="InterchangeTime" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SubmitterID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ReceiverName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ReceiverID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Destination" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA04" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA05" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA06" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA07" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA08" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA09" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA10" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA11" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA12" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA13" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA14" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA15" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA16" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GSA01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GSA02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GSA03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GSA04" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GSA05" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GSA06" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GSA07" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GSA08" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ST01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ST02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ST03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BHT01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BHT02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BHT03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BHT04" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BHT05" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BHT06" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sumbitter_N101" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Submitter_N102" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Submitter_N103" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Submitter_N104" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Submitter_N301" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Submitter_N302" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Submitter_N401" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Submitter_N402" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Submitter_N403" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Submitter_PER01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Submitter_PER02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Submitter_PER03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Submitter_PER04" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Submitter_PER05" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Submitter_PER06" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_N101" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_N102" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_N103" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_N104" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_N105" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_N301" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_N302" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_N401" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_N402" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_N403" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_PER01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_PER02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_PER03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_PER04" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_PER05" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_PER06" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimCount" Type="Int32" />
+    <Property Name="ExternalCorrelationToken" Type="Guid" />
+    <Property Name="ExtraField1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField6" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField7" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField8" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField9" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDateTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Created_Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FileStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FileLevelErrors" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Field2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Field3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Field4" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Field5" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Field6" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="error_claimcount" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="HiPaaS_website_offshoreEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="FileInTakes" EntityType="Self.FileInTake" />
+    <EntitySet Name="Claim_Status" EntityType="HiPaaS_website_offshoreModel.Claim_Status" />
+    <EntitySet Name="ClaimAdjustmentServiceLines" EntityType="HiPaaS_website_offshoreModel.ClaimAdjustmentServiceLine" />
+    <EntitySet Name="ClaimDiagnosisInfoes" EntityType="HiPaaS_website_offshoreModel.ClaimDiagnosisInfo" />
+    <EntitySet Name="ClaimInformationREFs" EntityType="HiPaaS_website_offshoreModel.ClaimInformationREF" />
+    <EntitySet Name="Claims_ICD_CODE" EntityType="HiPaaS_website_offshoreModel.Claims_ICD_CODE" />
+    <EntitySet Name="NoteClaim837" EntityType="HiPaaS_website_offshoreModel.NoteClaim837" />
+    <EntitySet Name="Categories" EntityType="HiPaaS_website_offshoreModel.Category" />
+    <EntitySet Name="LCD_Covered_Original" EntityType="HiPaaS_website_offshoreModel.LCD_Covered_Original" />
+    <FunctionImport Name="SP_GetClaimAmount" ReturnType="Collection(HiPaaS_website_offshoreModel.SP_GetClaimAmount_Result)" />
+    <FunctionImport Name="SP_GetClaims_ICD_CODE" ReturnType="Collection(HiPaaS_website_offshoreModel.SP_GetClaims_ICD_CODE_Result)" />
+    <FunctionImport Name="SP_GetCompanion_Guide" ReturnType="Collection(HiPaaS_website_offshoreModel.SP_GetCompanion_Guide_Result)" />
+    <FunctionImport Name="SP_GetLCD_Covered_Original" ReturnType="Collection(HiPaaS_website_offshoreModel.SP_GetLCD_Covered_Original_Result)" />
+    <FunctionImport Name="SP_GetLCD_SmallFile" />
+    <FunctionImport Name="SP_GetPendingClaimError" ReturnType="Collection(HiPaaS_website_offshoreModel.SP_GetPendingClaimError_Result)" />
+    <FunctionImport Name="SP_GetRejectedClaimError" ReturnType="Collection(HiPaaS_website_offshoreModel.SP_GetRejectedClaimError_Result)" />
+    <FunctionImport Name="SP_SearchClaims" ReturnType="Collection(HiPaaS_website_offshoreModel.SP_SearchClaims_Result)" />
+    <EntitySet Name="Eligibility276" EntityType="HiPaaS_website_offshoreModel.Eligibility276" />
+    <EntitySet Name="Eligibilty270" EntityType="HiPaaS_website_offshoreModel.Eligibilty270" />
+    <FunctionImport Name="SP_GetCompanion_Guide_270" ReturnType="Collection(HiPaaS_website_offshoreModel.SP_GetCompanion_Guide_270_Result)" />
+    <EntitySet Name="ErrorTypes" EntityType="HiPaaS_website_offshoreModel.ErrorType" />
+    <FunctionImport Name="SP_GetFileInTakeCount" ReturnType="Collection(Int32)">
+      <Parameter Name="filedate" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_getTotalFileCount" ReturnType="Collection(Int32)">
+      <Parameter Name="filedate" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetIntakeClaimDataCount" ReturnType="Collection(Int32)">
+      <Parameter Name="filedate" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetIntakeClaimDataErrorsCount" ReturnType="Collection(Int32)">
+      <Parameter Name="filedate" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetIntakeClaimDataVarifiedCount" ReturnType="Collection(Int32)">
+      <Parameter Name="filedate" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetRejectedClaims" ReturnType="Collection(HiPaaS_website_offshoreModel.SP_GetRejectedClaims_Result)">
+      <Parameter Name="filedate" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetClaimDailyAuditCount" ReturnType="Collection(HiPaaS_website_offshoreModel.SP_GetClaimDailyAuditCount_Result)">
+      <Parameter Name="filedate" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetClaimDailyAudit" ReturnType="Collection(HiPaaS_website_offshoreModel.SP_GetClaimDailyAudit_Result)">
+      <Parameter Name="filedate" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="FileInTake835" EntityType="HiPaaS_website_offshoreModel.FileInTake835" />
+    <EntitySet Name="IntakeClaimData835" EntityType="HiPaaS_website_offshoreModel.IntakeClaimData835" />
+    <EntitySet Name="IntakeClaimLineData835" EntityType="HiPaaS_website_offshoreModel.IntakeClaimLineData835" />
+    <FunctionImport Name="SP_GetFileInTake835Count" ReturnType="Collection(Int32)">
+      <Parameter Name="filedate" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="Claims278" EntityType="HiPaaS_website_offshoreModel.Claims278" />
+    <FunctionImport Name="SP_GetData_Wise270" ReturnType="Collection(HiPaaS_website_offshoreModel.SP_GetData_Wise270_Result)">
+      <Parameter Name="SDate" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetDetails270" ReturnType="Collection(HiPaaS_website_offshoreModel.SP_GetDetails270_Result)">
+      <Parameter Name="SDate" Mode="In" Type="String" />
+      <Parameter Name="Type_ID" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="Eligibilty_DateWise" EntityType="HiPaaS_website_offshoreModel.Eligibilty_DateWise" />
+    <EntitySet Name="IntakeClaimDatas" EntityType="HiPaaS_website_offshoreModel.IntakeClaimData" />
+    <EntitySet Name="IntakeClaimLineDatas" EntityType="HiPaaS_website_offshoreModel.IntakeClaimLineData" />
+    <FunctionImport Name="SP_GetLCD_SmallFileNew" ReturnType="Collection(HiPaaS_website_offshoreModel.SP_GetLCD_SmallFileNew_Result)" />
+    <EntitySet Name="AspNetRoles" EntityType="HiPaaS_website_offshoreModel.AspNetRole" />
+    <EntitySet Name="AspNetUserClaims" EntityType="HiPaaS_website_offshoreModel.AspNetUserClaim" />
+    <EntitySet Name="AspNetUserLogins" EntityType="HiPaaS_website_offshoreModel.AspNetUserLogin" />
+    <FunctionImport Name="SP_LoginUserDetails" ReturnType="Collection(HiPaaS_website_offshoreModel.SP_LoginUserDetails_Result)">
+      <Parameter Name="LoginEmailID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetenrollmentDetails834" ReturnType="Collection(HiPaaS_website_offshoreModel.SP_GetenrollmentDetails834_Result)" />
+    <EntitySet Name="MemberCoverageInfo_M1" EntityType="HiPaaS_website_offshoreModel.MemberCoverageInfo_M1" />
+    <EntitySet Name="MemberInfo_M1" EntityType="HiPaaS_website_offshoreModel.MemberInfo_M1" />
+    <FunctionImport Name="SP_834DailyDashboardCount" ReturnType="Collection(HiPaaS_website_offshoreModel.SP_834DailyDashboardCount_Result)" />
+    <FunctionImport Name="SP_834FileDetails" ReturnType="Collection(HiPaaS_website_offshoreModel.SP_834FileDetails_Result)">
+      <Parameter Name="text" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_834Filecountwisedetails" ReturnType="Collection(HiPaaS_website_offshoreModel.SP_834Filecountwisedetails_Result)">
+      <Parameter Name="text" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Daily834headerData" ReturnType="Collection(HiPaaS_website_offshoreModel.SP_Daily834headerData_Result)" />
+    <FunctionImport Name="SP_834FileHeaderDetails" ReturnType="Collection(HiPaaS_website_offshoreModel.SP_834FileHeaderDetails_Result)">
+      <Parameter Name="FileId" Mode="In" Type="String" />
+      <Parameter Name="Subscriber" Mode="In" Type="String" />
+      <Parameter Name="type" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="Claim_Status">
+    <Key>
+      <PropertyRef Name="Claim_Status_id" />
+    </Key>
+    <Property Name="Claim_Status_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Claim_Status_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ClaimAdjustmentServiceLine">
+    <Key>
+      <PropertyRef Name="SeqID" />
+    </Key>
+    <Property Name="SeqID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClaimId" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="FileID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TransactionID" Type="Int32" />
+    <Property Name="FileName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FileDate" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="OccurenceLoop" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SequenceId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CAS01" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CAS02" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CAS03" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CAS04" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CAS05" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CAS06" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CAS07" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CAS08" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CAS09" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CAS10" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CAS11" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CAS12" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CAS13" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CAS14" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CAS15" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CAS16" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CAS17" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CAS18" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CAS19" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CAS20" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField4" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ClaimDiagnosisInfo">
+    <Key>
+      <PropertyRef Name="SeqID" />
+    </Key>
+    <Property Name="SeqID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClaimId" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="FileID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TransactionID" Type="Int32" />
+    <Property Name="FileName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FileDate" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="OccurenceLoop" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SequenceId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="HI01" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="HI02" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="HI03" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="HI04" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="HI05" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="HI06" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="HI07" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="HI08" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="HI09" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="HI10" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField4" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ClaimInformationREF">
+    <Key>
+      <PropertyRef Name="SeqID" />
+    </Key>
+    <Property Name="SeqID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FileID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TransactionID" Type="Int32" />
+    <Property Name="FileName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FileDate" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="OccurenceLoop" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SequenceId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="REF01" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="REF02" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimId" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField4" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Claims_ICD_CODE">
+    <Key>
+      <PropertyRef Name="SeqId" />
+    </Key>
+    <Property Name="SeqId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ICD_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Year" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="NoteClaim837">
+    <Key>
+      <PropertyRef Name="SeqID" />
+    </Key>
+    <Property Name="SeqID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FileID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TransactionID" Type="Int32" />
+    <Property Name="FileName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FileDate" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="OccurenceLoop" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SequenceId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NTE01" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NTE02" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimId" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceLineItem" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="LCD_Covered_Original">
+    <Key>
+      <PropertyRef Name="SeqId" />
+    </Key>
+    <Property Name="SeqId" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CPT_HCPCS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Exclusion_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ICD_Code_Range_Start" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ICD_Code_Range_End" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Policy_Rule_Summary_or_Reference" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ABN_Form_Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ABN_Spanish_Form_Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Code_Effective_Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Code_Termination_Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Frequency_Limit" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Frequency_Procedure_Limit" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Frequency_Time_Span_Unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Frequency_Time_Span_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Sex" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Age_Minimum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Age_Maximum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Age_Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Policy_Rule_Key" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Policy_Rule_NameorDescriptor" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Diagnosis_Group_Identifier" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Diagnosis_Group_Logic" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Diagnosis_Coding_Order" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="SP_GetClaimAmount_Result">
+    <Property Type="Decimal" Name="claim_amount" Nullable="true" Precision="38" Scale="2" />
+    <Property Type="String" Name="ClaimStatus" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SP_GetClaims_ICD_CODE_Result">
+    <Property Type="Int32" Name="SeqId" Nullable="false" />
+    <Property Type="String" Name="ICD_CODE" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Year" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CodeDesc" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SP_GetCompanion_Guide_Result">
+    <Property Type="String" Name="Edit_Reference" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Segment" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="ID" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Min_Max" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Usage_Req" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Values5010A1" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="TA1_999_277CA" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Accept_Reject" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Disposition" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="PartB" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="CEDI" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="MiscNotes" Nullable="true" MaxLength="250" />
+  </ComplexType>
+  <ComplexType Name="SP_GetLCD_Covered_Original_Result">
+    <Property Type="Decimal" Name="SeqId" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="CPT" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ICDCode" Nullable="true" />
+    <Property Type="String" Name="policy" Nullable="true" />
+    <Property Type="String" Name="C_eff_date" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="policyrulekey" Nullable="true" />
+    <Property Type="String" Name="policyDesc" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_GetPendingClaimError_Result">
+    <Property Type="Int32" Name="RejLevelCount" Nullable="true" />
+    <Property Type="String" Name="ClaimLevelErrors" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="SP_GetRejectedClaimError_Result">
+    <Property Type="Int32" Name="RejLevelCount" Nullable="true" />
+    <Property Type="String" Name="ClaimLevelErrors" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="SP_SearchClaims_Result">
+    <Property Type="Int32" Name="SeqID" Nullable="false" />
+    <Property Type="String" Name="FileID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FileName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="FileDate" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ClaimID" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="claim_amount" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ClaimStatus" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BillingProvider_TaxId" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="Created_Date" Nullable="true" Precision="23" />
+  </ComplexType>
+  <EntityType Name="Eligibility276">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeofTransaction" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AvgResTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TotalNumOfReq" Type="Int32" />
+    <Property Name="Success" Type="Int32" />
+    <Property Name="Error" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Eligibilty270">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeofTransaction" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AvgResTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TotalNumOfReq" Type="Int32" />
+    <Property Name="Success" Type="Int32" />
+    <Property Name="Error" Type="Int32" />
+    <Property Name="Created_Date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <ComplexType Name="SP_GetCompanion_Guide_270_Result">
+    <Property Type="String" Name="Loop_ID" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Reference" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Info_Source_Name" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="X12_Codes" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Notes" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="ErrorType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Error_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Transaction_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Error_Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="SP_GetRejectedClaims_Result">
+    <Property Type="String" Name="Reason" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="BillingProviderLastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FileName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="FileDate" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Member_Account_Number" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="SubscriberLastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SubscriberFirstName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SP_GetClaimDailyAuditCount_Result">
+    <Property Type="Int32" Name="SubTotal" Nullable="true" />
+    <Property Type="Int32" Name="InBizstockTotal" Nullable="true" />
+    <Property Type="Int32" Name="RejTotal" Nullable="true" />
+    <Property Type="Int32" Name="PenTotal" Nullable="true" />
+    <Property Type="Int32" Name="VeriTotal" Nullable="true" />
+    <Property Type="Int32" Name="errTotal" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_GetClaimDailyAudit_Result">
+    <Property Type="String" Name="FileID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="filename" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="Submitted" Nullable="true" />
+    <Property Type="Int32" Name="Rejected" Nullable="true" />
+    <Property Type="Int32" Name="Pending" Nullable="true" />
+    <Property Type="Int32" Name="Verified" Nullable="true" />
+    <Property Type="Int32" Name="Error" Nullable="true" />
+    <Property Type="Int32" Name="InBizstock" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="FileInTake835">
+    <Key>
+      <PropertyRef Name="SeqID" />
+    </Key>
+    <Property Name="SeqID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FileID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TransactionID" Type="Int32" />
+    <Property Name="FileName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FileDate" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="BatchID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TransmissionID" Type="Int64" />
+    <Property Name="TradingPartner" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="InterchangeSenderID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="InterchangeControlNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="InterchangeDate" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="InterchangeTime" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SubmitterID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ReceiverName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ReceiverID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Destination" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA04" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA05" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA06" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA07" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA08" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA09" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA10" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA11" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA12" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA13" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA14" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA15" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISA16" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GSA01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GSA02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GSA03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GSA04" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GSA05" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GSA06" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GSA07" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GSA08" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ST01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ST02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ST03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BHT01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BHT02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BHT03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BHT04" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BHT05" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BHT06" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sumbitter_N101" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Submitter_N102" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Submitter_N103" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Submitter_N104" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Submitter_N301" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Submitter_N302" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Submitter_N401" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Submitter_N402" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Submitter_N403" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Submitter_PER01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Submitter_PER02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Submitter_PER03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Submitter_PER04" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Submitter_PER05" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Submitter_PER06" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_N101" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_N102" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_N103" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_N104" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_N105" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_N301" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_N302" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_N401" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_N402" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_N403" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_PER01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_PER02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_PER03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_PER04" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_PER05" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver_PER06" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimCount" Type="Int32" />
+    <Property Name="ExternalCorrelationToken" Type="Guid" />
+    <Property Name="ExtraField1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField6" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField7" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField8" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField9" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDateTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Created_Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FileStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FileLevelErrors" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Field2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Field3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Field4" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Field5" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Field6" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="error_claimcount" Type="Int32" />
+  </EntityType>
+  <EntityType Name="IntakeClaimData835">
+    <Key>
+      <PropertyRef Name="SeqID" />
+    </Key>
+    <Property Name="SeqID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FileID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TransactionID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FileName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FileDate" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="BatchID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TransmissionID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimExtNmbr" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimTMTrackingID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PaytoPlanInfo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Billing_Provider_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SecondaryBilling_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Subscriber_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ExtSubscriber_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Member_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Member_Account_Number" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Member_Last_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Member_First_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MemberMI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Member_DOB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DiagnosisCodes" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Claim_Amount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PatientPaid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NetBalance" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Adjust" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="InsuranceBalance" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VAN_Trace_Number" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="COB_Claim_Number" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimSupplimentalInfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ContractInformation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PatientDueAmmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExternalCorrelationToken" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LineCount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField6" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField7" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField8" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField9" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDateTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Created_Date" Type="DateTime" Precision="3" />
+    <Property Name="HL_ID_BillingProvider" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HL_Level_BillingProvider" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PRV_Billing01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PRV_Billing02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PRV_Billing03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM101_BillingProviderId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BillingProviderLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BillingProviderFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM108_BillingProvider" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM109_BillingProvider" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BillingProviderAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BillingProviderCity_State_Zip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BillingProvider_TaxId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BillingProvider_PER01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BillingProvider_PER02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BillingProvider_PER03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BillingProvider_PER04" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM101_PayToProvider" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayToProviderLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayToProviderFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM108_PayToProvider" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM109_PayToProvider" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayToProviderAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayToProviderCity_State_Zip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayToProvider_TaxId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayToProvider_PER01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayToProvider_PER02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayToProvider_PER03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayToProvider_PER04" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HL_ID_Subscriber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HL_Level_Subscriber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SBR01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SBR02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SBR03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SBR09" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SubscriberLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SubscriberFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SubscriberDOB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM108_Subscriber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM109_Subscriber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SubscriberAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SubscriberCity_State_Zip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SubscriberSecondaryIdentification" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CasualityClaimNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayerLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayerFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM108_Payer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM109_Payer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayerAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayerCity_State_Zip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayerSecondaryId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BillingProviderSecondaryId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HL_ID_Patient" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HL_Level_Patient" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PatientLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PatientFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM108_Patient" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM109_Patient" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PatientAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PatientCity_State_Zip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PatientDOB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CLM01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CLM02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CLM05_01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CLM05_02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CLM05_03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StatementBegin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StatementEnd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DischargeHour" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AdmissionDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RepricerReceivevDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ErrorCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ErrorDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Field1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimLevelErrors" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Field3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Field4" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NM109_2330" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="CLM_11" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimLevelICDErrorFlag" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimLevelCLMErrorFlag" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="HI01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="IntakeClaimLineData835">
+    <Key>
+      <PropertyRef Name="SeqID" />
+    </Key>
+    <Property Name="SeqID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FileID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimSeqID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TransactionID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FileName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FileDate" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="BatchID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TransmissionID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimExtNmbr" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimTMTrackingID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Subscriber_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Member_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ExtSubscriber_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ICD9ICD10" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ProcNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DiagnosisXRef" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DiagnosisCodes" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PatientWeight" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Units" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UnitMeasure" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Proc_Amount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PatientPaid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NetBalance" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Adjust" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="InsuranceBalance" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateofService" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateofServiceEnd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LineStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="OtherID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExternalCorrelationToken" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AmbulanceInfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="XRayInfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TransportInfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField6" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField7" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField8" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField9" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDateTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Created_Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HCP01_PricingMethodology" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HCP02_Amount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HCP03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HCP04" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HCP05_Rate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HCP06" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HCP07" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HCP08" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HCP12_Quantity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HCP13" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HCP14" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HCP15_ExceptionCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AttendingProviderNameLastOrOrganizationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AttendingProviderNameFirst" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM108_AttendingProvider" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM109_AttendingProvider" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AttendingProviderCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AttendingProvider_PRV02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AttendingProvider_PRV03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AttendingProvider_REF01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AttendingProvider_REF02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OperatingPhysicianNameLastOrOrganizationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OperatingPhysicianNameFirst" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM108_OperatingPhysician" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM109_OperatingPhysician" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OperatingPhysician_REF01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OperatingPhysician_REF02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherOperatingPhysicianNameLastOrOrganizationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherOperatingPhysicianNameFirst" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM108_OtherOperatingPhysician" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM109_OtherOperatingPhysician" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherOperatingPhysician_REF01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherOperatingPhysician_REF02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RenderingPhysicianNameLastOrOrganizationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RenderingPhysicianNameFirst" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM108_RenderingPhysician" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM109_RenderingPhysician" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RenderingPhysician_REF01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RenderingPhysician_REF02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceFacilityLocationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceFacilityLocation_NM102" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceFacilityLocation_NM108" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceFacilityLocation_NM109" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceFacilityLocationAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceFacilityLocation_City_State_Zip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceFacilityLocation_REF01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceFacilityLocation_REF02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ReferringProviderNameLastOrOrganizationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ReferringProviderNameFirst" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM108_ReferringProvider" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM109_ReferringProvider" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ReferringProvider_REF01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ReferringProvider_REF02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SBR01_PayerResponsibilityCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SBR02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SBR03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SBR04" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SBR09" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS01_ClaimAdjustMentGroupCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS04" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS05" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS06" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS07" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS08" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS09" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS10" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS11" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS12" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS13" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS14" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS15" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS16" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS17" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS18" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS19" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AMT01_PayerPaidAmmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AMT02_Amount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AMT01_RemainingPatientLiability" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AMT02_RPAmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AMT01_NonCoveredChargeAmmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AMT02_NCAmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherInsuranceCoverage_OI03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherInsuranceCoverage_OI06" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MIA01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MIA02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MIA03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MIA04" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MIA05" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MIA06" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MIA07" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MIA08" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MIA09" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MIA10" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MOA01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MOA02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MOA03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MOA04" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MOA05" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MOA06" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MOA07" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MOA08" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MOA09" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MOA10" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherSubscriberNameLastOrOrganizationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherSubscriberNameFirst" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherSubscriber_NM102" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM108_OtherSubscriber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM109_OtherSubscriber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherSubscriberAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherSubscriberCityStateZip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherSubscriber_REF01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherSubscriber_RF02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherPayerNameLastOrOrganizationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherPayerNameFirst" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherPayer_NM102" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM108_OtherPayer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM109_OtherPayer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherPayerAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherPayerCityStateZip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimCheckOrRemittanceDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LX" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SV201" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SV202" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SV202_1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SV202_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SV202_3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SV202_4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SV202_5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SV202_6" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SV202_7" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SV203" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SV204" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SV205" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SV207" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LinSupplimentalInfo_PWK01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PWK02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PWK05" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LIN02_DrugIdentification" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LIN03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CTP04_DrugQuantity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CTP05" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CTP05_1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SVD01" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="SVD02" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="SVD03" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="SVD03_1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="SVD03_2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="SVD03_3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="SVD05" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="LineCheckOrRemittanceDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RemainingPatientLiability" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ErrorCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimLineLevelErrors" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Field1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Field2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Field3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Field4" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Claims278">
+    <Key>
+      <PropertyRef Name="TranID" />
+    </Key>
+    <Property Name="TranID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TranName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TranDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TranStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Submitter" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ErrorCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="SP_GetData_Wise270_Result">
+    <Property Type="Int32" Name="Trans_CountID" Nullable="false" />
+    <Property Type="String" Name="TypeOfTransaction" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AvgResTime" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="TotalNumOfReq" Nullable="true" />
+    <Property Type="Int32" Name="Success" Nullable="true" />
+    <Property Type="Int32" Name="Error" Nullable="true" />
+    <Property Type="DateTime" Name="Date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Trans_type" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Submiter" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Trans_ID" Nullable="true" />
+    <Property Type="String" Name="Error_Code" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SP_GetDetails270_Result">
+    <Property Type="Int32" Name="Trans_CountID" Nullable="false" />
+    <Property Type="String" Name="TypeOfTransaction" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AvgResTime" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="TotalNumOfReq" Nullable="true" />
+    <Property Type="Int32" Name="Success" Nullable="true" />
+    <Property Type="Int32" Name="Error" Nullable="true" />
+    <Property Type="String" Name="Date" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Trans_type" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Submiter" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Trans_ID" Nullable="true" />
+    <Property Type="String" Name="Error_Code" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <EntityType Name="Eligibilty_DateWise">
+    <Key>
+      <PropertyRef Name="Trans_CountID" />
+    </Key>
+    <Property Name="Trans_CountID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeOfTransaction" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AvgResTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TotalNumOfReq" Type="Int32" />
+    <Property Name="Success" Type="Int32" />
+    <Property Name="Error" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="Trans_type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Submiter" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Trans_ID" Type="Int32" />
+    <Property Name="Error_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="IntakeClaimData">
+    <Key>
+      <PropertyRef Name="SeqID" />
+    </Key>
+    <Property Name="SeqID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FileID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TransactionID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FileName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FileDate" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="BatchID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TransmissionID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimExtNmbr" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimTMTrackingID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PaytoPlanInfo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Billing_Provider_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SecondaryBilling_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Subscriber_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ExtSubscriber_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Member_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Member_Account_Number" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Member_Last_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Member_First_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MemberMI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Member_DOB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DiagnosisCodes" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Claim_Amount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PatientPaid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NetBalance" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Adjust" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="InsuranceBalance" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VAN_Trace_Number" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="COB_Claim_Number" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimSupplimentalInfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ContractInformation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PatientDueAmmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExternalCorrelationToken" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LineCount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField6" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField7" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField8" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField9" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDateTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Created_Date" Type="DateTime" Precision="3" />
+    <Property Name="HL_ID_BillingProvider" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HL_Level_BillingProvider" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PRV_Billing01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PRV_Billing02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PRV_Billing03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM101_BillingProviderId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BillingProviderLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BillingProviderFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM108_BillingProvider" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM109_BillingProvider" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BillingProviderAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BillingProviderCity_State_Zip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BillingProvider_TaxId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BillingProvider_PER01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BillingProvider_PER02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BillingProvider_PER03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BillingProvider_PER04" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM101_PayToProvider" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayToProviderLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayToProviderFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM108_PayToProvider" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM109_PayToProvider" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayToProviderAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayToProviderCity_State_Zip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayToProvider_TaxId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayToProvider_PER01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayToProvider_PER02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayToProvider_PER03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayToProvider_PER04" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HL_ID_Subscriber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HL_Level_Subscriber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SBR01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SBR02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SBR03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SBR09" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SubscriberLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SubscriberFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SubscriberDOB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM108_Subscriber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM109_Subscriber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SubscriberAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SubscriberCity_State_Zip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SubscriberSecondaryIdentification" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CasualityClaimNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayerLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayerFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM108_Payer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM109_Payer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayerAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayerCity_State_Zip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayerSecondaryId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BillingProviderSecondaryId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HL_ID_Patient" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HL_Level_Patient" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PatientLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PatientFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM108_Patient" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM109_Patient" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PatientAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PatientCity_State_Zip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PatientDOB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CLM01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CLM02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CLM05_01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CLM05_02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CLM05_03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StatementBegin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StatementEnd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DischargeHour" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AdmissionDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RepricerReceivevDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ErrorCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ErrorDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Field1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimLevelErrors" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Field3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Field4" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NM109_2330" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="CLM_11" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimLevelICDErrorFlag" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimLevelCLMErrorFlag" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="HI01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="adjudication_status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="IntakeClaimLineData">
+    <Key>
+      <PropertyRef Name="SeqID" />
+    </Key>
+    <Property Name="SeqID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FileID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimSeqID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TransactionID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FileName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FileDate" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="BatchID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TransmissionID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimExtNmbr" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimTMTrackingID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Subscriber_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Member_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ExtSubscriber_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ICD9ICD10" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ProcNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DiagnosisXRef" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DiagnosisCodes" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PatientWeight" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Units" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UnitMeasure" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Proc_Amount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PatientPaid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NetBalance" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Adjust" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="InsuranceBalance" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateofService" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateofServiceEnd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LineStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="OtherID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExternalCorrelationToken" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AmbulanceInfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="XRayInfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TransportInfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField6" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField7" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField8" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField9" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDateTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Created_Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HCP01_PricingMethodology" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HCP02_Amount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HCP03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HCP04" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HCP05_Rate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HCP06" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HCP07" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HCP08" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HCP12_Quantity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HCP13" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HCP14" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HCP15_ExceptionCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AttendingProviderNameLastOrOrganizationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AttendingProviderNameFirst" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM108_AttendingProvider" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM109_AttendingProvider" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AttendingProviderCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AttendingProvider_PRV02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AttendingProvider_PRV03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AttendingProvider_REF01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AttendingProvider_REF02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OperatingPhysicianNameLastOrOrganizationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OperatingPhysicianNameFirst" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM108_OperatingPhysician" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM109_OperatingPhysician" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OperatingPhysician_REF01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OperatingPhysician_REF02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherOperatingPhysicianNameLastOrOrganizationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherOperatingPhysicianNameFirst" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM108_OtherOperatingPhysician" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM109_OtherOperatingPhysician" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherOperatingPhysician_REF01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherOperatingPhysician_REF02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RenderingPhysicianNameLastOrOrganizationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RenderingPhysicianNameFirst" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM108_RenderingPhysician" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM109_RenderingPhysician" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RenderingPhysician_REF01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RenderingPhysician_REF02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceFacilityLocationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceFacilityLocation_NM102" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceFacilityLocation_NM108" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceFacilityLocation_NM109" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceFacilityLocationAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceFacilityLocation_City_State_Zip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceFacilityLocation_REF01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceFacilityLocation_REF02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ReferringProviderNameLastOrOrganizationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ReferringProviderNameFirst" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM108_ReferringProvider" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM109_ReferringProvider" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ReferringProvider_REF01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ReferringProvider_REF02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SBR01_PayerResponsibilityCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SBR02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SBR03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SBR04" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SBR09" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS01_ClaimAdjustMentGroupCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS04" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS05" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS06" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS07" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS08" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS09" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS10" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS11" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS12" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS13" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS14" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS15" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS16" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS17" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS18" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAS19" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AMT01_PayerPaidAmmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AMT02_Amount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AMT01_RemainingPatientLiability" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AMT02_RPAmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AMT01_NonCoveredChargeAmmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AMT02_NCAmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherInsuranceCoverage_OI03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherInsuranceCoverage_OI06" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MIA01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MIA02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MIA03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MIA04" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MIA05" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MIA06" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MIA07" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MIA08" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MIA09" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MIA10" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MOA01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MOA02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MOA03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MOA04" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MOA05" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MOA06" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MOA07" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MOA08" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MOA09" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MOA10" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherSubscriberNameLastOrOrganizationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherSubscriberNameFirst" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherSubscriber_NM102" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM108_OtherSubscriber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM109_OtherSubscriber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherSubscriberAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherSubscriberCityStateZip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherSubscriber_REF01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherSubscriber_RF02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherPayerNameLastOrOrganizationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherPayerNameFirst" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherPayer_NM102" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM108_OtherPayer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM109_OtherPayer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherPayerAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherPayerCityStateZip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimCheckOrRemittanceDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LX" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SV201" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SV202" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SV202_1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SV202_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SV202_3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SV202_4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SV202_5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SV202_6" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SV202_7" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SV203" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SV204" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SV205" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SV207" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LinSupplimentalInfo_PWK01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PWK02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PWK05" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LIN02_DrugIdentification" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LIN03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CTP04_DrugQuantity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CTP05" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CTP05_1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SVD01" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="SVD02" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="SVD03" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="SVD03_1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="SVD03_2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="SVD03_3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="SVD05" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="LineCheckOrRemittanceDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RemainingPatientLiability" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ErrorCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimLineLevelErrors" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Field1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Field2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Field3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Field4" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="adjustment" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="type_of_adjustment" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="RemainigAmt" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="SP_GetLCD_SmallFileNew_Result">
+    <Property Type="Decimal" Name="SeqId" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="CPT" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ICDCode" Nullable="true" />
+    <Property Type="String" Name="policy" Nullable="true" />
+    <Property Type="String" Name="C_eff_date" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="policyrulekey" Nullable="true" />
+    <Property Type="String" Name="policyDesc" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="AspNetRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogin">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="SP_LoginUserDetails_Result">
+    <Property Type="String" Name="Id" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="256" />
+    <Property Type="Boolean" Name="EmailConfirmed" Nullable="false" />
+    <Property Type="String" Name="PasswordHash" Nullable="true" />
+    <Property Type="String" Name="SecurityStamp" Nullable="true" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" />
+    <Property Type="Boolean" Name="PhoneNumberConfirmed" Nullable="false" />
+    <Property Type="Boolean" Name="TwoFactorEnabled" Nullable="false" />
+    <Property Type="DateTime" Name="LockoutEndDateUtc" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="LockoutEnabled" Nullable="false" />
+    <Property Type="Int32" Name="AccessFailedCount" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="256" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="User_Role" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_GetenrollmentDetails834_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="SFHPID" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CIN" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Member_Birth_date" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Eligibility_Errors" Nullable="true" MaxLength="550" />
+    <Property Type="String" Name="Inbound_X12_status" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Qnxt_status" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="X12_Eff_date" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Qeffdate" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="X12_Term_date" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Qenddate" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="C834ToQNXT" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Member_death_date" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="FAMEDetails_status" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="CustomDB_staus" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PlanIntegration_status" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="IPA_status" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Plancode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Error_Type" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="custome_errors" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Outbound_status" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <EntityType Name="MemberCoverageInfo_M1">
+    <Key>
+      <PropertyRef Name="SeqID" />
+    </Key>
+    <Property Name="SeqID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FileID" Type="Int32" />
+    <Property Name="FileName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FullFile" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="LoadMonth" Type="DateTime" Precision="0" />
+    <Property Name="TransactionID" Type="Int32" />
+    <Property Name="OtherID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SubscriberNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MEDSID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TransCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="InsLineCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PlanCoverageDesc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StartDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EndDate" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MemberAmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Ref171" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Ref9V1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RefCE1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RefE81" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RefRB1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RefXX11" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RefZX1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RefZZ1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ReconcileInfo" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Reconcile" Type="Int32" />
+    <Property Name="CreateDateTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MemberInfo_M1">
+    <Key>
+      <PropertyRef Name="SeqID" />
+    </Key>
+    <Property Name="SeqID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FileID" Type="Int32" />
+    <Property Name="TransactionID" Type="Int32" />
+    <Property Name="FileName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FullFile" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="LoadMonth" Type="DateTime" Precision="0" />
+    <Property Name="OtherID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SubscriberNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MEDSID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MemberFName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MemberLName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MemberMI" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StreetAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PostalCode" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="County" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CountyRes" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Race" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Ethinicity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Language" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FAMELanguge" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MailingStreetAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MailingCity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MailingState" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MailingPostalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Ref171" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Ref231" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Ref3H1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Ref601" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RefDX1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RefF61" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RefQ41" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RefQQ1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RefABB1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RefZZ1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Status2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExtraField2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ReconcileInfo" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Reconcile" Type="Int32" />
+    <Property Name="CreateDateTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dob" Type="DateTime" Precision="3" />
+    <Property Name="Gender" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="error_desc" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="SP_834DailyDashboardCount_Result">
+    <Property Type="Int32" Name="total_file" Nullable="true" />
+    <Property Type="Int32" Name="Total_enrollment" Nullable="true" />
+    <Property Type="Int32" Name="addition" Nullable="true" />
+    <Property Type="Int32" Name="Change" Nullable="true" />
+    <Property Type="Int32" Name="term" Nullable="true" />
+    <Property Type="Int32" Name="Auditcount" Nullable="true" />
+    <Property Type="Int32" Name="Error" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_834FileDetails_Result">
+    <Property Type="String" Name="SubscriberNo" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="fileid" Nullable="true" />
+    <Property Type="String" Name="Enrollment_type" Nullable="false" MaxLength="11" />
+    <Property Type="String" Name="InsLineCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TransCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MemberAmount" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Error" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="CreateDateTime" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SP_834Filecountwisedetails_Result">
+    <Property Type="String" Name="FileName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="FileID" Nullable="true" />
+    <Property Type="String" Name="sender" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="receiver" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FileStatus" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="CreateDateTime" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SP_Daily834headerData_Result">
+    <Property Type="String" Name="FileName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="FileID" Nullable="true" />
+    <Property Type="String" Name="sender" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="receiver" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="total" Nullable="true" />
+    <Property Type="String" Name="FileStatus" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="CreateDateTime" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SP_834FileHeaderDetails_Result">
+    <Property Type="String" Name="FileName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="FileID" Nullable="true" />
+    <Property Type="String" Name="sender" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="receiver" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SubscriberNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MemberFName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MemberLName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Telephone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="StreetAddress" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PostalCode" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="Enrollment_type" Nullable="false" MaxLength="11" />
+    <Property Type="DateTime" Name="dob" Nullable="true" Precision="23" />
+    <Property Type="String" Name="gender" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="InsLineCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MemberAmount" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="EnrollmentStatus" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="StartDate" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EndDate" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CreateDateTime" Nullable="true" MaxLength="50" />
+  </ComplexType>
+</Schema>

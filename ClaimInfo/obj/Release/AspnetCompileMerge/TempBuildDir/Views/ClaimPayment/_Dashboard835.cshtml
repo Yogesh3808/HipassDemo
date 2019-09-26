@@ -1,0 +1,33 @@
+﻿@model ClaimInfo.Models.Dashboard837ViewModel
+<div class="dashformBx  dashformBx2 clearfix">
+    <div class="dashfrm-L1">
+        <label class="lblTxtCountHeader"> Total Files </label>
+        <br /><br />
+        <a class="lblCount" style="color:#20a8d8;" href="/ClaimPayment/Claimspayment835Details?sSelectedDate=@Model.FileDate&sMenu=total">@Model.FileCount</a>
+    </div>
+    <div class="dashfrm-L1">
+        <label class="lblTxtCountHeader"> Failed File Load </label>
+        <br /><br />
+        <a class="lblCount" style="color:#ff0000;" href="/ClaimPayment/Claimspayment835Details?sSelectedDate=@Model.FileDate&sMenu=FEC"> @Model.EDIFailLoadCount </a>
+    </div>
+    <div class="dashfrm-L1">
+        <label class="lblTxtCountHeader"> Paid Claims </label>
+        <br /><br />
+        <a class="lblCount" style="color:#20a8d8;" href="/ClaimPayment/Claimspayment835Details?sSelectedDate=@Model.FileDate&sMenu=SC">@Model.SubmittedClaimCount</a>
+    </div>
+    @*<div class="dashfrm-L1">
+        <label class="lblTxtCountHeader"> Accepted Claims </label>
+        <br /><br />
+        <a class="lblCount" style="color:#2ca058;" href="/Claims/GetFileDetailsByDate?sSelectedDate=@Model.FileDate&sMenu=AC">@Model.AcceptedClaimCount</a>
+    </div>*@
+    <div class="dashfrm-L1">
+        <label class="lblTxtCountHeader"> 835 Errors</label>
+        <br /><br />
+        <a class="lblCount" style="color:#ff0000;" href="/ClaimPayment/Claimspayment835Details?sSelectedDate=@Model.FileDate&sMenu=EC">@Model.RejectedClaimCount</a>
+    </div>
+
+    <div class="dashfrm-L2">
+
+    </div>
+    <div class="clearfix"></div>
+</div>

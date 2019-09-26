@@ -1,0 +1,418 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<style>
+    .mainDiv {
+        width: 150px;
+        height: 100px;
+        float: left;
+        margin-top: 10px;
+    }
+
+    .inline {
+        float: left;
+        width: 33%;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Create four equal columns that floats next to each other */
+    .column {
+        float: left;
+        width: 25%;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .bar {
+        width: 50px;
+        background: rgb(19, 157, 201);
+    }
+
+    .bar1 {
+        width: 50px;
+        background: #ec6236;
+    }
+</style>
+@*<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">*@
+
+<div class="rightpart">
+    <div class="dashBx">
+        <div class="clearfix"></div>
+        <div class="dashformBx  dashformBx2 clearfix">
+            <div style="border-bottom: 1.5px solid #139DC9;">
+                <img src="~/Images/Search.png" style="width:14px; height:14px;" />
+                <input type="text" id="MyCustomSearch" style="color: #139DC9; font-weight: bold;" placeholder="Search" class="mySearchbox" name="min">
+            </div>
+            <br />
+            <h2>HiPaaS Medical Monthly Eligibility Reconcile</h2>
+
+        </div>
+        <br />
+        <div>
+            <div style="width:25%; display:none; float:left;">
+                <label class="lblTxt">Select Client Name </label>
+                @Html.DropDownList("ClientName", new List<SelectListItem>
+                {
+                    new SelectListItem {Text = "Client Name 1", Value = "1",Selected = true},
+                    new SelectListItem {Text = "Client Name 2", Value = "2"}
+                }, "Select Client Name", new {@class = "dashInp"})
+            </div>
+            <div style="width:25%; float:left;">
+                <label class="lblTxt">Select State </label>
+                @Html.DropDownList("State", new List<SelectListItem>
+                {
+                    new SelectListItem {Text = "California", Value = "1" ,Selected = true},
+                    new SelectListItem {Text = "Michigan", Value = "2"},
+                 new SelectListItem {Text = "Florida", Value = "3"},
+                    new SelectListItem {Text = "New York", Value = "4"},
+                 new SelectListItem {Text = "Idaho", Value = "5"},
+                    new SelectListItem {Text = "Ohio", Value = "6"},
+                 new SelectListItem {Text = "Illinois", Value = "7"},
+                    new SelectListItem {Text = "Texas", Value = "8"},
+               new SelectListItem {Text = "Mississippi", Value = "9"},
+                    new SelectListItem {Text = "South Carolina", Value = "10"},
+                new SelectListItem {Text = "New Mexico", Value = "11"},
+                    new SelectListItem {Text = "Puerto Rico", Value = "12"},
+                          new SelectListItem {Text = "Washington", Value = "13"},
+                new SelectListItem {Text = "Utah", Value = "14"},
+                    new SelectListItem {Text = "Wisconsin", Value = "15"}
+                }, "Select State", new {@class = "dashInp"})
+            </div>
+            <div style="width:25%;  float:left;">
+                <label class="lblTxt">Select Trading Partner </label>
+                @Html.DropDownList("TradingPartner", new List<SelectListItem>
+                {
+                    new SelectListItem {Text = "Trading Partner 1", Value = "1",Selected = true},
+                    new SelectListItem {Text = "Trading Partner 2", Value = "2"}
+                }, "Select Trading Partner", new {@class = "dashInp"})
+            </div>
+            <div style="width:25%; float:left;">
+                <label class="lblTxt">Select Provider Name </label>
+                @Html.DropDownList("ProviderName", new List<SelectListItem>
+                {
+                    new SelectListItem {Text = "Provider Name 1", Value = "1",Selected = true},
+                    new SelectListItem {Text = "Provider Name 2", Value = "2"}
+                }, "Select Provider Name", new {@class = "dashInp"})
+            </div>
+            <div style="float:right;">
+                <img src="~/Images/834Dashboard_01.PNG" style="margin-left: 20px;" width="250"><br><br><br><br>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="dashfrm-L1">
+            <img src="~/Images/search_3_16.ico" width="13" height="13"><label class="lblTxtCountHeader"> <b>LoadMonth</b> </label>
+            <br /><br />
+            Jan 28 5:43 PM
+            <hr align="center">
+        </div>
+        <div class="dashfrm-L1">
+            <label class="lblTxtCountHeader"> Eligibility Errors </label>
+            <br /><br />
+            <div style=" text-align: center; color: red; font-size: 45px">3</div>
+        </div>
+        <div class="dashfrm-L1">
+            <label class="lblTxtCountHeader"> Total Inbound Eligibility </label>
+            <br /><br />
+            <div style="text-align: center; color: rgb(19, 157, 201); font-size: 45px">
+                500K
+            </div>
+        </div>
+        <div class="dashfrm-L1">
+            <label class="lblTxtCountHeader"> Active Reconciled </label>
+            <br /><br />
+            <div style=" text-align: center; color:green; font-size: 28px">0</div>
+        </div>
+        <div class="dashfrm-L1">
+            <label class="lblTxtCountHeader"> Hold Reconciled	 </label>
+            <br /><br />
+            <div style="  text-align: center; color:green; font-size: 28px">0</div>
+        </div>
+        <div class="dashfrm-L2">
+            <label class="lblTxtCountHeader"> Term Reconciled</label>
+            <br /><br />
+            <div style="  text-align: center; color:green; font-size: 28px">0</div>
+        </div>
+        <div class="clearfix"></div>
+        @*<div>
+
+                <p>
+                    <img src="~/Images/search_3_16.ico" width="13" height="13"><b> LoadMonth</b>
+                </p>
+                <div class="mainDiv">
+                Jan 28 5:43 PM
+                <hr width=100 align="left">
+            </div>
+                <div style='float:left; '>
+                    <table>
+                        <tr>
+                            <td>
+
+                            </td>
+                            <td style="  text-align: center; font-size: 13px">Eligibility Errors</td>
+                            <td style=" margin-left: 100px; text-align: center; font-size: 13px">Total Inbound Eligibility</td>
+                            <td style=" margin-left: 100px; text-align: center; font-size: 13px">Active Reconciled</td>
+                            <td style=" margin-left: 100px; text-align: center; font-size: 13px">Hold Reconciled</td>
+                            <td style=" margin-left: 100px; text-align: center; font-size: 13px">Term Reconciled</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style=" text-align: center; color: red; font-size: 45px">3</td>
+                            <td style=" margin-left: 100px; text-align: center; color: rgb(19, 157, 201); font-size: 45px">
+                                500K
+                            </td>
+                            <td style=" margin-left: 100px; text-align: center; color:green; font-size: 28px">0</td>
+                            <td style=" margin-left: 100px; text-align: center; color:green; font-size: 28px">0</td>
+                            <td style=" margin-left: 100px; text-align: center; color:green; font-size: 28px">0</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>*@
+        <div class="container">
+            <table class="inline" border: 1px solid #ddd; style="float:left;">
+                <tr>
+                    <th style="color: rgb(19, 157, 201); text-align: left;"> Total Eligibility in X12 834 File </th>
+                    <th style=" padding-left: 30px; padding: 5px; text-align: right; color: rgb(19, 157, 201)">Members</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style=" padding-left: 30px; padding: 5px; text-align: right;color: white; background: rgb(19, 157, 201)">
+                        2
+                    </td>
+                </tr>
+                <tr>
+                    <td>Active</td>
+                    <td style=" padding-left: 30px; padding: 5px; text-align: right;color: white; background: rgb(19, 157, 201)">
+                        400
+                    </td>
+                </tr>
+                <tr>
+                    <td>Dup in File</td>
+                    <td style=" padding-left: 30px; padding: 5px; text-align: right;color: white; background: rgb(19, 157, 201)">
+                        11
+                    </td>
+                </tr>
+                <tr>
+                    <td>Hold</td>
+                    <td style=" padding-left: 30px; padding: 5px; text-align: right;color: white; background: rgb(19, 157, 201)">
+                        50
+                    </td>
+                </tr>
+                <tr>
+                    <td>No Eligibility Data</td>
+                    <td style=" padding-left: 30px; padding: 5px; text-align: right;color: white; background: rgb(19, 157, 201)">
+                        2
+                    </td>
+                </tr>
+                <tr>
+                    <td>Other Health Plan(not 307)</td>
+                    <td style=" padding-left: 30px; padding: 5px; text-align: right;color: white; background: rgb(19, 157, 201)">
+                        15
+                    </td>
+                </tr>
+                <tr>
+                    <td>Term</td>
+                    <td style=" padding-left: 30px; padding: 5px; text-align: right;color: white; background: rgb(19, 157, 201)">
+                        20
+                    </td>
+                </tr>
+            </table>
+
+            <table class="inline" border: 1px solid #ddd; style="float:left; padding-left: 50px;">
+                <tr>
+                    <th style="color: rgb(19, 157, 201); text-align: left;"> Total Eligibility FAME </th>
+                    <th style=" padding-left: 30px; padding: 5px; text-align: right; color: rgb(19, 157, 201)">Members</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style=" padding-left: 30px; padding: 5px; text-align: right;color: white; background: rgb(19, 157, 201)">
+                        15
+                    </td>
+                </tr>
+                <tr>
+                    <td>Active</td>
+                    <td style=" padding-left: 30px; padding: 5px; text-align: right;color: white; background: rgb(19, 157, 201)">
+                        400
+                    </td>
+                </tr>
+                <tr>
+                    <td>Hold</td>
+                    <td style=" padding-left: 30px; padding: 5px; text-align: right;color: white; background: rgb(19, 157, 201)">
+                        50
+                    </td>
+                </tr>
+                <tr>
+                    <td>Other Health Plan(not 307)</td>
+                    <td style=" padding-left: 30px; padding: 5px; text-align: right;color: white; background: rgb(19, 157, 201)">
+                        40
+                    </td>
+                </tr>
+                <tr>
+                    <td>Term</td>
+                    <td style=" padding-left: 30px; padding: 5px; text-align: right;color: white; background: rgb(19, 157, 201)">
+                        20
+                    </td>
+                </tr>
+            </table>
+
+            <table class="inline" border: 1px solid #ddd; style="float:left; padding-left: 50px;">
+                <tr>
+                    <th style="color: rgb(19, 157, 201); text-align: left;"> Eligibility in Qnxt </th>
+                    <th style=" padding-left: 30px; padding: 5px; text-align: right; color: rgb(19, 157, 201)">Members</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style=" padding-left: 30px; padding: 5px; text-align: right;color: white; background: rgb(19, 157, 201)">
+                        10
+                    </td>
+                </tr>
+                <tr>
+                    <td>Active</td>
+                    <td style=" padding-left: 30px; padding: 5px; text-align: right;color: white; background: rgb(19, 157, 201)">
+                        350
+                    </td>
+                </tr>
+                <tr>
+                    <td>Active Delta</td>
+                    <td style=" padding-left: 30px; padding: 5px; text-align: right;color: white; background: rgb(19, 157, 201)">
+                        50
+                    </td>
+                </tr>
+                <tr>
+                    <td>Hold</td>
+                    <td style=" padding-left: 30px; padding: 5px; text-align: right;color: white; background: rgb(19, 157, 201)">
+                        30
+                    </td>
+                </tr>
+                <tr>
+                    <td>Term</td>
+                    <td style=" padding-left: 30px; padding: 5px; text-align: right;color: white; background: rgb(19, 157, 201)">
+                        20
+                    </td>
+                </tr>
+                <tr>
+                    <td>Term Delta</td>
+                    <td style=" padding-left: 30px; padding: 5px; text-align: right;color: white; background: rgb(19, 157, 201)">
+                        40
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="clearfix"></div>
+        <div style="padding: 10px;">
+            <div class="row" style="margin-top: 10px;">
+                <div class="column">
+                    <p style="color: rgb(19, 157, 201); text-align: left;"><b>Current Month Eligibility Errors</b> </p><br />
+                    <!-- <meter value="1.0"></meter> -->
+                    <div>
+                        <div class="bar" style="height:24px;width:70%; margin-left: 90px;"></div>
+
+                    </div>
+                    <div>
+                        <p style="margin-left: 10px">Active Delta 46</p>
+                    </div>
+                    <div>
+                        <p style="margin-left: 10px">Term Delta 1</p>
+                    </div>
+
+                </div>
+                <div class="column" style="margin-left: 30px">
+                    <table border: 1px solid #ddd; style="float:left; border-spacing: 10px;">
+                        <tr>
+                            <th style="color: rgb(19, 157, 201); text-align: left;">FAME Delta</th>
+                            <th style="padding-left: 30px; color: rgb(19, 157, 201); text-align: right;">Member Count</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style=" padding-left: 30px; padding: 5px; text-align: right;color: white; background: rgb(19, 157, 201)">105200</td>
+                        </tr>
+                        <tr>
+                            <td>Member Count</td>
+                            <td style=" padding-left: 30px; padding: 5px; text-align: right;color: white; background: rgb(19, 157, 201)">50943</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="column" style="margin-top: 20px; margin-left: -30px">
+                    <div style="color: rgb(19, 157, 201); text-align: center;"><b>RateCode Delta</b></div>
+                    <div style="font-size: 45px; color: red;text-align: center;">5</div>
+                </div>
+
+                <div class="column">
+
+                    <table>
+
+                        <tr>
+
+                            <th style="color: rgb(19, 157, 201); text-align: left; "> Custom DB AC&VT</th>
+                            <th style="padding-left: 30px; color: rgb(19, 157, 201); text-align: right;"> Transactions</th>
+                        </tr>
+                        <tr>
+                            <td>Adds and Changes</td>
+                            <td style=" padding-left: 30px; padding: 5px; text-align: right;color: white; background: rgb(19, 157, 201)">39267</td>
+                        </tr>
+                        <tr>
+                            <td>New Members</td>
+                            <td style=" padding-left: 30px; padding: 5px; text-align: right;color: white; background: rgb(19, 157, 201)">2098</td>
+                        </tr>
+                        <tr>
+                            <td>Term By Absence</td>
+                            <td style=" padding-left: 30px; padding: 5px; text-align: right;color: white; background: rgb(19, 157, 201)">5</td>
+                        </tr>
+                        <tr>
+                            <td>Voids and Terms</td>
+                            <td style=" padding-left: 30px; padding: 5px; text-align: right;color: white; background: rgb(19, 157, 201)">4558</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                    <p style="color: rgb(19, 157, 201); text-align: left;"><b>History Eligibility Errors </b></p><br />
+
+                    <div>
+                        <div class="bar1" style="height:24px;width:70%; margin-left: 90px;"></div>
+                    </div>
+                    <p style="color: gray">Active Delta  112</p>
+                    <p style="color: gray">Hold Delta 21 </p>
+                    <p style="color: gray">Term Delta 13</p>
+                </div>
+                <div class="column" style="margin-left: 30px; margin-top: -5px;">
+                    <div style="width: 250px; height: 60px; font-size:10px; color:white; background: rgb(19, 157, 201);"><p>CustomDB AC+VT Count<br>50.05k</p></div>
+                    <div style="width: 250px; height: 60px; font-size:10px; color:white; background: rgb(19, 157, 201);"><p>834 AC+VT Count<br>156.14k</p></div>
+                    <div style="color:gray; margin-top: 10px;"><b>Plan Integration Error</b></div><br />
+                    <div style="width: 250px; font-size:10px; color:white; height: 80px; background: rgb(19, 157, 201);"><p>Error<br>10</p></div>
+                </div>
+                <div class="column" style="margin-top: -20px; margin-left: -30px">
+                    <div style="color:gray; margin-top: 10px;"><b>Other Errors</b></div> <br>
+                    <div class="bar1" style="height:60px;width:50%; margin-left: 90px;"></div>  <br><br>
+                    <p style="margin-left: 10px; color: gray">Termed PCP  12</p><br><br /><br />
+                    <div style="width: 250px; font-size:10px; color:white; height: 50px; background: rgb(19, 157, 201);"><p>145.56k</p></div>
+                </div>
+                <div class="column" style=" margin-top: 20px;">
+                    <table>
+                        <tr>
+                            <th style="color: rgb(19, 157, 201); text-align: left;"> 834 To Qnxt AC & VT</th>
+                            <th style="padding-left: 30px; color: rgb(19, 157, 201); text-align: right;"> Transactions</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style=" padding-left: 30px; padding: 5px; text-align: right;color: white; background: rgb(19, 157, 201)">0</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,375 @@
+﻿@model ClaimInfo.Models.IntakeClaimDetailsViewModel
+@{
+    ViewBag.Title = "IntakeClaimDetails";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<div class="rightpart">
+    <div class="dashBx">
+        <div class="clearfix"></div>
+        <h2>Intake Claim Data</h2>
+        <hr />
+        <br />
+        <div>
+            <strong class="pull-right">
+                <a href="/Claims/IntakeClaimData?FileID=@Model.FileData.FileID&error_claimcount=0" style="color:#6AA2B8;"> Back To List</a>
+            </strong>
+        </div>
+        <button class="accordion active">File <strong>#@Model.FileID</strong></button>
+        <div class="panel" style="display:block;">
+            <br />
+            <div class="dashfrm-L">
+                <label class="lblTxt"> @Html.DisplayNameFor(model => model.FileData.FileName) </label>
+                @Html.DisplayFor(model => model.FileData.FileName)
+            </div>
+            <div class="dashfrm-M">
+                <label class="lblTxt"> @Html.DisplayNameFor(model => model.FileData.FileDate)</label>
+                @Html.DisplayFor(model => model.FileData.FileDate)
+            </div>
+            <div class="dashfrm-M">
+                <label class="lblTxt">@Html.DisplayNameFor(model => model.FileData.Submitter_N103)</label>
+                @Html.DisplayFor(model => model.FileData.Submitter_N103)
+            </div>
+            <div class="dashfrm-R">
+                <label class="lblTxt">@Html.DisplayNameFor(model => model.FileData.Receiver_N103)</label>
+                @Html.DisplayFor(model => model.FileData.Receiver_N103)
+            </div>
+            <div class="clearfix"></div>
+            <div class="dashfrm-L">
+                <label class="lblTxt">  @Html.DisplayNameFor(model => model.BillingProvider)</label>
+                @Html.DisplayFor(model => model.BillingProvider)
+            </div>
+            <div class="dashfrm-M">
+                <label class="lblTxt"> @Html.DisplayNameFor(model => model.FileData.Created_Date)</label>
+                @Html.DisplayFor(model => model.FileData.Created_Date)
+            </div>
+            <div class="dashfrm-M">
+            </div>
+            <div class="dashfrm-R">
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <button class="accordion">Claim <strong> #@Model.ClaimID</strong></button>
+        <div class="panel">
+            <br />
+            <div class="dashfrm-L">
+            </div>
+            <div class="dashfrm-M">
+            </div>
+            <div class="dashfrm-M">
+            </div>
+            <div class="dashfrm-R">
+                <strong style="margin-left:200px;">
+                    <a href="/Claims/IntakeClaimDetailsEdit?SeqID=@Model.ClaimDataSeqID" class="btn btn-default"><img src="../Content/Images/glyphicons_pencil.png" style="height:30px; width:30px;" /></a>
+                </strong>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="dashfrm-L">
+                <label class="lblTxt"> @Html.DisplayNameFor(model => model.ClaimDataSeqID) </label>
+                @Html.DisplayFor(model => model.ClaimDataSeqID)
+            </div>
+            <div class="dashfrm-M">
+                <label class="lblTxt"> @Html.DisplayNameFor(model => model.ClaimExtNmbr)</label>
+                @Html.DisplayFor(model => model.ClaimExtNmbr)
+            </div>
+            <div class="dashfrm-M">
+                <label class="lblTxt"> @Html.DisplayNameFor(model => model.PatientFirstName)</label>
+                @Html.DisplayFor(model => model.PatientFirstName)
+            </div>
+            <div class="dashfrm-R">
+                <label class="lblTxt">@Html.DisplayNameFor(model => model.PatientLastname)</label>
+                @Html.DisplayFor(model => model.PatientLastname)
+            </div>
+            <div class="clearfix"></div>
+            <div class="dashfrm-L">
+                <label class="lblTxt">  @Html.DisplayNameFor(model => model.ClaimTMTrackingID)</label>
+                @Html.DisplayFor(model => model.ClaimTMTrackingID)
+            </div>
+            <div class="dashfrm-M">
+                <label class="lblTxt"> @Html.DisplayNameFor(model => model.DischargeHour)</label>
+                @Html.DisplayFor(model => model.DischargeHour)
+            </div>
+            <div class="dashfrm-M">
+                <label class="lblTxt">   @Html.DisplayNameFor(model => model.AdmissionDate)</label>
+                @Html.DisplayFor(model => model.AdmissionDate)
+            </div>
+            <div class="dashfrm-R">
+                <label class="lblTxt">  @Html.DisplayNameFor(model => model.Claim_Amount)</label>
+                @Html.DisplayFor(model => model.Claim_Amount)
+            </div>
+            <div class="clearfix"></div>
+            <div class="dashfrm-L">
+                <label class="lblTxt">@Html.DisplayNameFor(model => model.PatientPaid)</label>
+                @Html.DisplayFor(model => model.PatientPaid)
+            </div>
+            <div class="dashfrm-M">
+                <label class="lblTxt">@Html.DisplayNameFor(model => model.NetBalance)</label>
+                @Html.DisplayFor(model => model.NetBalance)
+            </div>
+            <div class="dashfrm-M">
+                <label class="lblTxt">@Html.DisplayNameFor(model => model.Adjust)</label>
+                @Html.DisplayFor(model => model.Adjust)
+            </div>
+            <div class="dashfrm-R">
+                <label class="lblTxt">@Html.DisplayNameFor(model => model.InsuranceBalance)</label>
+                @Html.DisplayFor(model => model.InsuranceBalance)
+            </div>
+            <div class="clearfix"></div>
+            <div class="dashfrm-L">
+                <label class="lblTxt">@Html.DisplayNameFor(model => model.BillingProvider)</label>
+                @Html.DisplayFor(model => model.BillingProvider)
+            </div>
+            <div class="dashfrm-M">
+                <label class="lblTxt"> @Html.DisplayNameFor(model => model.BillingProviderAddress)</label>
+                @Html.DisplayFor(model => model.BillingProviderAddress)
+            </div>
+            <div class="dashfrm-M">
+                <label class="lblTxt">@Html.DisplayNameFor(model => model.Payer)</label>
+                @Html.DisplayFor(model => model.Payer)
+            </div>
+            <div class="dashfrm-R">
+                <label class="lblTxt">@Html.DisplayNameFor(model => model.PayerAddress)</label>
+                @Html.DisplayFor(model => model.PayerAddress)
+            </div>
+            <div class="clearfix"></div>
+            <div class="dashfrm-L">
+                <label class="lblTxt">@Html.DisplayNameFor(model => model.ClaimStatus)</label>
+                @Html.DisplayFor(model => model.ClaimStatus)
+            </div>
+            <div class="dashfrm-M">
+                <label class="lblTxt">@Html.DisplayNameFor(model => model.ICDCode)</label>
+                @Html.DisplayFor(model => model.ICDCode)
+            </div>
+            <div class="dashfrm-M">
+
+            </div>
+            <div class="dashfrm-R">
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <button class="accordion">Claim Line Data</button>
+        <div class="panel">
+            <br />
+            <table class="dashTable cell-border table table-bordered display">
+                <tr>
+                    <th>File ID</th>
+                    <th>Claim ID</th>
+                    <th>Service Line Count</th>
+                    <th>Paid Amount</th>
+                    <th>Reamining Amount</th>
+                    <th>Service Date</th>
+                    @*<th>Other Payer Primary Identifier</th>*@
+                    <th>Procedure Code</th>
+                    <th>Paid Service Unit Count</th>
+                    <th>Status</th>
+                    <th>Status Code</th>
+                    @*<th>Line Check Or RemittanceDate</th>*@
+
+                </tr>
+                @foreach (var item in Model.IntakeClaimLineData)
+                {
+                    <tr>
+                        <td>@item.FileID</td>
+                        <td>@item.ClaimID</td>
+                        <td>@item.LX</td>
+                        <td>@item.SVD02</td>
+                        <td>@item.AmmountOwed</td>
+                        <td>@item.ServiceDate</td>
+                        @*<td>@item.SVD01</td>*@
+                        <td>@item.SVD03</td>
+                        <td>@item.SVD05</td>
+                        <td>@item.ErrorCode</td>
+                        <td>@item.ErrorDesc</td>
+                        @*<td>@item.LineCheckOrRemittanceDate</td>*@
+                    </tr>
+                }
+            </table>
+            <br />
+        </div>
+    </div>
+</div>
+@section js{
+    <style type="text/css">
+
+        table {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+
+            table th {
+                background-color: #6AA2B8;
+                color: #333;
+                font-weight: bold;
+            }
+
+            table th, table td {
+                padding: 5px;
+                border: 1px solid #ccc;
+            }
+
+            table, table table td {
+                border: 0px solid #ccc;
+            }
+    </style>
+    <style>
+
+        main {
+            /*max-width: 800px;*/
+            padding: 5px;
+            border: 1px solid rgba(0,0,0,.2);
+            background: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,.1);
+        }
+
+        section {
+            display: none;
+            padding: 20px 0 0;
+            border-top: 1px solid #abc;
+        }
+        /*Demographics*/
+        .rbinput {
+            display: none;
+        }
+
+        .rblable {
+            display: inline-block;
+            margin: 0 0 -1px;
+            padding: 15px 25px;
+            font-weight: 600;
+            text-align: center;
+            color: #abc;
+            border: 1px solid transparent;
+        }
+
+            .rblable:before {
+                font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+                font-weight: bold;
+                margin-right: 10px;
+            }
+
+            .rblable:hover {
+                color: #789;
+                cursor: pointer;
+            }
+        /*Insurance*/
+        .rbinputIns {
+            display: none;
+        }
+
+        .rblableIns {
+            display: inline-block;
+            margin: 0 0 -1px;
+            padding: 15px 25px;
+            font-weight: 600;
+            text-align: center;
+            color: #abc;
+            border: 1px solid transparent;
+        }
+
+            .rblableIns:before {
+                font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+                font-weight: bold;
+                margin-right: 10px;
+            }
+
+            .rblableIns:hover {
+                color: #789;
+                cursor: pointer;
+            }
+
+        input:checked + label {
+            color: #0af;
+            border: 1px solid #abc;
+            border-top: 3px solid #0af;
+            border-bottom: 1px solid #fff;
+        }
+
+        #Demotab1:checked ~ #content1,
+        #Demotab2:checked ~ #content2,
+        #Demotab3:checked ~ #content3,
+        #Demotab4:checked ~ #content4,
+        #Demotab5:checked ~ #content5,
+        #Demotab6:checked ~ #content6,
+        #Demotab7:checked ~ #content7,
+        #Instab1:checked ~ #content8,
+        #Instab2:checked ~ #content9,
+        #Instab3:checked ~ #content10,
+        #Instab4:checked ~ #content11 {
+            display: block;
+        }
+
+        @@media screen and (max-width: 800px) {
+            label {
+                font-size: 0;
+            }
+
+                label:before {
+                    margin: 0;
+                    font-size: 18px;
+                }
+        }
+
+        @@media screen and (max-width: 500px) {
+            label {
+                padding: 15px;
+            }
+        }
+    </style>
+    <style>
+
+        .accordion {
+            font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 5px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+            margin-top: 10px;
+        }
+
+            .active, .accordion:hover {
+                background-color: #6AA2B8;
+            }
+
+        .panel {
+            font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+            border: 1px solid #6AA2B8;
+        }
+    </style>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+        function openCity(cityName) {
+            var i;
+            var x = document.getElementsByClassName("city");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            document.getElementById(cityName).style.display = "block";
+        }</script>
+
+}

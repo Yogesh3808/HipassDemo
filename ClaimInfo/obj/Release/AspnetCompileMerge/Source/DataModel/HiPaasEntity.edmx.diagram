@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="eee29f67df244c9c9aa4a6987f927ae3" Name="Diagram1" ZoomLevel="16">
+        <EntityTypeShape EntityType="HiPaaS_website_offshoreModel.FileInTake" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiPaaS_website_offshoreModel.Claim_Status" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="HiPaaS_website_offshoreModel.ClaimAdjustmentServiceLine" Width="1.5" PointX="7.375" PointY="3.75" />
+        <EntityTypeShape EntityType="HiPaaS_website_offshoreModel.ClaimDiagnosisInfo" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="HiPaaS_website_offshoreModel.ClaimInformationREF" Width="1.5" PointX="9.375" PointY="6.75" />
+        <EntityTypeShape EntityType="HiPaaS_website_offshoreModel.Claims_ICD_CODE" Width="1.5" PointX="11.375" PointY="0.75" />
+        <EntityTypeShape EntityType="HiPaaS_website_offshoreModel.NoteClaim837" Width="1.5" PointX="11.375" PointY="3.75" />
+        <EntityTypeShape EntityType="HiPaaS_website_offshoreModel.Category" Width="1.5" PointX="13.375" PointY="0.75" />
+        <EntityTypeShape EntityType="HiPaaS_website_offshoreModel.LCD_Covered_Original" Width="1.5" PointX="13.375" PointY="3.75" />
+        <EntityTypeShape EntityType="HiPaaS_website_offshoreModel.Eligibility276" Width="1.5" PointX="7.375" PointY="11.75" />
+        <EntityTypeShape EntityType="HiPaaS_website_offshoreModel.Eligibilty270" Width="1.5" PointX="13.375" PointY="10.75" />
+        <EntityTypeShape EntityType="HiPaaS_website_offshoreModel.ErrorType" Width="1.5" PointX="9.375" PointY="11.75" />
+        <EntityTypeShape EntityType="HiPaaS_website_offshoreModel.FileInTake835" Width="1.5" PointX="7.375" PointY="14.75" />
+        <EntityTypeShape EntityType="HiPaaS_website_offshoreModel.IntakeClaimData835" Width="1.5" PointX="9.375" PointY="14.75" />
+        <EntityTypeShape EntityType="HiPaaS_website_offshoreModel.IntakeClaimLineData835" Width="1.5" PointX="11.375" PointY="14.75" />
+        <EntityTypeShape EntityType="HiPaaS_website_offshoreModel.Claims278" Width="1.5" PointX="13.375" PointY="14.75" />
+        <EntityTypeShape EntityType="HiPaaS_website_offshoreModel.Eligibilty_DateWise" Width="1.5" PointX="15.375" PointY="0.75" />
+        <EntityTypeShape EntityType="HiPaaS_website_offshoreModel.IntakeClaimData" Width="1.5" PointX="2.875" PointY="0.875" />
+        <EntityTypeShape EntityType="HiPaaS_website_offshoreModel.IntakeClaimLineData" Width="1.5" PointX="5.125" PointY="1.25" />
+        <EntityTypeShape EntityType="HiPaaS_website_offshoreModel.AspNetRole" Width="1.5" PointX="15.375" PointY="4.75" />
+        <EntityTypeShape EntityType="HiPaaS_website_offshoreModel.AspNetUserClaim" Width="1.5" PointX="15.375" PointY="7.75" />
+        <EntityTypeShape EntityType="HiPaaS_website_offshoreModel.AspNetUserLogin" Width="1.5" PointX="15.375" PointY="10.75" />
+        <EntityTypeShape EntityType="HiPaaS_website_offshoreModel.MemberCoverageInfo_M1" Width="1.5" PointX="15.375" PointY="13.75" />
+        <EntityTypeShape EntityType="HiPaaS_website_offshoreModel.MemberInfo_M1" Width="1.5" PointX="17.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

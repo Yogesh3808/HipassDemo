@@ -1,0 +1,459 @@
+﻿@model ClaimInfo.Models.enrollmentDetails834
+@{
+    ViewBag.Title = "Outbound";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<script>
+    window.onload = function () {
+        CanvasJS.addColorSet("greenShades",
+            [//colorSet Array
+
+                "#139DC9",
+                "#83D2B4",
+                "#2E8B57",
+                "#3CB371",
+                "#90EE90"
+            ]);
+
+        CanvasJS.addColorSet("greenShades1",
+            [//colorSet Array
+
+                "#139DC9",
+                "#83D2B4",
+                "#9dc913",
+                "#ec6236 ",
+                "#c9139d ",
+                "#1342c9"
+            ]);
+        var chart1 = new CanvasJS.Chart("chartContainer", {
+            colorSet: "greenShades1",
+            animationEnabled: true,
+
+            height: 250,
+            width: 400,
+            title: {
+                text: ""
+            },
+            data: [{
+                type: "pie",
+                startAngle: 240,
+
+                yValueFormatString: "##0.00\"%\"",
+                indexLabel: "{label} {y}",
+                dataPoints: [
+
+                    {
+                        y: 40.00, label: "NEMSMC"
+                    },
+                    { y: 30.00, label: "UCS" },
+                    { y: 15.00, label: "Kaiser" },
+                    { y: 3.00, label: "BTP" },
+                    { y: 8.00, label: "MC_HILL" },
+                    { y: 4.00, label: "NMC_MC" },
+
+
+
+
+
+                ]
+            }]
+        });
+        chart1.render();
+
+
+        var chart = new CanvasJS.Chart("chartContainer1", {
+            colorSet: "greenShades",
+            animationEnabled: true,
+            height: 250,
+            width: 465,
+            title: {
+                text: ""
+            },
+            axisY: {
+                title: "Accepted claims",
+                titleFontColor: "#4F81BC",
+                lineColor: "#4F81BC",
+                labelFontColor: "#4F81BC",
+                tickColor: "#4F81BC",
+                width: 10
+            },
+            axisY2: {
+                title: "Rejected claims",
+                titleFontColor: "#C0504E",
+                lineColor: "#139DC9",
+                labelFontColor: "#C0504E",
+                tickColor: "#C0504E",
+                width: 10
+            },
+            toolTip: {
+                shared: true
+            },
+            legend: {
+                cursor: "pointer",
+                itemclick: toggleDataSeries
+            },
+            data: [{
+                type: "column",
+                name: "Accepted claims",
+                legendText: "",
+                showInLegend: true,
+                dataPoints: [
+                    { label: "WPS", y: 150 },
+                    { label: "TRIZETTO PROVIDER SOLUTIONS", y: 200 },
+                    { label: "Outreach Health Services", y: 150 },
+                    { label: "CMS", y: 90 }
+                    //{ label: "", y: 101.50 }
+                    //{ label: "", y: 97.8 }
+                ]
+            },
+            {
+                type: "column",
+                name: "Rejected claims",
+                legendText: "",
+                axisYType: "secondary",
+                showInLegend: true,
+                dataPoints: [
+                    { label: "WPS", y: 5 },
+                    { label: "TRIZETTO PROVIDER SOLUTIONS", y: 5 },
+                    { label: "Outreach Health Services", y: 5 },
+                    { label: "CMS", y: 25 }
+                    ////{ label: "", y: 40 },
+                    //{ label: "", y: 3.1 }
+                ]
+            }]
+        });
+        chart.render();
+
+        var chart3 = new CanvasJS.Chart("chartContainer3", {
+            colorSet: "greenShades",
+            animationEnabled: true,
+            height: 250,
+            width: 465,
+            title: {
+                text: ""
+            },
+            data: [{
+                type: "pie",
+                startAngle: 240,
+                yValueFormatString: "##0.00\"%\"",
+                indexLabel: "{label} {y}",
+                dataPoints: [
+                    {
+                        y: 85.00, label: "Accepted"
+                    },
+                    { y: 15.00, label: "Rejected" }
+                ]
+            }]
+        });
+        chart3.render();
+
+
+        var chart4 = new CanvasJS.Chart("chartContainer4", {
+            colorSet: "greenShades",
+            animationEnabled: true,
+            height: 250,
+            width: 465,
+            title: {
+                text: ""
+            },
+            axisY: {
+                title: "",
+                titleFontColor: "#4F81BC",
+                lineColor: "#4F81BC",
+                labelFontColor: "#4F81BC",
+                tickColor: "#4F81BC"
+            },
+            axisY2: {
+                title: "",
+                titleFontColor: "#C0504E",
+                lineColor: "#139DC9",
+                labelFontColor: "#C0504E",
+                tickColor: "#C0504E"
+            },
+            toolTip: {
+                shared: true
+            },
+            legend: {
+                cursor: "pointer",
+                itemclick: toggleDataSeries
+            },
+            data: [{
+                type: "column",
+                name: "",
+                legendText: "",
+                showInLegend: true,
+                dataPoints: [
+                    { label: "", y: 266.21 },
+                    { label: "", y: 302.25 },
+                    { label: "", y: 157.20 },
+                    { label: "", y: 148.77 },
+                    { label: "", y: 101.50 },
+                    { label: "", y: 97.8 }
+                ]
+            },
+            {
+                type: "column",
+                name: "",
+                legendText: "",
+                axisYType: "secondary",
+                showInLegend: true,
+                dataPoints: [
+                    { label: "", y: 10.46 },
+                    { label: "", y: 2.27 },
+                    { label: "", y: 3.99 },
+                    { label: "", y: 4.45 },
+                    { label: "", y: 2.92 },
+                    { label: "", y: 3.1 }
+                ]
+            }]
+        });
+        chart4.render();
+
+        var chart5 = new CanvasJS.Chart("chartContainer6", {
+            colorSet: "greenShades",
+            animationEnabled: true,
+            height: 250,
+            width: 465,
+            title: {
+                text: ""
+            },
+            data: [{
+                type: "pie",
+                startAngle: 240,
+                yValueFormatString: "##0.00\"%\"",
+                indexLabel: "{label} {y}",
+                dataPoints: [
+                    {
+                        y: 95.00, label: "Accepted"
+                    },
+                    { y: 5.00, label: "Rejected" }
+                ]
+            }]
+        });
+        chart5.render();
+
+        function toggleDataSeries(e) {
+            if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                e.dataSeries.visible = false;
+            }
+            else {
+                e.dataSeries.visible = true;
+            }
+            chart.render();
+            chart1.render();
+            chart3.render();
+            chart4.render();
+        }
+    }
+</script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<style>
+
+    .Grid1 {
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    .Grid1, th, td {
+        border: 1px solid #f3eeee;
+        border-collapse: collapse;
+        width: 250px;
+        height: 10px;
+    }
+
+    th, td {
+        padding: 15px;
+        text-align: left;
+    }
+
+    .table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .table, th, td {
+        text-align: center;
+        padding: 8px;
+        border: 1px solid #f3eeee;
+    }
+
+
+
+    th {
+        background-color: #139DC9;
+        color: white;
+    }
+</style>
+
+<div class="rightpart">
+    <div class="dashBx">
+        <div class="clearfix"></div>
+        <div style="border-bottom: 1.5px solid #139DC9;">
+                <img src="~/Images/Search.png" style="width:14px; height:14px;" />
+                <input type="text" id="MyCustomSearch" style="color: #139DC9; font-weight: bold;" placeholder="Search" class="mySearchbox" name="min">
+            </div>
+            <br />
+        <div>
+            <div style="width:25%; display:none; float:left;">
+                <label class="lblTxt">Select Client Name </label>
+                @Html.DropDownList("ClientName", new List<SelectListItem>
+                {
+                    new SelectListItem {Text = "Client Name 1", Value = "1",Selected = true},
+                    new SelectListItem {Text = "Client Name 2", Value = "2"}
+                }, "Select Client Name", new {@class = "dashInp"})
+            </div>
+            <div style="width:25%; float:left;">
+                <label class="lblTxt">Select State </label>
+                @Html.DropDownList("State", new List<SelectListItem>
+                {
+                    new SelectListItem {Text = "California", Value = "1" ,Selected = true},
+                    new SelectListItem {Text = "Michigan", Value = "2"},
+                 new SelectListItem {Text = "Florida", Value = "3"},
+                    new SelectListItem {Text = "New York", Value = "4"},
+                 new SelectListItem {Text = "Idaho", Value = "5"},
+                    new SelectListItem {Text = "Ohio", Value = "6"},
+                 new SelectListItem {Text = "Illinois", Value = "7"},
+                    new SelectListItem {Text = "Texas", Value = "8"},
+               new SelectListItem {Text = "Mississippi", Value = "9"},
+                    new SelectListItem {Text = "South Carolina", Value = "10"},
+                new SelectListItem {Text = "New Mexico", Value = "11"},
+                    new SelectListItem {Text = "Puerto Rico", Value = "12"},
+                          new SelectListItem {Text = "Washington", Value = "13"},
+                new SelectListItem {Text = "Utah", Value = "14"},
+                    new SelectListItem {Text = "Wisconsin", Value = "15"}
+                }, "Select State", new {@class = "dashInp"})
+            </div>
+            <div style="width:25%;  float:left;">
+                <label class="lblTxt">Select Trading Partner </label>
+                @Html.DropDownList("TradingPartner", new List<SelectListItem>
+                {
+                    new SelectListItem {Text = "Trading Partner 1", Value = "1",Selected = true},
+                    new SelectListItem {Text = "Trading Partner 2", Value = "2"}
+                }, "Select Trading Partner", new {@class = "dashInp"})
+            </div>
+            <div style="width:25%; float:left;">
+                <label class="lblTxt">Select Provider Name </label>
+                @Html.DropDownList("ProviderName", new List<SelectListItem>
+                {
+                    new SelectListItem {Text = "Provider Name 1", Value = "1",Selected = true},
+                    new SelectListItem {Text = "Provider Name 2", Value = "2"}
+                }, "Select Provider Name", new {@class = "dashInp"})
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+        <br />
+
+        <div>
+            @*<div style="width:20%; background-color:red;">
+                    <label style="font-size:medium; font:bold;">Eligibility Status</label>
+
+                </div>*@
+            <div style="width:30%; float:left;">
+                <label style="font-size:medium; font:bold;">Eligibility Status</label><br /><br />
+                <table cellpadding="0" cellspacing="0" style="float:left; margin-top:20px;" class="Grid1">
+                    <tbody>
+
+                        <tr>
+                            <td> <label class="lblTxtCountHeader"> Active </label></td>
+                        </tr>
+                        <tr>
+                            <td><label class="lblTxtCountHeader"> Dup In File </label></td>
+                        </tr>
+                        <tr>
+                        <tr>
+                            <td><label class="lblTxtCountHeader"> Hold </label></td>
+                        </tr>
+                        <tr>
+                            <td> <label class="lblTxtCountHeader">No Eligibility Data</label></td>
+                        </tr>
+                        <tr>
+                            <td><label class="lblTxtCountHeader"> Other Health Plan(not 307) </label></td>
+                        </tr>
+                        <tr>
+                            <td><label class="lblTxtCountHeader">Term</label></td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+            <div style="width:30%; float:left;">
+                <label style="font-size:medium; font:bold;">Eligibility to IPA-May Monthly File</label><br /><br />
+                <div id="chartContainer" style="height: 150px; width:30%;"></div>
+            </div>
+            <div style="width:30%; float:right; margin-top:30px;">
+                <div style="height:70px; width:185px; background-color:#83D2B4; float:left;">
+                    <label style="font-size:9px; color:white;">All MC Eligibility to Beacon</label><br />
+                    <label style="font-size:9px; color:white;">156.1 4k</label>
+                </div>
+                <div style="height:70px; width:185px; background-color:#9dc913; float:right;">
+                    <label style="font-size:9px; color:white;">All MC Eligibility to VSP</label><br />
+                    <label style="font-size:9px; color:white;">156.1 4k</label>
+
+                </div>
+                <br /><br />
+                <div style="height:70px; width:185px; background-color:#139DC9; float:left; margin-top:10px;">
+                    <label style="font-size:9px; color:white;">All MC Eligibility to PerRXMcStatus</label><br />
+                    <label style="font-size:9px; color:white;">156.1 4k</label>
+                </div>
+
+                <div style="height:70px; width:185px; background-color:#139DC9; float:right; margin-top:10px;">
+                    <label style="font-size:9px; color:white;">All Part D Eligibility to PerRXMcStatus </label><br />
+                    <label style="font-size:9px; color:white;">156.1 4k</label>
+                </div>
+
+                <br /><br />
+                <div style="height:70px; width:170px; background-color:#c9139d; float:left; margin-top:10px;">
+                    <label style="font-size:9px; color:white;">Outbound Error</label><br />
+                    <label style="font-size:9px; color:white;">156.1 4k</label>
+
+                </div>
+                <div style="height:70px; width:185px; background-color:#ec6236; float:right; margin-top:10px;">
+                    <label style="font-size:9px; color:white;">To DPH & CPG</label><br />
+                    <label style="font-size:9px; color:white;">156.1 4k</label>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+        <div style="margin-top:300px;">
+            <br /><br />
+            <table id="SecondTable" cellpadding="0" cellspacing="0" class="Grid">
+                <tr>
+                    <th>
+                        Error <img src="~/Images/search_3_16.ico" style="float: right" />
+                    </th>
+                    <th>SFHPID <img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                    <th>CIN<img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                    <th>X12 Inbound Status<img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                    <th>QNXT Status<img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                    <th>Outbound Status <img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                    <th>Plan Integration Status <img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                    <th>Plan Integration Desc <img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                </tr>
+                <tbody>
+
+                    @foreach (var item in Model.objVisitDetailsList)
+                    {
+                    <tr>
+                        <td>@item.Error_Type </td>
+                        <td>@item.SFHPID </td>
+                        <td>@item.CIN </td>
+                        <td>@item.Inbound_X12_status </td>
+                        <td>@item.Qnxt_status </td>
+                        <td>@item.Outbound_status</td>
+                        <td>@item.PlanIntegration_status</td>
+                        <td></td>
+                    </tr>
+                    }
+
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>

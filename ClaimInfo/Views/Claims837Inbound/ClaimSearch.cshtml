@@ -1,0 +1,67 @@
+﻿@model List<ClaimInfo.DataModel.SP_SearchClaims_Result>
+@{
+    ViewBag.Title = "ClaimSearch";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<div class="rightpart">
+    <div class="dashBx">
+        <div class="clearfix"></div>
+        <h2>Claims Search</h2>
+        <hr />
+        <br />
+        <div class="dashformBx  dashformBx2 clearfix">
+            <div class="dashfrm-L">
+                @Html.TextBox("fileName-filter", "", new { @placeholder = "FileDate", @class = "dashInp form-control input-filter", @search_index = "1" })
+            </div>
+            <div class="dashfrm-M">
+                @Html.TextBox("fileStatus-filter", "", new { @placeholder = "FileName", @class = "dashInp form-control input-filter", @search_index = "2" })
+            </div>
+            <div class="dashfrm-M">
+                @Html.TextBox("submitter-filter", "", new { @placeholder = "ClaimID", @class = " dashInp form-control input-filter", @search_index = "12" })
+            </div>
+            <div class="dashfrm-R">
+                @Html.TextBox("reciever-filter", "", new { @placeholder = "Claim Status", @class = "dashInp form-control input-filter", @search_index = "13" })
+            </div>
+            <div class="clearfix"></div>
+            <div class="dashBx">
+                <div class="dashTable cell-border table table-bordered display" id="rootId" style="margin-top:5px;">
+                    <table id="tblId1">
+                        <thead>
+                            <tr>
+                                <th style="text-align:left;">File Name</th>
+                                <th style="text-align:left;">ClaimID</th>
+                                <th style="text-align:left;">Tax</th>
+                                <th style="text-align:left;">ClaimStatus</th>
+                                <th style="text-align:right;">claim_amount</th>
+                                <th style="text-align:right;">StatementBeginDate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.Count > 0)
+                            {
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td style="text-align:left;">@item.FileName</td>
+                                        <td style="text-align:left;">@item.ClaimID</td>
+                                        <td style="text-align:left;">@item.BillingProvider_TaxId</td>
+                                        <td style="text-align:left;">@item.ClaimStatus</td>
+                                        <td style="text-align:right;">$@item.claim_amount</td>
+                                        <td style="text-align:right;">@item.Created_Date</td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr><td style="border:none; text-align:left;">No records found</td></tr>
+
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,472 @@
+﻿@model ClaimInfo.Models.Dailt834Model
+@{
+    ViewBag.Title = "FileClaimDetails";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<div class="rightpart">
+    <div class="dashBx">
+        <div class="clearfix"></div>
+        <div class="dashformBx  dashformBx2 clearfix">
+            <div style="border-bottom: 1.5px solid #139DC9;">
+                <img src="~/Images/Search.png" style="width:14px; height:14px;" />
+                <input type="text" id="MyCustomSearch" style="color: #139DC9; font-weight: bold;" placeholder="Search" class="mySearchbox" name="min">
+            </div>
+        </div>
+        <div>
+            <div style="width:25%; display:none; float:left;">
+                <label class="lblTxt">Select Client Name </label>
+                @Html.DropDownList("ClientName", new List<SelectListItem>
+                {
+                    new SelectListItem {Text = "Client Name 1", Value = "1",Selected = true},
+                    new SelectListItem {Text = "Client Name 2", Value = "2"}
+                }, "Select Client Name", new {@class = "dashInp"})
+            </div>
+            <div style="width:25%; float:left;">
+                <label class="lblTxt">Select State </label>
+                @Html.DropDownList("State", new List<SelectListItem>
+                {
+                    new SelectListItem {Text = "California", Value = "1" ,Selected = true},
+                    new SelectListItem {Text = "Michigan", Value = "2"},
+                 new SelectListItem {Text = "Florida", Value = "3"},
+                    new SelectListItem {Text = "New York", Value = "4"},
+                 new SelectListItem {Text = "Idaho", Value = "5"},
+                    new SelectListItem {Text = "Ohio", Value = "6"},
+                 new SelectListItem {Text = "Illinois", Value = "7"},
+                    new SelectListItem {Text = "Texas", Value = "8"},
+               new SelectListItem {Text = "Mississippi", Value = "9"},
+                    new SelectListItem {Text = "South Carolina", Value = "10"},
+                new SelectListItem {Text = "New Mexico", Value = "11"},
+                    new SelectListItem {Text = "Puerto Rico", Value = "12"},
+                          new SelectListItem {Text = "Washington", Value = "13"},
+                new SelectListItem {Text = "Utah", Value = "14"},
+                    new SelectListItem {Text = "Wisconsin", Value = "15"}
+                }, "Select State", new {@class = "dashInp"})
+            </div>
+            <div style="width:25%;  float:left;">
+                <label class="lblTxt">Select Trading Partner </label>
+                @Html.DropDownList("TradingPartner", new List<SelectListItem>
+                {
+                    new SelectListItem {Text = "Trading Partner 1", Value = "1",Selected = true},
+                    new SelectListItem {Text = "Trading Partner 2", Value = "2"}
+                }, "Select Trading Partner", new {@class = "dashInp"})
+            </div>
+            <div style="width:25%; float:left;">
+                <label class="lblTxt">Select Provider Name </label>
+                @Html.DropDownList("ProviderName", new List<SelectListItem>
+                {
+                    new SelectListItem {Text = "Provider Name 1", Value = "1",Selected = true},
+                    new SelectListItem {Text = "Provider Name 2", Value = "2"}
+                }, "Select Provider Name", new {@class = "dashInp"})
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <br /><br />
+
+        <div style="width:45%; float:left;">
+            <table cellpadding="0" cellspacing="0" class="Grid">
+                <tr>
+                    <th></th>
+                    <th>File Name <img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                    <th>File Date <img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                    <th style="width: 100px;">Sender<img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                    <th>Receiver<img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                    <th>File Status <img src="~/Images/search_3_16.ico" style="float: right" /></th>
+
+                </tr>
+                @if (Model != null)
+                {
+                    foreach (var item in Model.objFileEnrollmentDetails)
+                    {
+                <tr>
+                    <td>
+                        <img src="~/Images/plus.png" />
+                        <div style="display:none">
+                            <table cellpadding="0" cellspacing="0" id="ChildGrid" class="ChildGrid">
+                                <tr>
+                                    <th>Subscriber No</th>
+                                    <th>Enrollment Type</th>
+                                    <th>Plan Code</th>
+                                    <th>Member Amount</th>
+                                    <th>Error Code</th>
+                                </tr>
+                                @foreach (var item1 in Model.objFile834Details)
+                                {
+
+                                    if (item1.fileid == item.FileID)
+                                    {
+                                <tr>
+                                    
+
+                                    <td><a onclick="return CallPartialView('@item1.fileid' ,'@item1.SubscriberNo')" style="color: #139DC9" class="details" href="javascript:;">@item1.SubscriberNo</a></td>
+
+                                    <td>@item1.Enrollment_type</td>
+                                    <td>
+                                        @item1.InsLineCode
+                                    </td>
+                                    <td>@item1.MemberAmount</td>
+                                    <td>@item1.Error</td>
+                                </tr>
+                                    }
+                                }
+                            </table>
+                        </div>
+                    </td>
+
+                    <td>@item.FileName</td>
+                    <td>@item.CreateDateTime</td>
+                    <td>@item.sender</td>
+                    <td>@item.receiver</td>
+                    <td>@item.FileStatus</td>
+
+
+
+                </tr>
+                    }
+                }
+                </table>
+            </div>
+
+            <div style="width:55%;float:right;">
+                <div id="PartialDivDashboard">
+                </div>
+            </div>
+            <div id="dialog" style="display:none;">
+            </div>
+        </div>
+
+
+    </div>
+
+    <script type="text/javascript">
+        function CallPartialView(FileID, SubscriberNo) {
+        
+            var name = FileID;
+            var SubscriberNo = SubscriberNo;
+           
+            $.ajax({
+                type: "POST",
+                url: "/Daily834Inbound/Details",
+                data: '{SeqID: "' + name + '" , SubscriberNo: "' + SubscriberNo + '"  }',
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                success: function (response) {
+                    $('#PartialDivDashboard').html(response);
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+        }
+
+    </script>
+    <style>
+
+
+        .Grid {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+
+            .Grid th {
+                background-color: #139DC9;
+                color: #FFFFFF;
+                font-weight: bold;
+                text-align: left;
+            }
+
+            .Grid th, .Grid td {
+                padding: 5px;
+                border: 1px solid #ccc;
+            }
+
+            .Grid img {
+                cursor: pointer;
+            }
+
+        .ChildGrid {
+            width: 100%;
+        }
+
+            .ChildGrid th {
+                background-color: #FFFFFF;
+                color: #139DC9;
+                font-weight: bold;
+            }
+
+            .ChildGrid td {
+                color: #139DC9;
+            }
+    </style>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        //Assign Click event to Plus Image.
+        $("body").on("click", "img[src*='plus.png']", function () {
+            $(this).closest("tr").after("<tr><td></td><td colspan = '999'>" + $(this).next().html() + "</td></tr>");
+            $(this).attr("src", "/images/minus.png");
+        });
+        //Assign Click event to Minus Image.
+        $("body").on("click", "img[src*='minus.png']", function () {
+            $(this).attr("src", "/images/plus.png");
+            $(this).closest("tr").next().remove();
+        });
+    </script>
+
+
+    @section js{
+
+        <script type="text/javascript">
+            $(".loadPartialView").click(function () {
+                var name = $(this).attr('id');
+                //alert(name);
+                $.ajax({
+                    type: "POST",
+                    url: "/Claims/ClaimCounts",
+                    data: '{sDate: "' + name + '" }',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "html",
+                    success: function (response) {
+                        $('#PartialDivDashboard').html(response);
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            });
+        </script>
+
+        @*<script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/jquery-ui.js" type="text/javascript"></script>
+            <link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/themes/blitzer/jquery-ui.css"
+                  rel="stylesheet" type="text/css" />*@
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/jquery-ui.js" type="text/javascript"></script>
+        <link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/themes/blitzer/jquery-ui.css"
+              rel="stylesheet" type="text/css" />
+        @*//Working*@
+        <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/start/jquery-ui.min.css" rel="stylesheet">
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+
+        <script type="text/javascript">
+
+            function check(SeqID) {
+                $.ajax({
+                    type: "POST",
+                    url: "/Claims/Details",
+                    data: '{SeqID: "' + SeqID + '" }',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "html",
+                    success: function (response) {
+                        $('#dialog').html(response);
+                        $('#dialog').dialog('open');
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            }
+
+            $("#dialog").dialog({
+                autoOpen: false,
+                modal: true,
+                show: true,
+                title: "Intake Claim Data",
+                width: 900//,
+                //buttons: {
+                //    "Save": function () {
+                //        $(this).dialog("close");
+                //    },
+                //    "Cancel": function () {
+                //        $(this).dialog("close");
+                //    }
+                //}
+            });
+
+        </script>
+    }
+
+
+
+    <style>
+
+        /* [HORIZONTAL BARS] */
+        #bar-horzontal {
+            max-width: 600px;
+            /*border: 1px solid #333;*/
+            background: #f2f2f2;
+        }
+
+            #bar-horzontal div {
+                color: #fff;
+                padding: 30px 0 30px 5px;
+                box-sizing: border-box;
+            }
+    </style>
+    <style>
+
+
+        main {
+            /*max-width: 800px;*/
+            padding: 5px;
+            border: 1px solid rgba(0,0,0,.2);
+            background: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,.1);
+        }
+
+        section {
+            display: none;
+            padding: 20px 0 0;
+            border-top: 1px solid #abc;
+        }
+        /*Demographics*/
+        .rbinput {
+            display: none;
+        }
+
+        .rblable {
+            display: inline-block;
+            margin: 0 0 -1px;
+            padding: 15px 25px;
+            font-weight: 600;
+            text-align: center;
+            color: #abc;
+            border: 1px solid transparent;
+        }
+
+            .rblable:before {
+                font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+                font-weight: bold;
+                margin-right: 10px;
+            }
+
+            .rblable:hover {
+                color: #789;
+                cursor: pointer;
+            }
+        /*Insurance*/
+        .rbinputIns {
+            display: none;
+        }
+
+        .rblableIns {
+            display: inline-block;
+            margin: 0 0 -1px;
+            padding: 15px 25px;
+            font-weight: 600;
+            text-align: center;
+            color: #abc;
+            border: 1px solid transparent;
+        }
+
+            .rblableIns:before {
+                font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+                font-weight: bold;
+                margin-right: 10px;
+            }
+
+            .rblableIns:hover {
+                color: #789;
+                cursor: pointer;
+            }
+
+        input:checked + label {
+            color: #0af;
+            border: 1px solid #abc;
+            border-top: 3px solid #0af;
+            border-bottom: 1px solid #fff;
+        }
+
+        #Demotab1:checked ~ #content1,
+        #Demotab2:checked ~ #content2,
+        #Demotab3:checked ~ #content3,
+        #Demotab4:checked ~ #content4,
+        #Demotab5:checked ~ #content5,
+        #Demotab6:checked ~ #content6,
+        #Demotab7:checked ~ #content7,
+        #Instab1:checked ~ #content8,
+        #Instab2:checked ~ #content9,
+        #Instab3:checked ~ #content10,
+        #Instab4:checked ~ #content11 {
+            display: block;
+        }
+
+        @@media screen and (max-width: 800px) {
+            label {
+                font-size: 0;
+            }
+
+                label:before {
+                    margin: 0;
+                    font-size: 18px;
+                }
+        }
+
+        @@media screen and (max-width: 500px) {
+            label {
+                padding: 15px;
+            }
+        }
+    </style>
+    <style>
+
+
+        .accordion {
+            font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 5px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 14px;
+            transition: 0.4s;
+            /*margin-top: 10px;*/
+        }
+
+            .active, .accordion:hover {
+                background-color: #139DC9;
+            }
+
+        .panel {
+            font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+            /*padding: 0 18px;*/
+            display: none;
+            background-color: white;
+            overflow: hidden;
+            border: 1px solid #139DC9;
+        }
+    </style>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+        function openCity(cityName) {
+            var i;
+            var x = document.getElementsByClassName("city");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            document.getElementById(cityName).style.display = "block";
+        }</script>
+

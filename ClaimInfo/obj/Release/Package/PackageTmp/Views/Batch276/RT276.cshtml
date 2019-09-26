@@ -1,0 +1,3027 @@
+﻿@model ClaimInfo.Models.ProcessSummaryModel1
+@{
+    ViewBag.Title = "RT276";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+
+<script>
+    window.onload = function () {
+        CanvasJS.addColorSet("greenShades",
+            [//colorSet Array
+                "#139DC9",
+                "#83D2B4"
+            ]);
+        CanvasJS.addColorSet("greenShadesforBar",
+            [//colorSet Array
+                "#139DC9"
+            ]);
+            var chart = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: true,
+                dataPointWidth: 20,
+                colorSet: "greenShadesforBar",
+                theme: "light2", // "light1", "light2", "dark1", "dark2"
+                title: {
+                    //text: "Number of Employees under Each Manager"
+                },
+                axisY: {
+                    //title: "No. of Employees"
+                },
+                data: [{
+                    type: "column",
+                    dataPoints: @Html.Raw(ViewBag.DataPoints)
+        }]
+            });
+            chart.render();
+        var chart1 = new CanvasJS.Chart("chartContainer1", {
+            colorSet: "greenShades",
+                animationEnabled: true,
+                title: {
+                },
+                data: [{
+                    click: function (e) {
+                        window.location.href = '/Eligibility/ErrorCountDetails?ErrorCount=pie&error_claimcount=0';
+                    },
+                    type: "pie",
+                    startAngle: 240,
+                    yValueFormatString: "##0.00\"%\"",
+                    indexLabel: "{label} {y}",
+                     dataPoints: @Html.Raw(ViewBag.DataPoints1)
+                    @*dataPoints: [
+                        { y:@Html.Raw(ViewBag.DataPoints) , label: "Completed" },
+                        { y: @Html.Raw(ViewBag.DataPoints), label: "Errored" }
+                    ]*@
+                }]
+            });
+            chart1.render();
+            var dps = [];
+            var chart2 = new CanvasJS.Chart("chartContainer2", {
+                title: {
+                },
+                axisY: {
+                    includeZero: false
+                },
+                data: [{
+                    type: "spline",
+                    markerSize: 0,
+                    dataPoints: dps
+                }]
+            });
+            var xVal = 0;
+            var yVal = 100;
+            var updateInterval = 1000;
+            var dataLength = 50; // number of dataPoints visible at any point
+            var updateChart = function (count) {
+                count = count || 1;
+                // count is number of times loop runs to generate random dataPoints.
+                for (var j = 0; j < count; j++) {
+                    yVal = yVal + Math.round(5 + Math.random() * (-5 - 5));
+                    dps.push({
+                        x: xVal,
+                        y: yVal
+                    });
+                    xVal++;
+                }
+                if (dps.length > dataLength) {
+                    dps.shift();
+                }
+                chart2.render();
+            };
+            updateChart(dataLength);
+            //setInterval(function () { updateChart() }, updateInterval);
+        }
+</script>
+<div class="rightpart">
+    <div class="dashBx">
+
+        <div style="border-bottom: 1.5px solid #139DC9;">
+            <img src="~/Images/Search.png" style="width:14px; height:14px;" />
+            <input type="text" id="MyCustomSearch" style="color: #139DC9; font-weight: bold;" placeholder="Search" class="mySearchbox" name="min">
+        </div>
+        <br />
+        <div>
+            <div style="width:25%; display:none; float:left;">
+                <label class="lblTxt">Select Client Name </label>
+                @Html.DropDownList("ClientName", new List<SelectListItem>
+                {
+                    new SelectListItem {Text = "Client Name 1", Value = "1",Selected = true},
+                    new SelectListItem {Text = "Client Name 2", Value = "2"}
+                }, "Select Client Name", new { @class = "dashInp" })
+            </div>
+            <div style="width:25%; float:left;">
+                <label class="lblTxt">Select State </label>
+                @Html.DropDownList("State", new List<SelectListItem>
+                {
+                    new SelectListItem {Text = "California", Value = "1" ,Selected = true},
+                    new SelectListItem {Text = "Michigan", Value = "2"},
+                 new SelectListItem {Text = "Florida", Value = "3"},
+                    new SelectListItem {Text = "New York", Value = "4"},
+                 new SelectListItem {Text = "Idaho", Value = "5"},
+                    new SelectListItem {Text = "Ohio", Value = "6"},
+                 new SelectListItem {Text = "Illinois", Value = "7"},
+                    new SelectListItem {Text = "Texas", Value = "8"},
+               new SelectListItem {Text = "Mississippi", Value = "9"},
+                    new SelectListItem {Text = "South Carolina", Value = "10"},
+                new SelectListItem {Text = "New Mexico", Value = "11"},
+                    new SelectListItem {Text = "Puerto Rico", Value = "12"},
+                          new SelectListItem {Text = "Washington", Value = "13"},
+                new SelectListItem {Text = "Utah", Value = "14"},
+                    new SelectListItem {Text = "Wisconsin", Value = "15"}
+                }, "Select State", new { @class = "dashInp" })
+            </div>
+            <div style="width:25%;  float:left;">
+                <label class="lblTxt">Select Trading Partner </label>
+                @Html.DropDownList("TradingPartner", new List<SelectListItem>
+                {
+                    new SelectListItem {Text = "Trading Partner 1", Value = "1",Selected = true},
+                    new SelectListItem {Text = "Trading Partner 2", Value = "2"}
+                }, "Select Trading Partner", new { @class = "dashInp" })
+            </div>
+            <div style="width:25%; float:left;">
+                <label class="lblTxt">Select Provider Name </label>
+                @Html.DropDownList("ProviderName", new List<SelectListItem>
+                {
+                    new SelectListItem {Text = "Provider Name 1", Value = "1",Selected = true},
+                    new SelectListItem {Text = "Provider Name 2", Value = "2"}
+                }, "Select Provider Name", new { @class = "dashInp" })
+            </div>
+        </div>
+        <div class="clearfix"></div><br /><br />
+        <div>
+            <div>
+                <label style="color: #2980B9; margin-left:115px;">Execution Status Time</label>
+                <label style="color: #2980B9;width:35%; margin-left:25px; float:left;">Execution Status </label>
+                <br />
+
+                <br />
+                <div id="chartContainer" style="height: 250px; margin-left:0px; width:35%; float:left;  ">
+                </div>
+            </div>
+            <div id="chartContainer1" style="height: 250px; margin-left:35px; width:25%; float:left;  "></div>
+            <div style="height: 250px; width:30%;  float:left;">
+                <table cellpadding="0" cellspacing="0" class="Grid1">
+                    <tbody>
+                        <tr>
+                            <td> <label class="lblTxtCountHeader">Avg Response Time (milliseconds)</label></td>
+                            <td><a class="lblCount" style="color:#bb1f44;"> @Model.AvgResTime</a></td>
+                        </tr>
+                        <tr>
+                            <td> <label class="lblTxtCountHeader">  Total Number Of Requests </label></td>
+                            <td><a class="lblCount" style="color:#ff0000;" href="/Claims/Eligibility270Details?TotalCount=@Model.Date&Status=1">@Model.TotalNumOfReq</a></td>
+                        </tr>
+                        <tr>
+                            <td><label class="lblTxtCountHeader"> Total Success Count </label></td>
+                            <td><label class="lblCount" style="color:#2ca058;"> @Model.Success </label></td>
+                        </tr>
+
+
+
+                        <tr>
+                            <td><label class="lblTxtCountHeader"> Total Error Count </label></td>
+                            <td> <a class="lblCount" style="color:#ff0000;" href="/Claims/Eligibility270Details?TotalCount=@Model.Date&Status=Fail">@Model.Error</a></td>
+                        </tr>
+
+
+
+                    </tbody>
+                </table>
+            </div>
+            @*<div style="text-align: center">
+                    <canvas id="barcanvas"></canvas>
+                </div>*@
+            <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+            @*<script src="~/Scripts/Chat.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.bundle.min.js"></script>*@
+        </div>
+
+    </div>
+
+    <div style="margin-left:20px;">
+
+        <button class="accordion active">2019</button>
+        <div class="panel" style="display:block;">
+            <div class="accordion-container">
+                <div class="set">
+                    <a href="#">
+                        July
+                        <i class="fa fa-plus"> </i>
+                    </a>
+                    <div class="content">
+                        <div class="accordion-containerchild">
+                            <div class="setchild">
+                                <a href="#" id="20190101" class="loadPartialView">
+                                    <div style="float:left;"> 01 Tue 2019</div>
+                                    <div>
+
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">0 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    @*<div id="20190101child" class="setchildCount" >
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+
+                                    <i class="fa fa-plus">
+                                    </i>
+                                </a>
+                                <div class="contentchild">
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190102" class="loadPartialView">
+                                    <div style="float:left;">  02 Wed 2019</div>
+                                    <div>
+
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">0 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    @*<div id="20190102child" class="setchildCount" >
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190102child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190103" class="loadPartialView">
+                                    <div style="float:left;">  03 Thr 2019</div>
+                                    <div>
+
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">0 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190103child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190104" class="loadPartialView">
+                                    <div style="float:left;">
+                                        04 Fri 2019
+                                    </div>
+                                    <div>
+
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">0 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190104child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190105" class="loadPartialView">
+                                    <div style="float:left;">
+                                        05 Sat 2019
+                                    </div>
+                                    <div>
+
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">0 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190105child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190106" class="loadPartialView">
+                                    <div style="float:left;">
+                                        06 Sun 2019
+                                    </div>
+
+                                    <div>
+
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">0 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190106child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190107" class="loadPartialView">
+                                    <div style="float:left;">
+                                        07 Mon 2019
+                                    </div>
+
+                                    <div>
+
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">0 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190107child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190108" class="loadPartialView">
+
+                                    <div style="float:left;">
+                                        08 Tue 2019
+                                    </div>
+                                    <div>
+
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">0 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190108child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190109" class="loadPartialView">
+                                    <div style="float:left;">
+                                        09 Wed 2019
+                                    </div>
+                                    <div>
+
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">0 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190109child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190110" class="loadPartialView">
+                                    <div style="float:left;">
+                                        10 Thr 2019
+                                    </div>
+                                    <div>
+
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">0 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190110child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190111" class="loadPartialView">
+                                    <div style="float:left;">
+                                        11 Fri 2019
+                                    </div>
+                                    <div>
+
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">0 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190111child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190112" class="loadPartialView">
+                                    <div style="float:left;">
+                                        12 Sat 2019
+                                    </div>
+                                    <div>
+
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">0 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190112child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190113" class="loadPartialView">
+
+                                    <div style="float:left;">
+                                        13 Sun 2019
+                                    </div>
+                                    <div>
+
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">0 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190113child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190114" class="loadPartialView">
+                                    <div style="float:left;">
+                                        14 Mon 2019
+                                    </div>
+                                    <div>
+
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">0 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190114child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190115" class="loadPartialView">
+                                    <div style="float:left;">
+                                        15 Tue 2019
+                                    </div>
+                                    <div>
+
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">0 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190115child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190116" class="loadPartialView">
+
+                                    <div style="float:left;">
+                                        16 Wed 2019
+                                    </div>
+                                    <div>
+
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">0 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190116child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190117" class="loadPartialView">
+
+                                    <div style="float:left;">
+                                        17 Thr 2019
+                                    </div>
+                                    <div>
+
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">0 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190117child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190118" class="loadPartialView">
+                                    <div style="float:left;">
+                                        18 Fri 2019
+                                    </div>
+                                    <div>
+
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">0 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190118child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190119" class="loadPartialView">
+                                    <div style="float:left;">
+                                        19 Sat 2019
+                                    </div>
+                                    <div>
+
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">0 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190119child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190120" class="loadPartialView">
+
+                                    <div style="float:left;">
+                                        20 Sun 2019
+                                    </div>
+                                    <div>
+
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">0 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190120child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190121" class="loadPartialView">
+                                    <div style="float:left;">
+                                        21 Mon 2019
+                                    </div>
+                                    <div>
+
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">0 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190121child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190122" class="loadPartialView">
+
+                                    <div style="float:left;">
+                                        22 Tue 2019
+                                    </div>
+                                    <div>
+
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">0 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190122child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190123" class="loadPartialView">
+
+                                    <div style="float:left;">
+                                        23 Wed 2019
+                                    </div>
+                                    <div>
+
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">0 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190123child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190124" class="loadPartialView">
+
+                                    <div style="float:left;">
+                                        24 Thr 2019
+                                    </div>
+                                    <div>
+
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">0 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190124child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190125" class="loadPartialView">
+
+                                    <div style="float:left;">
+                                        25 Fri 2019
+                                    </div>
+                                    <div>
+
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">0 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190125child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190126" class="loadPartialView">
+
+                                    <div style="float:left;">
+                                        26 Sat 2019
+                                    </div>
+                                    <div>
+
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">0 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190126child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190127" class="loadPartialView">
+
+                                    <div style="float:left;">
+                                        27 Sun 2019
+                                    </div>
+                                    <div>
+
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">0 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190127child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190128" class="loadPartialView">
+
+                                    <div style="float:left;">
+                                        28 Mon 2019
+                                    </div>
+                                    <div>
+
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">0 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190128child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190129" class="loadPartialView">
+
+                                    <div style="float:left;">
+                                        29 Tue 2019
+                                    </div>
+                                    <div>
+
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">0 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190129child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190130" class="loadPartialView">
+
+                                    <div style="float:left;">
+                                        30 Wed 2019
+                                    </div>
+                                    <div>
+
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">0 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190130child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190131" class="loadPartialView">
+
+                                    <div style="float:left;">
+                                        31 Thr 2019
+                                    </div>
+                                    <div>
+
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">0 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190131child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @*<div class="set">
+                        <a href="#">
+                            February
+                            <i class="fa fa-plus"></i>
+                        </a>
+                        <div class="content">
+
+                        </div>
+                    </div>*@
+                <div class="set">
+                    <a href="#">
+                        Augest
+                        <i class="fa fa-plus"></i>
+                    </a>
+                    <div class="content">
+                        <div class="accordion-containerchild">
+                            <div class="setchild">
+                                <a href="#" id="02/01/2019" class="loadPartialView">
+                                    <div style="float:left;">
+                                        01 Fri 2019
+                                    </div>
+                                    <div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 1.3 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 42 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 40 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">2 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190201child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="02/02/2019" class="loadPartialView">
+                                    @*02 Sat*@
+                                    <div style="float:left;">
+                                        02 Sat 2019
+                                    </div>
+                                    <div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 1.3 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 40 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 33 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">7 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190202child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="02/03/2019" class="loadPartialView">
+                                    @*03 Sun*@
+                                    <div style="float:left;">
+                                        03 Sun 2019
+                                    </div>
+                                    <div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 1.4 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 45 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 39 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">6 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190203child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="02/04/2019" class="loadPartialView">
+                                    @*04 Mon*@
+                                    <div style="float:left;">
+                                        04 Mon 2019
+                                    </div>
+                                    <div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 1.2 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 25 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 22 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">3 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190204child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="02/05/2019" class="loadPartialView">
+                                    @*05 Tue*@
+                                    <div style="float:left;">
+                                        05 Tue 2019
+                                    </div>
+                                    <div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 1.1 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 50 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 46 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">4 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190205child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="02/06/2019" class="loadPartialView">
+                                    @*06 Wed*@
+                                    <div style="float:left;">
+                                        06 Wed 2019
+                                    </div>
+                                    <div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 1.2 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 15 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 13 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">2 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190206child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="02/07/2019" class="loadPartialView">
+                                    @*07 Thu*@
+                                    <div style="float:left;">
+                                        07 Thu 2019
+                                    </div>
+                                    <div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 1.3 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 28 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 24 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">4 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190207child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="02/08/2019" class="loadPartialView">
+                                    @*08 Fri*@
+                                    <div style="float:left;">
+                                        08 Fri 2019
+                                    </div>
+                                    <div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 1.3 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 30 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 27 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">3 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190208child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="02/09/2019" class="loadPartialView">
+                                    @*09 Sat*@
+                                    <div style="float:left;">
+                                        09 Sat 2019
+                                    </div>
+                                    <div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 1.4 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 60 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 58 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">2 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190209child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="02/10/2019" class="loadPartialView">
+                                    @*10 Sun*@
+                                    <div style="float:left;">
+                                        10 Sun 2019
+                                    </div>
+                                    <div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 1.3 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 45 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 43 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">2 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190210child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="02/11/2019" class="loadPartialView">
+                                    @*11 Mon*@
+                                    <div style="float:left;">
+                                        11 Mon 2019
+                                    </div>
+                                    <div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 1.3 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 40 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 33 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">7 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190211child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="02/12/2019" class="loadPartialView">
+                                    @*12 Tue*@
+                                    <div style="float:left;">
+                                        12 Tue 2019
+                                    </div>
+                                    <div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 1.6 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 80 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 76 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">4 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190212child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="02/13/2019" class="loadPartialView">
+                                    @*13 Wed*@
+                                    <div style="float:left;">
+                                        13 Wed 2019
+                                    </div>
+                                    <div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 1.5 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 55 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 54 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">1 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190213child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="02/14/2019" class="loadPartialView">
+                                    @*14 Thu*@
+                                    <div style="float:left;">
+                                        14 Thu 2019
+                                    </div>
+                                    <div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 1.7 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 70 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 69 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">1 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190214child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="02/15/2019" class="loadPartialView">
+                                    @*15 Fri*@
+                                    <div style="float:left;">
+                                        15 Fri 2019
+                                    </div>
+                                    <div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 1.1 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 40 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 36 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">4 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190215child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="02/16/2019" class="loadPartialView">
+                                    @*16 Sat*@
+                                    <div style="float:left;">
+                                        16 Sat 2019
+                                    </div>
+                                    <div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 1.0 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 90 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 85 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">5 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190216child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="02/17/2019" class="loadPartialView">
+                                    @*17 Sun*@
+                                    <div style="float:left;">
+                                        17 Sun 2019
+                                    </div>
+                                    <div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 1.8 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 60 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 52 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">8 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190217child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="02/18/2019" class="loadPartialView">
+                                    @*18 Mon*@
+                                    <div style="float:left;">
+                                        18 Mon 2019
+                                    </div>
+                                    <div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 1.5 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 55 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 50 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">5 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190218child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="02/19/2019" class="loadPartialView">
+                                    @*19 Tue*@
+                                    <div style="float:left;">
+                                        19 Tue 2019
+                                    </div>
+                                    <div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 1.2 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 40 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 37 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">3 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190219child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="02/20/2019" class="loadPartialView">
+                                    @*20 Wed*@
+                                    <div style="float:left;">
+                                        20 Wed 2019
+                                    </div>
+                                    <div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 1.7 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 100 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 94 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">6 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190220child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="02/21/2019" class="loadPartialView">
+                                    @*21 Thu*@
+                                    <div style="float:left;">
+                                        21 Thu 2019
+                                    </div>
+                                    <div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 1.3 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 50 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 56 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">4 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190221child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="02/22/2019" class="loadPartialView">
+                                    @*22 Fri*@
+                                    <div style="float:left;">
+                                        22 Fri 2019
+                                    </div>
+                                    <div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 1.1 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 80 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 74 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">6 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190222child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="02/23/2019" class="loadPartialView">
+                                    @*23 Sat*@
+                                    <div style="float:left;">
+                                        23 Sat 2019
+                                    </div>
+                                    <div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 1.5 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 60 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 56 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">4 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190223child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="02/24/2019" class="loadPartialView">
+                                    @*24 Sun*@
+                                    <div style="float:left;">
+                                        24 Sun 2019
+                                    </div>
+                                    <div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 1.4 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 70 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 62 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">8 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190224child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="02/25/2019" class="loadPartialView">
+                                    @*25 Mon*@
+                                    <div style="float:left;">
+                                        25 Mon 2019
+                                    </div>
+                                    <div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 1.5 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 65 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 59 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">6 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190225child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="02/26/2019" class="loadPartialView">
+                                    @*26 Tue*@
+                                    <div style="float:left;">
+                                        26 Tue 2019
+                                    </div>
+                                    <div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 1.7 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 80 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 78 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">2 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190226child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="02/27/2019" class="loadPartialView">
+                                    @*27 Wed*@
+                                    <div style="float:left;">
+                                        27 Wed 2019
+                                    </div>
+                                    <div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 1.1 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 90 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 87 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">3 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190227child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="02/28/2019" class="loadPartialView">
+                                    @*28 Thu*@
+                                    <div style="float:left;">
+                                        28 Thu 2019
+                                    </div>
+                                    <div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 1.8 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 60 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild"> 55 </label>
+                                        </div>
+                                        <div style="width: 10%;float: left;text-align: center;">
+                                            <label class="lblCountChild">5 </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    @*<div id="20190228child">
+                                            @Html.Partial("_DashboardChild")
+                                        </div>*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="set">
+                    <a href="#" id="March">
+                        September
+                        <i class="fa fa-plus"></i>
+                    </a>
+                    <div class="content">
+                        <div class="accordion-containerchild">
+                            <div class="setchild">
+                                <a href="#" id="03/01/2019" class="loadPartialView">
+                                    01 Fri
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    <div id="20190301child">
+                                        @*@Html.Partial("_DashboardChild")*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="03/02/2019" class="loadPartialView">
+                                    02 Sat
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    <div id="20190302child">
+                                        @*@Html.Partial("_DashboardChild")*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="03/03/2019" class="loadPartialView">
+                                    03 Sun
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    <div id="20190303child">
+                                        @*@Html.Partial("_DashboardChild")*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="03/04/2019" class="loadPartialView">
+                                    04 Mon
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    <div id="20190304child">
+                                        @*@Html.Partial("_DashboardChild")*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="03/05/2019" class="loadPartialView">
+                                    05 Tue
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    <div id="20190305child">
+                                        @*@Html.Partial("_DashboardChild")*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="03/06/2019" class="loadPartialView">
+                                    06 Wed
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    <div id="20190306child">
+                                        @*@Html.Partial("_DashboardChild")*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="03/07/2019" class="loadPartialView">
+                                    07 Thu
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    <div id="20190307child">
+                                        @*@Html.Partial("_DashboardChild")*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="03/08/2019" class="loadPartialView">
+                                    08 Fri
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    <div id="20190308child">
+                                        @*@Html.Partial("_DashboardChild")*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="03/09/2019" class="loadPartialView">
+                                    09 Sat
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    <div id="20190309child">
+                                        @*@Html.Partial("_DashboardChild")*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="03/10/2019" class="loadPartialView">
+                                    10 Sun
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    <div id="20190310child">
+                                        @*@Html.Partial("_DashboardChild")*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="03/11/2019" class="loadPartialView">
+                                    11 Mon
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    <div id="20190311child">
+                                        @*@Html.Partial("_DashboardChild")*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="03/12/2019" class="loadPartialView">
+                                    12 Tue
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    <div id="20190312child">
+                                        @*@Html.Partial("_DashboardChild")*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="03/13/2019" class="loadPartialView">
+                                    13 Wed
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    <div id="20190313child">
+                                        @*@Html.Partial("_DashboardChild")*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="03/03/2019" class="loadPartialView">
+                                    14 Thu
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    <div id="20190314child">
+                                        @*@Html.Partial("_DashboardChild")*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="03/03/2019" class="loadPartialView">
+                                    15 Fri
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    <div id="20190315child">
+                                        @*@Html.Partial("_DashboardChild")*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="03/03/2019" class="loadPartialView">
+                                    16 Sat
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    <div id="20190316child">
+                                        @*@Html.Partial("_DashboardChild")*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="03/03/2019" class="loadPartialView">
+                                    17 Sun
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    <div id="20190317child">
+                                        @*@Html.Partial("_DashboardChild")*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="03/03/2019" class="loadPartialView">
+                                    18 Mon
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    <div id="20190318child">
+                                        @*@Html.Partial("_DashboardChild")*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="03/03/2019" class="loadPartialView">
+                                    19 Tue
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    <div id="20190319child">
+                                        @*@Html.Partial("_DashboardChild")*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="03/03/2019" class="loadPartialView">
+                                    20 Wed
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    <div id="20190320child">
+                                        @*@Html.Partial("_DashboardChild")*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="03/03/2019" class="loadPartialView">
+                                    21 Thu
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    <div id="20190321child">
+                                        @*@Html.Partial("_DashboardChild")*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="03/03/2019" class="loadPartialView">
+                                    22 Fri
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    <div id="20190322child">
+                                        @*@Html.Partial("_DashboardChild")*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="03/03/2019" class="loadPartialView">
+                                    23 Sat
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    <div id="20190323child">
+                                        @*@Html.Partial("_DashboardChild")*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="03/03/2019" class="loadPartialView">
+                                    24 Sun
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    <div id="20190324child">
+                                        @*@Html.Partial("_DashboardChild")*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="03/25/2019" class="loadPartialView">
+                                    25 Mon
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    <div id="20190325child">
+                                        @*@Html.Partial("_DashboardChild")*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="03/26/2019" class="loadPartialView">
+                                    26 Tue
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    <div id="20190326child">
+                                        @*@Html.Partial("_DashboardChild")*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="03/27/2019" class="loadPartialView">
+                                    27 Wed
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    <div id="20190327child">
+                                        @*@Html.Partial("_DashboardChild")*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="03/28/2019" class="loadPartialView">
+                                    28 Thu
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    <div id="20190328child">
+                                        @*@Html.Partial("_DashboardChild")*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190329" class="loadPartialView">
+                                    29 Fri
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    <div id="20190329child">
+                                        @*@Html.Partial("_DashboardChild")*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190330" class="loadPartialView">
+                                    30 Sat
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    <div id="20190330child">
+                                        @*@Html.Partial("_DashboardChild")*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setchild">
+                                <a href="#" id="20190331" class="loadPartialView">
+                                    31 Sun
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                                <div class="contentchild">
+                                    <div id="20190331child">
+                                        @*@Html.Partial("_DashboardChild")*@
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+        $(".loadPartialView").click(function () {
+            var name = $(this).attr('id');
+            //alert(name);
+            //var hr = $(this).attr("href");
+            //alert(hr);
+           // $('#PartialDivDashboard').load("@Url.Action("ClaimCounts", "Claims", new { @sDate = 20190123 })");
+            //$("#PartialDivDashboard").load("../Claims/ClaimCounts", new { sDate: name });
+            $.ajax({
+                type: "POST",
+                url: "/Eligibility/TransCount276",
+                data: '{TotalCount: "' + name + '" }',
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                success: function (response) {
+                    $('#EligibilityPartialView').html(response);
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+});
+</script>
+<script>
+    $(function () {
+
+        $('#processSummary').DataTable({
+            //"processing": true,
+            //"bLengthChange": false,
+            //"bLengthChange": false,
+            //"language": {
+            //    "processing": "<img src='/Content/Images/loading.gif' id='ProgressImage'/>" //add a loading image,simply putting <img src="loader.gif" /> tag.
+            //},
+            //"serverSide": true,
+            //"searching": true,
+            //"ordering": true,
+            ////"scrollY": 200,
+            ////"scrollX": true,
+            //"responsive": true,
+            //"ajax":
+            //{
+            //    "url": "/Claims/GetProcessSummary",
+            //    "type": "POST",
+            //    "dataType": "JSON"
+            //},
+            //"columns":
+            //    [
+
+            //        {
+            //            data: 'TypeofTransaction'
+
+            //        },
+            //        { data: 'AvgResTime' },
+            //        //{ data: 'ISA09' },
+            //        { data: 'TotalNumOfReq' },
+            //        { data: 'Success' },
+            //        {
+            //            data: 'Error',
+            //            "render": function (data, type, row, meta) {
+            //                if (type === 'display') {
+            //                    data = '<a class="fileTag" style="color:#6AA2B8;" href="/Claims/ErrorCountDetails?ErrorCount=' + row.Error + '&error_claimcount=0">' + data + '</a>';
+            //                }
+            //                return data;
+            //            }
+            //        },
+
+            //        //{ data: 'CreateDateTime' },
+            //        //{ data: 'ClaimCount' },
+            //        //{ data: 'error_claimcount' }
+            //        //{
+            //        //    data: 'error_claimcount',
+            //        //    "render": function (data, type, row, meta) {
+            //        //        if (type === 'display') {
+            //        //            data = '<a class="btn btn-danger"  href="/Claims/IntakeClaimData?FileID=' + row.FileID + '&error_claimcount=' + row.error_claimcount + '">' + data + '</a>';
+            //        //        }
+            //        //        if (row.error_claimcount != "0")
+            //        //            return data;
+            //        //        else
+            //        //            return "";
+            //        //    }
+            //        //},
+
+            //        // { data: 'Field1' },
+            //        //{ data: 'Field2' }
+
+            //    ]
+            ////, "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+            ////    //alert(iDisplayIndex, iDisplayIndexFull);
+            ////    //if (iDisplayIndex % 2 == 0) {
+            ////    //    $(nRow).removeClass('myodd myeven');
+            ////    //    $(nRow).addClass('myodd');
+            ////    //} else {
+            ////    //    $(nRow).removeClass('myodd myeven');
+            ////    //    $(nRow).addClass('myeven');
+            ////    //}
+            ////    if (aData['FileStatus'] == 'Failed') {
+            ////        //$('td', nRow).css('background-color', '#FF5959');
+            ////        //$('td', nRow).css('color', 'white');
+
+            ////    }
+            ////}
+        });
+
+
+
+
+
+
+
+
+    });
+
+
+
+</script>
+@section js{
+    <script type="text/javascript">
+        $(".loadPartialView").click(function () {
+            var name = $(this).attr('id');
+            //alert(name);
+
+            //$.ajax({
+            //    type: "POST",
+            //    url: "/Claims/ClaimCounts",
+            //    data: '{sDate: "' + name + '" }',
+            //    contentType: "application/json; charset=utf-8",
+            //    dataType: "html",
+            //    success: function (response) {
+            //        $('#PartialDivDashboard').html(response);
+            //    },
+            //    failure: function (response) {
+            //        alert(response.responseText);
+            //    },
+            //    error: function (response) {
+            //        alert(response.responseText);
+            //    }
+            //});
+        });
+    </script>
+
+    <style>
+
+        .accordion-containerchild {
+            position: relative;
+            /*max-width: 500px;*/
+            height: auto;
+            margin: 10px auto;
+            padding: 0 18px;
+        }
+
+            .accordion-containerchild > h2 {
+                text-align: center;
+                color: #fff;
+                padding-bottom: 5px;
+                margin-bottom: 20px;
+                padding-bottom: 15px;
+                border-bottom: 1px solid #ddd;
+            }
+
+        .setchild {
+            position: relative;
+            width: 100%;
+            height: auto;
+            background-color: #f5f5f5;
+        }
+
+            .setchild > a {
+                display: block;
+                padding: 10px 15px;
+                text-decoration: none;
+                color: #555;
+                font-weight: 600;
+                border-bottom: 1px solid #ddd;
+                -webkit-transition: all 0.2s linear;
+                -moz-transition: all 0.2s linear;
+                transition: all 0.2s linear;
+            }
+
+                .setchild > a i {
+                    float: right;
+                    margin-top: 2px;
+                }
+
+                .setchild > a.active {
+                    background-color: #3399cc;
+                    color: #fff;
+                }
+
+        .contentchild {
+            background-color: #fff;
+            /*border-bottom: 1px solid #ddd;*/
+            display: none;
+            border: 1px solid #6AA2B8;
+        }
+
+            .contentchild p {
+                padding: 10px 15px;
+                margin: 0;
+                color: #333;
+            }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $(".setchild > a").on("click", function () {
+                var name = $(this).attr('id');
+                //alert(name);
+                //var url = "/Claims/DashboardChild?sDate=" + name;
+                //$('#' + name + 'child').load(url);
+
+                if ($(this).hasClass("active")) {
+                    $(this).removeClass("active");
+                    $(this)
+                        .siblings(".contentchild")
+                        .slideUp(200);
+                    $(".setchild > a i")
+                        .removeClass("fa-minus")
+                        .addClass("fa-plus");
+                } else {
+                    $(".setchild > a i")
+                        .removeClass("fa-minus")
+                        .addClass("fa-plus");
+                    $(this)
+                        .find("i")
+                        .removeClass("fa-plus")
+                        .addClass("fa-minus");
+                    $(".setchild > a").removeClass("active");
+                    $(this).addClass("active");
+                    $(".contentchild").slideUp(200);
+                    $(this)
+                        .siblings(".contentchild")
+                        .slideDown(200);
+                }
+            });
+        });
+
+    </script>
+    @* Parent CSS *@
+    <style>
+        /*body {
+                background-color: #567;
+                padding: 0 10px;
+                font-family: 'Open Sans', sans-serif;
+            }*/
+
+        .accordion-container {
+            position: relative;
+            /*max-width: 500px;*/
+            height: auto;
+            margin: 10px auto;
+        }
+
+            .accordion-container > h2 {
+                text-align: center;
+                color: #fff;
+                padding-bottom: 5px;
+                margin-bottom: 20px;
+                padding-bottom: 15px;
+                border-bottom: 1px solid #ddd;
+            }
+
+        .set {
+            position: relative;
+            width: 100%;
+            height: auto;
+            background-color: #f5f5f5;
+        }
+
+            .set > a {
+                display: block;
+                padding: 10px 15px;
+                text-decoration: none;
+                color: #555;
+                font-weight: 600;
+                border-bottom: 1px solid #ddd;
+                -webkit-transition: all 0.2s linear;
+                -moz-transition: all 0.2s linear;
+                transition: all 0.2s linear;
+            }
+
+                .set > a i {
+                    float: right;
+                    margin-top: 2px;
+                }
+
+                .set > a.active {
+                    background-color: #3399cc;
+                    color: #fff;
+                }
+
+        .content {
+            background-color: #fff;
+            /*border-bottom: 1px solid #ddd;*/
+            display: none;
+            border: 1px solid #139DC9;
+        }
+
+            .content p {
+                padding: 10px 15px;
+                margin: 0;
+                color: #333;
+            }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $(".set > a").on("click", function () {
+                if ($(this).hasClass("active")) {
+                    $(this).removeClass("active");
+                    $(this)
+                        .siblings(".content")
+                        .slideUp(200);
+                    $(".set > a i")
+                        .removeClass("fa-minus")
+                        .addClass("fa-plus");
+                } else {
+                    $(".set > a i")
+                        .removeClass("fa-minus")
+                        .addClass("fa-plus");
+                    $(this)
+                        .find("i")
+                        .removeClass("fa-plus")
+                        .addClass("fa-minus");
+                    $(".set > a").removeClass("active");
+                    $(this).addClass("active");
+                    $(".content").slideUp(200);
+                    $(this)
+                        .siblings(".content")
+                        .slideDown(200);
+                }
+            });
+        });
+
+    </script>
+}
+
+<style>
+
+
+    main {
+        /*max-width: 800px;*/
+        padding: 5px;
+        border: 1px solid rgba(0,0,0,.2);
+        background: #fff;
+        box-shadow: 0 1px 3px rgba(0,0,0,.1);
+    }
+
+    section {
+        display: none;
+        padding: 20px 0 0;
+        border-top: 1px solid #abc;
+    }
+    /*Demographics*/
+    .rbinput {
+        display: none;
+    }
+
+    .rblable {
+        display: inline-block;
+        margin: 0 0 -1px;
+        padding: 15px 25px;
+        font-weight: 600;
+        text-align: center;
+        color: #abc;
+        border: 1px solid transparent;
+    }
+
+        .rblable:before {
+            font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .rblable:hover {
+            color: #789;
+            cursor: pointer;
+        }
+    /*Insurance*/
+    .rbinputIns {
+        display: none;
+    }
+
+    .rblableIns {
+        display: inline-block;
+        margin: 0 0 -1px;
+        padding: 15px 25px;
+        font-weight: 600;
+        text-align: center;
+        color: #abc;
+        border: 1px solid transparent;
+    }
+
+        .rblableIns:before {
+            font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .rblableIns:hover {
+            color: #789;
+            cursor: pointer;
+        }
+
+    input:checked + label {
+        color: #0af;
+        border: 1px solid #abc;
+        border-top: 3px solid #0af;
+        border-bottom: 1px solid #fff;
+    }
+
+    #Demotab1:checked ~ #content1,
+    #Demotab2:checked ~ #content2,
+    #Demotab3:checked ~ #content3,
+    #Demotab4:checked ~ #content4,
+    #Demotab5:checked ~ #content5,
+    #Demotab6:checked ~ #content6,
+    #Demotab7:checked ~ #content7,
+    #Instab1:checked ~ #content8,
+    #Instab2:checked ~ #content9,
+    #Instab3:checked ~ #content10,
+    #Instab4:checked ~ #content11 {
+        display: block;
+    }
+
+    @@media screen and (max-width: 800px) {
+        label {
+            font-size: 0;
+        }
+
+            label:before {
+                margin: 0;
+                font-size: 18px;
+            }
+    }
+
+    @@media screen and (max-width: 500px) {
+        label {
+            padding: 15px;
+        }
+    }
+</style>
+<style>
+
+
+    .accordion {
+        font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 5px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        transition: 0.4s;
+        margin-top: 10px;
+    }
+
+        .active, .accordion:hover {
+            background-color: #139DC9;
+        }
+
+    .panel {
+        font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+        padding: 0 18px;
+        display: none;
+        background-color: white;
+        overflow: hidden;
+        border: 1px solid #139DC9;
+    }
+</style>
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+    function openCity(cityName) {
+        var i;
+        var x = document.getElementsByClassName("city");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        document.getElementById(cityName).style.display = "block";
+    }</script>
+<style>
+
+
+    .accordion {
+        font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 5px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        transition: 0.4s;
+        margin-top: 10px;
+    }
+
+        .active, .accordion:hover {
+            background-color: #139DC9;
+        }
+
+    .panel {
+        font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+        padding: 0 18px;
+        display: none;
+        background-color: white;
+        overflow: hidden;
+        border: 1px solid #139DC9;
+    }
+</style>
+<style>
+
+    .Grid1 {
+        width: 100%;
+        margin-left: 100px;
+    }
+
+    .Grid1, th, td {
+        border: 1px solid #f3eeee;
+        border-collapse: collapse;
+        width: 250px;
+        height: 50px;
+    }
+
+    Grid1, th, td {
+        padding: 15px;
+        text-align: left;
+    }
+
+    .Grid1 {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .Grid1, th, td {
+        text-align: center;
+        padding: 8px;
+        border: 1px solid #f3eeee;
+    }
+
+
+
+    Grid1, th {
+        background-color: #139DC9;
+        color: white;
+    }
+</style>
+@*<script>
+        $(function () {
+            $('#processSummary').DataTable({
+                "processing": true,
+                "language": {
+                    "processing": "<img src='/Content/Images/loading.gif' id='ProgressImage'/>" //add a loading image,simply putting <img src="loader.gif" /> tag.
+                },
+                "serverSide": true,
+                "searching": true,
+                "ordering": true,
+                //"scrollY": 200,
+                //"scrollX": true,
+                "responsive": true,
+                "ajax":
+                {
+                    "url": "/Claims/GetProcessSummary",
+                    "type": "POST",
+                    "dataType": "JSON"
+                },
+                "columns":
+                    [
+                        {
+                            data: 'Process_Name'
+                        },
+                        { data: 'Avg_Response' },
+                        //{ data: 'ISA09' },
+                        { data: 'Standard_Deviation' },
+                        { data: 'executions' },
+                        { data: 'Avg_inbound_size' },
+                        //{ data: 'ST01' },
+                        //{ data: 'ISA10' },
+                        //{ data: 'GSA04' },
+                        //{ data: 'GSA05' },
+                        //{ data: 'ST02' },
+                        //{ data: 'ST03' },
+                        { data: 'Avg_inbound_count' },
+                        { data: 'Avg_outbound_size' },
+                        { data: 'Avg_outbound_count' },
+                        { data: 'Avg_returned_size' },
+                        { data: 'Avg_returned_count' }//,
+                        //{ data: 'CreateDateTime' },
+                        //{ data: 'ClaimCount' },
+                        //{ data: 'error_claimcount' }
+                        //{
+                        //    data: 'error_claimcount',
+                        //    "render": function (data, type, row, meta) {
+                        //        if (type === 'display') {
+                        //            data = '<a class="btn btn-danger"  href="/Claims/IntakeClaimData?FileID=' + row.FileID + '&error_claimcount=' + row.error_claimcount + '">' + data + '</a>';
+                        //        }
+                        //        if (row.error_claimcount != "0")
+                        //            return data;
+                        //        else
+                        //            return "";
+                        //    }
+                        //},
+                        // { data: 'Field1' },
+                        //{ data: 'Field2' }
+                    ]
+                //, "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+                //    //alert(iDisplayIndex, iDisplayIndexFull);
+                //    //if (iDisplayIndex % 2 == 0) {
+                //    //    $(nRow).removeClass('myodd myeven');
+                //    //    $(nRow).addClass('myodd');
+                //    //} else {
+                //    //    $(nRow).removeClass('myodd myeven');
+                //    //    $(nRow).addClass('myeven');
+                //    //}
+                //    if (aData['FileStatus'] == 'Failed') {
+                //        //$('td', nRow).css('background-color', '#FF5959');
+                //        //$('td', nRow).css('color', 'white');
+                //    }
+                //}
+            });
+        });
+    </script>*@
+<script>
+    $(function () {
+        $('#processSummary').DataTable({
+            "processing": true,
+            "bLengthChange": false,
+            "language": {
+                "processing": "<img src='/Content/Images/loading.gif' id='ProgressImage'/>" //add a loading image,simply putting <img src="loader.gif" /> tag.
+            },
+            "serverSide": true,
+            "searching": true,
+            "ordering": true,
+            //"scrollY": 200,
+            //"scrollX": true,
+            "responsive": true,
+            "ajax":
+            {
+                "url": "/Eligibility/GetProcessSummary276",
+                "type": "POST",
+                "dataType": "JSON"
+            },
+            "columns":
+                [
+                    {
+                        data: 'TypeofTransaction'
+                    },
+                    { data: 'AvgResTime' },
+                    //{ data: 'ISA09' },
+                    { data: 'TotalNumOfReq' },
+                    { data: 'Success' },
+                    {
+                        data: 'Error',
+                        "render": function (data, type, row, meta) {
+                            if (type === 'display') {
+                                data = '<a class="fileTag" style="color:#6AA2B8;" href="/Eligibility/ErrorCountDetails?ErrorCount=' + row.Error + '&error_claimcount=276">' + data + '</a>';
+                            }
+                            return data;
+                        }
+                    },
+                    //{ data: 'CreateDateTime' },
+                    //{ data: 'ClaimCount' },
+                    //{ data: 'error_claimcount' }
+                    //{
+                    //    data: 'error_claimcount',
+                    //    "render": function (data, type, row, meta) {
+                    //        if (type === 'display') {
+                    //            data = '<a class="btn btn-danger"  href="/Claims/IntakeClaimData?FileID=' + row.FileID + '&error_claimcount=' + row.error_claimcount + '">' + data + '</a>';
+                    //        }
+                    //        if (row.error_claimcount != "0")
+                    //            return data;
+                    //        else
+                    //            return "";
+                    //    }
+                    //},
+                    // { data: 'Field1' },
+                    //{ data: 'Field2' }
+                ]
+            //, "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+            //    //alert(iDisplayIndex, iDisplayIndexFull);
+            //    //if (iDisplayIndex % 2 == 0) {
+            //    //    $(nRow).removeClass('myodd myeven');
+            //    //    $(nRow).addClass('myodd');
+            //    //} else {
+            //    //    $(nRow).removeClass('myodd myeven');
+            //    //    $(nRow).addClass('myeven');
+            //    //}
+            //    if (aData['FileStatus'] == 'Failed') {
+            //        //$('td', nRow).css('background-color', '#FF5959');
+            //        //$('td', nRow).css('color', 'white');
+            //    }
+            //}
+        });
+    });</script>

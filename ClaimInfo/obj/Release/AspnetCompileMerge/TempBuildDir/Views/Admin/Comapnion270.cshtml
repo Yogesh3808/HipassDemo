@@ -1,0 +1,65 @@
+﻿@model  List<ClaimInfo.DataModel.SP_GetCompanion_Guide_270_Result>
+@{
+    ViewBag.Title = "Comapnion270";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<link href="~/CSS/StyleSheetForTable.css" rel="stylesheet" />
+
+<div class="rightpart">
+    <div class="dashBx">
+        <div class="clearfix"></div>
+        <h2>270 Companion Guide</h2>
+        <hr />
+        <div class="dashformBx  dashformBx2 clearfix">
+            <div class="dashfrm-L">
+                @Html.TextBox("file", "", new { type = "file" })
+            </div>
+            <div class="dashfrm-M">
+                
+            </div>
+            <div class="dashfrm-M">
+            </div>
+            <div class="dashfrm-R">
+            </div>
+            <div class="clearfix"></div>
+            <div class="dashBx">
+                <div class="table-responsive" id="rootId" style="margin-top:5px;">
+                    <table id="tblId" class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th style="text-align:left;">Loop ID</th>
+                                <th style="text-align:left;">Reference</th>
+                                <th style="text-align:left;">Name</th>
+                                <th style="text-align:left;">X12 Codes</th>
+                                <th style="text-align:left;">Notes/Comments</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.Count > 0)
+                            {
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td style="text-align:left;">@item.Loop_ID</td>
+                                        <td style="text-align:left;">@item.Reference</td>
+                                        <td style="text-align:left;">@item.Info_Source_Name</td>
+                                        <td style="text-align:left;">@item.X12_Codes</td>
+                                        <td style="text-align:left;">@item.Notes</td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr><td style="border:none; text-align:left;">No records found</td></tr>
+
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

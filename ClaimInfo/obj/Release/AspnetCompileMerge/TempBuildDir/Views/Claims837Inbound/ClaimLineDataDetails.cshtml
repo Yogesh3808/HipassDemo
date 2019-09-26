@@ -1,0 +1,339 @@
+﻿@model ClaimInfo.Models.IntakeClaimLineDetailsViewModel
+@{
+    ViewBag.Title = "ClaimLineDataDetails";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<div class="rightpart">
+    <div class="dashBx">
+        <div class="clearfix"></div>
+        <h2>Claim Line Data </h2>
+        <hr />
+        <br />
+        <div>
+            <strong class="pull-right">
+                <a href="/Claims/ClaimLineData?FileID=@Model.FileData.FileID&ClaimID=@Model.ClaimID" style="color:#6AA2B8;"> Back To List</a>
+            </strong>
+        </div>
+        <button class="accordion active">File <strong>#@Model.FileID</strong></button>
+        <div class="panel" style="display:block;">
+            <br />
+            <div class="dashfrm-L">
+                <label class="lblTxt"> @Html.DisplayNameFor(model => model.FileData.FileName) </label>
+                @Html.DisplayFor(model => model.FileData.FileName)
+            </div>
+            <div class="dashfrm-M">
+                <label class="lblTxt"> @Html.DisplayNameFor(model => model.FileData.FileDate)</label>
+                @Html.DisplayFor(model => model.FileData.FileDate)
+            </div>
+            <div class="dashfrm-M">
+            </div>
+            <div class="dashfrm-R">
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <button class="accordion">Claim <strong> #@Model.ClaimID</strong></button>
+        <div class="panel">
+            <br />
+            <div class="dashfrm-L">
+                <label class="lblTxt"> @Html.DisplayNameFor(model => model.IntakeClaimData.ClaimExtNmbr) </label>
+                @Html.DisplayFor(model => model.IntakeClaimData.ClaimExtNmbr)
+            </div>
+            <div class="dashfrm-M">
+                <label class="lblTxt"> @Html.DisplayNameFor(model => model.IntakeClaimData.ClaimTMTrackingID)</label>
+                @Html.DisplayFor(model => model.IntakeClaimData.ClaimTMTrackingID)
+            </div>
+            <div class="dashfrm-M">
+                <label class="lblTxt">@Html.DisplayNameFor(model => model.IntakeClaimData.AdmissionDate)</label>
+                @Html.DisplayFor(model => model.IntakeClaimData.AdmissionDate)
+            </div>
+            <div class="dashfrm-R">
+                <label class="lblTxt">  @Html.DisplayNameFor(model => model.IntakeClaimData.Claim_Amount)</label>
+                @Html.DisplayFor(model => model.IntakeClaimData.Claim_Amount)
+            </div>
+            <div class="clearfix"></div>
+            <div class="dashfrm-L">
+                <label class="lblTxt">@Html.DisplayNameFor(model => model.IntakeClaimData.ClaimStatus)</label>
+                @Html.DisplayFor(model => model.IntakeClaimData.ClaimStatus)
+            </div>
+            <div class="dashfrm-M">
+                <label class="lblTxt">@Html.DisplayNameFor(model => model.IntakeClaimData.ClaimCode)</label>
+                @Html.DisplayFor(model => model.IntakeClaimData.ClaimCode)
+            </div>
+            <div class="dashfrm-M">
+
+            </div>
+            <div class="dashfrm-R">
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <button class="accordion"><span>Claim Line Data <strong> #@Model.ClaimLineDataSeqID</strong></span></button>
+        <div class="panel">
+            <br />
+            <div class="dashfrm-L">
+                <label class="lblTxt">@Html.DisplayNameFor(model => model.BatchID)</label>
+                @Html.DisplayFor(model => model.BatchID)
+            </div>
+            <div class="dashfrm-M">
+                <label class="lblTxt">@Html.DisplayNameFor(model => model.CreatedBy)</label>
+                @Html.DisplayFor(model => model.CreatedBy)
+            </div>
+            <div class="dashfrm-M">
+                <label class="lblTxt">@Html.DisplayNameFor(model => model.CreateDateTime)</label>
+                @Html.DisplayFor(model => model.CreateDateTime)
+            </div>
+            <div class="dashfrm-R">
+                <label class="lblTxt">@Html.DisplayNameFor(model => model.Created_Date)</label>
+                @Html.DisplayFor(model => model.Created_Date)
+            </div>
+            <div class="clearfix"></div>
+            <div class="dashfrm-L">
+                <label class="lblTxt">  @Html.DisplayNameFor(model => model.ServiceFacilityLocationName)</label>
+                @Html.DisplayFor(model => model.ServiceFacilityLocationName)
+            </div>
+            <div class="dashfrm-M">
+                <label class="lblTxt"> @Html.DisplayNameFor(model => model.ServiceFacilityLocation_NM102)</label>
+                @Html.DisplayFor(model => model.ServiceFacilityLocation_NM102)
+            </div>
+            <div class="dashfrm-M">
+                <label class="lblTxt">@Html.DisplayNameFor(model => model.ServiceFacilityLocation_NM108)</label>
+                @Html.DisplayFor(model => model.ServiceFacilityLocation_NM108)
+            </div>
+            <div class="dashfrm-R">
+                <label class="lblTxt"> @Html.DisplayNameFor(model => model.ServiceFacilityLocation_NM109)</label>
+                @Html.DisplayFor(model => model.ServiceFacilityLocation_NM109)
+            </div>
+            <div class="clearfix"></div>
+            <div class="dashfrm-L">
+                <label class="lblTxt">@Html.DisplayNameFor(model => model.ServiceFacilityLocationAddress)</label>
+                @Html.DisplayFor(model => model.ServiceFacilityLocationAddress)
+            </div>
+            <div class="dashfrm-M">
+                <label class="lblTxt"> @Html.DisplayNameFor(model => model.SBR02)</label>
+                @Html.DisplayFor(model => model.SBR02)
+            </div>
+            <div class="dashfrm-M">
+                <label class="lblTxt">@Html.DisplayNameFor(model => model.SBR03)</label>
+                @Html.DisplayFor(model => model.SBR03)
+            </div>
+            <div class="dashfrm-R">
+                <label class="lblTxt">@Html.DisplayNameFor(model => model.SBR04)</label>
+                @Html.DisplayFor(model => model.SBR04)
+            </div>
+            <div class="clearfix"></div>
+            <div class="dashfrm-L">
+                <label class="lblTxt">@Html.DisplayNameFor(model => model.SBR09)</label>
+                @Html.DisplayFor(model => model.SBR09)
+            </div>
+            <div class="dashfrm-M">
+                <label class="lblTxt"> @Html.DisplayNameFor(model => model.AMT01_PayerPaidAmmount)</label>
+                @Html.DisplayFor(model => model.AMT01_PayerPaidAmmount)
+            </div>
+            <div class="dashfrm-M">
+                <label class="lblTxt"> @Html.DisplayNameFor(model => model.AMT02_Amount)</label>
+                @Html.DisplayFor(model => model.AMT02_Amount)
+            </div>
+            <div class="dashfrm-R">
+                <label class="lblTxt">@Html.DisplayNameFor(model => model.AMT01_RemainingPatientLiability)</label>
+                @Html.DisplayFor(model => model.AMT01_RemainingPatientLiability)
+            </div>
+            <div class="clearfix"></div>
+            <div class="dashfrm-L">
+                <label class="lblTxt">@Html.DisplayNameFor(model => model.AMT02_RPAmount)</label>
+                @Html.DisplayFor(model => model.AMT02_RPAmount)
+            </div>
+            <div class="dashfrm-M">
+                <label class="lblTxt">@Html.DisplayNameFor(model => model.SVD01)</label>
+                @Html.DisplayFor(model => model.SVD01)
+            </div>
+            <div class="dashfrm-M">
+                <label class="lblTxt">@Html.DisplayNameFor(model => model.SVD02)</label>
+                @Html.DisplayFor(model => model.SVD02)
+            </div>
+            <div class="dashfrm-R">
+                <label class="lblTxt">@Html.DisplayNameFor(model => model.SVD03)</label>
+                @Html.DisplayFor(model => model.SVD03)
+            </div>
+            <div class="clearfix"></div>
+            <div class="dashfrm-L">
+                <label class="lblTxt">@Html.DisplayNameFor(model => model.LineCheckOrRemittanceDate)</label>
+                @Html.DisplayFor(model => model.LineCheckOrRemittanceDate)
+            </div>
+            <div class="dashfrm-M">
+                <label class="lblTxt">@Html.DisplayNameFor(model => model.ServiceDate)</label>
+                @Html.DisplayFor(model => model.ServiceDate)
+            </div>
+            <div class="dashfrm-M">
+                
+            </div>
+            <div class="dashfrm-R">
+                
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        
+    </div>
+</div>
+
+@section js{
+    <style>
+
+        main {
+            /*max-width: 800px;*/
+            padding: 5px;
+            border: 1px solid rgba(0,0,0,.2);
+            background: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,.1);
+        }
+
+        section {
+            display: none;
+            padding: 20px 0 0;
+            border-top: 1px solid #abc;
+        }
+        /*Demographics*/
+        .rbinput {
+            display: none;
+        }
+
+        .rblable {
+            display: inline-block;
+            margin: 0 0 -1px;
+            padding: 15px 25px;
+            font-weight: 600;
+            text-align: center;
+            color: #abc;
+            border: 1px solid transparent;
+        }
+
+            .rblable:before {
+                font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+                font-weight: bold;
+                margin-right: 10px;
+            }
+
+            .rblable:hover {
+                color: #789;
+                cursor: pointer;
+            }
+        /*Insurance*/
+        .rbinputIns {
+            display: none;
+        }
+
+        .rblableIns {
+            display: inline-block;
+            margin: 0 0 -1px;
+            padding: 15px 25px;
+            font-weight: 600;
+            text-align: center;
+            color: #abc;
+            border: 1px solid transparent;
+        }
+
+            .rblableIns:before {
+                font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+                font-weight: bold;
+                margin-right: 10px;
+            }
+
+            .rblableIns:hover {
+                color: #789;
+                cursor: pointer;
+            }
+
+        input:checked + label {
+            color: #0af;
+            border: 1px solid #abc;
+            border-top: 3px solid #0af;
+            border-bottom: 1px solid #fff;
+        }
+
+        #Demotab1:checked ~ #content1,
+        #Demotab2:checked ~ #content2,
+        #Demotab3:checked ~ #content3,
+        #Demotab4:checked ~ #content4,
+        #Demotab5:checked ~ #content5,
+        #Demotab6:checked ~ #content6,
+        #Demotab7:checked ~ #content7,
+        #Instab1:checked ~ #content8,
+        #Instab2:checked ~ #content9,
+        #Instab3:checked ~ #content10,
+        #Instab4:checked ~ #content11 {
+            display: block;
+        }
+
+        @@media screen and (max-width: 800px) {
+            label {
+                font-size: 0;
+            }
+
+                label:before {
+                    margin: 0;
+                    font-size: 18px;
+                }
+        }
+
+        @@media screen and (max-width: 500px) {
+            label {
+                padding: 15px;
+            }
+        }
+    </style>
+    <style>
+
+        .accordion {
+            font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 5px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+            margin-top: 10px;
+        }
+
+            .active, .accordion:hover {
+                background-color: #6AA2B8;
+            }
+
+        .panel {
+            font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+            border: 1px solid #6AA2B8;
+        }
+    </style>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+        function openCity(cityName) {
+            var i;
+            var x = document.getElementsByClassName("city");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            document.getElementById(cityName).style.display = "block";
+        }</script>
+
+}

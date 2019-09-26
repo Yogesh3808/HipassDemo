@@ -1,0 +1,28 @@
+﻿@model ClaimInfo.Models.ProcessSummaryModel1
+<div class="dashformBx  dashformBx2 clearfix">
+
+    <div class="dashfrm-L1">
+        <label class="lblTxtCountHeader">  Avg Response Time (milliseconds) </label>
+        <br /><br />
+        <label class="lblCount" style="color:#20a8d8;"> @Model.AvgResTime </label>
+    </div>
+    <div class="dashfrm-L1">
+        <label class="lblTxtCountHeader">  Total Number Of Requests </label>
+        <br /><br />
+        <a class="lblCount" style="color:#ff0000;" href="/Claims/Eligibility271Details?TotalCount=@Model.Date&Status=1">@Model.TotalNumOfReq</a>
+    </div>
+    <div class="dashfrm-L1">
+        <label class="lblTxtCountHeader">   Total Success Count </label>
+        <br /><br />
+        <label class="lblCount" style="color:#2ca058;"> @Model.Success </label>
+    </div>
+    <div class="dashfrm-L1">
+        <label class="lblTxtCountHeader">  Total Error Count </label>
+        <br /><br />
+        <a class="lblCount" style="color:#ff0000;" href="/Claims/Eligibility271Details?TotalCount=@Model.Date&Status=Fail">@Model.Error</a>
+    </div>
+
+    <div class="dashfrm-L2">
+    </div>
+    <div class="clearfix"></div>
+</div>

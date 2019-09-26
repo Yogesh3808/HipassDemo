@@ -1,0 +1,147 @@
+﻿@model  List<ClaimInfo.DataModel.SP_GetRejectedClaims_Result>
+@{
+    ViewBag.Title = "Claims Rejection";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+    int RejCount = ViewBag.RejCount;
+}
+<link href="~/CSS/StyleSheetForTable.css" rel="stylesheet" />
+<div class="rightpart">
+    <div class="dashBx">
+        <div class="clearfix"></div>
+        <div style="border-bottom: 1.5px solid #139DC9;">
+            <img src="~/Images/Search.png" style="width:14px; height:14px;" />
+            <input type="text" id="MyCustomSearch" style="color: #139DC9; font-weight: bold;" placeholder="Search" class="mySearchbox" name="min">
+        </div>
+        <br />
+        <h2>Claims Rejection</h2>
+        <br />
+        <div class="dashformBx  dashformBx2 clearfix">
+            <div>
+                <div style="width:25%; display:none; float:left;">
+                    <label class="lblTxt">Select Client Name </label>
+                    @Html.DropDownList("ClientName", new List<SelectListItem>
+                    {
+                        new SelectListItem {Text = "Client Name 1", Value = "1",Selected = true},
+                        new SelectListItem {Text = "Client Name 2", Value = "2"}
+                    }, "Select Client Name", new {@class = "dashInp"})
+                </div>
+                <div class="dashfrm-L">
+                    <label class="lblTxt">Select State </label>
+                    @Html.DropDownList("State", new List<SelectListItem>
+                    {
+                        new SelectListItem {Text = "California", Value = "1" ,Selected = true},
+                        new SelectListItem {Text = "Michigan", Value = "2"},
+                     new SelectListItem {Text = "Florida", Value = "3"},
+                        new SelectListItem {Text = "New York", Value = "4"},
+                     new SelectListItem {Text = "Idaho", Value = "5"},
+                        new SelectListItem {Text = "Ohio", Value = "6"},
+                     new SelectListItem {Text = "Illinois", Value = "7"},
+                        new SelectListItem {Text = "Texas", Value = "8"},
+                   new SelectListItem {Text = "Mississippi", Value = "9"},
+                        new SelectListItem {Text = "South Carolina", Value = "10"},
+                    new SelectListItem {Text = "New Mexico", Value = "11"},
+                        new SelectListItem {Text = "Puerto Rico", Value = "12"},
+                              new SelectListItem {Text = "Washington", Value = "13"},
+                    new SelectListItem {Text = "Utah", Value = "14"},
+                        new SelectListItem {Text = "Wisconsin", Value = "15"}
+                    }, "Select State", new {@class = "dashInp"})
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">Select Trading Partner </label>
+                    @Html.DropDownList("TradingPartner", new List<SelectListItem>
+                    {
+                        new SelectListItem {Text = "Trading Partner 1", Value = "1",Selected = true},
+                        new SelectListItem {Text = "Trading Partner 2", Value = "2"}
+                    }, "Select Trading Partner", new {@class = "dashInp"})
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">Select Provider Name </label>
+                    @Html.DropDownList("ProviderName", new List<SelectListItem>
+                    {
+                        new SelectListItem {Text = "Provider Name 1", Value = "1",Selected = true},
+                        new SelectListItem {Text = "Provider Name 2", Value = "2"}
+                    }, "Select Provider Name", new {@class = "dashInp"})
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="dashfrm-L">
+                @Html.TextBox("fileName-filter", "", new { @placeholder = "FileName", @class = "dashInp form-control input-filter", @search_index = "1" })
+            </div>
+            <div class="dashfrm-M">
+                @Html.TextBox("fileStatus-filter", "", new { @placeholder = "Member_Acc_No", @class = "dashInp form-control input-filter", @search_index = "2" })
+            </div>
+            <div class="dashfrm-M">
+                @Html.TextBox("submitter-filter", "", new { @placeholder = "SubscriberLName", @class = " dashInp form-control input-filter", @search_index = "12" })
+            </div>
+            <div class="dashfrm-R">
+                @*@Html.TextBox("reciever-filter", "", new { @placeholder = "Claim Status", @class = "dashInp form-control input-filter", @search_index = "13" })*@
+            </div>
+            <div class="clearfix"></div>
+
+            <br />
+            <div class="clearfix"></div>
+            <div class="dashfrm-L1">
+                <label class="lblTxtCountHeader"> Total Rejection </label>
+                <br /><br />
+                @*<label class="lblCount" style="color:#ff0000;"> @RejCount </label>*@
+                <a class="lblCount" style="color:#ff0000;" href="/Claims/FileClaimDetails?sSelectedDate=&sMenu=EC">@RejCount</a>
+            </div>
+            <div class="dashfrm-LR1">
+                <div style="width:45%; text-align:left; display:inline-block; background-color:brown;height:90px;color:#FFFFFF;"><span style="padding:10px;">Misdirected Claims</span></div>
+                <div style="width:25%; text-align:left; display:inline-block; background-color:dodgerblue;height:90px;color:#FFFFFF;"><span style="padding:10px;">Member Not Found</span></div>
+                <div style="width:20%; text-align:left; display:inline-block; background-color:crimson;height:90px;color:#FFFFFF;"><span style="padding:10px;">ICD Code not Found</span></div>
+            </div>
+            <div class="clearfix"></div>
+            <br />
+            <div class="">
+                <div class="table-responsive" id="rootId" style="margin-top:5px;">
+                    <table id="tblId" class="table table-striped">
+                        <thead>
+                            <tr style="background: #139DC9;color: white;">
+                                <th style="text-align:left;width: 200px;">Reason<img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                                <th style="text-align:left;width: 200px;">BillingProLastName<img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                                <th style="text-align:left;">FileName<img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                                @*<th style="text-align:left;">FileDate</th>*@
+                                <th style="text-align:left;">Member_Acc_No<img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                                <th style="text-align:left;">SubscriberLName<img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                                <th style="text-align:left;">SubscriberFName<img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                                <th style="text-align:left;">Assign<img src="~/Images/search_3_16.ico" style="float: right" /></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.Count > 0)
+                            {
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td style="text-align:left;">@item.Reason</td>
+                                        <td style="text-align:left;">@item.BillingProviderLastName</td>
+                                        <td style="text-align:left;">@item.FileName</td>
+                                        @*<td style="text-align:left;">@item.FileDate</td>*@
+                                        <td style="text-align:left;">@item.Member_Account_Number</td>
+                                        <td style="text-align:left;">@item.SubscriberLastName</td>
+                                        <td style="text-align:left;">@item.SubscriberFirstName</td>
+                                        <td>
+                                            <select>
+                                                <option value="">Select</option>
+                                                <option value="Amit Patel">John Wilson</option>
+                                                <option value="John Smith">John Smith</option>
+                                                <option value="Sarah Thompson">Sarah Thompson</option>
+                                                <option value="Sarah Thompson">Andrew  Parkar</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr><td style="border:none; text-align:left;" colspan="6">No records found</td></tr>
+
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,357 @@
+﻿
+@{
+    ViewBag.Title = "ClaimsInfo";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<link href="~/CSS/StyleSheetForTable.css" rel="stylesheet" />
+<div class="rightpart">
+    <div class="dashBx">
+        <div class="clearfix"></div>
+        <div id="fileIntekDiv">
+           
+            <div style="border-bottom: 1px solid #6AA2B8;">
+                Search Filter
+            </div>
+            <div class="dashformBx  dashformBx2 clearfix">
+                <div class="dashfrm-L">
+                    <label class="lblTxt"> File Name </label>
+                    @Html.TextBox("fileName-filter", "", new { @class = "dashInp form-control input-filter", @search_index = "1" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">  File Status </label>
+                    @Html.TextBox("fileStatus-filter", "", new { @class = "dashInp form-control input-filter", @search_index = "2" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt"> Submitter </label>
+                    @Html.TextBox("submitter-filter", "", new { @class = " dashInp form-control input-filter", @search_index = "12" })
+                </div>
+                <div class="dashfrm-R">
+                    <label class="lblTxt">  Reciever </label>
+                    @Html.TextBox("reciever-filter", "", new { @class = "dashInp form-control input-filter", @search_index = "13" })
+                </div>
+                <div class="clearfix"></div>
+                <div class="dashfrm-L">
+                    <label class="lblTxt"> File Date From </label>
+                    @Html.TextBox("startDate", "", new { @class = "dashInp date-filter form-control", @search_index = "3", @search_type = "from", @onkeydown = "return false;" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt"> File Date To </label>
+                    @Html.TextBox("endDate", "", new { @class = "dashInp date-filter form-control", @search_index = "3", @search_type = "to", @onkeydown = "return false;" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt"> </label>
+                    <button class="editBtn pull-right filter-reset" style="width: 30%;"> Reset </button>
+                </div>
+                <div class="dashfrm-R">
+
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="filter col-md-12" style="display:none;">
+                <fieldset>
+                    <legend>
+                        Search Filter
+                    </legend>
+                    <div class="row form-group col-md-12">
+                        <button class="pull-right filter-reset"> Reset </button>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <div class="col-md-4">
+                                <label class="filter-label">
+                                    File Name
+                                </label>
+                            </div>
+                            <div class="col-md-8">
+                                @Html.TextBox("fileName-filter", "", new { @class = " form-control input-filter", @search_index = "1" })
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-md-4">
+                                <label class="filter-label">
+                                    File Status
+                                </label>
+                            </div>
+                            <div class="col-md-8">
+                                @Html.TextBox("fileStatus-filter", "", new { @class = " form-control input-filter", @search_index = "2" })
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-md-4">
+                                <label class="filter-label">
+                                    File Date From
+                                </label>
+                            </div>
+                            <div class="col-md-8">
+                                @Html.TextBox("startDate", "", new { @class = "date-filter form-control", @search_index = "3", @search_type = "from", @onkeydown = "return false;" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <div class="col-md-4">
+                                <label class="filter-label">
+                                    Submitter
+                                </label>
+
+                            </div>
+                            <div class="col-md-8">
+                                @Html.TextBox("submitter-filter", "", new { @class = "form-control input-filter", @search_index = "12" })
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-md-4">
+                                <label class="filter-label">
+                                    Reciever
+                                </label>
+                            </div>
+                            <div class="col-md-8">
+                                @Html.TextBox("reciever-filter", "", new { @class = "form-control input-filter", @search_index = "13" })
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-md-4">
+                                <label class="filter-label">
+                                    File Date To
+                                </label>
+                            </div>
+                            <div class="col-md-8">
+                                @Html.TextBox("endDate", "", new { @class = "date-filter form-control", @search_index = "3", @search_type = "to", @onkeydown = "return false;" })
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="table-responsive" id="rootId" style="margin-top:5px;">
+                <table id="fileIntakeTable" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                File ID
+                            </th>
+                            <th>
+                                File Name
+                            </th>
+                            <th>
+                                File Date
+                            </th>
+                            <th>
+                                File Status
+                            </th>
+                            @*<th>
+                                    Submitter Id
+                                </th>*@
+                            <th>
+                                Submitter
+                            </th>
+                            <th>
+                                Receiver
+                            </th>
+                            @*<th>
+                                    Health Care Claim
+                                </th>
+                                <th>
+                                    Application Sender’s Code
+                                </th>
+                                <th>
+                                    Application Receiver’s Code
+                                </th>
+                                <th>
+                                    Responsible Agency Code
+                                </th>*@
+                            @*<th>
+                                    Transaction Set Control Number
+                                </th>
+                                <th>
+                                    Version
+                                </th>*@
+                            <th>
+                                Originator
+                            </th>
+                            <th>
+                                Created Date
+                            </th>
+                            @*<th>
+                                    Create Date Time
+                                </th>*@
+                            @*<th>
+                                    ClaimCount
+                                </th>
+                                <th>
+                                    Error ClaimCount
+                                </th>*@
+                            @*<th>
+                                    277 CA total claims
+                                </th>
+                                <th>
+                                    277 CA error count
+                                </th>*@
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <div id="dialog-edit" style="display: none">
+    </div>
+</div>
+<style>
+    table.dataTable tbody tr.myeven {
+        background-color: #f2dede;
+    }
+
+    table.dataTable tbody tr.myodd {
+        background-color: #bce8f1;
+    }
+</style>
+
+
+<script>
+    $(function () {
+        //debugger;
+
+        //$('.date-filter').daterangepicker(
+        //    {
+        //        singleDatePicker: true
+        //    });
+        // $("#fileIntakeTable tr:even").css("background-color", "#dedede");
+        //$("#fileIntakeTable tr:odd").css("background-color", "#ffffff");
+
+        $('#fileIntakeTable').DataTable({
+            "processing": true,
+            "bLengthChange": false,
+            "language": {
+                "processing": "<img src='/Content/Images/loading.gif' id='ProgressImage'/>" //add a loading image,simply putting <img src="loader.gif" /> tag.
+            },
+            "serverSide": true,
+            "searching": true,
+            "ordering": true,
+            //"scrollY": 200,
+            //"scrollX": true,
+            "responsive": true,
+            "ajax":
+            {
+                "url": "/Claims/GetFileIntakes",
+                "type": "POST",
+                "dataType": "JSON"
+            },
+            "columns":
+                [
+                    {
+                        data: 'FileID',
+                        visible: false
+                    },
+                    {
+                        data: 'FileName',
+                        "render": function (data, type, row, meta) {
+                            if (type === 'display') {
+                                data = '<a class="fileTag" style="color:#6AA2B8;" href="/Claims/IntakeClaimData?FileID=' + row.FileID + '&error_claimcount=0">' + data + '</a>';
+                                //data = '<a class="fileTag" style="color:#6AA2B8;" href="/Claims/IntakeClaimDataDetails?FileID=' + row.FileID + '">' + data + '</a>';
+                            }
+                            return data;
+                        }
+                    },
+                    { data: 'FileDate' },
+                    { data: 'FileStatus' },
+                    //{ data: 'ISA09' },
+                    { data: 'Submitter_N103' },
+                    { data: 'Receiver_N103' },
+                    //{ data: 'ST01' },
+                    //{ data: 'ISA10' },
+                    //{ data: 'GSA04' },
+                    //{ data: 'GSA05' },
+                    //{ data: 'ST02' },
+                    //{ data: 'ST03' },
+                    { data: 'BHT03' },
+                    { data: 'Created_Date' }//,
+                    //{ data: 'CreateDateTime' },
+                    //{ data: 'ClaimCount' },
+                    //{ data: 'error_claimcount' }
+                    //{
+                    //    data: 'error_claimcount',
+                    //    "render": function (data, type, row, meta) {
+                    //        if (type === 'display') {
+                    //            data = '<a class="btn btn-danger"  href="/Claims/IntakeClaimData?FileID=' + row.FileID + '&error_claimcount=' + row.error_claimcount + '">' + data + '</a>';
+                    //        }
+                    //        if (row.error_claimcount != "0")
+                    //            return data;
+                    //        else
+                    //            return "";
+                    //    }
+                    //},
+
+                    // { data: 'Field1' },
+                    //{ data: 'Field2' }
+
+                ]
+            //, "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+            //    //alert(iDisplayIndex, iDisplayIndexFull);
+            //    //if (iDisplayIndex % 2 == 0) {
+            //    //    $(nRow).removeClass('myodd myeven');
+            //    //    $(nRow).addClass('myodd');
+            //    //} else {
+            //    //    $(nRow).removeClass('myodd myeven');
+            //    //    $(nRow).addClass('myeven');
+            //    //}
+            //    if (aData['FileStatus'] == 'Failed') {
+            //        //$('td', nRow).css('background-color', '#FF5959');
+            //        //$('td', nRow).css('color', 'white');
+
+            //    }
+            //}
+        });
+
+
+
+        $('.date-filter').val('');
+        // Filter Section
+
+        $('.input-filter').on('blur', function (e) {
+            //debugger;
+            index = $(this).attr("search-index");
+            searchFilter(this, index);
+        });
+
+        $(".filter-reset").on('click', function (e) {
+            //debugger;
+            $('#fileIntakeTable').DataTable().search('').columns().search('').draw();
+            $('.input-filter').val('');
+            $('.date-filter').val('');
+        });
+        $('.date-filter').on('change', function (e) {
+            //debugger;
+            val = '';
+            index = $(this).attr("search-index");
+            type = $(this).attr("search-type");
+
+            if (($("#endDate").val() != '' && $("#startDate").val() != '') && (Date.parse($("#endDate").val()) < Date.parse($("#startDate").val()))) {
+                alert("End date should be greater than or equal to Start date");
+                $(this).val('');
+            }
+
+            if (type == 'from') {
+                val = $(this).val() + '-' + $("#endDate").val();
+            }
+            else if (type == 'to') {
+                val = $("#startDate").val() + '-' + $(this).val();
+            }
+            var data = $('#fileIntakeTable').DataTable();
+            data.column(index).search(val).draw();
+
+        });
+
+
+
+
+    });
+
+    function searchFilter(ele, index) {
+        //debugger;
+        var datatable = $('#fileIntakeTable').DataTable();
+        datatable.column(index).search(ele.value).draw();
+    }
+
+</script>

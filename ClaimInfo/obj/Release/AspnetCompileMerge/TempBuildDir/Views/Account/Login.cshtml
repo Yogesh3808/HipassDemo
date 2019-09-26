@@ -1,0 +1,74 @@
+﻿@model ClaimInfo.Models.LoginViewModel
+@{
+    /**/
+
+    Layout = null;
+}
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Main CSS-->
+    <link rel="stylesheet" type="text/css" href="~/css/main.css">
+    <!-- Font-icon css-->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Login- Devcool Admin</title>
+</head>
+<body>
+    <section class="material-half-bg">
+        <div class="cover"></div>
+    </section>
+    <section class="login-content" style="background-color:#FFFFFF;">
+        <div class="logo">
+            <h1>
+                <img src="~/Images/blue1x.png" width="260" height="50" />
+                @*<img src="~/Images/devcool-logo-horizontal-01.png" />*@
+                @*<img width="260" height="50" style="background-color:#139DC9;" src="~/images/devcool-logo-h-white.png" class="custom-logo" alt="DevCool" itemprop="logo" sizes="(max-width: 220px) 100vw, 200px">*@
+            </h1>
+        </div>
+        <div class="login-box">
+            <div class="login-form">
+                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>SIGN IN</h3>
+                    <div class="form-group">
+                        <label class="control-label">USERNAME</label>
+                        @Html.TextBox("Username", "", new { @class = "form-control" })
+                        @* @Html.ValidationMessageFor(m => m.UserName, "", new { @style = "color:red" })*@
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">PASSWORD</label>
+                        @Html.Password("Password", "", new { @class = "form-control" })
+                        <p style="color:red"> @Html.Raw(TempData["msg"])</p>
+                    </div>
+                    <div class="form-group" style="display:none;">
+                        <div class="utility" @*style="display:none;"*@>
+                            <p class="semibold-text mb-2"><a href="~/Account/ForgotPassword" style="color:#139DC9;">Forgot Password ?</a></p>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group btn-container">
+                        <button class="btn btn-primary btn-block" style="background-color:#139DC9;border-color:#139DC9"><i class="fa fa-sign-in fa-lg fa-fw"></i>SIGN IN</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+    <!-- Essential javascripts for application to work-->
+    @*<script src="~/js/jquery-3.2.1.min.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/main.js"></script>*@
+    <!-- The javascript plugin to display page loading on top-->
+    @*<script src="~/js/plugins/pace.min.js"></script>*@
+    <script type="text/javascript">
+        // Login Page Flipbox control
+        //$('.login-content [data-toggle="flip"]').click(function () {
+        //    $('.login-box').toggleClass('flipped');
+        //    return false;
+        //});
+    </script>
+</body>

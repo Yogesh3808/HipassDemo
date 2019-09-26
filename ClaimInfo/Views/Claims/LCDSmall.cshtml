@@ -1,0 +1,69 @@
+﻿@model  List<ClaimInfo.DataModel.SP_GetLCD_SmallFileNew_Result>
+@{
+    ViewBag.Title = "LCDSmall";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<link href="~/CSS/StyleSheetForTable.css" rel="stylesheet" />
+
+
+<div class="rightpart">
+    <div class="dashBx">
+        <div class="clearfix"></div>
+        <h2>NonCovered</h2>
+        <hr />
+        <div class="dashformBx  dashformBx2 clearfix">
+            <div class="dashfrm-L">
+                @Html.TextBox("file", "", new { type = "file" })
+            </div>
+            <div class="dashfrm-M">
+                
+            </div>
+            <div class="dashfrm-M">
+            </div>
+            <div class="dashfrm-R">
+            </div>
+            <div class="clearfix"></div>
+            <div class="dashBx">
+                <div class="table-responsive" id="rootId" style="margin-top:5px;">
+                    <table id="tblId" class="table table-striped">
+                        <thead>
+                            <tr>
+                                @*<th style="text-align:left;">SeqId</th>*@
+                                <th style="text-align:left;">CPT</th>
+                                @*<th style="text-align:left;">ICDCode</th>*@
+                                @*<th style="text-align:left;">policy</th>*@
+                                <th style="text-align:left;">Code Effective Date</th>
+                                <th style="text-align:left;">Policy rule key</th>
+                                <th style="text-align:left;">Policy Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.Count > 0)
+                            {
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+                                        @*<td style="text-align:left;">@item.SeqId</td>*@
+                                        <td style="text-align:left;">@item.CPT</td>
+                                        @*<td style="text-align:left;">@item.ICDCode</td>*@
+                                        @*<td style="text-align:left;">@item.policy</td>*@
+                                        <td style="text-align:left;">@item.C_eff_date</td>
+                                        <td style="text-align:left;">@item.policyrulekey</td>
+                                        <td style="text-align:left;">@item.policyDesc</td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr><td style="border:none; text-align:left;">No records found</td></tr>
+
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

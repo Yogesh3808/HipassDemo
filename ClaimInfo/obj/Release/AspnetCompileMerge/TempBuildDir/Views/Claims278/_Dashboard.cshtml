@@ -1,0 +1,31 @@
+﻿@model ClaimInfo.Models.Dashboard837ViewModel
+<div class="dashformBx  dashformBx2 clearfix">
+    <div class="dashfrm-L1">
+        <label class="lblTxtCountHeader"> Total Request </label>
+        <br /><br />
+        <a class="lblCount" style="color:#20a8d8;" href="/Claims278/SearchDetails?sSelectedDate=@Model.FileDate&sMenu=total">@Model.FileCount</a>
+    </div>
+    <div class="dashfrm-L1">
+        <label class="lblTxtCountHeader"> Failed TA1 </label>
+        <br /><br />
+        <a class="lblCount" style="color:#ff0000;" href="/Claims278/SearchDetails?sSelectedDate=@Model.FileDate&sMenu=FEC"> @Model.EDIFailLoadCount </a>
+    </div>
+    <div class="dashfrm-L1">
+        <label class="lblTxtCountHeader"> Validate Error </label>
+        <br /><br />
+        <a class="lblCount" style="color:#20a8d8;" href="/Claims278/SearchDetails?sSelectedDate=@Model.FileDate&sMenu=SC">@Model.SubmittedClaimCount</a>
+    </div>
+    <div class="dashfrm-L1">
+        <label class="lblTxtCountHeader"> 278-11 Response </label>
+        <br /><br />
+        <a class="lblCount" style="color:#2ca058;" href="/Claims278/SearchDetails?sSelectedDate=@Model.FileDate&sMenu=AC">@Model.AcceptedClaimCount</a>
+    </div>
+    <div class="dashfrm-L1">
+        
+    </div>
+
+    <div class="dashfrm-L2">
+
+    </div>
+    <div class="clearfix"></div>
+</div>

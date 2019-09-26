@@ -1,0 +1,317 @@
+﻿@model  IEnumerable<ClaimInfo.Models.IntakeClaimDataListViewModel>
+@{
+    ViewBag.Title = "IntakeClaimData";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+    string FileID = ViewBag.FileID;
+    string error_claimcount = ViewBag.error_claimcount;
+}
+<link href="~/CSS/StyleSheetForTable.css" rel="stylesheet" />
+<div class="rightpart">
+    <div class="dashBx">
+        <div class="clearfix"></div>
+        <h2>Intake Claims Data</h2>
+        <hr />
+        <div id="fileIntekDiv">
+
+            <div class="dashformBx  dashformBx2 clearfix">
+                <div class="dashfrm-L">
+                    <label class="lblTxt">  Claim ID </label>
+                    @Html.TextBox("claimID-filter", "", new { @class = "dashInp form-control input-filter", @search_index = "1" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt">  Claim Status </label>
+                    @Html.TextBox("claimStatus-filter", "", new { @class = "dashInp form-control input-filter", @search_index = "2" })
+                </div>
+                <div class="dashfrm-M">
+                    <label class="lblTxt"> Claim TM Tracking ID </label>
+                    @Html.TextBox("claimTrackingID", "", new { @class = "dashInp input-filter form-control", @search_index = "4", @search_type = "to" })
+                </div>
+                <div class="dashfrm-R">
+                    <label class="lblTxt"> </label>
+                    <button class="editBtn pull-right filter-reset" style="width: 30%;"> Reset </button>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+
+            <div class="filter col-md-12" style="display:none;">
+                <fieldset>
+                    <legend>
+                        Search Filter
+                    </legend>
+                    <div class="row form-group col-md-12">
+                        <button class="pull-right filter-reset"> Reset </button>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <div class="col-md-4">
+                                <label class="filter-label">
+                                    Claim ID
+                                </label>
+                            </div>
+                            <div class="col-md-8">
+                                @Html.TextBox("claimID-filter", "", new { @class = " form-control input-filter", @search_index = "1" })
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-md-4">
+                                <label class="filter-label">
+                                    Claim Status
+                                </label>
+                            </div>
+                            <div class="col-md-8">
+                                @Html.TextBox("claimStatus-filter", "", new { @class = " form-control input-filter", @search_index = "2" })
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-md-4">
+                                <label class="filter-label">
+                                    Claim TM Tracking ID
+                                </label>
+                            </div>
+                            <div class="col-md-8">
+                                @Html.TextBox("claimTrackingID", "", new { @class = "input-filter form-control", @search_index = "4", @search_type = "to" })
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="table-responsive" id="rootId" style="margin-top:5px;">
+                <table id="intakeClaimDataTable" class="dashTable cell-border table table-bordered display">
+                    <thead>
+                        <tr>
+                            <th>
+                                File ID
+                            </th>
+                            <th>
+                                Claim ID
+                            </th>
+                            <th>
+                                Claim Status
+                            </th>
+                            <th>
+                                Provider
+                            </th>
+                            <th>
+                                Account Number
+                            </th>
+                            <th>
+                                Subscriber First Name
+                            </th>
+                            <th>
+                                Subscriber Last Name
+                            </th>
+                            <th>
+                                Patient First Name
+                            </th>
+                            <th>
+                                Patient Last Name
+                            </th>
+                            <th>
+                                Claim Amount
+                            </th>
+                            <th>
+                                Error Code
+                            </th>
+                            @*<th>
+                                    Error Desc error
+                                </th>*@
+                            <th>
+                                277 CA code
+                            </th>
+                            <th>
+                                277 CA category
+                            </th>
+                            <th>
+                                Details
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+
+        <div id="divClaimIntakeDataModel" class="modal fade" role="dialog">
+        </div>
+    </div>
+</div>
+
+<script>
+
+    $(function () {
+
+        //     $('.date-filter').daterangepicker(
+        //{
+        //    singleDatePicker: true,
+        //});
+
+        $("#intakeClaimDataTable tr:even").css("background-color", "#dedede");
+        $('#intakeClaimDataTable').DataTable({
+            "processing": true,
+            "bLengthChange": false,
+            "language": {
+                "processing": "<img src='/Content/images/loading.gif' id='ProgressImage'/>" //add a loading image,simply putting <img src="loader.gif" /> tag.
+            },
+            "serverSide": true,
+            "searching": true,
+            "ordering": true,
+            "scrollY": 200,
+            "scrollX": true,
+            "responsive": true,
+            "ajax":
+            {
+                "url": "/Claims/GetIntakeClaimData",
+                "data": {
+                    "FileID": @FileID,
+                    "error_claimcount":@error_claimcount,
+                },
+                "type": "POST",
+                "dataType": "JSON"
+            },
+            "columns": [
+                {
+                    data: 'FileID',
+                    visible: true,
+                },
+                {
+                    data: 'ClaimID',
+                    "render": function (data, type, row, meta) {
+                        //debugger;
+                        if (type === 'display') {
+                            data = '<a class="claimTag" style="color:#6AA2B8;" href="/Claims/ClaimLineData?FileID=' + @FileID + '&ClaimID=' + row.ClaimID + '">' + data + '</a>';
+                        }
+                        return data;
+                    }
+                },
+                { data: 'ClaimStatus' },
+                { data: 'BillingProvider' },
+                { data: 'AccountNumber' },
+                { data: 'SubscriberFirstName' },
+                { data: 'SubscriberLastName' },
+                { data: 'PatientFirstName' },
+                { data: 'PatientLastName' },
+                { data: 'Claim_Amount' },
+                //{
+                //    data: 'ErrorCode',
+                //    "render": function (data, type, row, meta) {
+                //        if (type === 'display') {
+                //            data = '<a class="btn btn-danger"  href="#">' + data + '</a>';
+                //        }
+                //        if (row.ErrorCode == "Not OK")
+                //            return data;
+                //        else
+                //            return "";
+                //    }
+                //},
+                //{ data: 'ErrorDesc' },
+                //{ data: 'Field1' },
+                {  data: 'Field2'},
+                {
+                    data: 'Field3',
+                    "render": function (data, type, row, meta) {
+                        if (data != null) {
+                            if (data.length > 10)
+                                return type === 'display' && data.length > 10 ? '<span title=\"' + data + '"\>' + data.substr(0, 10) + '...</span>' : data;
+                            else
+                                return data;
+                        }
+                        else
+                            return data;
+                    }
+                },
+                {
+                    data: 'Field4',
+                    "render": function (data, type, row, meta) {
+                        if (data != null) {
+                            if (data.length > 10)
+                                return type === 'display' && data.length > 10 ? '<span title=\"' + data + '"\>' + data.substr(0, 10) + '...</span>' : data;
+                            else
+                            return data;
+                        }
+                        else
+                            return data;
+                    }
+                },
+                {
+                    "targets": -1,
+                    "data": null,
+                    "render": function (data, type, row, meta) {
+                        //debugger;
+                        if (type === 'display') {
+                            //debugger;
+                            //data = '<a href="/Claims/IntakeClaimDetails?SeqID='+row.ClaimDataSeqID+'" class="btn btn-default"><span class="glyphicon glyphicon-new-window"></span></a>';
+                            data = '<a href="/Claims/IntakeClaimDetails?SeqID=' + row.ClaimDataSeqID + '" class="btn btn-default"><img src="../Content/Images/glyphicons_new_window.png" style="height:30px; width:30px;" /></a>';
+                        }
+
+                        return data;
+                    },
+                    //"defaultContent": '<a href="/Claims/IntakeClaimDetails?SeqID='+row[0]+'" class="btn btn-default"><span class="glyphicon glyphicon-new-window"></span></a>',
+                    "searchable": false
+                }
+            ]
+
+            //, "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+            //    //alert(aData['ErrorCode']);
+            //    //if (aData['ErrorCode'] != null) {
+            //    //    $('td', nRow).css('background-color', '#FF5959');
+            //    //    $('td', nRow).css('color', 'white');
+            //    //}
+            //}
+
+        });
+
+        $('#intakeClaimDataTable tbody').on('click', '#showClaimData', function () {
+            //debugger;
+            var table = $('#intakeClaimDataTable').DataTable();
+            var data = table.row($(this).parents('tr')).data();
+            window.location.href = "/Claims/IntakeClaimDetails?SeqID=" + data[0];
+        });
+
+        $('.date-filter').val('');
+        // Filter Section
+
+        $('.input-filter').on('blur', function (e) {
+            //debugger;
+            index = $(this).attr("search-index");
+            searchFilter(this, index);
+        });
+
+        $(".filter-reset").on('click', function (e) {
+            //debugger;
+            $('#intakeClaimDataTable').DataTable().search('').columns().search('').draw();
+            $('.input-filter').val('');
+            $('.date-filter').val('');
+        });
+
+        //$('.date-filter').on('change', function (e) {
+        //    debugger;
+        //    val = '';
+        //    index = $(this).attr("search-index");
+        //    type = $(this).attr("search-type");
+
+        //    if (($("#endDate").val() != '' && $("#startDate").val() != '') && (Date.parse($("#endDate").val()) < Date.parse($("#startDate").val()))) {
+        //        alert("End date should be greater than or equal to Start date");
+        //        $(this).val('');
+        //    }
+
+        //    if (type == 'from') {
+        //        val = $(this).val() + '-' + $("#endDate").val();
+        //    }
+        //    else if (type == 'to') {
+        //        val = $("#startDate").val() + '-' + $(this).val();
+        //    }
+        //    var data = $('#intakeClaimDataTable').DataTable();
+        //    data.column(index).search(val).draw();
+
+        //});
+
+    });
+
+    function searchFilter(ele, index) {
+        //debugger;
+        var datatable = $('#intakeClaimDataTable').DataTable();
+        datatable.column(index).search(ele.value).draw();
+    }
+</script>
+
+
